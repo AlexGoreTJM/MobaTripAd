@@ -14,7 +14,7 @@ id="WebApp_ID" version="3.0">
     <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
     <init-param>
       <param-name>config</param-name>
-      <param-value>/WEB-INF/struts-config.xml</param-value>
+      <param-value>/WEB-INF/navigazione.xml</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
