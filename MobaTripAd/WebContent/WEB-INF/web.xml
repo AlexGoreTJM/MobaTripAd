@@ -6,7 +6,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 id="WebApp_ID" version="3.0">
 
   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>/WEB-INF/PAG/jsp/index.jsp</welcome-file>
   </welcome-file-list>
   
   <servlet>
@@ -33,6 +33,17 @@ id="WebApp_ID" version="3.0">
 	       <html:xxxxxx .... >
   -->
   <jsp-config>
+    <!-- JSTL Custom-Tag -->
+  	<taglib>
+      <taglib-uri>uric</taglib-uri>
+      <taglib-location>/WEB-INF/tld/c.tld</taglib-location>
+    </taglib>
+  	<taglib>
+      <taglib-uri>urifmt</taglib-uri>
+      <taglib-location>/WEB-INF/tld/fmt.tld</taglib-location>
+    </taglib>
+    
+    <!-- STRUTS Custom-Tag -->
   	<taglib>
       <taglib-uri>uribean</taglib-uri>
       <taglib-location>/WEB-INF/tld/struts-html.tld</taglib-location>
@@ -52,7 +63,7 @@ id="WebApp_ID" version="3.0">
     <session-timeout>30</session-timeout> 
   </session-config>
   
-  <!-- Optional Server Errors conditions =============================-->
+  <!-- Optional Server Errors conditions =============================
   <error-page>
 	<error-code>404</error-code>
 	<location>/PAGES/jsp/index.jsp?feedbackHome=error404</location>
@@ -62,5 +73,6 @@ id="WebApp_ID" version="3.0">
 	<error-code>500</error-code>
 	<location>/PAGES/jsp/index.jsp?feedbackHome=error500</location>
   </error-page>
-
+  -->
+  
 </web-app>
