@@ -2,7 +2,7 @@ package moba.model.entity;
 
 public class Piattaforma {
 
-	private Integer idpiattaforma;
+	private int idpiattaforma;
 	private String nome;
 	private String brand;
 	private String logo;
@@ -16,7 +16,7 @@ public class Piattaforma {
 		this.info = info;
 	}
 
-	public Integer getIdpiattaforma() {
+	public int getIdpiattaforma() {
 		return idpiattaforma;
 	}
 

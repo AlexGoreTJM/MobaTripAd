@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 public class Utente {
 	
-	private Integer idUtente;
+	private int idUtente;
 	private Boolean admin;
 	private String nickname;
 	private String email;
@@ -15,7 +15,7 @@ public class Utente {
 	private Timestamp dataReg;
 	private String info;
 	
-	public Utente(Integer idUtente, Boolean admin, String nickname, String email, String nome, String cognome,
+	public Utente(int idUtente, Boolean admin, String nickname, String email, String nome, String cognome,
 			Grado grado, String avatar, Timestamp dataReg, String info) {
 		super();
 		
@@ -30,7 +30,7 @@ public class Utente {
 		this.dataReg = dataReg;
 		this.info = info;
 	}
-	public Integer getIdUtente() {
+	public int getIdUtente() {
 		return idUtente;
 	}
 	public Boolean getAdmin() {
