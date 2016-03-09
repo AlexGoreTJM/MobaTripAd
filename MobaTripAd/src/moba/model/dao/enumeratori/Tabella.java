@@ -2,6 +2,6 @@ package moba.model.dao.enumeratori;
 
 public enum Tabella {
 	
-	Utente,Pippo,T3,Tabella4 ;
+	CATEGORIA, GIOCO, GIOCOPIATTA, GRADO, PIATTAFORMA, RECENSIONE, UTENTE, VALUTAZIONE;
 
 }
