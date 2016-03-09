@@ -7,8 +7,8 @@ public class Recensione {
 	private Utente utente;
 	private Gioco gioco;
 	private Integer ctrLike;
-	private Integer ctrDislike;
-	private Integer segnalata;
+	private int ctrDislike;
+	private int segnalata;
 	private String info;
 	private Timestamp dataRec;
 	
@@ -32,15 +32,15 @@ public class Recensione {
 		return gioco;
 	}
 
-	public Integer getCtrLike() {
+	public int getCtrLike() {
 		return ctrLike;
 	}
 
-	public Integer getCtrDislike() {
+	public int getCtrDislike() {
 		return ctrDislike;
 	}
 
-	public Integer getSegnalata() {
+	public int getSegnalata() {
 		return segnalata;
 	}
 
