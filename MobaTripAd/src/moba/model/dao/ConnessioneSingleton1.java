@@ -8,12 +8,12 @@ import java.util.ResourceBundle;
 
 import moba.model.dao.eccezioni.DAOConnessioneException;
 
-public class ConSingleton {
+public class ConnessioneSingleton1 {
 	
-	private static ConSingleton istanza;
+	private static ConnessioneSingleton1 istanza;
 	private Connection con;
 
-	private ConSingleton() throws DAOConnessioneException {
+	private ConnessioneSingleton1() throws DAOConnessioneException {
 		//tutta la logica JDBC x ottenere la Connection:
 		try {
 			ResourceBundle rb = ResourceBundle.getBundle("popolazione.info.db");
@@ -31,9 +31,9 @@ public class ConSingleton {
 		}
 	}
 
-	public static ConSingleton getIstanza() throws DAOConnessioneException {
+	public static ConnessioneSingleton1 getIstanza() throws DAOConnessioneException {
 		if(istanza==null)
-			istanza= new ConSingleton();
+			istanza= new ConnessioneSingleton1();
 		
 		return istanza;
 	}
