@@ -1,6 +1,6 @@
 package moba.model.entity;
 
-public class CategoriaBean {
+public class Categoria {
 
 	private int idCategoria;
 	private String nome;
@@ -23,7 +23,7 @@ public class CategoriaBean {
 		return info;
 	}
 
-	public CategoriaBean(int idCategoria, String nome, String img, String info) {
+	public Categoria(int idCategoria, String nome, String img, String info) {
 		super();
 		this.idCategoria = idCategoria;
 		this.nome = nome;
