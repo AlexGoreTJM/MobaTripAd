@@ -1,0 +1,42 @@
+CATEGORIA
+-------------------------
+1	RPG
+2	MOBA
+3	FPS
+4	Strategy Game
+5	Graphic Adventure
+6	Drive simulation
+7	Fly Simulation
+8	Action Adventure
+9	Sport
+10	Platform
+11	Survivor Horror
+12	Fight
+13	MMORPG
+
+
+PIATTAFORMA:
+-----------------
+1	PC
+2	PS2
+3	PS3
+4	PS4
+5	XBOX ONE
+6	XBOX 360
+7	Wii
+8	WiiU
+9	DSi
+10	3DS
+11	Android
+12	iOS
+
+
+GRADO:
+-----------------
+Peone		1
+Recluta		2
+Scudiero	3
+Fante		4
+Cavaliere	5
+Capitano	6
+Generale	7

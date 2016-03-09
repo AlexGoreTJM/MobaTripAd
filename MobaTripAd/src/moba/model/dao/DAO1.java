@@ -53,6 +53,7 @@ public abstract class DAO1<T> {
 	public abstract int insert(T entity) throws DAOException;
 	
 	public abstract T select(int id) throws DAOException;
+	
 	public abstract ArrayList<T> select() throws DAOException;
 	public abstract ArrayList<T> select(Colonna colonna, Object valore) throws DAOException;
 	public abstract ArrayList<T> selectLike(String criterio) throws DAOException;
