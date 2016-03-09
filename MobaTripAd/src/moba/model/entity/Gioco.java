@@ -136,9 +136,10 @@ public class Gioco {
 	}
 
 	public Gioco(String titolo, String sh, int players, boolean web, Date dataUscita, int etaMin, double costoLancio,
-			Categoria categoria, double valutazioneSito, String pro, String contro, String img1, String img2,
+			int idCategoria, double valutazioneSito, String pro, String contro, String img1, String img2,
 			String urlVideo, String urlSh, String requisiti, String info) {
-		this(0, titolo, sh, players, web, dataUscita, etaMin, costoLancio, categoria, valutazioneSito, pro, contro,
+		
+		this(0, titolo, sh, players, web, dataUscita, etaMin, costoLancio, new Categoria(idCategoria, null, null, null), valutazioneSito, pro, contro,
 				img1, img2, urlVideo, urlSh, requisiti, info, null);
 
 	}
