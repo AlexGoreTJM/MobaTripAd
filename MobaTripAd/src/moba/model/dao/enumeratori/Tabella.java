@@ -2,6 +2,6 @@ package moba.model.dao.enumeratori;
 
 public enum Tabella {
 	
-	Utente,T2,T3,Tabella4 ;
+	Utente,Pippo,T3,Tabella4 ;
 
 }
