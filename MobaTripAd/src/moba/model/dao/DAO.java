@@ -8,22 +8,22 @@ import java.util.ArrayList;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.enumeratori.Tabella;
 
-public abstract class DAO2 {
+public abstract class DAO {
 	
 	protected Connection con;
 	protected ResultSet res;
 	
-	protected DAO2() throws DAOException {
+	protected DAO() throws DAOException {
 		con = ConnessioneSingleton.getIstanza().getCon();
 //		System.out.println("Connessione OK ==> "+con);
 	}
 	
-	public static DAO2 getDaoInstance(Tabella entity) throws DAOException{
+	public static DAO getDaoInstance(Tabella entity) throws DAOException{
 		//Pattern FACTORY:
-		String path = DAO2.class.getPackage().getName();
+		String path = DAO.class.getPackage().getName();
 		try {
-			Class<DAO2> dao = 
-		   (Class<DAO2>) Class.forName(path+".Dao"+entity);
+			Class<DAO> dao = 
+		   (Class<DAO>) Class.forName(path+".Dao"+entity);
 			
 			return dao.newInstance(); //adopera costruttore di default 
 			
