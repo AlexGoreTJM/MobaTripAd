@@ -17,7 +17,7 @@ public class ConnessioneSingleton {
 		try {  //Connessione al DB:
 			ResourceBundle rb = ResourceBundle.getBundle("moba.info.db");
 			
-			Class.forName(rb.getString("driver"));
+			Class.forName(rb.getString("drv"));
 			con = DriverManager.getConnection(rb.getString("url")
 											 +rb.getString("sid")
 											 ,rb.getString("usr")
