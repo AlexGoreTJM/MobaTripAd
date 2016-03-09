@@ -4,10 +4,11 @@ import java.sql.Timestamp;
 
 public class Utente {
 	
-	private Integer idUtente;
-	private Boolean admin;
+	private int idUtente;
+	private boolean admin;
 	private String nickname;
 	private String email;
+	private String password;
 	private String nome;
 	private String cognome;
 	private Grado grado;
@@ -33,7 +34,7 @@ public class Utente {
 	public Integer getIdUtente() {
 		return idUtente;
 	}
-	public Boolean getAdmin() {
+	public boolean isAdmin() {
 		return admin;
 	}
 	public String getNickname() {
@@ -62,6 +63,9 @@ public class Utente {
 	}
 	
 	
+	public String getPassword() {
+		return password;
+	}
 	@Override
 	public String toString() {
 		return 
