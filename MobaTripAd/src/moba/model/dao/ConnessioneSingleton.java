@@ -15,7 +15,7 @@ public class ConnessioneSingleton {
 	
 	private ConnessioneSingleton() throws DAOException {
 		try {  //Connessione al DB:
-			ResourceBundle rb = ResourceBundle.getBundle("discoteca.info.db");
+			ResourceBundle rb = ResourceBundle.getBundle("moba.info.db");
 			
 			Class.forName(rb.getString("driver"));
 			con = DriverManager.getConnection(rb.getString("url")

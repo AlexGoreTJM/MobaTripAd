@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
+import moba.model.dao.enumeratori.Tabella;
 import moba.model.entity.Categoria;
 
 public class DaoCategoria extends DAO {
@@ -73,5 +74,25 @@ public class DaoCategoria extends DAO {
 		return (T) new Categoria(res.getInt("idcategoria"), res.getString("nome"), res.getString("img"),
 				res.getString("info"));
 	}
+	
+	
+	//metodo main ESCLUSIVAMENTE x testare tutti i metodi
+		public static void main(String[] args) {
+			
+			try {
+				DaoCategoria dao = (DaoCategoria) DAO.getDaoInstance(Tabella.Categoria);
+				
+				
+				System.out.println("\nselect(pk): "+dao.select(1));
+				
+				
+				System.out.println("\nselect all: "+dao.select());
+		
+				
+			} catch (DAOException e) {
+				System.out.println(e.getMessage());
+			}
+
+		}
 
 }
