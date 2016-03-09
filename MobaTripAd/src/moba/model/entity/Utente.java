@@ -1,6 +1,5 @@
 package moba.model.entity;
 
-
 import java.sql.Timestamp;
 
 public class Utente {
@@ -61,6 +60,8 @@ public class Utente {
 	public String getInfo() {
 		return info;
 	}
+	
+	
 	@Override
 	public String toString() {
 		return 
