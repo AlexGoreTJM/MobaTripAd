@@ -171,12 +171,40 @@ public class DaoGioco extends DAO {
 				throw new DAONonTrovatoException("ERRORE SELECT GIOCHI CON PIATTAFORMA " + idPiattaforma);
 
 			giochi.add(componiEntity());
-			
+
 			while (res.next())
 				giochi.add(componiEntity());
 
 		} catch (SQLException e) {
 			throw new DAOException("ERRORE SELECT GIOCHI x idpiattaforma: " + idPiattaforma + ". Causa: "
+					+ e.getMessage() + " Errorcode: " + e.getErrorCode());
+		}
+
+		return giochi;
+	}
+
+	public ArrayList<Gioco> selectPopolare() throws DAOException {
+
+		String sql = "select g.idgioco, g.titolo, g.sh, g.players, g.web, g.datauscita, g.etamin, g.costolancio, g.idcategoria, g.valutazionesito, g.pro, g.contro, g.img1, g.img2, g.urlvideo, g.urlsh, g.requisiti, g.info, g.datareg, count(*) as ctr"
+					 + "from gioco g join recensione r on (g.idgioco= r.idgioco) group by g.idgioco, g.titolo, g.sh, g.players, g.web, g.datauscita, g.etamin, g.costolancio, g.idcategoria, g.valutazionesito, g.pro, g.contro, g.img1, g.img2, g.urlvideo,"
+				     +"g.urlsh, g.requisiti, g.info, g.datareg order by ctr dec;";
+
+		ArrayList<Gioco> giochi = new ArrayList<>();
+
+		try (PreparedStatement pst = con.prepareStatement(sql)) {
+
+			res = pst.executeQuery();
+
+			if (!res.next())
+				throw new DAONonTrovatoException("ERRORE SELECT GIOCHI POPOLARI ");
+
+			giochi.add(componiEntity());
+			
+			while (res.next())
+				giochi.add(componiEntity());
+
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE SELECT GIOCHI x popolarita': " + ". Causa: "
 					+ e.getMessage() + " Errorcode: " + e.getErrorCode());
 		}
 
@@ -208,13 +236,13 @@ public class DaoGioco extends DAO {
 
 		try {
 			DaoGioco dao = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
-			
-		//	int i = dao.insert((T) new Gioco("PROVA", "PROVA", 1, 1, new DATE, 11, 11, 1, 1, "ddd", "ppp", "ddd", "dddd", "ddd", null, null, null));
-			
-			
+
+			// int i = dao.insert((T) new Gioco("PROVA", "PROVA", 1, 1, new
+			// DATE, 11, 11, 1, 1, "ddd", "ppp", "ddd", "dddd", "ddd", null,
+			// null, null));
+
 			System.out.println("" + dao.selectByIdPiattaforma(4));
-			
-			
+
 		} catch (DAOException e) {
 			System.out.println(e.getMessage());
 		}
