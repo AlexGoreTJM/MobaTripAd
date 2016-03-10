@@ -100,62 +100,64 @@ public class DaoGioco extends DAO {
 				throw new DAONonTrovatoException("ERRORE SELECT GIOCO CON ID " + pk);
 
 		} catch (SQLException e) {
-			throw new DAOException("ERRORE SELECT GIOCO x pk: "+pk
-			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+			throw new DAOException("ERRORE SELECT GIOCO x pk: " + pk + ". Causa: " + e.getMessage() + " Errorcode: "
+					+ e.getErrorCode());
+		}
+
+	}
+
+	public <T> T selectLast() throws DAOException {
+		String sql = "SELECT idgioco, titolo, sh, players, web, datauscita, etamin, costolancio, idcategoria, valutazionesito, pro, contro, img1, img2, urlvideo, urlsh, requisiti, info, datareg FROM ("
+				+ "   SELECT idgioco, titolo, sh, players, web, datauscita, etamin, costolancio, idcategoria, valutazionesito, pro, contro, img1, img2, urlvideo, urlsh, requisiti, info, datareg FROM gioco ORDER BY datauscita DESC) WHERE ROWNUM = 1;  ";
+
+		try (PreparedStatement pst = con.prepareStatement(sql)) {
+
+			res = pst.executeQuery();
+
+			if (res.next())
+				return componiEntity();
+			else
+				throw new DAONonTrovatoException("ERRORE SELECT GIOCO CON ID ");
+
+		} catch (SQLException e) {
+			throw new DAOException(
+					"ERRORE SELECT GIOCO x pk: " + ". Causa: " + e.getMessage() + " Errorcode: " + e.getErrorCode());
 		}
 
 	}
 
 	private <T> T componiEntity() throws SQLException, DAOException {
-		
-		
+
 		ArrayList<Piattaforma> piattaforme = new ArrayList<>();
 		ArrayList<GiocoPiatta> giocopiatta = new DaoGiocoPiatta().selectByIdGioco(res.getInt("idgioco"));
 		for (GiocoPiatta giocoPiatta2 : giocopiatta) {
 			piattaforme.add(new DaoPiattaforma().select(giocoPiatta2.getIdPiattaforma()));
 		}
-		
+
 		double valutazione = new DaoValutazione().getAvgValutazioneByIdGioco(res.getInt("idgioco"));
-		
-		return (T) new Gioco(res.getInt("idgioco"), 
-							res.getString("titolo"), 
-							res.getString("sh"), 
-							res.getInt("players"),
-							(res.getInt("web")==1)?true:false, 
-							res.getDate("datauscita"), 
-							res.getInt("etamin"), 
-							res.getDouble("costolancio"),
-							((Categoria) new DaoCategoria().select(res.getInt("idcategoria"))), 
-							res.getDouble("valutazionesito"),
-							res.getString("pro"), 
-							res.getString("contro"), 
-							res.getString("img1"), 
-							res.getString("img2"),
-							res.getString("urlvideo"), 
-							res.getString("urlsh"), 
-							res.getString("requisiti"), 
-							res.getString("info"),
-							res.getTimestamp("datareg"), 
-							piattaforme,
-							new DaoRecensione().select(res.getInt("idgioco")),
-							valutazione);
+
+		return (T) new Gioco(res.getInt("idgioco"), res.getString("titolo"), res.getString("sh"), res.getInt("players"),
+				(res.getInt("web") == 1) ? true : false, res.getDate("datauscita"), res.getInt("etamin"),
+				res.getDouble("costolancio"), ((Categoria) new DaoCategoria().select(res.getInt("idcategoria"))),
+				res.getDouble("valutazionesito"), res.getString("pro"), res.getString("contro"), res.getString("img1"),
+				res.getString("img2"), res.getString("urlvideo"), res.getString("urlsh"), res.getString("requisiti"),
+				res.getString("info"), res.getTimestamp("datareg"), piattaforme,
+				new DaoRecensione().select(res.getInt("idgioco")), valutazione);
 
 	}
-	
-	//metodo main ESCLUSIVAMENTE x testare tutti i metodi
+
+	// metodo main ESCLUSIVAMENTE x testare tutti i metodi
 	public static void main(String[] args) {
-		
+
 		try {
 			DaoGioco dao = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
-			
-			System.out.println("" + dao.select(3));
-	
-			
+
+			System.out.println("" + dao.selectLast());
+
 		} catch (DAOException e) {
 			System.out.println(e.getMessage());
 		}
 
 	}
-	
 
 }
