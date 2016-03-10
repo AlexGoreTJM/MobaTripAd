@@ -109,6 +109,10 @@ public class Gioco {
 				+ contro + ", img1=" + img1 + ", img2=" + img2 + ", urlVideo=" + urlVideo + ", urlSh=" + urlSh
 				+ ", requisiti=" + requisiti + ", info=" + info + ", dataReg=" + dataReg + "]";
 	}
+	
+	public Gioco(int idGioco){
+		this.idGioco = idGioco;
+	}
 
 	public Gioco(int idGioco, String titolo, String sh, int players, boolean web, Date dataUscita, int etaMin,
 			double costoLancio, Categoria categoria, double valutazioneSito, String pro, String contro, String img1,
