@@ -58,7 +58,7 @@
     <global-forwards>
         <!-- Default forward to "Welcome" action -->
         <!-- Demonstrates using index.jsp to forward -->
-        <forward name="welcome" path="/welcome.do" />
+        <forward name="inizia" path="/inizia.do" />
     </global-forwards>
 
 

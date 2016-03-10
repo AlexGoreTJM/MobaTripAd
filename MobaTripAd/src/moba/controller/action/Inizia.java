@@ -12,6 +12,7 @@ import moba.model.dao.DAO;
 import moba.model.dao.DaoGioco;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.enumeratori.Tabella;
+import moba.model.entity.Gioco;
 
 public class Inizia extends Action {
 
@@ -22,9 +23,9 @@ public class Inizia extends Action {
 		try {
 			DaoGioco dao = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
 
-			request.setAttribute("ultimoGiocoUscito", dao.selectLast());
+			request.setAttribute("ultimoGiocoUscito",(Gioco) dao.selectLast());
 			//request.setAttribute("giochiPiuRecensito", dao.selectPopolare());
-
+			System.out.println((Gioco)dao.selectLast());
 			return mapping.findForward("success");
 		} catch (DAOException e) {
 
