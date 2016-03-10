@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import moba.model.entity.Grado;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
+import moba.model.dao.enumeratori.Tabella;
 
 public class DaoGrado extends DAO {
 
@@ -40,23 +41,23 @@ public class DaoGrado extends DAO {
 	
 
 
-	public  Grado select(String pk) throws DAOException {
+	public  Grado select(String nome) throws DAOException {
 		String sql = 
 		"SELECT nome,peso "
 		+"FROM GRADO "
 		+"WHERE nome = ?";
 		
 		try(PreparedStatement pst = con.prepareStatement(sql)) {
-			pst.setString(1, pk);
+			pst.setString(1, nome);
 			res = pst.executeQuery(); //esegue la query così preparata
 			if(res.next())
 				return  componiEntity();
 			else
 				throw new DAONonTrovatoException
-				("WARNING: dati non trovati in GRADO x pk: "+pk);
+				("WARNING: dati non trovati in GRADO x nome: "+nome);
 			
 		} catch (SQLException e) {
-			throw new DAOException("ERRORE SELECT GRADO x pk: "+pk
+			throw new DAOException("ERRORE SELECT GRADO x nome: "+nome
 			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
 		}
 	
@@ -72,7 +73,25 @@ public class DaoGrado extends DAO {
 	}
 	
 	
-	
+	//metodo main ESCLUSIVAMENTE x testare tutti i metodi
+			public static void main(String[] args) {
+				
+				try {
+					DaoGrado dao = (DaoGrado) DAO.getDaoInstance(Tabella.Grado);
+					
+					
+					
+					
+					
+					System.out.println(dao.select("Peone"));
+					
+			
+					
+				} catch (DAOException e) {
+					System.out.println(e.getMessage());
+				}
+
+			}
 	
 
 	

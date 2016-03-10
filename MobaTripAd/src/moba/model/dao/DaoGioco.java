@@ -103,12 +103,26 @@ public class DaoGioco extends DAO {
 	}
 
 	private <T> T componiEntity() throws SQLException, DAOException {
-		return (T) new Gioco(res.getInt("idgioco"), res.getString("titolo"), res.getString("sh"), res.getInt("players"),
-				(res.getInt("web")==1)?true:false, res.getDate("datauscita"), res.getInt("etamin"), res.getDouble("costolancio"),
-				((Categoria) new DaoCategoria().select(res.getInt("idcategoria"))), res.getDouble("valutazionesito"),
-				res.getString("pro"), res.getString("contro"), res.getString("img1"), res.getString("img2"),
-				res.getString("urlvideo"), res.getString("urlsh"), res.getString("requisiti"), res.getString("info"),
-				res.getTimestamp("timestamp"));
+		return (T) new Gioco(res.getInt("idgioco"), 
+							res.getString("titolo"), 
+							res.getString("sh"), 
+							res.getInt("players"),
+							(res.getInt("web")==1)?true:false, 
+							res.getDate("datauscita"), 
+							res.getInt("etamin"), 
+							res.getDouble("costolancio"),
+							((Categoria) new DaoCategoria().select(res.getInt("idcategoria"))), 
+							res.getDouble("valutazionesito"),
+							res.getString("pro"), 
+							res.getString("contro"), 
+							res.getString("img1"), 
+							res.getString("img2"),
+							res.getString("urlvideo"), 
+							res.getString("urlsh"), 
+							res.getString("requisiti"), 
+							res.getString("info"),
+							res.getTimestamp("timestamp"), 
+							new DaoPiattaforma().select(res.getInt("idgioco")));
 
 	}
 

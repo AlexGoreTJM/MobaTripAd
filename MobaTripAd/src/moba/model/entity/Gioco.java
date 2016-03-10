@@ -2,6 +2,7 @@ package moba.model.entity;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 
 public class Gioco {
 
@@ -24,6 +25,15 @@ public class Gioco {
 	private String requisiti;
 	private String info;
 	private Timestamp dataReg;
+	private ArrayList<Piattaforma> piattaforme;
+
+	public ArrayList<Piattaforma> getPiattaforme() {
+		return piattaforme;
+	}
+
+	public void setPiattaforme(ArrayList<Piattaforma> piattaforme) {
+		this.piattaforme = piattaforme;
+	}
 
 	public int getIdGioco() {
 		return idGioco;
@@ -101,13 +111,16 @@ public class Gioco {
 		return dataReg;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "\n Gioco [idGioco=" + idGioco + ", titolo=" + titolo + ", sh=" + sh + ", players=" + players + ", web="
+		return "Gioco [idGioco=" + idGioco + ", titolo=" + titolo + ", sh=" + sh + ", players=" + players + ", web="
 				+ web + ", dataUscita=" + dataUscita + ", etaMin=" + etaMin + ", costoLancio=" + costoLancio
 				+ ", categoria=" + categoria + ", valutazioneSito=" + valutazioneSito + ", pro=" + pro + ", contro="
 				+ contro + ", img1=" + img1 + ", img2=" + img2 + ", urlVideo=" + urlVideo + ", urlSh=" + urlSh
-				+ ", requisiti=" + requisiti + ", info=" + info + ", dataReg=" + dataReg + "]";
+				+ ", requisiti=" + requisiti + ", info=" + info + ", dataReg=" + dataReg + ", piattaforme="
+				+ piattaforme + "]";
 	}
 	
 	public Gioco(int idGioco){
@@ -116,7 +129,7 @@ public class Gioco {
 
 	public Gioco(int idGioco, String titolo, String sh, int players, boolean web, Date dataUscita, int etaMin,
 			double costoLancio, Categoria categoria, double valutazioneSito, String pro, String contro, String img1,
-			String img2, String urlVideo, String urlSh, String requisiti, String info, Timestamp dataReg) {
+			String img2, String urlVideo, String urlSh, String requisiti, String info, Timestamp dataReg, ArrayList<Piattaforma> piattaforme) {
 		super();
 		this.idGioco = idGioco;
 		this.titolo = titolo;
@@ -137,6 +150,7 @@ public class Gioco {
 		this.requisiti = requisiti;
 		this.info = info;
 		this.dataReg = dataReg;
+		this.piattaforme = piattaforme;
 	}
 
 	public Gioco(String titolo, String sh, int players, boolean web, Date dataUscita, int etaMin, double costoLancio,
@@ -144,7 +158,7 @@ public class Gioco {
 			String urlVideo, String urlSh, String requisiti, String info) {
 		
 		this(0, titolo, sh, players, web, dataUscita, etaMin, costoLancio, new Categoria(idCategoria, null, null, null), valutazioneSito, pro, contro,
-				img1, img2, urlVideo, urlSh, requisiti, info, null);
+				img1, img2, urlVideo, urlSh, requisiti, info, null, null);
 
 	}
 
