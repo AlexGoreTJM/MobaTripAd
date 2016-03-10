@@ -46,7 +46,7 @@ public <T> int insert(T entity) throws DAOException {
 			pst.setString(6, r.getInfo());
 			pst.setTimestamp(7, r.getDataRec());
 			
-			//esegue la query così preparata:
+			//esegue la query cosï¿½ preparata:
 			return pst.executeUpdate();
 		
 		} catch (SQLException e) {
@@ -76,7 +76,7 @@ public <T> int insert(T entity) throws DAOException {
 		try(PreparedStatement pst = con.prepareStatement(sql)) {
 			pst.setInt(1, idUtente);
 			pst.setInt(2, idGioco);
-			res = pst.executeQuery(); //esegue la query così preparata
+			res = pst.executeQuery(); //esegue la query cosï¿½ preparata
 			if(res.next())
 				return  componiEntity();
 			else
@@ -120,7 +120,7 @@ public <T> int insert(T entity) throws DAOException {
 		ArrayList<Recensione> lista = new ArrayList<Recensione>();
 		try(PreparedStatement pst = con.prepareStatement(sql)) {
 			pst.setInt(1, idGioco);
-			res = pst.executeQuery(); //esegue la query così preparata
+			res = pst.executeQuery(); //esegue la query cosï¿½ preparata
 			while(res.next())
 				lista.add(componiEntity());
 			
@@ -143,6 +143,7 @@ public <T> int insert(T entity) throws DAOException {
 			
 		} catch (DAOException e) {
 			System.out.println(e.getMessage());
+			//ciao
 		}
 
 	}
