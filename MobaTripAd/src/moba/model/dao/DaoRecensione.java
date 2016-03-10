@@ -143,7 +143,6 @@ public <T> int insert(T entity) throws DAOException {
 			
 		} catch (DAOException e) {
 			System.out.println(e.getMessage());
-			//ciao
 		}
 
 	}
