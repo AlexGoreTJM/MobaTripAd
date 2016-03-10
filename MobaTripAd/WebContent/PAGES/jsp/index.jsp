@@ -285,6 +285,18 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="RESOURCES/js/bootstrap.min.js"></script>
+	
+	
+	<hr>
+	FUNZIONI UTENTE
+	<br><br>
+	<a href="vaiLogin.do">login</a>
+	<br>
+	<a href="funzione1.do">funzione1</a>
+	<br>
+	<a href="funzione2.do">funzione2</a>
+	<br>
+	
 
 </body>
 
