@@ -5,9 +5,11 @@ import java.sql.Timestamp;
 public class Utente {
 	
 	private int idUtente;
-	private Boolean admin;
+	private boolean admin;
+
 	private String nickname;
 	private String email;
+	private String password;
 	private String nome;
 	private String cognome;
 	private Grado grado;
@@ -15,7 +17,7 @@ public class Utente {
 	private Timestamp dataReg;
 	private String info;
 	
-	public Utente(int idUtente, Boolean admin, String nickname, String email, String nome, String cognome,
+	public Utente(int idUtente, boolean admin, String nickname, String email, String nome, String cognome,
 			Grado grado, String avatar, Timestamp dataReg, String info) {
 		super();
 		
@@ -33,7 +35,7 @@ public class Utente {
 	public int getIdUtente() {
 		return idUtente;
 	}
-	public Boolean getAdmin() {
+	public boolean isAdmin() {
 		return admin;
 	}
 	public String getNickname() {
@@ -62,6 +64,9 @@ public class Utente {
 	}
 	
 	
+	public String getPassword() {
+		return password;
+	}
 	@Override
 	public String toString() {
 		return 
