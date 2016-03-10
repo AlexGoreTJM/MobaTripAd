@@ -32,13 +32,13 @@ public class LoginForm extends ActionForm {
 		ActionErrors errori = new ActionErrors();
 		
 		//nell'ActionMessage definiamo un 'etichetta' facilmente decifrabile secondo la regola NomeClasse.campo.problema
-		if(this.username == null || this.username.length() == 0)
-			errori.add("username", new ActionMessage("LoginForm.username.empty"));
+		if(this.username == null || this.username.isEmpty())
+			errori.add("username", new ActionMessage("obbligatorio", "username"));
 		
-		if(this.password == null || this.password.length() == 0)
-			errori.add("password", new ActionMessage("LoginForm.password.empty"));
+		if(this.password == null || this.password.isEmpty())
+			errori.add("password", new ActionMessage("obbligatorio", "password"));
 		else if(password.length() < 8)
-			errori.add("password", new ActionMessage("LoginForm.password.tooShort"));
+			errori.add("password", new ActionMessage("formale","almeno 8 caratteri"));
 		
 		return errori;
 	}

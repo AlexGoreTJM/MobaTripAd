@@ -23,7 +23,7 @@
 				<li><a href="#">About</a></li>
 				<li><a href="#">Services</a></li>
 				<li><a href="#">Contact</a></li>
-				<li><a class="login" href="login.do">Login</a></li>
+				<li><a class="login" href="vaiLogin.do">Login</a></li>
 			</ul>
 			
 		</div>

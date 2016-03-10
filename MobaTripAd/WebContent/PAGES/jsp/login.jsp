@@ -9,6 +9,28 @@
 <title>Login</title>
 </head>
 <body>
+<form action="login.do" method="get">
+<table>
+	<tr>
+		<td>Username</td>
+		<td><input type="text" name="username"></td>
+	</tr>
+	<tr>
+		<td colspan="2" > <html:errors property="username"/> </td>
+	</tr>
+	<tr>
+		<td>Password</td>
+		<td><input type="password" name="password"></td>
+	</tr>
+	<tr>
+		<td colspan="2" > <html:errors property="password"/> </td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input type="submit" ></td>
+	</tr>
+</table> 
+</form>
 
 </body>
 </html>

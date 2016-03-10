@@ -82,7 +82,7 @@
 
 <!-- AREA USER  -->
 
-<action path="/Login" type="moba.controller.action.Login" name="LoginForm"
+<action path="/login" type="moba.controller.action.Login" name="LoginForm"
 	validate="true" input="/PAGES/jsp/login.jsp"  >
 	<forward name="success" path="/PAGES/jsp/dashboardUtente.jsp" />
 	<forward name="failure" path="/PAGES/jsp/errore.jsp" />
@@ -107,7 +107,7 @@ end samples -->
 <!-- ======================================== Message Resources Definitions -->
 
     <message-resources
-		parameter="moba.controller.form.info.errori" key="errori" null="false" >
+		parameter="moba.info.errori" key="errori" null="false" >
 	</message-resources>
 	
 
