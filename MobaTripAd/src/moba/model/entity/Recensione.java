@@ -6,13 +6,15 @@ public class Recensione {
 	
 	private Utente utente;
 	private Gioco gioco;
-	private Integer ctrLike;
+	private int ctrLike;
 	private int ctrDislike;
 	private int segnalata;
 	private String info;
 	private Timestamp dataRec;
 	
-	public Recensione(Utente utente, Gioco gioco, Integer ctrLike, Integer ctrDislike, Integer segnalata, String info,
+	
+	
+	public Recensione(Utente utente, Gioco gioco, int ctrLike, int ctrDislike, int segnalata, String info,
 			Timestamp dataRec) {
 		super();
 		this.utente = utente;

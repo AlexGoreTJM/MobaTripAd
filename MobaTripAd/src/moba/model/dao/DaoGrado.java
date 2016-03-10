@@ -84,7 +84,7 @@ public class DaoGrado extends DAO {
 					
 					
 					System.out.println(dao.select("Peone"));
-					System.out.println("\n select *: "+dao.select());
+					
 			
 					
 				} catch (DAOException e) {
