@@ -9,7 +9,7 @@
 <title>Login</title>
 </head>
 <body>
-<form action="login.do" method="get">
+<form action="login.do" method="post">
 <table>
 	<tr>
 		<td>Username</td>

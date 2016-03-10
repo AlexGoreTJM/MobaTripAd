@@ -8,7 +8,51 @@
 </head>
 <body>
 
-<form action="signin.do" value="">
+<form action="signin.do" method="post">
+<table>
+    <tr>
+      <td>Nome:</td>
+      <td><input type="text" name="nome"></td>
+    </tr>
+    
+    <tr>
+      <td>Cognome:</td>
+      <td><input type="text" name="cognome"></td>
+    </tr>
+    
+    <tr>
+      <td>Username:</td>
+      <td><input type="text" name="username"></td>
+    </tr>
+    
+    <tr>
+      <td>Email:</td>
+      <td><input type="text" name="email"></td>
+    </tr>
+    
+    <tr>
+      <td>Conferma email:</td>
+      <td><input type="text" name="email_c"></td>
+    </tr>
+    
+    <tr>
+      <td>Password:</td>
+      <td><input type="password" name="password"></td>
+    </tr>
+    
+    <tr>
+      <td>Conferma password:</td>
+      <td><input type="password" name="password_c"></td>
+    </tr>
+    
+    <tr>
+      <td>Parlaci di te:</td>
+      <td><input type="text" name="info"></td>
+    </tr>
+    <tr>
+    <td colspan="2"><input type="submit" ></td>
+
+</table>
 
 
 
