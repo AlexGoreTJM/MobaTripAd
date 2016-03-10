@@ -16,14 +16,14 @@
 		<td><input type="text" name="username"></td>
 	</tr>
 	<tr>
-		<td colspan="2" > <html:errors property="username"/> </td>
+		<td colspan="2"> <html:errors property="username" bundle="errori" /> </td>
 	</tr>
 	<tr>
 		<td>Password</td>
 		<td><input type="password" name="password"></td>
 	</tr>
 	<tr>
-		<td colspan="2" > <html:errors property="password"/> </td>
+		<td colspan="2" > <html:errors property="password" bundle="errori" /> </td>
 	</tr>
 	<tr>
 		<td></td>
