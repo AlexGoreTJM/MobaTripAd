@@ -16,7 +16,7 @@
 
 <title>Shop Homepage - Start Bootstrap Template</title>
 
-<!-- Bootstrap Core CSS -->
+<!-- Bootstrap Core CSS --><!-- Bootstrap Core CSS -->
 <link rel="stylesheet" media="all" type="text/css" href="RESOURCES/css/bootstrap.min.css"/>
   
 <!--<link type="text/css" rel="stylesheet"
