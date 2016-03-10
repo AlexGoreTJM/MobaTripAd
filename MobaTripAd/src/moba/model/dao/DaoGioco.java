@@ -6,10 +6,12 @@ import java.util.ArrayList;
 
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
+import moba.model.dao.enumeratori.Tabella;
 import moba.model.entity.Categoria;
 import moba.model.entity.Gioco;
 import moba.model.entity.GiocoPiatta;
 import moba.model.entity.Piattaforma;
+import moba.model.entity.Utente;
 
 public class DaoGioco extends DAO {
 
@@ -129,9 +131,25 @@ public class DaoGioco extends DAO {
 							res.getString("urlsh"), 
 							res.getString("requisiti"), 
 							res.getString("info"),
-							res.getTimestamp("timestamp"), 
+							res.getTimestamp("datareg"), 
 							piattaforme);
 
 	}
+	
+	//metodo main ESCLUSIVAMENTE x testare tutti i metodi
+	public static void main(String[] args) {
+		
+		try {
+			DaoGioco dao = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
+			
+			System.out.println("" + dao.select(3));
+	
+			
+		} catch (DAOException e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
+	
 
 }

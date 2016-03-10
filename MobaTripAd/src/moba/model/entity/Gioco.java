@@ -119,8 +119,8 @@ public class Gioco {
 				+ web + ", dataUscita=" + dataUscita + ", etaMin=" + etaMin + ", costoLancio=" + costoLancio
 				+ ", categoria=" + categoria + ", valutazioneSito=" + valutazioneSito + ", pro=" + pro + ", contro="
 				+ contro + ", img1=" + img1 + ", img2=" + img2 + ", urlVideo=" + urlVideo + ", urlSh=" + urlSh
-				+ ", requisiti=" + requisiti + ", info=" + info + ", dataReg=" + dataReg + ", piattaforme="
-				+ piattaforme + "]";
+				+ ", requisiti=" + requisiti + ", info=" + info + ", dataReg=" + dataReg + ", \npiattaforme="
+				+ piattaforme.toString() + "]";
 	}
 	
 	public Gioco(int idGioco){
