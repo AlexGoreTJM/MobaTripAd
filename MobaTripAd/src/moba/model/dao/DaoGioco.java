@@ -8,6 +8,8 @@ import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
 import moba.model.entity.Categoria;
 import moba.model.entity.Gioco;
+import moba.model.entity.GiocoPiatta;
+import moba.model.entity.Piattaforma;
 
 public class DaoGioco extends DAO {
 
@@ -103,6 +105,12 @@ public class DaoGioco extends DAO {
 	}
 
 	private <T> T componiEntity() throws SQLException, DAOException {
+		ArrayList<Piattaforma> piattaforme = new ArrayList<>();
+		ArrayList<GiocoPiatta> giocopiatta = new DaoGiocoPiatta().selectByIdGioco(res.getInt("idgioco"));
+		for (GiocoPiatta giocoPiatta2 : giocopiatta) {
+			piattaforme.add(new DaoPiattaforma().select(giocoPiatta2.getIdPiattaforma()));
+		}
+		
 		return (T) new Gioco(res.getInt("idgioco"), 
 							res.getString("titolo"), 
 							res.getString("sh"), 
@@ -122,7 +130,7 @@ public class DaoGioco extends DAO {
 							res.getString("requisiti"), 
 							res.getString("info"),
 							res.getTimestamp("timestamp"), 
-							new DaoPiattaforma().select(res.getInt("idgioco")));
+							piattaforme);
 
 	}
 
