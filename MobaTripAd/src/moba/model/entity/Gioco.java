@@ -122,6 +122,10 @@ public class Gioco {
 				+ ", requisiti=" + requisiti + ", info=" + info + ", dataReg=" + dataReg + ", piattaforme="
 				+ piattaforme + "]";
 	}
+	
+	public Gioco(int idGioco){
+		this.idGioco = idGioco;
+	}
 
 	public Gioco(int idGioco, String titolo, String sh, int players, boolean web, Date dataUscita, int etaMin,
 			double costoLancio, Categoria categoria, double valutazioneSito, String pro, String contro, String img1,
