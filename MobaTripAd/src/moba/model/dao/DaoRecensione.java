@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import moba.model.entity.Grado;
 import moba.model.entity.Recensione;
 import moba.model.entity.Utente;
 import moba.model.dao.eccezioni.DAOException;
@@ -122,7 +123,22 @@ public <T> int insert(T entity) throws DAOException {
 		return null;
 	}
 	
+	public static void main(String[] args) {
+		
+		try {
+			DaoRecensione dao = (DaoRecensione) DAO.getDaoInstance(Tabella.Recensione);
+			
+			
+			
+			
+			
 	
+			
+		} catch (DAOException e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
 	
 	
 	
