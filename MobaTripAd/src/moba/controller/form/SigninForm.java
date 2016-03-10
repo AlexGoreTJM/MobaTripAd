@@ -86,8 +86,7 @@ public class SigninForm extends ActionForm {
 		
 		if(this.password == null || this.password.isEmpty())
 			errori.add("password", new ActionMessage("obbligatorio", "password"));
-		else if(password.length() < 8)
-			errori.add("password", new ActionMessage("formale","almeno 8 caratteri"));
+		
 		
 		if(this.email == null || this.email.isEmpty())
 			errori.add("email", new ActionMessage("obbligatorio", "email"));

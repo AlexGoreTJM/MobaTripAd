@@ -37,8 +37,7 @@ public class LoginForm extends ActionForm {
 		
 		if(this.password == null || this.password.isEmpty())
 			errori.add("password", new ActionMessage("obbligatorio", "password"));
-		else if(password.length() < 8)
-			errori.add("password", new ActionMessage("formale","almeno 8 caratteri"));
+		
 		
 		return errori;
 	}

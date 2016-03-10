@@ -27,8 +27,10 @@ public class Signin extends Action{
 		try {
 			DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
 			
+			
 			Utente u = new Utente(f.getUsername(), f.getEmail(), f.getPassword(), f.getNome(), f.getCognome(), new Grado("Peone",1), f.getAvatar(), f.getInfo());
-	        request.getSession().setAttribute("utente", dao.insert(u));
+			dao.insert(u);
+	        request.getSession().setAttribute("utente", u);
 			
 			return mapping.findForward("success");
 			
