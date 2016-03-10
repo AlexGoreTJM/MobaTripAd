@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
+import moba.model.dao.enumeratori.Tabella;
 import moba.model.dao.DaoGrado;
 import moba.model.entity.Grado;
 import moba.model.entity.Utente;
@@ -21,6 +22,7 @@ public class DaoUtente extends DAO{
 	public <T> int insert(T entity) throws DAOException {
 		
 		Utente u = (Utente) entity;
+		System.out.println(u.getPassword());
 		
 		String sql = "INSERT INTO utente "
 				+ "(admin, nickname, email, password, nome, cognome, grado, avatar, info) "
@@ -106,7 +108,7 @@ public class DaoUtente extends DAO{
 		
 	}
 	
-	public Utente selectLogin(String login, String password) throws DAOException {
+	public Utente selectLogin(String username, String password) throws DAOException {
 
 		String sql = 
 		"SELECT idutente, admin, nickname, email, password, nome, cognome, grado, avatar, datareg, info "
@@ -114,22 +116,46 @@ public class DaoUtente extends DAO{
 		+"WHERE (nickname = ? or email = ?) and password = ?";
 		
 		try(PreparedStatement pst = con.prepareStatement(sql)) {
-			pst.setString(1, login);
-			pst.setString(2, login);
+			pst.setString(1, username);
+			pst.setString(2, username);
 			pst.setString(3, password);
 			res = pst.executeQuery(); //esegue la query così preparata
 			if(res.next())
 				return componiEntity();
 			else
 				throw new DAONonTrovatoException
-				("WARNING: dati non trovati in UTENTE x login: "+login+" and password: "+password);
+				("Credenziali invalide: login: "+username+" and password: "+password);
 			
 		} catch (SQLException e) {
-			throw new DAOException("ERRORE SELECT UTENTE x login: "+login+" and password: "+password
+			throw new DAOException("ERRORE SELECT UTENTE x login: "+username+" and password: "+password
 			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
 		}
 		
 	}
+	
+	public String recuperaPassword(String username) throws DAOException {
+		
+		String sql = 
+				"SELECT password FROM utente "
+				+ "WHERE nickname = ? or email = ?";
+		
+		try (PreparedStatement pst = con.prepareStatement(sql)){
+			
+			pst.setString(1, username);
+			pst.setString(2, username);
+			res = pst.executeQuery();
+			if(res.next())
+				return res.getString("password");
+			else
+				throw new DAONonTrovatoException
+				("username o email " + username + " non registrato!");
+			
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE SELECT UTENTE x login: " + username
+			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		}
+	}
+
 
 	private <T> T componiEntity() throws SQLException,DAOException{
 		
@@ -137,12 +163,40 @@ public class DaoUtente extends DAO{
 				,res.getInt("admin")==0 ? false : true
 				,res.getString("nickname")
 				,res.getString("email")
+				,res.getString("password")
 				,res.getString("nome")
 				,res.getString("cognome") 
 				,(Grado)new DaoGrado().select(res.getString("grado"))
 				,res.getString("avatar") 
 				,res.getTimestamp("datareg") 
 				,res.getString("info"));
+	}
+	
+	//metodo main ESCLUSIVAMENTE x testare tutti i metodi
+	public static void main(String[] args) {
+		
+		try {
+			DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
+			
+			Utente u = new Utente(false, "skyzzo", "skyzzo@christian.com","password", "Matteo", "Matteo", "Peone", "moba.jpg", null);
+			int i = dao.insert(u);
+			System.out.println("\ninsert(Utente): "+ i);
+
+			System.out.println("\nselect(pk): "+dao.select(i));
+			
+			System.out.println("\ndelete(pk)" + dao.delete(i));
+
+			System.out.println("\nselect(pk): "+dao.select(i));
+			
+			
+			
+			System.out.println("\nselect all: "+dao.select());
+	
+			
+		} catch (DAOException e) {
+			System.out.println(e.getMessage());
+		}
+
 	}
 	
 	
