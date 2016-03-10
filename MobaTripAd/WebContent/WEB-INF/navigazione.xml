@@ -85,7 +85,7 @@
 <action path="/Login" type="moba.controller.action.Login" name="LoginForm"
 	validate="true" input="/PAG/jsp/login.jsp"  >
 	<forward name="success" path="/PAG/jsp/dashboardUtente.jsp" />
-	<forward name="failure" path="/PAG/jsp/login.jsp" />
+	<forward name="failure" path="/PAG/jsp/errore.jsp" />
 </action>
 
 
