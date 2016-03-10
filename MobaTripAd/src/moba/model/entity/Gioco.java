@@ -26,6 +26,8 @@ public class Gioco {
 	private String info;
 	private Timestamp dataReg;
 	private ArrayList<Piattaforma> piattaforme;
+	private ArrayList<Recensione> recensioni;
+	private double valutazione;
 
 	public ArrayList<Piattaforma> getPiattaforme() {
 		return piattaforme;
@@ -113,23 +115,25 @@ public class Gioco {
 
 
 
+
+	
 	@Override
 	public String toString() {
 		return "Gioco [idGioco=" + idGioco + ", titolo=" + titolo + ", sh=" + sh + ", players=" + players + ", web="
 				+ web + ", dataUscita=" + dataUscita + ", etaMin=" + etaMin + ", costoLancio=" + costoLancio
 				+ ", categoria=" + categoria + ", valutazioneSito=" + valutazioneSito + ", pro=" + pro + ", contro="
 				+ contro + ", img1=" + img1 + ", img2=" + img2 + ", urlVideo=" + urlVideo + ", urlSh=" + urlSh
-				+ ", requisiti=" + requisiti + ", info=" + info + ", dataReg=" + dataReg + ", \npiattaforme="
-				+ piattaforme.toString() + "]";
+				+ ", requisiti=" + requisiti + ", info=" + info + ", dataReg=" + dataReg + ", piattaforme="
+				+ piattaforme + ", recensioni=" + recensioni + ", valutazione=" + valutazione + "]";
 	}
-	
+
 	public Gioco(int idGioco){
 		this.idGioco = idGioco;
 	}
 
 	public Gioco(int idGioco, String titolo, String sh, int players, boolean web, Date dataUscita, int etaMin,
 			double costoLancio, Categoria categoria, double valutazioneSito, String pro, String contro, String img1,
-			String img2, String urlVideo, String urlSh, String requisiti, String info, Timestamp dataReg, ArrayList<Piattaforma> piattaforme) {
+			String img2, String urlVideo, String urlSh, String requisiti, String info, Timestamp dataReg, ArrayList<Piattaforma> piattaforme,ArrayList<Recensione> recensioni, double valutazione) {
 		super();
 		this.idGioco = idGioco;
 		this.titolo = titolo;
@@ -151,6 +155,8 @@ public class Gioco {
 		this.info = info;
 		this.dataReg = dataReg;
 		this.piattaforme = piattaforme;
+		this.recensioni = recensioni;
+		this.valutazione = valutazione;
 	}
 
 	public Gioco(String titolo, String sh, int players, boolean web, Date dataUscita, int etaMin, double costoLancio,
@@ -158,7 +164,7 @@ public class Gioco {
 			String urlVideo, String urlSh, String requisiti, String info) {
 		
 		this(0, titolo, sh, players, web, dataUscita, etaMin, costoLancio, new Categoria(idCategoria, null, null, null), valutazioneSito, pro, contro,
-				img1, img2, urlVideo, urlSh, requisiti, info, null, null);
+				img1, img2, urlVideo, urlSh, requisiti, info, null, null,null,0.0);
 
 	}
 

@@ -103,10 +103,7 @@ public <T> int insert(T entity) throws DAOException {
 				);
 	}
 
-	@Override
-	public <T> T select(int pk) throws DAOException {
-		throw new DAOException("WARNING: COMANDO NON IMPLEMENTATO!");
-	}
+
 
 
 	@Override
@@ -115,16 +112,34 @@ public <T> int insert(T entity) throws DAOException {
 		return null;
 	}
 	
+	public <T> T select(int idGioco) throws DAOException {
+		String sql = 
+		"SELECT idutente, idgioco, ctrlike, ctrdislike, segnalata, info, datarec "
+		+"FROM RECENSIONE "
+		+"WHERE idgioco = ?";
+		ArrayList<Recensione> lista = new ArrayList<Recensione>();
+		try(PreparedStatement pst = con.prepareStatement(sql)) {
+			pst.setInt(1, idGioco);
+			res = pst.executeQuery(); //esegue la query così preparata
+			while(res.next())
+				lista.add(componiEntity());
+			
+			if(lista.size() == 0)
+				throw new DAONonTrovatoException
+				("WARNING: dati non trovati in RECENSIONE X idGioco "+idGioco);
+			return (T) lista;
+
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE SELECT RECENSIONE x nome: "+idGioco
+			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		}
+	}
+	
 	public static void main(String[] args) {
 		
 		try {
 			DaoRecensione dao = (DaoRecensione) DAO.getDaoInstance(Tabella.Recensione);
 			
-			
-			
-			
-			
-	
 			
 		} catch (DAOException e) {
 			System.out.println(e.getMessage());
