@@ -107,8 +107,9 @@ public class DaoGioco extends DAO {
 	}
 
 	public <T> T selectLast() throws DAOException {
-		String sql = "SELECT idgioco, titolo, sh, players, web, datauscita, etamin, costolancio, idcategoria, valutazionesito, pro, contro, img1, img2, urlvideo, urlsh, requisiti, info, datareg FROM ("
-				+ "   SELECT idgioco, titolo, sh, players, web, datauscita, etamin, costolancio, idcategoria, valutazionesito, pro, contro, img1, img2, urlvideo, urlsh, requisiti, info, datareg FROM gioco ORDER BY datauscita DESC) WHERE ROWNUM = 1;  ";
+		String sql = "SELECT idgioco, titolo, sh, players, web, datauscita, etamin, costolancio, idcategoria, valutazionesito, pro, contro, img1, img2, urlvideo, urlsh, requisiti, info, datareg "
+					+ "FROM gioco "
+					+ "WHERE datauscita IN (SELECT max(datauscita) from gioco) ";
 
 		try (PreparedStatement pst = con.prepareStatement(sql)) {
 
@@ -117,7 +118,7 @@ public class DaoGioco extends DAO {
 			if (res.next())
 				return componiEntity();
 			else
-				throw new DAONonTrovatoException("ERRORE SELECT GIOCO CON ID ");
+				throw new DAONonTrovatoException("WARNING:  ");
 
 		} catch (SQLException e) {
 			throw new DAOException(
