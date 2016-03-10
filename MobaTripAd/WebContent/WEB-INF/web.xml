@@ -6,6 +6,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 id="WebApp_ID" version="3.0">
 
   <welcome-file-list>
+  	<welcome-file>inizia.do</welcome-file>
     <welcome-file>/PAGES/jsp/index.jsp</welcome-file>
   </welcome-file-list>
   

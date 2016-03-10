@@ -21,17 +21,17 @@ public class Inizia extends Action {
 
 		try {
 			DaoGioco dao = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
-			
-			request.setAttribute("lastGame", dao.selectLast());
-			
+
+			request.setAttribute("ultimoGiocoUscito", dao.selectLast());
+			//request.setAttribute("giochiPiuRecensito", dao.selectPopolare());
+
+			return mapping.findForward("success");
 		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+
+			request.setAttribute("errore", e.getMessage());
+			return mapping.findForward("failure");
 		}
-		
-		return mapping.findForward("success");
+
 	}
-	
-	
-	
+
 }
