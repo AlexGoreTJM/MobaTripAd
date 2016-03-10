@@ -33,6 +33,7 @@ public class Utente {
 		this.dataReg = dataReg;
 		this.info = info;
 	}
+	
 
 	public int getIdUtente() {
 		return idUtente;
@@ -78,6 +79,22 @@ public class Utente {
 			String avatar, String info) {
 		this(0, admin, nickname, email, password, nome, cognome, new Grado(grado, 0), avatar, null, info);
 	}
+	
+	
+	
+
+	public Utente(String nickname, String email, String password, String nome, String cognome, Grado grado,
+			String avatar, String info) {
+		this.nickname = nickname;
+		this.email = email;
+		this.password = password;
+		this.nome = nome;
+		this.cognome = cognome;
+		this.grado = grado;
+		this.avatar = avatar;
+		this.info = info;
+	}
+
 
 	public String getPassword() {
 		return password;

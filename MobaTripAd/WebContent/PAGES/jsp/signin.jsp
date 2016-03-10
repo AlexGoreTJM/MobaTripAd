@@ -46,6 +46,11 @@
     </tr>
     
     <tr>
+      <td>Avatar:</td>
+      <td><input type="text" name="avatar"></td>
+    </tr>
+    
+    <tr>
       <td>Parlaci di te:</td>
       <td><input type="text" name="info"></td>
     </tr>
