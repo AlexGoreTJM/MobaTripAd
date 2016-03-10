@@ -108,7 +108,7 @@ public class DaoUtente extends DAO{
 		
 	}
 	
-	public Utente selectLogin(String login, String password) throws DAOException {
+	public Utente selectLogin(String username, String password) throws DAOException {
 
 		String sql = 
 		"SELECT idutente, admin, nickname, email, password, nome, cognome, grado, avatar, datareg, info "
@@ -116,22 +116,46 @@ public class DaoUtente extends DAO{
 		+"WHERE (nickname = ? or email = ?) and password = ?";
 		
 		try(PreparedStatement pst = con.prepareStatement(sql)) {
-			pst.setString(1, login);
-			pst.setString(2, login);
+			pst.setString(1, username);
+			pst.setString(2, username);
 			pst.setString(3, password);
 			res = pst.executeQuery(); //esegue la query così preparata
 			if(res.next())
 				return componiEntity();
 			else
 				throw new DAONonTrovatoException
-				("WARNING: dati non trovati in UTENTE x login: "+login+" and password: "+password);
+				("Credenziali invalide: login: "+username+" and password: "+password);
 			
 		} catch (SQLException e) {
-			throw new DAOException("ERRORE SELECT UTENTE x login: "+login+" and password: "+password
+			throw new DAOException("ERRORE SELECT UTENTE x login: "+username+" and password: "+password
 			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
 		}
 		
 	}
+	
+	public String recuperaPassword(String username) throws DAOException {
+		
+		String sql = 
+				"SELECT password FROM utente "
+				+ "WHERE nickname = ? or email = ?";
+		
+		try (PreparedStatement pst = con.prepareStatement(sql)){
+			
+			pst.setString(1, username);
+			pst.setString(2, username);
+			res = pst.executeQuery();
+			if(res.next())
+				return res.getString("password");
+			else
+				throw new DAONonTrovatoException
+				("username o email " + username + " non registrato!");
+			
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE SELECT UTENTE x login: " + username
+			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		}
+	}
+
 
 	private <T> T componiEntity() throws SQLException,DAOException{
 		
