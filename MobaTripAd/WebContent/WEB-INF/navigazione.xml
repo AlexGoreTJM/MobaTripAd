@@ -72,7 +72,6 @@
 <action path="/vaiLogin" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/login.jsp" ></action>
 
 
-
 <!-- ============================================= PATH CHE ESEGUONO FORM E ACTION SPECIFICI ============================================= -->
 
 <!-- AREA ADMIN  -->
