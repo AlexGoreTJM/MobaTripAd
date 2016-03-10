@@ -81,10 +81,10 @@ public <T> int insert(T entity) throws DAOException {
 				return  componiEntity();
 			else
 				throw new DAONonTrovatoException
-				("WARNING: dati non trovati in GRADO x idUtente: "+idUtente + " e X idGioco "+idGioco);
+				("WARNING: dati non trovati in RECENSIONE x idUtente: "+idUtente + " e X idGioco "+idGioco);
 			
 		} catch (SQLException e) {
-			throw new DAOException("ERRORE SELECT GRADO x nome: "+idUtente
+			throw new DAOException("ERRORE SELECT RECENSIONE x nome: "+idUtente
 			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
 		}
 	
@@ -124,9 +124,9 @@ public <T> int insert(T entity) throws DAOException {
 			while(res.next())
 				lista.add(componiEntity());
 			
-			if(lista.size() == 0)
+			/*if(lista.size() == 0)
 				throw new DAONonTrovatoException
-				("WARNING: dati non trovati in RECENSIONE X idGioco "+idGioco);
+				("WARNING: dati non trovati in RECENSIONE X idGioco "+idGioco);*/
 			return (T) lista;
 
 		} catch (SQLException e) {

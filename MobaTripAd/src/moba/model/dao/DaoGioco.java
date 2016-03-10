@@ -108,8 +108,7 @@ public class DaoGioco extends DAO {
 
 	public <T> T selectLast() throws DAOException {
 		String sql = "SELECT idgioco, titolo, sh, players, web, datauscita, etamin, costolancio, idcategoria, valutazionesito, pro, contro, img1, img2, urlvideo, urlsh, requisiti, info, datareg "
-					+ "FROM gioco "
-					+ "WHERE datauscita IN (SELECT max(datauscita) from gioco) ";
+				+ "FROM gioco " + "WHERE datauscita IN (SELECT max(datauscita) from gioco) ";
 
 		try (PreparedStatement pst = con.prepareStatement(sql)) {
 
@@ -125,6 +124,62 @@ public class DaoGioco extends DAO {
 					"ERRORE SELECT GIOCO x pk: " + ". Causa: " + e.getMessage() + " Errorcode: " + e.getErrorCode());
 		}
 
+	}
+
+	public ArrayList<Gioco> selectByIdCategoria(int idCategoria) throws DAOException {
+
+		String sql = "SELECT idgioco, titolo, sh, players, web, datauscita, etamin, costolancio, idcategoria, valutazionesito, pro, contro, img1, img2, urlvideo, urlsh, requisiti, info, datareg FROM MOBA.GIOCO WHERE IDCATEGORIA = ?";
+
+		ArrayList<Gioco> giochi = new ArrayList<>();
+
+		try (PreparedStatement pst = con.prepareStatement(sql)) {
+
+			pst.setInt(1, idCategoria);
+
+			res = pst.executeQuery();
+
+			if (!res.next())
+				throw new DAONonTrovatoException("ERRORE SELECT GIOCHI CON CATEGORIA " + idCategoria);
+
+			giochi.add(componiEntity());
+			while (res.next())
+				giochi.add(componiEntity());
+
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE SELECT GIOCHI x idcategoria: " + idCategoria + ". Causa: " + e.getMessage()
+					+ " Errorcode: " + e.getErrorCode());
+		}
+
+		return giochi;
+	}
+
+	public ArrayList<Gioco> selectByIdPiattaforma(int idPiattaforma) throws DAOException {
+
+		String sql = "SELECT A.idgioco, A.titolo, A.sh, A.players, A.web, A.datauscita, A.etamin, A.costolancio, A.idcategoria, A.valutazionesito, A.pro, A.contro, A.img1, A.img2, A.urlvideo, A.urlsh, A.requisiti, A.info, A.datareg "
+				+ "FROM MOBA.GIOCO A, MOBA.GIOCOPIATTA B WHERE A.idgioco = B.idgioco AND B.IDPIATTAFORMA = ?";
+
+		ArrayList<Gioco> giochi = new ArrayList<>();
+
+		try (PreparedStatement pst = con.prepareStatement(sql)) {
+
+			pst.setInt(1, idPiattaforma);
+
+			res = pst.executeQuery();
+
+			if (!res.next())
+				throw new DAONonTrovatoException("ERRORE SELECT GIOCHI CON PIATTAFORMA " + idPiattaforma);
+
+			giochi.add(componiEntity());
+			
+			while (res.next())
+				giochi.add(componiEntity());
+
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE SELECT GIOCHI x idpiattaforma: " + idPiattaforma + ". Causa: "
+					+ e.getMessage() + " Errorcode: " + e.getErrorCode());
+		}
+
+		return giochi;
 	}
 
 	private <T> T componiEntity() throws SQLException, DAOException {
@@ -152,8 +207,7 @@ public class DaoGioco extends DAO {
 
 		try {
 			DaoGioco dao = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
-
-			System.out.println("" + dao.selectLast());
+			System.out.println("" + dao.selectByIdPiattaforma(4));
 
 		} catch (DAOException e) {
 			System.out.println(e.getMessage());
