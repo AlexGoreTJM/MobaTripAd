@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
+import moba.model.dao.enumeratori.Tabella;
 import moba.model.entity.Recensione;
 import moba.model.entity.Valutazione;
 
@@ -93,14 +94,43 @@ public <T> int insert(T entity) throws DAOException {
 
 	@Override
 	public <T> T select(int pk) throws DAOException {
-		// TODO Auto-generated method stub
-		return null;
+		throw new DAOException("WARNING: COMANDO NON IMPLEMENTATO");
 	}
 	
 	
+	public double getAvgValutazioneByIdGioco(int idGioco) throws DAOException{
+		
+		String sql = 
+				"SELECT avg(voto) as votoMedio "
+				+"FROM valutazione "
+				+"WHERE idgioco = ?";
+		
+		try(PreparedStatement pst = con.prepareStatement(sql)) {
+			pst.setInt(1, idGioco);
+			res = pst.executeQuery(); //esegue la query così preparata
+			if(res.next())
+				return  res.getDouble("votoMedio");
+			else
+				throw new DAONonTrovatoException
+				("WARNING: dati non trovati in VALUTAZIONE x idGioco "+idGioco);
+			
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE SELECT GRADO x nome: "+idGioco
+			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		}
+		
+		
+	}
 	
-	
-	
+	  public static void main(String[] args) {
+			try {
+				DaoValutazione dao = (DaoValutazione) getDaoInstance(Tabella.Valutazione);
+				System.out.println("getAvgValutazione: " + dao.getAvgValutazioneByIdGioco(1));
+			} catch (DAOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	
 	
 

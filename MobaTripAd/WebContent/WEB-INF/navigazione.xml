@@ -69,7 +69,8 @@
 <!-- =============== PATH CHE ESEGUONO HYPERLINK O PASSAGGI DI CUI NON SERVONO FORM E VALIDAZIONI E ACTION SPECIFICI =============== -->
 
 <!-- PATH X MENU PRINCIPALE  -->
-<action path="/vaiStatisticheAdmin" type="org.apache.struts.actions.ForwardAction" parameter="/PAG/jsp/statisticheAdmin.jsp" ></action>
+<action path="/vaiLogin" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/login.jsp" ></action>
+
 
 
 <!-- ============================================= PATH CHE ESEGUONO FORM E ACTION SPECIFICI ============================================= -->
@@ -83,9 +84,9 @@
 <!-- AREA USER  -->
 
 <action path="/Login" type="moba.controller.action.Login" name="LoginForm"
-	validate="true" input="/PAG/jsp/login.jsp"  >
-	<forward name="success" path="/PAG/jsp/dashboardUtente.jsp" />
-	<forward name="failure" path="/PAG/jsp/errore.jsp" />
+	validate="true" input="/PAGES/jsp/login.jsp"  >
+	<forward name="success" path="/PAGES/jsp/dashboardUtente.jsp" />
+	<forward name="failure" path="/PAGES/jsp/errore.jsp" />
 </action>
 
 

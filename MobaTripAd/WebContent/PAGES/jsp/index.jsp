@@ -16,7 +16,7 @@
 
 <title>Shop Homepage - Start Bootstrap Template</title>
 
-<!-- Bootstrap Core CSS -->
+<!-- Bootstrap Core CSS --><!-- Bootstrap Core CSS -->
 <link rel="stylesheet" media="all" type="text/css" href="RESOURCES/css/bootstrap.min.css"/>
   
 <!--<link type="text/css" rel="stylesheet"
@@ -285,6 +285,18 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="RESOURCES/js/bootstrap.min.js"></script>
+	
+	
+	<hr>
+	FUNZIONI UTENTE
+	<br><br>
+	<a href="vaiLogin.do">login</a>
+	<br>
+	<a href="funzione1.do">funzione1</a>
+	<br>
+	<a href="funzione2.do">funzione2</a>
+	<br>
+	
 
 </body>
 

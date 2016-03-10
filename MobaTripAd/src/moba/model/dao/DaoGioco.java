@@ -107,11 +107,15 @@ public class DaoGioco extends DAO {
 	}
 
 	private <T> T componiEntity() throws SQLException, DAOException {
+		
+		
 		ArrayList<Piattaforma> piattaforme = new ArrayList<>();
 		ArrayList<GiocoPiatta> giocopiatta = new DaoGiocoPiatta().selectByIdGioco(res.getInt("idgioco"));
 		for (GiocoPiatta giocoPiatta2 : giocopiatta) {
 			piattaforme.add(new DaoPiattaforma().select(giocoPiatta2.getIdPiattaforma()));
 		}
+		
+		double valutazione = new DaoValutazione().getAvgValutazioneByIdGioco(res.getInt("idgioco"));
 		
 		return (T) new Gioco(res.getInt("idgioco"), 
 							res.getString("titolo"), 
@@ -132,7 +136,9 @@ public class DaoGioco extends DAO {
 							res.getString("requisiti"), 
 							res.getString("info"),
 							res.getTimestamp("datareg"), 
-							piattaforme);
+							piattaforme,
+							new DaoRecensione().select(res.getInt("idgioco")),
+							valutazione);
 
 	}
 	
