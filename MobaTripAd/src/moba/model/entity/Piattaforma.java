@@ -8,6 +8,10 @@ public class Piattaforma {
 	private String logo;
 	private String info;
 	
+	public Piattaforma(int idpiattaforma){
+		this.idpiattaforma = idpiattaforma;
+	}
+	
 	public Piattaforma(Integer idpiattaforma, String nome, String brand, String logo, String info) {
 		this.idpiattaforma = idpiattaforma;
 		this.nome = nome;

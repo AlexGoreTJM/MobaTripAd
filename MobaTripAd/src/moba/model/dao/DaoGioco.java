@@ -108,7 +108,7 @@ public class DaoGioco extends DAO {
 				((Categoria) new DaoCategoria().select(res.getInt("idcategoria"))), res.getDouble("valutazionesito"),
 				res.getString("pro"), res.getString("contro"), res.getString("img1"), res.getString("img2"),
 				res.getString("urlvideo"), res.getString("urlsh"), res.getString("requisiti"), res.getString("info"),
-				res.getTimestamp("timestamp"));
+				res.getTimestamp("timestamp"), new DaoPiattaforma().selectPiattaforme(res.getInt("idgioco"));
 
 	}
 

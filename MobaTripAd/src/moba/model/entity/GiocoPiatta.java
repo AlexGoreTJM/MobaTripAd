@@ -2,29 +2,25 @@ package moba.model.entity;
 
 public class GiocoPiatta {
 
-	private Gioco gioco;
-	private Piattaforma piattaforma;
-	
-	public GiocoPiatta(Gioco gioco, Piattaforma piattaforma) {
-		super();
-		this.gioco = gioco;
-		this.piattaforma = piattaforma;
+	private int idGioco;
+	private int idPiattaforma;
+
+	public GiocoPiatta(int idGioco, int idPiattaforma) {
+		this.idGioco = idGioco;
+		this.idPiattaforma = idPiattaforma;
 	}
 
-	public Gioco getGioco() {
-		return gioco;
+	public int getIdGioco() {
+		return idGioco;
 	}
 
-	public Piattaforma getPiattaforma() {
-		return piattaforma;
+	public int getIdPiattaforma() {
+		return idPiattaforma;
 	}
 
 	@Override
 	public String toString() {
-		return "GiocoPiatta [gioco=" + gioco + ", piattaforma=" + piattaforma + "]";
+		return "GiocoPiatta [idGioco=" + idGioco + ", idPiattaforma=" + idPiattaforma + "]";
 	}
-	
-	
-	
-	
+
 }

@@ -178,7 +178,7 @@ public class DaoUtente extends DAO{
 		try {
 			DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
 			
-			Utente u = new Utente(false, "skyzzo", "skyzzo@christian.com","password", "Matteo", "Matteo", "Peone", "moba.jpg", null);
+			Utente u = new Utente(false, "skyzzo", "skyzzo@christian.com","porcaccialatroia", "Matteo", "Matteo", "Peone", "moba.jpg", null);
 			int i = dao.insert(u);
 			System.out.println("\ninsert(Utente): "+ i);
 
@@ -186,11 +186,11 @@ public class DaoUtente extends DAO{
 			
 			System.out.println("\ndelete(pk)" + dao.delete(i));
 
-			System.out.println("\nselect(pk): "+dao.select(i));
+			//System.out.println("\nselect(pk): "+dao.select(i));
 			
-			
-			
-			System.out.println("\nselect all: "+dao.select());
+			i = dao.insert(u);
+			System.out.println(dao.recuperaPassword("skyzzo") + "\n");
+			System.out.println(dao.recuperaPassword("skyzzo@christian.com") + "\n");
 	
 			
 		} catch (DAOException e) {
