@@ -28,9 +28,8 @@ public class DaoGiocoPiatta extends DAO {
 			pst.setInt(2, u.getIdPiattaforma());
 
 			// esegue la query così preparata:
-			pst.executeUpdate();
 
-			return u.getIdGioco();
+			return pst.executeUpdate();
 
 		} catch (SQLException e) {
 
