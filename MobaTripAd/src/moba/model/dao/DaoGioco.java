@@ -12,6 +12,7 @@ import moba.model.entity.Gioco;
 import moba.model.entity.GiocoPiatta;
 import moba.model.entity.Piattaforma;
 import moba.model.entity.Utente;
+import oracle.sql.DATE;
 
 public class DaoGioco extends DAO {
 
@@ -207,8 +208,13 @@ public class DaoGioco extends DAO {
 
 		try {
 			DaoGioco dao = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
+			
+		//	int i = dao.insert((T) new Gioco("PROVA", "PROVA", 1, 1, new DATE, 11, 11, 1, 1, "ddd", "ppp", "ddd", "dddd", "ddd", null, null, null));
+			
+			
 			System.out.println("" + dao.selectByIdPiattaforma(4));
-
+			
+			
 		} catch (DAOException e) {
 			System.out.println(e.getMessage());
 		}
