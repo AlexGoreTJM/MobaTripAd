@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
+import moba.model.dao.enumeratori.Tabella;
 import moba.model.dao.DaoGrado;
 import moba.model.entity.Grado;
 import moba.model.entity.Utente;
@@ -21,6 +22,7 @@ public class DaoUtente extends DAO{
 	public <T> int insert(T entity) throws DAOException {
 		
 		Utente u = (Utente) entity;
+		System.out.println(u.getPassword());
 		
 		String sql = "INSERT INTO utente "
 				+ "(admin, nickname, email, password, nome, cognome, grado, avatar, info) "
@@ -137,12 +139,40 @@ public class DaoUtente extends DAO{
 				,res.getInt("admin")==0 ? false : true
 				,res.getString("nickname")
 				,res.getString("email")
+				,res.getString("password")
 				,res.getString("nome")
 				,res.getString("cognome") 
 				,(Grado)new DaoGrado().select(res.getString("grado"))
 				,res.getString("avatar") 
 				,res.getTimestamp("datareg") 
 				,res.getString("info"));
+	}
+	
+	//metodo main ESCLUSIVAMENTE x testare tutti i metodi
+	public static void main(String[] args) {
+		
+		try {
+			DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
+			
+			Utente u = new Utente(false, "skyzzo", "skyzzo@christian.com","password", "Matteo", "Matteo", "Peone", "moba.jpg", null);
+			int i = dao.insert(u);
+			System.out.println("\ninsert(Utente): "+ i);
+
+			System.out.println("\nselect(pk): "+dao.select(i));
+			
+			System.out.println("\ndelete(pk)" + dao.delete(i));
+
+			System.out.println("\nselect(pk): "+dao.select(i));
+			
+			
+			
+			System.out.println("\nselect all: "+dao.select());
+	
+			
+		} catch (DAOException e) {
+			System.out.println(e.getMessage());
+		}
+
 	}
 	
 	
