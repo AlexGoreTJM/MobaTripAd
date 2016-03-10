@@ -2,11 +2,15 @@ package moba.model.entity;
 
 public class Piattaforma {
 
-	private Integer idpiattaforma;
+	private int idpiattaforma;
 	private String nome;
 	private String brand;
 	private String logo;
 	private String info;
+	
+	public Piattaforma(int idpiattaforma){
+		this.idpiattaforma = idpiattaforma;
+	}
 	
 	public Piattaforma(Integer idpiattaforma, String nome, String brand, String logo, String info) {
 		this.idpiattaforma = idpiattaforma;
@@ -16,7 +20,7 @@ public class Piattaforma {
 		this.info = info;
 	}
 
-	public Integer getIdpiattaforma() {
+	public int getIdpiattaforma() {
 		return idpiattaforma;
 	}
 

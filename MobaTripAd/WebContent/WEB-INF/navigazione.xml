@@ -24,8 +24,7 @@
 
 <form-beans>
 	
-	<form-bean type="project.controller.form.LoginAdminForm" name="LoginAdminForm" />
-	<form-bean type="project.controller.form.ImpostazioniAdminForm" name="ImpostazioniAdminForm" />
+	<form-bean type="moba.controller.form.LoginForm" name="LoginForm" />
 
 
 	<!-- sample form bean descriptor for a DynaActionForm
@@ -70,23 +69,23 @@
 <!-- =============== PATH CHE ESEGUONO HYPERLINK O PASSAGGI DI CUI NON SERVONO FORM E VALIDAZIONI E ACTION SPECIFICI =============== -->
 
 <!-- PATH X MENU PRINCIPALE  -->
-<action path="/vaiStatisticheAdmin" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/statisticheAdmin.jsp" ></action>
+<action path="/vaiStatisticheAdmin" type="org.apache.struts.actions.ForwardAction" parameter="/PAG/jsp/statisticheAdmin.jsp" ></action>
 
 
 <!-- ============================================= PATH CHE ESEGUONO FORM E ACTION SPECIFICI ============================================= -->
 
 <!-- AREA ADMIN  -->
 
-<action path="/LoginAdmin" type="project.controller.action.LoginAdmin" validate="true" input="/PAGES/jsp/indexAdmin.jsp" name="LoginAdminForm" >
-	<forward name="success" path="/PAGES/jsp/dashboardAdmin.jsp" />
-	<forward name="failure" path="/PAGES/jsp/indexAdmin.jsp" />
-</action>
 
-<action path="/RiempiDomini" type="project.controller.action.RiempiDomini">
-	<forward name="successCatalogo" path="/PAGES/jsp/ricercaCatalogoAdmin.jsp" />
-	<forward name="successUtente" path="/PAGES/jsp/ricercaClientiAdmin.jsp" />
-	<forward name="successIndex" path="/PAGES/jsp/indexAdmin.jsp" />
-	<forward name="failure" path="/PAGES/jsp/erroreGenericoAdmin.jsp" />
+
+
+
+<!-- AREA USER  -->
+
+<action path="/Login" type="moba.controller.action.Login" name="LoginForm"
+	validate="true" input="/PAG/jsp/login.jsp"  >
+	<forward name="success" path="/PAG/jsp/dashboardUtente.jsp" />
+	<forward name="failure" path="/PAG/jsp/errore.jsp" />
 </action>
 
 
@@ -108,11 +107,7 @@ end samples -->
 <!-- ======================================== Message Resources Definitions -->
 
     <message-resources
-		parameter="project.controller.form.info.erroriLogin" key="erroriLogin" null="false" >
-	</message-resources>
-	
-	<message-resources
-		parameter="project.controller.form.info.erroriDatiPersonaliAdmin" key="erroriDatiPersonaliAdmin" null="false" >
+		parameter="moba.controller.form.info.errori" key="errori" null="false" >
 	</message-resources>
 	
 
