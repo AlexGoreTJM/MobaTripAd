@@ -6,6 +6,7 @@ public class DAOUnivocoException extends DAOException {
 	}
 
 	public DAOUnivocoException(String message) {
+		
 		super(message);
 	}
 

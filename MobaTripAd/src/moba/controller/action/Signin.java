@@ -36,21 +36,8 @@ public class Signin extends Action{
 			
 		} catch (DAOUnivocoException e) {
 			
-			if (e.getMessage().matches(".UTENTE_UX_EMAIL.")){
-				int index = e.getMessage().indexOf("UTENTE_UX_EMAIL");
-				String errorTypeCatch = e.getMessage().substring(index);
-				
-				request.setAttribute("erroreEmailDuplicata", e.getMessage());
-				}
-			else if(e.getMessage().matches(".UTENTE_UX_NICKNAME.")){
-				int index = e.getMessage().indexOf("UTENTE_UX_NICKNAME");
-				String errorTypeCatch = e.getMessage().substring(index);
-				
-				request.setAttribute("erroreNicknameDuplicato", e.getMessage());
-			}
-				
-				
-			return mapping.findForward("failure");
+			request.setAttribute("errore", e.getMessage());
+			return mapping.findForward("stay");
 		}
 		catch (DAOException e) {
 			request.setAttribute("errore", e.getMessage());
