@@ -155,6 +155,44 @@ public class DaoUtente extends DAO {
 					+ " Errorcode: " + e.getErrorCode());
 		}
 	}
+	
+	public int updateUtenteGrado(int idUtente) throws DAOException {
+		
+		DaoRecensione dr = new DaoRecensione();
+		
+		int recensioni = dr.countRecensioniByUtente(idUtente);
+		int differenzaLike = dr.countLikeByUtente(idUtente) - dr.countDislikeByUtente(idUtente);
+		
+		String sql = "UPDATE utente SET grado = ? where idutente = ?";
+		String grado = null;
+		
+		if(recensioni < 3 || differenzaLike < 10)
+			grado = "Peone";
+		else if(recensioni < 6 || differenzaLike < 20)
+			grado = "Recluta";
+		else if(recensioni < 12 || differenzaLike < 40)
+			grado = "Scudiero";
+		else if(recensioni < 24 || differenzaLike < 80)
+			grado = "Fante";
+		else if(recensioni < 48 || differenzaLike < 160)
+			grado = "Cavaliere";
+		else if(recensioni < 96 || differenzaLike < 320)
+			grado = "Capitano";
+		else
+			grado = "Generale";
+		
+		try (PreparedStatement pst = con.prepareStatement(sql)) {
+			
+			pst.setString(1, grado);
+			pst.setInt(2, idUtente);
+			
+			return pst.executeUpdate();
+			
+		} catch (SQLException e) {
+			throw new DAOException(
+					"ERRORE UPDATE UTENTE. " + "Causa: " + e.getMessage() + " Errorcode: " + e.getErrorCode());
+		}
+	}
 
 	private <T> T componiEntity() throws SQLException, DAOException {
 
