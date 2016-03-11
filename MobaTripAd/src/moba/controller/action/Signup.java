@@ -8,7 +8,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import moba.controller.form.SignunForm;
+import moba.controller.form.SignupForm;
 import moba.model.dao.DAO;
 import moba.model.dao.DaoUtente;
 import moba.model.dao.eccezioni.DAOException;
@@ -23,7 +23,7 @@ public class Signup extends Action{
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		
-		SignunForm f = (SignunForm) form;
+		SignupForm f = (SignupForm) form;
 		
 		Utente utente = new Utente(f.getUsername()
 								 , f.getEmail()
