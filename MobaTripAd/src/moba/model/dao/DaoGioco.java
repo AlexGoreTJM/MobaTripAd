@@ -106,7 +106,7 @@ public class DaoGioco extends DAO {
 
 	}
 
-	public <T> T selectLast() throws DAOException {
+	public <T> T selectRecente() throws DAOException {
 		String sql = "SELECT idgioco, titolo, sh, players, web, datauscita, etamin, costolancio, idcategoria, valutazionesito, pro, contro, img1, img2, urlvideo, urlsh, requisiti, info, datareg "
 				+ "FROM gioco " + "WHERE datauscita IN (SELECT max(datauscita) from gioco) ";
 

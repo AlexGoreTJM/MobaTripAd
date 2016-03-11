@@ -27,10 +27,10 @@ public class Inizia extends Action {
 			DaoPiattaforma daop = (DaoPiattaforma) DAO.getDaoInstance(Tabella.Piattaforma);
 			DaoCategoria daoc = (DaoCategoria) DAO.getDaoInstance(Tabella.Categoria);
 			
-			request.setAttribute("ultimoGiocoUscito", dao.selectLast());
-			request.setAttribute("giochiPiuRecensito", dao.selectPopolare());
-			request.setAttribute("listaPiattaforme", daop.select());
-			request.setAttribute("listaCategorie", daoc.select());
+			request.setAttribute("GiocoRecente", dao.selectRecente());
+			request.setAttribute("listaGiocoPopolari", dao.selectPopolare());
+			request.setAttribute("listaPiattaforma", daop.select());
+			request.setAttribute("listaCategoria", daoc.select());
 			
 			return mapping.findForward("success");
 		} catch (DAOException e) {
