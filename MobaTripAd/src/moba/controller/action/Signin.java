@@ -18,7 +18,6 @@ import moba.model.entity.Grado;
 import moba.model.entity.Utente;
 import moba.model.utilita.MailJava;
 
-
 public class Signin extends Action{
 	
 	@Override
@@ -26,24 +25,29 @@ public class Signin extends Action{
 		
 		SigninForm f = (SigninForm) form;
 		
+		Utente utente = new Utente(f.getUsername()
+								 , f.getEmail()
+								 , f.getPassword()
+								 , f.getNome()
+								 , f.getCognome()
+								 , new Grado("Peone",1)
+								 , f.getAvatar()
+								 , f.getInfo());
 		try {
 			DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
+			dao.insert(utente);
 			
+			MailJava.MandaSignMail(utente.getEmail());
 			
-			Utente u = new Utente(f.getUsername(), f.getEmail(), f.getPassword(), f.getNome(), f.getCognome(), new Grado("Peone",1), f.getAvatar(), f.getInfo());
-			dao.insert(u);
-	        request.getSession().setAttribute("utente", u);
-	        
-			MailJava.MandaSignMail(f.getEmail());
+			request.setAttribute
+			("feedback", "Controlla la tua mail ("+utente.getEmail()+") e conferma la registrazione!");
 			
 			return mapping.findForward("success");
 			
 		} catch (DAOUnivocoException e) {
-			
-			request.setAttribute("errore", e.getMessage());
+			request.setAttribute("erroreSignin", e.getMessage());
 			return mapping.findForward("stay");
-		}
-		catch (DAOException e) {
+		} catch (DAOException e) {
 			request.setAttribute("errore", e.getMessage());
 			return mapping.findForward("failure");
 		}
