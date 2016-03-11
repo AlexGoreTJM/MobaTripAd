@@ -8,12 +8,11 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import moba.controller.form.LoginForm;
 import moba.controller.form.SigninForm;
 import moba.model.dao.DAO;
 import moba.model.dao.DaoUtente;
 import moba.model.dao.eccezioni.DAOException;
-import moba.model.dao.eccezioni.DAONonTrovatoException;
+import moba.model.dao.eccezioni.DAOUnivocoException;
 import moba.model.dao.enumeratori.Tabella;
 import moba.model.entity.Grado;
 import moba.model.entity.Utente;
@@ -35,8 +34,22 @@ public class Signin extends Action{
 			
 			return mapping.findForward("success");
 			
-		} catch (DAONonTrovatoException e) {
-			request.setAttribute("errore", e.getMessage());
+		} catch (DAOUnivocoException e) {
+			
+			if (e.getMessage().matches(".UTENTE_UX_EMAIL.")){
+				int index = e.getMessage().indexOf("UTENTE_UX_EMAIL");
+				String errorTypeCatch = e.getMessage().substring(index);
+				
+				request.setAttribute("erroreEmailDuplicata", e.getMessage());
+				}
+			else if(e.getMessage().matches(".UTENTE_UX_NICKNAME.")){
+				int index = e.getMessage().indexOf("UTENTE_UX_NICKNAME");
+				String errorTypeCatch = e.getMessage().substring(index);
+				
+				request.setAttribute("erroreNicknameDuplicato", e.getMessage());
+			}
+				
+				
 			return mapping.findForward("failure");
 		}
 		catch (DAOException e) {
