@@ -25,6 +25,7 @@
 <form-beans>
 	
 	<form-bean type="moba.controller.form.LoginForm" name="LoginForm" />
+	<form-bean type="moba.controller.form.SigninForm" name="SigninForm" />
 
 
 	<!-- sample form bean descriptor for a DynaActionForm
