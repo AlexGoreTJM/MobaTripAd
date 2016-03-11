@@ -86,10 +86,7 @@
 
 
 
-
-
 <!-- AREA ADMIN  -->
-
 
 
 
@@ -113,6 +110,9 @@
 <action path="/logout" type="moba.controller.action.Logout"> 
 	<forward name="success" path="/inizia.do" />
 </action>
+
+
+
 
 
 <!-- sample input and input submit actions
