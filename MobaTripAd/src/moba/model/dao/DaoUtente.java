@@ -8,7 +8,6 @@ import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
 import moba.model.dao.eccezioni.DAOUnivocoException;
 import moba.model.dao.enumeratori.Tabella;
-import moba.model.dao.DaoGrado;
 import moba.model.entity.Grado;
 import moba.model.entity.Utente;
 
