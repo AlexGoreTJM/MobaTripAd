@@ -4,15 +4,10 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import org.apache.tomcat.jni.Time;
-
-import com.sun.jmx.snmp.Timestamp;
-
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
 import moba.model.dao.enumeratori.Tabella;
 import moba.model.entity.Recensione;
-import moba.model.entity.Utente;
 
 public class DaoRecensione extends DAO {
 	
