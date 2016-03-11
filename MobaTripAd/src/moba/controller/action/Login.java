@@ -30,8 +30,8 @@ public class Login extends Action {
 			return mapping.findForward("success");
 			
 		} catch (DAONonTrovatoException e) {
-			request.setAttribute("errore", e.getMessage());
-			return mapping.findForward("failure");
+			request.setAttribute("erroreLogin", "Credenziali invalide");
+			return mapping.findForward("stay");
 		}catch (DAOException e) {
 			request.setAttribute("errore", e.getMessage());
 			return mapping.findForward("failure");

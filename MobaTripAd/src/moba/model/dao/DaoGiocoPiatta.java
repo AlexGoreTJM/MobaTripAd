@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
 import moba.model.dao.enumeratori.Tabella;
+import moba.model.entity.Gioco;
 import moba.model.entity.GiocoPiatta;
 
 public class DaoGiocoPiatta extends DAO {

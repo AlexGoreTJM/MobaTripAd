@@ -106,7 +106,7 @@ public class DaoGioco extends DAO {
 
 	}
 
-	public <T> T selectLast() throws DAOException {
+	public <T> T selectRecente() throws DAOException {
 		String sql = "SELECT idgioco, titolo, sh, players, web, datauscita, etamin, costolancio, idcategoria, valutazionesito, pro, contro, img1, img2, urlvideo, urlsh, requisiti, info, datareg "
 				+ "FROM gioco " + "WHERE datauscita IN (SELECT max(datauscita) from gioco) ";
 
@@ -185,8 +185,8 @@ public class DaoGioco extends DAO {
 	public ArrayList<Gioco> selectPopolare() throws DAOException {
 
 		String sql = "select g.idgioco, g.titolo, g.sh, g.players, g.web, g.datauscita, g.etamin, g.costolancio, g.idcategoria, g.valutazionesito, g.pro, g.contro, g.img1, g.img2, g.urlvideo, g.urlsh, g.requisiti, g.info, g.datareg, count(*) as ctr"
-				+" from gioco g join recensione r on (g.idgioco= r.idgioco) group by g.idgioco, g.titolo, g.sh, g.players, g.web, g.datauscita, g.etamin, g.costolancio, g.idcategoria, g.valutazionesito, g.pro, g.contro, g.img1, g.img2, g.urlvideo,"
-				+" g.urlsh, g.requisiti, g.info, g.datareg order by ctr desc";
+				+ " from gioco g join recensione r on (g.idgioco= r.idgioco) group by g.idgioco, g.titolo, g.sh, g.players, g.web, g.datauscita, g.etamin, g.costolancio, g.idcategoria, g.valutazionesito, g.pro, g.contro, g.img1, g.img2, g.urlvideo,"
+				+ " g.urlsh, g.requisiti, g.info, g.datareg order by ctr desc";
 
 		ArrayList<Gioco> giochi = new ArrayList<>();
 
@@ -198,13 +198,13 @@ public class DaoGioco extends DAO {
 				throw new DAONonTrovatoException("ERRORE SELECT GIOCHI POPOLARI ");
 
 			giochi.add(componiEntity());
-			
+
 			while (res.next())
 				giochi.add(componiEntity());
 
 		} catch (SQLException e) {
-			throw new DAOException("ERRORE SELECT GIOCHI x popolarita': " + ". Causa: "
-					+ e.getMessage() + " Errorcode: " + e.getErrorCode());
+			throw new DAOException("ERRORE SELECT GIOCHI x popolarita': " + ". Causa: " + e.getMessage()
+					+ " Errorcode: " + e.getErrorCode());
 		}
 
 		return giochi;
@@ -226,8 +226,7 @@ public class DaoGioco extends DAO {
 				res.getDouble("costolancio"), ((Categoria) new DaoCategoria().select(res.getInt("idcategoria"))),
 				res.getDouble("valutazionesito"), res.getString("pro"), res.getString("contro"), res.getString("img1"),
 				res.getString("img2"), res.getString("urlvideo"), res.getString("urlsh"), res.getString("requisiti"),
-				res.getString("info"), res.getTimestamp("datareg"), piattaforme,
-				recensione, valutazione);
+				res.getString("info"), res.getTimestamp("datareg"), piattaforme, recensione, valutazione);
 
 	}
 

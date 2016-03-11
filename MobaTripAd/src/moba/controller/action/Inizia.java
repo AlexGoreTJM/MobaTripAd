@@ -9,10 +9,11 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import moba.model.dao.DAO;
+import moba.model.dao.DaoCategoria;
 import moba.model.dao.DaoGioco;
+import moba.model.dao.DaoPiattaforma;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.enumeratori.Tabella;
-import moba.model.entity.Gioco;
 
 public class Inizia extends Action {
 
@@ -22,9 +23,14 @@ public class Inizia extends Action {
 
 		try {
 			DaoGioco dao = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
-
-			//request.setAttribute("ultimoGiocoUscito",(Gioco) dao.selectLast());
-			//request.setAttribute("giochiPiuRecensito", dao.selectPopolare());
+			DaoPiattaforma daop = (DaoPiattaforma) DAO.getDaoInstance(Tabella.Piattaforma);
+			DaoCategoria daoc = (DaoCategoria) DAO.getDaoInstance(Tabella.Categoria);
+			
+			request.setAttribute("giocoRecente", dao.selectRecente());
+			request.setAttribute("listaGiocoPopolari", dao.selectPopolare());
+			request.setAttribute("listaPiattaforma", daop.select());
+			request.setAttribute("listaCategoria", daoc.select());
+			
 			return mapping.findForward("success");
 		} catch (DAOException e) {
 

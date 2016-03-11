@@ -19,7 +19,7 @@ public class DaoUtente extends DAO {
 	}
 
 	@Override
-	public <T> int insert(T entity) throws DAOException, DAOUnivocoException {
+	public <T> int insert(T entity) throws DAOException{
 
 		Utente u = (Utente) entity;
 		System.out.println(u.getPassword());
@@ -49,6 +49,18 @@ public class DaoUtente extends DAO {
 
 		} catch (SQLException e) {
 
+			if(e.getErrorCode() == 1){
+				
+				if (e.getMessage().matches("EMAIL")){
+				
+					throw new DAOUnivocoException("EMAIL già registrata");
+					
+				} else if(e.getMessage().matches("NICKNAME")){
+					
+					throw new DAOUnivocoException("NICKNAME già presente");
+				}
+			}
+				
 			throw new DAOException(
 					"ERRORE INSERT UTENTE. " + "Causa: " + e.getMessage() + " Errorcode: " + e.getErrorCode());
 		} 

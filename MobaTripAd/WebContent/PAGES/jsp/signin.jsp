@@ -22,33 +22,39 @@
     </tr>
     
     <tr>
-      <td>Username:</td>
+      <td>*Username:</td>
       <td><input type="text" name="username"></td>
+      <td></td>
     </tr>
     
     <tr>
-      <td>Email:</td>
+      <td>*Email:</td>
       <td><input type="text" name="email"></td>
+      <td></td>
     </tr>
     
     <tr>
-      <td>Conferma email:</td>
+      <td>*Conferma email:</td>
       <td><input type="text" name="email_c"></td>
+      <td></td>
     </tr>
     
     <tr>
-      <td>Password:</td>
+      <td>*Password:</td>
       <td><input type="password" name="password"></td>
+      <td></td>
     </tr>
     
     <tr>
-      <td>Conferma password:</td>
+      <td>*Conferma password:</td>
       <td><input type="password" name="password_c"></td>
+      <td></td>
     </tr>
     
     <tr>
-      <td>Avatar:</td>
+      <td>*Avatar:</td>
       <td><input type="text" name="avatar"></td>
+      <td></td>
     </tr>
     
     <tr>
