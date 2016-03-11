@@ -8,7 +8,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import moba.controller.form.SigninForm;
+import moba.controller.form.SignunForm;
 import moba.model.dao.DAO;
 import moba.model.dao.DaoUtente;
 import moba.model.dao.eccezioni.DAOException;
@@ -18,12 +18,12 @@ import moba.model.entity.Grado;
 import moba.model.entity.Utente;
 import moba.model.utilita.MailJava;
 
-public class Signin extends Action{
+public class Signup extends Action{
 	
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		
-		SigninForm f = (SigninForm) form;
+		SignunForm f = (SignunForm) form;
 		
 		Utente utente = new Utente(f.getUsername()
 								 , f.getEmail()
@@ -45,7 +45,7 @@ public class Signin extends Action{
 			return mapping.findForward("success");
 			
 		} catch (DAOUnivocoException e) {
-			request.setAttribute("erroreSignin", e.getMessage());
+			request.setAttribute("erroreSignup", e.getMessage());
 			return mapping.findForward("stay");
 		} catch (DAOException e) {
 			request.setAttribute("errore", e.getMessage());

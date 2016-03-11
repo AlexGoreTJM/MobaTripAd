@@ -43,7 +43,7 @@
         
         <h3>Personal info</h3>
         
-        <form class="form-horizontal" role="form" action="signin.do" method="post">
+        <form class="form-horizontal" role="form" action="signup.do" method="post">
           <div class="form-group">
             <label class="col-lg-3 control-label">Nome:</label>
             <div class="col-lg-8">
@@ -117,7 +117,7 @@
 
 
 
-<!-- <form action="signin.do" method="post">
+<!-- <form action="signup.do" method="post">
 <table>
     <tr>
       <td>Nome:</td>
