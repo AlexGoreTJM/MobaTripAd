@@ -30,10 +30,10 @@
 					</c:when>
 					<c:otherwise>
 					
-						<li>Ciao <a href="vaiProfilo.do" class="navbar-link">${sessionScope.utente.nickname}</a> |
-								<a href="logout.do" class="navbar-link">
-          <span class="glyphicon glyphicon-log-out"></span>
-        </a></li>
+						<li> <div style="position: absolute; width: 200px;"><a href="vaiProfilo.do" class="navbar-link">Ciao  ${sessionScope.utente.nickname}|  </a> 				
+						<a href="logout.do" class="navbar-link">Logout
+          <span class="glyphicon glyphicon-log-out"></span></a></div>
+        </li>
 							
 					
 								
