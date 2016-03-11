@@ -7,6 +7,8 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
 
+import moba.model.utilita.Utilita;
+
 public class LoginForm extends ActionForm {
 	
 	private String username;
@@ -37,7 +39,9 @@ public class LoginForm extends ActionForm {
 		
 		if(this.password == null || this.password.isEmpty())
 			errori.add("password", new ActionMessage("obbligatorio", "password"));
-		
+	
+		if(!Utilita.verificaPassword(this.password))
+			errori.add("password", new ActionMessage("formale", "password"));
 		
 		return errori;
 	}
