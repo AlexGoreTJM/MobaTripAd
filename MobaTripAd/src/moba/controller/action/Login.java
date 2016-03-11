@@ -12,6 +12,7 @@ import moba.controller.form.LoginForm;
 import moba.model.dao.DAO;
 import moba.model.dao.DaoUtente;
 import moba.model.dao.eccezioni.DAOException;
+import moba.model.dao.eccezioni.DAONonTrovatoException;
 import moba.model.dao.enumeratori.Tabella;
 
 public class Login extends Action {
@@ -28,7 +29,10 @@ public class Login extends Action {
 			
 			return mapping.findForward("success");
 			
-		} catch (DAOException e) {
+		} catch (DAONonTrovatoException e) {
+			request.setAttribute("errore", e.getMessage());
+			return mapping.findForward("failure");
+		}catch (DAOException e) {
 			request.setAttribute("errore", e.getMessage());
 			return mapping.findForward("failure");
 		}

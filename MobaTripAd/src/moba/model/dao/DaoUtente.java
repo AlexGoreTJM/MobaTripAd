@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
+import moba.model.dao.eccezioni.DAOUnivocoException;
 import moba.model.dao.enumeratori.Tabella;
 import moba.model.dao.DaoGrado;
 import moba.model.entity.Grado;
@@ -19,7 +20,7 @@ public class DaoUtente extends DAO {
 	}
 
 	@Override
-	public <T> int insert(T entity) throws DAOException {
+	public <T> int insert(T entity) throws DAOException, DAOUnivocoException {
 
 		Utente u = (Utente) entity;
 		System.out.println(u.getPassword());
@@ -51,7 +52,7 @@ public class DaoUtente extends DAO {
 
 			throw new DAOException(
 					"ERRORE INSERT UTENTE. " + "Causa: " + e.getMessage() + " Errorcode: " + e.getErrorCode());
-		}
+		} 
 	}
 
 	@Override
