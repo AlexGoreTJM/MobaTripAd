@@ -55,7 +55,7 @@
 		<td><input type="submit" ></td>
 	</tr>
 </table> 
-Se non sei registrato<a href="/PAGES/jsp/signin.jsp">clicka qui</a>.
+<a href="/PAGES/jsp/signin.jsp">REGISTRATI</a>.
 </form>
 	</div>
 
