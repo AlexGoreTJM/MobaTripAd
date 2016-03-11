@@ -29,11 +29,13 @@
 						<li><a class="signin" href="vaiSignin.do">Sign in</a></li>
 					</c:when>
 					<c:otherwise>
-						<li id="benvenuto">
+						<li >
+							<div id="benvenuto">
 					
-							Ciao <a href="vaiProfilo.do"><b>${sessionScope.utente.nickname}</b></a> |
-							<a href="logout.do">logout</a>
+								Ciao <a href="vaiProfilo.do"><b>${sessionScope.utente.nickname}</b></a> |
+								<a href="logout.do">logout</a>
 					
+							</div>
 						</li>
 					</c:otherwise>
 				</c:choose>
