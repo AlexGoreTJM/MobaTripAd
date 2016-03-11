@@ -11,20 +11,21 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import moba.model.dao.DAO;
+import moba.model.dao.DaoCategoria;
 import moba.model.dao.DaoGioco;
-import moba.model.dao.DaoPiattaforma;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.enumeratori.Tabella;
+import moba.model.entity.Categoria;
 import moba.model.entity.Gioco;
-import moba.model.entity.Piattaforma;
 
 /**
- * Dato l'id della piattaforma, ritorna le informazioni e i giochi supportati
+ * Dato l'id della categoria, ritorna le informazioni e i giochi supportati
+ * 
  * @author chris
  * @version 1.0
  *
  */
-public class GiochiPiattaforma extends Action {
+public class GiochiCategoria extends Action {
 
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
@@ -32,23 +33,22 @@ public class GiochiPiattaforma extends Action {
 
 		try {
 			DaoGioco daoGioco = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
-			DaoPiattaforma daoPiattaforma = (DaoPiattaforma) DAO.getDaoInstance(Tabella.Piattaforma);
+			DaoCategoria daoCategoria = (DaoCategoria) DAO.getDaoInstance(Tabella.Categoria);
 
-			int idPiatt = Integer.parseInt(request.getParameter("idPiattaforma"));
+			int idCategoria = Integer.parseInt(request.getParameter("idCategoria"));
 
-			Piattaforma p = daoPiattaforma.select(idPiatt);
-			ArrayList<Gioco> giochi = daoGioco.selectByIdPiattaforma(idPiatt);
+			Categoria c = daoCategoria.select(idCategoria);
+			ArrayList<Gioco> giochi = daoGioco.selectByIdCategoria(idCategoria);
 
-			request.setAttribute("piattaforma", p);
+			request.setAttribute("categoria", c);
 			request.setAttribute("listaGiochi", giochi);
-			
+
 			return mapping.findForward("success");
-			
+
 		} catch (DAOException e) {
 			request.setAttribute("errore", e.getMessage());
 			return mapping.findForward("failure");
 		}
 
 	}
-
 }
