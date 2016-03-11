@@ -67,7 +67,7 @@
 						</form>
 					</div>
 					<div class="panel-footer ">
-						Don't have an account! <a href="/PAGES/jsp/signin.jsp" onClick=""> Sign Up Here </a>
+						Don't have an account! <a href="signin.do" onClick=""> Sign Up Here </a>
 					</div>
                 </div>
 			</div>
