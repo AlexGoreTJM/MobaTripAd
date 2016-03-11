@@ -20,6 +20,7 @@ import moba.model.entity.Piattaforma;
 
 /**
  * Dato l'id della piattaforma, ritorna le informazioni e i giochi supportati
+ * 
  * @author chris
  * @version 1.0
  *
@@ -29,21 +30,17 @@ public class GiochiPiattaforma extends Action {
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
+		int idPiatt = Integer.parseInt(request.getParameter("idPiattaforma"));
 
 		try {
 			DaoGioco daoGioco = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
 			DaoPiattaforma daoPiattaforma = (DaoPiattaforma) DAO.getDaoInstance(Tabella.Piattaforma);
 
-			int idPiatt = Integer.parseInt(request.getParameter("idPiattaforma"));
+			request.setAttribute("piattaforma", daoPiattaforma.select(idPiatt));
+			request.setAttribute("listaGioco", daoGioco.selectByIdPiattaforma(idPiatt));
 
-			Piattaforma p = daoPiattaforma.select(idPiatt);
-			ArrayList<Gioco> giochi = daoGioco.selectByIdPiattaforma(idPiatt);
-
-			request.setAttribute("piattaforma", p);
-			request.setAttribute("listaGiochi", giochi);
-			
 			return mapping.findForward("success");
-			
+
 		} catch (DAOException e) {
 			request.setAttribute("errore", e.getMessage());
 			return mapping.findForward("failure");
