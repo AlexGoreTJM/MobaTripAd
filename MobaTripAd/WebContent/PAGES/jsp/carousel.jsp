@@ -16,16 +16,19 @@
 							</ol>
 							<div class="carousel-inner">
 								<div class="item active">
-									<img class="slide-image" src="http://placehold.it/800x300"
-										alt="">
+									<a href="http://www.hdblog.it">
+										<img class="slide-image" src="IMGDB/Gioco/" + "${listaGiocoPopolari[0].img1}" title="${listaGiocoPopolari[0].titolo}">
+									</a>
 								</div>
 								<div class="item">
-									<img class="slide-image" src="http://placehold.it/800x300"
-										alt="">
+									<a href="http://www.hdblog.it">
+										<img class="slide-image" src="IMGDB/Gioco/" + "${listaGiocoPopolari[1].img1}" title="${listaGiocoPopolari[1].titolo}">
+									</a>
 								</div>
 								<div class="item">
-									<img class="slide-image" src="http://placehold.it/800x300"
-										alt="">
+									<a href="http://www.hdblog.it">
+										<img class="slide-image" src="IMGDB/Gioco/" + "${listaGiocoPopolari[2].img1}" title="${listaGiocoPopolari[2].titolo}">
+									</a>
 								</div>
 							</div>
 							<a class="left carousel-control" href="#carousel-example-generic"
