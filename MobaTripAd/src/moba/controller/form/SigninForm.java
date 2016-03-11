@@ -86,10 +86,15 @@ public class SigninForm extends ActionForm {
 		
 		if(this.password == null || this.password.isEmpty())
 			errori.add("password", new ActionMessage("obbligatorio", "password"));
+		else if(!(this.password.matches("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,20})")))
+			errori.add("password", new ActionMessage("incorretta", "password"));
 		
 		
 		if(this.email == null || this.email.isEmpty())
 			errori.add("email", new ActionMessage("obbligatorio", "email"));
+		else if(!(this.email.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+				+"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")))
+			errori.add("email", new ActionMessage("incorretta", "email"));
 		
 		if(this.avatar == null || this.avatar.isEmpty())
 			errori.add("avatar", new ActionMessage("obbligatorio", "avatar"));
