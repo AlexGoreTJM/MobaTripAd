@@ -16,6 +16,8 @@ import moba.model.dao.eccezioni.DAOUnivocoException;
 import moba.model.dao.enumeratori.Tabella;
 import moba.model.entity.Grado;
 import moba.model.entity.Utente;
+import moba.model.utilita.MailJava;
+
 
 public class Signin extends Action{
 	
@@ -31,6 +33,8 @@ public class Signin extends Action{
 			Utente u = new Utente(f.getUsername(), f.getEmail(), f.getPassword(), f.getNome(), f.getCognome(), new Grado("Peone",1), f.getAvatar(), f.getInfo());
 			dao.insert(u);
 	        request.getSession().setAttribute("utente", u);
+	        
+			MailJava.MandaSignMail(f.getEmail());
 			
 			return mapping.findForward("success");
 			

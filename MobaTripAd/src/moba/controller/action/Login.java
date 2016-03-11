@@ -15,6 +15,8 @@ import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
 import moba.model.dao.enumeratori.Tabella;
 
+
+
 public class Login extends Action {
 
 	@Override
@@ -26,6 +28,7 @@ public class Login extends Action {
 			DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
 			
 			request.getSession().setAttribute("utente", dao.selectLogin(f.getUsername(), f.getPassword()));
+			
 			
 			return mapping.findForward("success");
 			
