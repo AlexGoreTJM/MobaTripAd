@@ -24,7 +24,7 @@ public class Inizia extends Action {
 			DaoGioco dao = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
 
 			//request.setAttribute("ultimoGiocoUscito",(Gioco) dao.selectLast());
-			//request.setAttribute("giochiPiuRecensito", dao.selectPopolare());
+			request.setAttribute("giochiPiuRecensito", dao.selectPopolare());
 			return mapping.findForward("success");
 		} catch (DAOException e) {
 

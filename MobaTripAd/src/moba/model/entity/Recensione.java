@@ -3,22 +3,20 @@ package moba.model.entity;
 import java.sql.Timestamp;
 
 public class Recensione {
-	
+
 	private Utente utente;
-	private Gioco gioco;
+	private int idGioco;
 	private int ctrLike;
 	private int ctrDislike;
 	private int segnalata;
 	private String info;
 	private Timestamp dataRec;
-	
-	
-	
-	public Recensione(Utente utente, Gioco gioco, int ctrLike, int ctrDislike, int segnalata, String info,
+
+	public Recensione(Utente utente, int idGioco, int ctrLike, int ctrDislike, int segnalata, String info,
 			Timestamp dataRec) {
 		super();
 		this.utente = utente;
-		this.gioco = gioco;
+		this.idGioco = idGioco;
 		this.ctrLike = ctrLike;
 		this.ctrDislike = ctrDislike;
 		this.segnalata = segnalata;
@@ -26,12 +24,20 @@ public class Recensione {
 		this.dataRec = dataRec;
 	}
 
+	public int getIdGioco() {
+		return idGioco;
+	}
+
+	public void setIdGioco(int idGioco) {
+		this.idGioco = idGioco;
+	}
+
 	public Utente getUtente() {
 		return utente;
 	}
 
-	public Gioco getGioco() {
-		return gioco;
+	public void setUtente(Utente utente) {
+		this.utente = utente;
 	}
 
 	public int getCtrLike() {
@@ -56,10 +62,8 @@ public class Recensione {
 
 	@Override
 	public String toString() {
-		return "/n Recensione [utente=" + utente + ", gioco=" + gioco + ", ctrLike=" + ctrLike + ", ctrDislike="
+		return "/n Recensione [utente=" + utente + ", gioco=" + idGioco + ", ctrLike=" + ctrLike + ", ctrDislike="
 				+ ctrDislike + ", segnalata=" + segnalata + ", info=" + info + ", dataRec=" + dataRec + "]";
 	}
-	
-	
 
 }

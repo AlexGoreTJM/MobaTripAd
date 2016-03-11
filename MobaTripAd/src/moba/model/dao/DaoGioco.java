@@ -11,8 +11,7 @@ import moba.model.entity.Categoria;
 import moba.model.entity.Gioco;
 import moba.model.entity.GiocoPiatta;
 import moba.model.entity.Piattaforma;
-import moba.model.entity.Utente;
-import oracle.sql.DATE;
+import moba.model.entity.Recensione;
 
 public class DaoGioco extends DAO {
 
@@ -186,8 +185,8 @@ public class DaoGioco extends DAO {
 	public ArrayList<Gioco> selectPopolare() throws DAOException {
 
 		String sql = "select g.idgioco, g.titolo, g.sh, g.players, g.web, g.datauscita, g.etamin, g.costolancio, g.idcategoria, g.valutazionesito, g.pro, g.contro, g.img1, g.img2, g.urlvideo, g.urlsh, g.requisiti, g.info, g.datareg, count(*) as ctr"
-					 + "from gioco g join recensione r on (g.idgioco= r.idgioco) group by g.idgioco, g.titolo, g.sh, g.players, g.web, g.datauscita, g.etamin, g.costolancio, g.idcategoria, g.valutazionesito, g.pro, g.contro, g.img1, g.img2, g.urlvideo,"
-				     +"g.urlsh, g.requisiti, g.info, g.datareg order by ctr dec;";
+				+" from gioco g join recensione r on (g.idgioco= r.idgioco) group by g.idgioco, g.titolo, g.sh, g.players, g.web, g.datauscita, g.etamin, g.costolancio, g.idcategoria, g.valutazionesito, g.pro, g.contro, g.img1, g.img2, g.urlvideo,"
+				+" g.urlsh, g.requisiti, g.info, g.datareg order by ctr desc";
 
 		ArrayList<Gioco> giochi = new ArrayList<>();
 
@@ -215,6 +214,7 @@ public class DaoGioco extends DAO {
 
 		ArrayList<Piattaforma> piattaforme = new ArrayList<>();
 		ArrayList<GiocoPiatta> giocopiatta = new DaoGiocoPiatta().selectByIdGioco(res.getInt("idgioco"));
+		ArrayList<Recensione> recensione = new DaoRecensione().select(res.getInt("idgioco"));
 		for (GiocoPiatta giocoPiatta2 : giocopiatta) {
 			piattaforme.add(new DaoPiattaforma().select(giocoPiatta2.getIdPiattaforma()));
 		}
@@ -227,7 +227,7 @@ public class DaoGioco extends DAO {
 				res.getDouble("valutazionesito"), res.getString("pro"), res.getString("contro"), res.getString("img1"),
 				res.getString("img2"), res.getString("urlvideo"), res.getString("urlsh"), res.getString("requisiti"),
 				res.getString("info"), res.getTimestamp("datareg"), piattaforme,
-				new DaoRecensione().select(res.getInt("idgioco")), valutazione);
+				recensione, valutazione);
 
 	}
 
@@ -241,7 +241,7 @@ public class DaoGioco extends DAO {
 			// DATE, 11, 11, 1, 1, "ddd", "ppp", "ddd", "dddd", "ddd", null,
 			// null, null));
 
-			System.out.println("" + dao.selectByIdPiattaforma(4));
+			System.out.println("" + dao.selectPopolare());
 
 		} catch (DAOException e) {
 			System.out.println(e.getMessage());

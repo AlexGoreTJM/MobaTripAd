@@ -39,7 +39,7 @@ public <T> int insert(T entity) throws DAOException {
 		try (PreparedStatement pst = con.prepareStatement(sql)) {
 			
 			pst.setInt(1, r.getUtente().getIdUtente());
-			pst.setInt(2, r.getGioco().getIdGioco());
+			pst.setInt(2, r.getIdGioco());
 			pst.setInt(3, r.getCtrLike());
 			pst.setInt(4, r.getCtrDislike());
 			pst.setInt(5, r.getSegnalata());
@@ -94,7 +94,7 @@ public <T> int insert(T entity) throws DAOException {
 		//SELECT idutente, idgioco, ctrlike, ctrdislike, segnalata, info, datarec 
 		return new Recensione(
 				 new DaoUtente().select(res.getInt("idutente"))
-				,new DaoGioco().select(res.getInt("idgioco")) 
+				,res.getInt("idgioco")
 				,res.getInt("ctrlike")
 				,res.getInt("ctrdislike")
 				,res.getInt("segnalata")
