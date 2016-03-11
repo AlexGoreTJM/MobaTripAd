@@ -73,6 +73,8 @@
 
 <action path="/vaiLogin" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/login.jsp" ></action>
 <action path="/vaiSignin" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/signin.jsp" ></action>
+<action path="/vaiProfilo" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/profiloUtente.jsp" ></action>
+
 
 
 <!-- ============================================= PATH CHE ESEGUONO FORM E ACTION SPECIFICI ============================================= -->
@@ -96,13 +98,13 @@
 
 <action path="/login" type="moba.controller.action.Login" name="LoginForm"
 	validate="true" input="/PAGES/jsp/login.jsp"  >
-	<forward name="success" path="/PAGES/jsp/dashboardUtente.jsp" />
+	<forward name="success" path="/PAGES/jsp/index.jsp" />
 	<forward name="failure" path="/PAGES/jsp/errore.jsp" />
 </action>
 
 <action path="/signin" type="moba.controller.action.Signin" name="SigninForm"
 	validate="true" input="/PAGES/jsp/signin.jsp"  >
-	<forward name="success" path="/PAGES/jsp/feedbackSignin.jsp" />
+	<forward name="success" path="/PAGES/jsp/index.jsp" />
 	<forward name="stay" path="/PAGES/jsp/signin.jsp" />
 	<forward name="failure" path="/PAGES/jsp/errore.jsp" />
 </action>
