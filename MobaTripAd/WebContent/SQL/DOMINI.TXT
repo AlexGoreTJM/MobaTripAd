@@ -33,6 +33,7 @@ PIATTAFORMA:
 
 GRADO:
 -----------------
+Admin       0
 Peone		1
 Recluta		2
 Scudiero	3
