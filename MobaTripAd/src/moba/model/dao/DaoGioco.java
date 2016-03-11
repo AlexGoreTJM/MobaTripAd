@@ -118,11 +118,9 @@ public class DaoGioco extends DAO {
 				throw new DAONonTrovatoException("ERRORE SELECT ULTIMI GIOCHI");
 
 			giochi.add(componiEntity());
-			int ultimiInseriti = 0;
 
-			while (res.next() && ultimiInseriti < 5) {
+			while (res.next()) {
 				giochi.add(componiEntity());
-				ultimiInseriti++;
 			}
 		} catch (SQLException e) {
 			throw new DAOException(
@@ -247,7 +245,7 @@ public class DaoGioco extends DAO {
 			// DATE, 11, 11, 1, 1, "ddd", "ppp", "ddd", "dddd", "ddd", null,
 			// null, null));
 
-			System.out.println("" + dao.selectPopolare());
+			System.out.println("" + dao.selectRecente());
 
 		} catch (DAOException e) {
 			System.out.println(e.getMessage());

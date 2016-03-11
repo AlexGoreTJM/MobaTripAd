@@ -26,7 +26,7 @@
 				<c:choose>
 					<c:when test="${sessionScope.utente == null}">
 						<li><a class="login" href="vaiLogin.do">Login</a></li>
-						<li><a class="signup" href="vaiSigniup.do">Sign in</a></li>
+						<li><a class="signup" href="vaiSignup.do">Sign in</a></li>
 					</c:when>
 					<c:otherwise>
 					
