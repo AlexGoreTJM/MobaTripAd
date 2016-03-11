@@ -45,7 +45,12 @@ public <T> int insert(T entity) throws DAOException {
 			pst.setTimestamp(7, r.getDataRec());
 			
 			//esegue la query cos� preparata:
-			return pst.executeUpdate();
+			int update = pst.executeUpdate();
+			
+			new DaoUtente().updateUtenteGrado(r.getUtente().getIdUtente());
+			
+			return update;
+			
 		
 		} catch (SQLException e) {
 
@@ -56,7 +61,26 @@ public <T> int insert(T entity) throws DAOException {
 
 	
 	public <T> T delete(int idUtente, int idGioco) throws DAOException {
-		throw new DAOException("WARNING: COMANDO NON IMPLEMENTATO!");
+		
+		Recensione r = this.select(idUtente, idGioco);
+		
+		String sql = "DELETE FROM RECENSIONE WHERE idutente = ? and idgioco = ?";
+		
+		try (PreparedStatement pst = con.prepareStatement(sql)) {
+			
+			pst.setInt(1, r.getUtente().getIdUtente());
+			pst.setInt(2, r.getIdGioco());
+			
+			pst.executeUpdate();		
+			
+			new DaoUtente().updateUtenteGrado(r.getUtente().getIdUtente());	
+			
+			return (T) r;
+			
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE DELETE RECENSIONE x idUtente: "+idUtente + " e X idGioco "+idGioco
+					+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		}	
 	}
 
 		
@@ -79,10 +103,10 @@ public <T> int insert(T entity) throws DAOException {
 				return  componiEntity();
 			else
 				throw new DAONonTrovatoException
-				("WARNING: dati non trovati in RECENSIONE x idUtente: "+idUtente + " e X idGioco "+idGioco);
+				("WARNING: dati non trovati in RECENSIONE x idUtente: "+idUtente + " e x idGioco "+idGioco);
 			
 		} catch (SQLException e) {
-			throw new DAOException("ERRORE SELECT RECENSIONE x nome: "+idUtente
+			throw new DAOException("ERRORE SELECT RECENSIONE x idUtente: "+idUtente + " e x idGioco "+idGioco
 			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
 		}
 	
@@ -141,7 +165,11 @@ public <T> int insert(T entity) throws DAOException {
 			pst.setInt(1, idUtente);
 			pst.setInt(2, idGioco);
 			
-			return pst.executeUpdate();
+			int update = pst.executeUpdate();
+			
+			new DaoUtente().updateUtenteGrado(idUtente);
+			
+			return update;
 			
 		} catch (SQLException e) {
 			throw new DAOException("ERRORE UPDATE RECENSIONE ADD LIKE. "
@@ -157,7 +185,11 @@ public <T> int insert(T entity) throws DAOException {
 			pst.setInt(1, idUtente);
 			pst.setInt(2, idGioco);
 			
-			return pst.executeUpdate();
+			int update = pst.executeUpdate();
+			
+			new DaoUtente().updateUtenteGrado(idUtente);
+			
+			return update;
 			
 		} catch (SQLException e) {
 			throw new DAOException("ERRORE UPDATE RECENSIONE ADD DISLIKE. "
@@ -173,7 +205,11 @@ public <T> int insert(T entity) throws DAOException {
 			pst.setInt(1, idUtente);
 			pst.setInt(2, idGioco);
 			
-			return pst.executeUpdate();
+			int update = pst.executeUpdate();
+			
+			new DaoUtente().updateUtenteGrado(idUtente);
+			
+			return update;
 			
 		} catch (SQLException e) {
 			throw new DAOException("ERRORE UPDATE RECENSIONE REMOVE LIKE. "
@@ -189,7 +225,11 @@ public <T> int insert(T entity) throws DAOException {
 			pst.setInt(1, idUtente);
 			pst.setInt(2, idGioco);
 			
-			return pst.executeUpdate();
+			int update = pst.executeUpdate();
+			
+			new DaoUtente().updateUtenteGrado(idUtente);
+			
+			return update;
 			
 		} catch (SQLException e) {
 			throw new DAOException("ERRORE UPDATE RECENSIONE REMOVE DISLIKE. "
