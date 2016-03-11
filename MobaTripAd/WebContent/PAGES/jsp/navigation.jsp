@@ -27,7 +27,7 @@
 				<li><a class="signin" href="vaiSignin.do">Sign in</a></li>
 				<li><a class="logout" href="vaiLogout.do">Log out</a></li>
 				<li><div id="benvenuto">
-					<c:if test="${scopeSession.utente}">
+					<c:if test="${sessionScope.utente}">
 						Ciao <a href="vaiProfilo.do"><b>${scopeSession.utente.nickname}</b></a> |
 						<a href="logout.do">logout</a>
 					</c:if>
