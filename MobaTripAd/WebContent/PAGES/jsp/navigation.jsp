@@ -29,14 +29,16 @@
 						<li><a class="signin" href="vaiSignin.do">Sign in</a></li>
 					</c:when>
 					<c:otherwise>
-						<li >
-							<div id="benvenuto">
 					
-								Ciao <a href="vaiProfilo.do"><b>${sessionScope.utente.nickname}</b></a> |
-								<a href="logout.do">logout</a>
+						<li>Ciao <a href="vaiProfilo.do" class="navbar-link">${sessionScope.utente.nickname}</a> |
+								<a href="logout.do" class="navbar-link">
+          <span class="glyphicon glyphicon-log-out"></span>
+        </a></li>
+							
 					
-							</div>
-						</li>
+								
+							
+						
 					</c:otherwise>
 				</c:choose>
 			</ul>
@@ -45,3 +47,7 @@
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container --> </nav>
+	
+	
+      
+      

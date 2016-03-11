@@ -110,7 +110,7 @@
 </action>
 
 <action path="/logout" type="moba.controller.action.Logout"> 
-	<forward name="success" path="inizia.do" />
+	<forward name="success" path="/inizia.do" />
 </action>
 
 
