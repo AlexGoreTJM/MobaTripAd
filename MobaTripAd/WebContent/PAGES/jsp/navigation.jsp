@@ -24,6 +24,9 @@
 				<li><a href="#">Services</a></li>
 				<li><a href="#">Contact</a></li>
 				<li><a class="login" href="vaiLogin.do">Login</a></li>
+				<li><a class="signin" href="vaiSignin.do">Sign in</a></li>
+				<li><a class="logout" href="vaiLogout.do">Log out</a></li>
+				
 			</ul>
 			
 		</div>
