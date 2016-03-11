@@ -156,6 +156,37 @@ public class DaoUtente extends DAO {
 		}
 	}
 	
+	public Utente update(Utente utente) throws DAOException {
+		
+		Utente u = this.select(utente.getIdUtente());
+		
+		String sql = "UPDATE UTENTE SET idutente = ?, admin = ?, nickname = ?, email = ? password = ?, nome = ?, cognome = ? grado = ? avatar = ? datareg = ?, info = ?";
+		
+		try (PreparedStatement pst = con.prepareStatement(sql)){
+			
+			pst.setInt(1, utente.getIdUtente());
+			pst.setInt(2, utente.isAdmin() ? 1 : 0);
+			pst.setString(3, utente.getNickname());
+			pst.setString(4, utente.getEmail());
+			pst.setString(5, utente.getPassword());
+			pst.setString(6, utente.getNome());
+			pst.setString(7, utente.getCognome());
+			pst.setString(8, utente.getGrado().getNome());
+			pst.setString(9, utente.getAvatar());
+			pst.setTimestamp(10, utente.getDataReg());
+			pst.setString(11, utente.getInfo());
+			
+			pst.executeUpdate();
+			
+			return u;
+			
+		} catch (SQLException e) {
+			throw new DAOException
+			("ERRORE UPDATE UTENTE x pk="+utente.getIdUtente()
+			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		}
+	}
+	
 	public int updateUtenteGrado(int idUtente) throws DAOException {
 		
 		DaoRecensione dr = new DaoRecensione();
