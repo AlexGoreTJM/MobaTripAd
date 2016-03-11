@@ -33,6 +33,7 @@ public class Gioco {
 	
 	
 	//COSTRUTTORI:
+	
 	public Gioco(int idGioco){
 		this.idGioco = idGioco;
 	}
@@ -73,18 +74,14 @@ public class Gioco {
 				img1, img2, urlVideo, urlSh, requisiti, info, null, null,null,0.0);
 	}
 
-	//GETTER
 	
-	public ArrayList<Piattaforma> getPiattaforme() {
-		return piattaforme;
-	}
-
-	public void setPiattaforme(ArrayList<Piattaforma> piattaforme) {
-		this.piattaforme = piattaforme;
-	}
+	//GETTER & SETTER:
 
 	public int getIdGioco() {
 		return idGioco;
+	}
+	public void setIdGioco(int idGioco) {
+		this.idGioco = idGioco;
 	}
 
 	public String getTitolo() {
@@ -158,6 +155,14 @@ public class Gioco {
 	public Timestamp getDataReg() {
 		return dataReg;
 	}
+	
+	public ArrayList<Piattaforma> getPiattaforme() {
+		return piattaforme;
+	}
+
+	public ArrayList<Recensione> getRecensioni() {
+		return recensioni;
+	}
 
 
 	@Override
@@ -173,6 +178,5 @@ public class Gioco {
 				+ "\nPIATTAFORME:\n"+ piattaforme
 				+ "\nRECENSIONI:\n" + recensioni;
 	}
-
 
 }
