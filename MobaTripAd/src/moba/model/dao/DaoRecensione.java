@@ -4,10 +4,15 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import org.apache.tomcat.jni.Time;
+
+import com.sun.jmx.snmp.Timestamp;
+
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
 import moba.model.dao.enumeratori.Tabella;
 import moba.model.entity.Recensione;
+import moba.model.entity.Utente;
 
 public class DaoRecensione extends DAO {
 	
@@ -238,7 +243,7 @@ public <T> int insert(T entity) throws DAOException {
 	}
 	
 	public int countRecensioniByUtente(int idUtente) throws DAOException {
-		String sql = "SELECT COUNT(*) AS recensioni FROM RECENSIONE WHERE idtutente = ? GROUP BY idutente";
+		String sql = "SELECT COUNT(*) AS recensioni FROM RECENSIONE WHERE idutente = ? GROUP BY idutente";
 		
 		try(PreparedStatement pst = con.prepareStatement(sql)) {
 			pst.setInt(1, idUtente);
@@ -258,14 +263,14 @@ public <T> int insert(T entity) throws DAOException {
 	}
 	
 	public int countLikeByUtente(int idUtente) throws DAOException {
-		String sql = "SELECT SUM(ctrlike) AS like FROM RECENSIONE WHERE idtutente = ? GROUP BY idutente";
+		String sql = "SELECT SUM(ctrlike) AS likes FROM RECENSIONE WHERE idutente = ? GROUP BY idutente";
 		
 		try(PreparedStatement pst = con.prepareStatement(sql)) {
 			pst.setInt(1, idUtente);
 			res = pst.executeQuery();
 			
 			if (res.next())
-				return res.getInt("like");
+				return res.getInt("likes");
 			else
 				throw new DAONonTrovatoException
 				("WARNING: like non trovati in RECENSIONE X idUtente "+idUtente);
@@ -278,14 +283,14 @@ public <T> int insert(T entity) throws DAOException {
 	}
 	
 	public int countDislikeByUtente(int idUtente) throws DAOException {
-		String sql = "SELECT SUM(ctrdislike) AS dislike FROM RECENSIONE WHERE idtutente = ? GROUP BY idutente";
+		String sql = "SELECT SUM(ctrdislike) AS dislikes FROM RECENSIONE WHERE idutente = ? GROUP BY idutente";
 		
 		try(PreparedStatement pst = con.prepareStatement(sql)) {
 			pst.setInt(1, idUtente);
 			res = pst.executeQuery();
 			
 			if (res.next())
-				return res.getInt("dislike");
+				return res.getInt("dislikes");
 			else
 				throw new DAONonTrovatoException
 				("WARNING: dislike non trovati in RECENSIONE X idUtente "+idUtente);
@@ -301,7 +306,6 @@ public <T> int insert(T entity) throws DAOException {
 		
 		try {
 			DaoRecensione dao = (DaoRecensione) DAO.getDaoInstance(Tabella.Recensione);
-			
 			
 		} catch (DAOException e) {
 			System.out.println(e.getMessage());
