@@ -106,24 +106,29 @@ public class DaoGioco extends DAO {
 
 	}
 
-	public <T> T selectRecente() throws DAOException {
-		String sql = "SELECT idgioco, titolo, sh, players, web, datauscita, etamin, costolancio, idcategoria, valutazionesito, pro, contro, img1, img2, urlvideo, urlsh, requisiti, info, datareg "
-				+ "FROM gioco " + "WHERE datauscita IN (SELECT max(datauscita) from gioco) ";
-
+	public ArrayList<Gioco> selectRecente() throws DAOException {
+		String sql = "SELECT idgioco, titolo, sh, players, web, datauscita, etamin, costolancio, idcategoria, valutazionesito, pro, contro, img1, img2, urlvideo, urlsh, requisiti, info, datareg"
+				+ " FROM gioco ORDER BY datauscita DESC";
+		ArrayList<Gioco> giochi = new ArrayList<>();
 		try (PreparedStatement pst = con.prepareStatement(sql)) {
 
 			res = pst.executeQuery();
 
-			if (res.next())
-				return componiEntity();
-			else
-				throw new DAONonTrovatoException("WARNING:  ");
+			if (!res.next())
+				throw new DAONonTrovatoException("ERRORE SELECT ULTIMI GIOCHI");
 
+			giochi.add(componiEntity());
+			int ultimiInseriti = 0;
+
+			while (res.next() && ultimiInseriti < 5) {
+				giochi.add(componiEntity());
+				ultimiInseriti++;
+			}
 		} catch (SQLException e) {
 			throw new DAOException(
-					"ERRORE SELECT GIOCO x pk: " + ". Causa: " + e.getMessage() + " Errorcode: " + e.getErrorCode());
+					"ERRORE SELECT GIOCO" + ". Causa: " + e.getMessage() + " Errorcode: " + e.getErrorCode());
 		}
-
+		return giochi;
 	}
 
 	public ArrayList<Gioco> selectByIdCategoria(int idCategoria) throws DAOException {
@@ -195,13 +200,15 @@ public class DaoGioco extends DAO {
 			res = pst.executeQuery();
 
 			if (!res.next())
-				throw new DAONonTrovatoException("ERRORE SELECT GIOCHI POPOLARI ");
+				throw new DAONonTrovatoException("ERRORE SELECT GIOCHI POPOLARI");
 
 			giochi.add(componiEntity());
+			int carosello = 0;
 
-			while (res.next())
+			while (res.next() && carosello < 2) {
 				giochi.add(componiEntity());
-
+				carosello++;
+			}
 		} catch (SQLException e) {
 			throw new DAOException("ERRORE SELECT GIOCHI x popolarita': " + ". Causa: " + e.getMessage()
 					+ " Errorcode: " + e.getErrorCode());
