@@ -7,9 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-Registrazione avvenuta con successo. <br>
-<form href="index.jsp">
-<input type="submit" value="Torna alla Home Page"/>
-</form>
+Registrazione avvenuta con successo. Una mail di conferma ti è stata inviata all'indirizzo da te specificato. <br>
+<a href="inizia.do">Torna alla Home Page</a>
 </body>
 </html>
