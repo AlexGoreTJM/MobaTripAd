@@ -20,7 +20,6 @@ import moba.model.entity.Piattaforma;
 
 /**
  * Dato l'id della piattaforma, ritorna le informazioni e i giochi supportati
- * 
  * @author chris
  * @version 1.0
  *
