@@ -33,9 +33,9 @@ public class Inizia extends Action {
 			request.setAttribute("listaPiattaforma", daop.select());
 			request.setAttribute("listaCategoria", daoc.select());
 			
-			session.setAttribute("pathCategoria", "/IMGDB/Categoria/");
-			session.setAttribute("pathPiattaforma", "/IMGDB/Piattaforma/");
-			session.setAttribute("pathGioco", "/IMGDB/Gioco/");
+			session.setAttribute("pathCategoria", "IMGDB/Categoria/");
+			session.setAttribute("pathPiattaforma", "IMGDB/Piattaforma/");
+			session.setAttribute("pathGioco", "IMGDB/Gioco/");
 			
 			return mapping.findForward("success");
 		} catch (DAOException e) {

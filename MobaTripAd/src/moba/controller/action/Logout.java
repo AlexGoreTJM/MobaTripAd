@@ -15,8 +15,8 @@ import moba.model.entity.Utente;
 public class Logout extends Action {
 
 	@Override
-	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
+	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) 
+			throws Exception {
 		
 		//recupera il nick Utente dalla sessione:
 		Utente utente = (Utente) request.getSession().getAttribute("utente");
@@ -37,7 +37,5 @@ public class Logout extends Action {
 		
 		return mapping.findForward("success");
 	}
-	
-	
 
 }

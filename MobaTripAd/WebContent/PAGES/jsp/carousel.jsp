@@ -17,17 +17,17 @@
 							<div class="carousel-inner">
 								<div class="item active">
 									<a href="http://www.hdblog.it">
-										<img class="slide-image" src="${'IMGDB/Gioco/' + listaGiocoPopolari[0].img1}" title="${listaGiocoPopolari[0].titolo}">
+										<img class="slide-image" src="${pathGioco}${listaGiocoPopolari[0].img1}" title="${listaGiocoPopolari[1].titolo}">
 									</a>
 								</div>
 								<div class="item">
 									<a href="http://www.hdblog.it">
-										<img class="slide-image" src="${'IMGDB/Gioco/' + listaGiocoPopolari[1].img1}" title="${listaGiocoPopolari[1].titolo}">
+										<img class="slide-image" src="${pathGioco}${listaGiocoPopolari[1].img1}" title="${listaGiocoPopolari[1].titolo}">
 									</a>
 								</div>
 								<div class="item">
 									<a href="http://www.hdblog.it">
-										<img class="slide-image" src="${'IMGDB/Gioco/' + listaGiocoPopolari[2].img1}" title="${listaGiocoPopolari[2].titolo}">
+										<img class="slide-image" src="${pathGioco}${listaGiocoPopolari[2].img1}" title="${listaGiocoPopolari[2].titolo}">
 									</a>
 								</div>
 							</div>

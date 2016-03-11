@@ -38,7 +38,7 @@
 
 	<%@ include file="../jsp/navigation.jsp" %>
 	
-	
+	<%@ include file="../jsp/feedback.jsp" %>
 		
 
 	<!-- Page Content -->

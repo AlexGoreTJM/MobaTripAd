@@ -47,7 +47,7 @@
 												<span class="input-group-addon">
 													<i class="glyphicon glyphicon-user"></i>
 												</span> 
-												<input class="form-control" placeholder="Username" name="username" type="text" autofocus>
+												<input class="form-control" placeholder="Username" name="username" type="text" autofocus><html:errors property="username" bundle="errori" />
 											</div>
 										</div>
 										<div class="form-group">
@@ -55,7 +55,7 @@
 												<span class="input-group-addon">
 													<i class="glyphicon glyphicon-lock"></i>
 												</span>
-												<input class="form-control" placeholder="Password" name="password" type="password" value="">
+												<input class="form-control" placeholder="Password" name="password" type="password" value=""><html:errors property="password" bundle="errori" />
 											</div>
 										</div>
 										<div class="form-group">
@@ -120,14 +120,5 @@
 
 	</div>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-
 </body>
 </html>

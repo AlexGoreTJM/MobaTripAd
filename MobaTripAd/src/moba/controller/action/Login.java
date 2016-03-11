@@ -15,8 +15,6 @@ import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
 import moba.model.dao.enumeratori.Tabella;
 
-
-
 public class Login extends Action {
 
 	@Override
@@ -26,14 +24,13 @@ public class Login extends Action {
 		
 		try {
 			DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
-			
+
 			request.getSession().setAttribute("utente", dao.selectLogin(f.getUsername(), f.getPassword()));
-			
 			
 			return mapping.findForward("success");
 			
 		} catch (DAONonTrovatoException e) {
-			request.setAttribute("erroreLogin", "Credenziali invalide");
+			request.setAttribute("erroreLogin", "Credenziali invalide!");
 			return mapping.findForward("stay");
 		}catch (DAOException e) {
 			request.setAttribute("errore", e.getMessage());
@@ -42,6 +39,4 @@ public class Login extends Action {
 		
 	}
 	
-	
-
 }
