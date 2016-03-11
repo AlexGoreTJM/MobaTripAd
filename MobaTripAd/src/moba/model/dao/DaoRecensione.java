@@ -4,12 +4,10 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import moba.model.entity.Grado;
-import moba.model.entity.Recensione;
-import moba.model.entity.Utente;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
 import moba.model.dao.enumeratori.Tabella;
+import moba.model.entity.Recensione;
 
 public class DaoRecensione extends DAO {
 	
@@ -131,6 +129,130 @@ public <T> int insert(T entity) throws DAOException {
 
 		} catch (SQLException e) {
 			throw new DAOException("ERRORE SELECT RECENSIONE x nome: "+idGioco
+			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		}
+	}
+	
+	public int addLike(int idUtente, int idGioco) throws DAOException {
+		
+		String sql = "UPDATE RECENSIONE SET ctrlike = ctrlike + 1 where idutente = ? and idgioco = ?";
+		
+		try(PreparedStatement pst = con.prepareStatement(sql)) {
+			pst.setInt(1, idUtente);
+			pst.setInt(2, idGioco);
+			
+			return pst.executeUpdate();
+			
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE UPDATE RECENSIONE ADD LIKE. "
+					+ "Causa: " + e.getMessage() + " Errorcode: " + e.getErrorCode());
+		}
+	}
+	
+	public int addDislike(int idUtente, int idGioco) throws DAOException {
+		
+		String sql = "UPDATE RECENSIONE SET ctrdislike = ctrdislike + 1 where idutente = ? and idgioco = ?";
+		
+		try(PreparedStatement pst = con.prepareStatement(sql)) {
+			pst.setInt(1, idUtente);
+			pst.setInt(2, idGioco);
+			
+			return pst.executeUpdate();
+			
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE UPDATE RECENSIONE ADD DISLIKE. "
+					+ "Causa: " + e.getMessage() + " Errorcode: " + e.getErrorCode());
+		}
+	}
+	
+	public int removeLike(int idUtente, int idGioco) throws DAOException {
+		
+		String sql = "UPDATE RECENSIONE SET ctrlike = ctrlike - 1 where idutente = ? and idgioco = ?";
+		
+		try(PreparedStatement pst = con.prepareStatement(sql)) {
+			pst.setInt(1, idUtente);
+			pst.setInt(2, idGioco);
+			
+			return pst.executeUpdate();
+			
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE UPDATE RECENSIONE REMOVE LIKE. "
+					+ "Causa: " + e.getMessage() + " Errorcode: " + e.getErrorCode());
+		}
+	}
+	
+	public int removeDislike(int idUtente, int idGioco) throws DAOException {
+		
+		String sql = "UPDATE RECENSIONE SET ctrdislike = ctrdislike - 1 where idutente = ? and idgioco = ?";
+		
+		try(PreparedStatement pst = con.prepareStatement(sql)) {
+			pst.setInt(1, idUtente);
+			pst.setInt(2, idGioco);
+			
+			return pst.executeUpdate();
+			
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE UPDATE RECENSIONE REMOVE DISLIKE. "
+					+ "Causa: " + e.getMessage() + " Errorcode: " + e.getErrorCode());
+		}
+	}
+	
+	public int countRecensioniByUtente(int idUtente) throws DAOException {
+		String sql = "SELECT COUNT(*) AS recensioni FROM RECENSIONE WHERE idtutente = ? GROUP BY idutente";
+		
+		try(PreparedStatement pst = con.prepareStatement(sql)) {
+			pst.setInt(1, idUtente);
+			res = pst.executeQuery();
+			
+			if (res.next())
+				return res.getInt("recensioni");
+			else
+				throw new DAONonTrovatoException
+				("WARNING: dati non trovati in RECENSIONE X idUtente "+idUtente);
+						
+
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE COUNT RECENSIONE X idutente: "+idUtente
+			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		}
+	}
+	
+	public int countLikeByUtente(int idUtente) throws DAOException {
+		String sql = "SELECT SUM(ctrlike) AS like FROM RECENSIONE WHERE idtutente = ? GROUP BY idutente";
+		
+		try(PreparedStatement pst = con.prepareStatement(sql)) {
+			pst.setInt(1, idUtente);
+			res = pst.executeQuery();
+			
+			if (res.next())
+				return res.getInt("like");
+			else
+				throw new DAONonTrovatoException
+				("WARNING: like non trovati in RECENSIONE X idUtente "+idUtente);
+						
+
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE COUNT LIKE X idutente: "+idUtente
+			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		}
+	}
+	
+	public int countDislikeByUtente(int idUtente) throws DAOException {
+		String sql = "SELECT SUM(ctrdislike) AS dislike FROM RECENSIONE WHERE idtutente = ? GROUP BY idutente";
+		
+		try(PreparedStatement pst = con.prepareStatement(sql)) {
+			pst.setInt(1, idUtente);
+			res = pst.executeQuery();
+			
+			if (res.next())
+				return res.getInt("dislike");
+			else
+				throw new DAONonTrovatoException
+				("WARNING: dislike non trovati in RECENSIONE X idUtente "+idUtente);
+						
+
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE COUNT DISLIKE X idutente: "+idUtente
 			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
 		}
 	}
