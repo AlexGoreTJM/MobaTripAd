@@ -14,7 +14,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">MobaTripAd</a>
+			<a class="navbar-brand" href="/MobaTripAd/inizia.do">MobaTripAd</a>
 		</div>
 	<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
@@ -23,15 +23,22 @@
 				<li><a href="#">About</a></li>
 				<li><a href="#">Services</a></li>
 				<li><a href="#">Contact</a></li>
-				<li><a class="login" href="vaiLogin.do">Login</a></li>
-				<li><a class="signin" href="vaiSignin.do">Sign in</a></li>
-				<li><a class="logout" href="vaiLogout.do">Log out</a></li>
-				<li><div id="benvenuto">
-					<c:if test="${!scopeSession.utente}">
-						Ciao <a href="vaiProfilo.do"><b>${scopeSession.utente.nickname}</b></a> |
-						<a href="logout.do">logout</a>
-					</c:if>
-				</div></li>
+				<c:choose>
+					<c:when test="${sessionScope.utente == null}">
+						<li><a class="login" href="vaiLogin.do">Login</a></li>
+						<li><a class="signin" href="vaiSignin.do">Sign in</a></li>
+					</c:when>
+					<c:otherwise>
+						<li >
+							<div id="benvenuto">
+					
+								Ciao <a href="vaiProfilo.do"><b>${sessionScope.utente.nickname}</b></a> |
+								<a href="logout.do">logout</a>
+					
+							</div>
+						</li>
+					</c:otherwise>
+				</c:choose>
 			</ul>
 			
 		</div>
