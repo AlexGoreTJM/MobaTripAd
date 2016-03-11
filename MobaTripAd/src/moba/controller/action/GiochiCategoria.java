@@ -33,14 +33,11 @@ public class GiochiCategoria extends Action {
 
 		try {
 			DaoGioco daoGioco = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
-			DaoCategoria daoCategoria = (DaoCategoria) DAO.getDaoInstance(Tabella.Categoria);
 
 			int idCategoria = Integer.parseInt(request.getParameter("idCategoria"));
 
-			Categoria c = daoCategoria.select(idCategoria);
 			ArrayList<Gioco> giochi = daoGioco.selectByIdCategoria(idCategoria);
 
-			request.setAttribute("categoria", c);
 			request.setAttribute("listaGiochi", giochi);
 
 			return mapping.findForward("success");
