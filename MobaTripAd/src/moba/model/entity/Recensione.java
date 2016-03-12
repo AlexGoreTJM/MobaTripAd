@@ -23,6 +23,10 @@ public class Recensione {
 		this.info = info;
 		this.dataRec = dataRec;
 	}
+	
+	public Recensione(int idUtente, int idGioco,String info){
+		this(new Utente(idUtente),idGioco,0,0,0,info,null);
+	}
 
 	public int getIdGioco() {
 		return idGioco;

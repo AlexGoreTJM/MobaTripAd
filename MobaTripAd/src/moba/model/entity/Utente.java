@@ -17,6 +17,9 @@ public class Utente {
 	private String info;
 
 	//COSTRUTTORI:
+	public Utente(int idUtente){
+		this.idUtente = idUtente;
+	}
 	
 	public Utente(int idUtente, boolean admin, String nickname, String email, String password, String nome,
 			String cognome, Grado grado, String avatar, Timestamp dataReg, String info) {
