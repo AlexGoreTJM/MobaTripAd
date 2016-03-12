@@ -15,7 +15,7 @@ public class Gioco {
 	private int etaMin;
 	private double costoLancio;
 	private double valutazioneSito;
-	private double valutazione;
+	private double valutazione = 0.0;
 	private String pro;
 	private String contro;
 	private String img1;
@@ -164,6 +164,15 @@ public class Gioco {
 		return recensioni;
 	}
 
+	
+
+	public double getValutazione() {
+		return valutazione;
+	}
+
+	public void setValutazione(double valutazione) {
+		this.valutazione = valutazione;
+	}
 
 	@Override
 	public String toString() {

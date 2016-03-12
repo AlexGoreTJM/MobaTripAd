@@ -226,6 +226,7 @@ public class DaoGioco extends DAO {
 
 		double valutazione = new DaoValutazione().getAvgValutazioneByIdGioco(res.getInt("idgioco"));
 
+
 		return (T) new Gioco(res.getInt("idgioco"), res.getString("titolo"), res.getString("sh"), res.getInt("players"),
 				(res.getInt("web") == 1) ? true : false, res.getDate("datauscita"), res.getInt("etamin"),
 				res.getDouble("costolancio"), ((Categoria) new DaoCategoria().select(res.getInt("idcategoria"))),
