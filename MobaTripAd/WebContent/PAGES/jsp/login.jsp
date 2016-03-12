@@ -47,16 +47,18 @@
 												<span class="input-group-addon">
 													<i class="glyphicon glyphicon-user"></i>
 												</span> 
-												<input class="form-control" placeholder="Username" name="username" type="text" autofocus><html:errors property="username" bundle="errori" />
+												<input class="form-control" placeholder="Username" name="username" type="text" autofocus>
 											</div>
+											<html:errors property="username" bundle="errori" />
 										</div>
 										<div class="form-group">
 											<div class="input-group">
 												<span class="input-group-addon">
 													<i class="glyphicon glyphicon-lock"></i>
 												</span>
-												<input class="form-control" placeholder="Password" name="password" type="password" value=""><html:errors property="password" bundle="errori" />
+												<input class="form-control" placeholder="Password" name="password" type="password" value="">
 											</div>
+											<html:errors property="password" bundle="errori" />
 										</div>
 										<div class="form-group">
 											<input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign in">
