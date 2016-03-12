@@ -13,7 +13,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">MobaTripAd</a>
+      <a class="navbar-brand" href="/MobaTripAd/inizia.do">MobaTripAd</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

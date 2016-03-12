@@ -25,7 +25,7 @@
 <body>
 <%@ include file="../jsp/navigation.jsp" %>
 <div class="container">
-    <h1>Edit Profile</h1>
+    <h1>Create Profile</h1>
   	<hr>
 	<div class="row">
       <!-- left column -->
