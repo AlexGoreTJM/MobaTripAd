@@ -235,6 +235,30 @@ public class DaoGioco extends DAO {
 				res.getString("info"), res.getTimestamp("datareg"), piattaforme, recensione, valutazione);
 
 	}
+	
+	
+	public  ArrayList<Gioco> selectByTitolo(String titoloGioco) throws DAOException {
+		ArrayList<Gioco> giochi = new ArrayList<>();
+		
+		String sql = "SELECT idgioco, titolo, sh, players, web, datauscita, etamin, costolancio, idcategoria, valutazionesito, pro, contro, img1, img2, urlvideo, urlsh, requisiti, info, datareg FROM MOBA.GIOCO WHERE upper (titolo) LIKE upper ('%"+titoloGioco+"%') ";
+
+		try (PreparedStatement pst = con.prepareStatement(sql)) {
+
+			//pst.setString(1, titoloGioco);
+
+			res = pst.executeQuery();
+
+			while (res.next() ) {
+				giochi.add(componiEntity());
+			}
+			
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE SELECT GIOCO x pk: " + titoloGioco + ". Causa: " + e.getMessage() + " Errorcode: "
+					+ e.getErrorCode());
+		}
+		return giochi;
+
+	}
 
 	// metodo main ESCLUSIVAMENTE x testare tutti i metodi
 	public static void main(String[] args) {
@@ -246,7 +270,7 @@ public class DaoGioco extends DAO {
 			// DATE, 11, 11, 1, 1, "ddd", "ppp", "ddd", "dddd", "ddd", null,
 			// null, null));
 
-			System.out.println("" + dao.selectRecente());
+			System.out.println("" + dao.selectByTitolo("warcraft"));
 
 		} catch (DAOException e) {
 			System.out.println(e.getMessage());
