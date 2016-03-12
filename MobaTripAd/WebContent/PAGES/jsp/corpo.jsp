@@ -5,7 +5,7 @@
 <c:forEach items="${listaGiocoRecente}" var="GiocoRecente">
 <div class="col-sm-4 col-lg-4 col-md-4">
 	<div class="thumbnail">
-		<img src="${pathGioco}${GiocoRecente.img1}" alt="${GiocoRecente.titolo}">
+		<img src="${pathGioco}${GiocoRecente.img1}" alt="${GiocoRecente.titolo}" height="50">
 		<div class="caption">
 			<h4 class="pull-right">Voto: ${GiocoRecente.valutazioneSito}</h4>
 			<h4>
