@@ -17,22 +17,24 @@
 			<td><input type="text" value="${utente.email }"/></td>
 		</tr>
 		<tr>
-			<td></td>
-			<td></td>
+			<td>Password</td>
+			<td><input type="text" value="${utente.password }"/></td>
 		</tr>
 		<tr>
-			<td></td>
-			<td></td>
+			<td>Nome</td>
+			<td><input type="text" value="${utente.nome }"/></td>
 		</tr>
 		<tr>
-			<td></td>
-			<td></td>
+			<td>Cognome</td>
+			<td><input type="text" value="${utente.cognome }"/></td>
 		</tr>
 		<tr>
-			<td></td>
-			<td></td>
+			<td>Informazioni Personali</td>
+			<td><input type="text" value="${utente.info }"/></td>
 		</tr>
-		<tr></tr>
+		<tr>
+			<td><input type="submit" value="Aggiorna" /></td>
+		</tr>
 	</table>
 </form>
 
