@@ -4,9 +4,7 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-body {
-    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-}
+
 
 .slide-image {
     width: 100%;
@@ -76,3 +74,80 @@ a.login {
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
 }
+
+.panel-default>.panel-heading {
+    color: white;
+    background-color: #222;
+    border-color: #080808;
+}
+
+.navbar-default {
+  background-color: #222222;
+  border-color: #3e3e3e;
+}
+.navbar-default .navbar-brand {
+  color: white;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #808080;
+}
+.navbar-default .navbar-text {
+  color: #808080;
+}
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #808080;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #808080;
+  background-color: #3e3e3e;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #808080;
+  background-color: #3e3e3e;
+}
+.navbar-default .navbar-toggle {
+  border-color: #3e3e3e;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #3e3e3e;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #808080;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #808080;
+}
+.navbar-default .navbar-link {
+  color: #808080;
+}
+.navbar-default .navbar-link:hover {
+  color: #808080;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #808080;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #808080;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #808080;
+    background-color: #3e3e3e;
+  }
+}
+
