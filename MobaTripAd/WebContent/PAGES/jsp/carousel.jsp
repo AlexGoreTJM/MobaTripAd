@@ -16,17 +16,17 @@
 							</ol>
 							<div class="carousel-inner">
 								<div class="item active">
-									<a href="http://www.hdblog.it">
+									<a href="schedaGioco.do?idGioco=${listaGiocoPopolari[0].idGioco}">
 										<img class="slide-image" src="${pathGioco}${listaGiocoPopolari[0].img1}" title="${listaGiocoPopolari[1].titolo}">
 									</a>
 								</div>
 								<div class="item">
-									<a href="http://www.hdblog.it">
+									<a href="schedaGioco.do?idGioco=${listaGiocoPopolari[1].idGioco}">
 										<img class="slide-image" src="${pathGioco}${listaGiocoPopolari[1].img1}" title="${listaGiocoPopolari[1].titolo}">
 									</a>
 								</div>
 								<div class="item">
-									<a href="http://www.youporn.com">
+									<a href="schedaGioco.do?idGioco=${listaGiocoPopolari[2].idGioco}">
 										<img class="slide-image" src="${pathGioco}${listaGiocoPopolari[2].img1}" title="${listaGiocoPopolari[2].titolo}">
 									</a>
 								</div>
