@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<form>
+<form action="modifica.do" method="post">
 	<table>
 		<tr>
 			<td>Email</td>
@@ -18,7 +18,7 @@
 		</tr>
 		<tr>
 			<td>Password</td>
-			<td><input type="text" value="${utente.password }"/></td>
+			<td><input type="text" value="${utente.password }" /></td>
 		</tr>
 		<tr>
 			<td>Nome</td>
