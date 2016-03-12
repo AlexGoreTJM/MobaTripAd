@@ -61,7 +61,13 @@ public class ModificaForm extends ActionForm{
 		if(!Utilita.verificaEmail(this.email))
 			errori.add("email", new ActionMessage("formale", "email"));
 		
+		if(this.password == null || this.password.isEmpty())
+			errori.add("password", new ActionMessage("obbligatorio", "password"));
+
+		if(!Utilita.verificaPassword(this.password))
+			errori.add("password", new ActionMessage("formale", "password"));
 		
+		return errori;
 	}
 	
 }
