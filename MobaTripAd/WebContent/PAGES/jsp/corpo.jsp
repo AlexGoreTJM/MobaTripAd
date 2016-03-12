@@ -5,12 +5,12 @@
 <c:forEach items="${listaGiocoRecente}" var="GiocoRecente">
 	<div class="col-sm-4 col-lg-4 col-md-4">
 		<div class="thumbnail">
-			<img src="${pathGioco}${GiocoRecente.img1}"
-				alt="${GiocoRecente.titolo}">
+			<a href="schedaGioco.do?idGioco=${GiocoRecente.idGioco}"><img src="${pathGioco}${GiocoRecente.img1}"
+				alt="${GiocoRecente.titolo}"></a>
 			<div class="caption">
 				<h4 class="pull-right">Voto: ${GiocoRecente.valutazioneSito}</h4>
 				<h4>
-					<a href="#">${GiocoRecente.titolo}</a>
+					<a href="schedaGioco.do?idGioco=${GiocoRecente.idGioco}">${GiocoRecente.titolo}</a>
 				</h4>
 				<p>${GiocoRecente.info}</p>
 			</div>

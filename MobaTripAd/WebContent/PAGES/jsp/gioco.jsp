@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ include file="/PAGES/jsp/customTag.jsp"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -14,20 +14,26 @@
 <title>MobaTripAd --Home Page--</title>
 
 <!-- Bootstrap Core CSS -->
-<link rel="stylesheet" media="all" type="text/css" href="RESOURCES/css/bootstrap.min.css"/>
-  
+<link rel="stylesheet" media="all" type="text/css"
+	href="RESOURCES/css/bootstrap.min.css" />
+
 <!--<link type="text/css" rel="stylesheet"
 	href="<c:url value="/css/bootstrap.min.css" />" /> -->
 <!-- Custom CSS -->
-<link rel="stylesheet" media="all" type="text/css" href="RESOURCES/css/shop-homepage.css"/>
+<link rel="stylesheet" media="all" type="text/css"
+	href="RESOURCES/css/shop-homepage.css" />
 
 </head>
 <body>
+	<%@ include file="../jsp/navigation.jsp"%>
+	<div class="container" style="margin-top: 40px">
+		<div class="row">
+			<div class="col-md-6">
+				<img src="${pathGioco}${gioco.img1}" alt="testo" /> Titolo:
+				${gioco.titolo}
 
-<img src="${pathGioco}${gioco.img1}" alt="testo" />
-
-Titolo: ${gioco.titolo}
-
-	
+			</div>
+		</div>
+	</div>
 </body>
 </html>
