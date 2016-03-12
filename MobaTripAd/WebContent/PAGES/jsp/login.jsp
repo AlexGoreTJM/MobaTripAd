@@ -29,7 +29,7 @@
 			<div class="col-sm-6 col-md-4 col-md-offset-4">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<strong> Sign in to continue</strong>
+						<strong> Login to continue</strong>
 					</div>
 					<div class="panel-body">
 						<form role="form" action="login.do" method="post">
@@ -61,7 +61,7 @@
 											<html:errors property="password" bundle="errori" />
 										</div>
 										<div class="form-group">
-											<input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign in">
+											<input type="submit" class="btn btn-lg btn-primary btn-block" value="Login">
 										</div>
 									</div>
 								</div>
