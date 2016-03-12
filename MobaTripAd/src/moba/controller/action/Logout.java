@@ -18,22 +18,25 @@ public class Logout extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) 
 			throws Exception {
 		
-		//recupera il nick Utente dalla sessione:
-		Utente utente = (Utente) request.getSession().getAttribute("utente");
+		if(request.getSession().getAttribute("utente") != null){
+			//recupera il nick Utente dalla sessione:
+			Utente utente = (Utente) request.getSession().getAttribute("utente");
 		
-		Enumeration<String> beanInSessione = 		
-		request.getSession().getAttributeNames();
+			Enumeration<String> beanInSessione = 		
+					request.getSession().getAttributeNames();
 		
-		//scorre TUTTI i bean in sessione e li rimuove uno-ad-uno:
-		System.out.println("\nLOGOUT ==> rimozione bean da Session:");
-		while (beanInSessione.hasMoreElements()) {
-			String bean = (String) beanInSessione.nextElement();
-			System.out.println(bean);
-			request.getSession().removeAttribute( bean );
+			//scorre TUTTI i bean in sessione e li rimuove uno-ad-uno:
+			System.out.println("\nLOGOUT ==> rimozione bean da Session:");
+			while (beanInSessione.hasMoreElements()) {
+				String bean = (String) beanInSessione.nextElement();
+				System.out.println(bean);
+				request.getSession().removeAttribute( bean );
+			}
+		
+			request.setAttribute
+			("feedback","Ciao "+utente.getNickname()+", alla prossima! :)");
+		
 		}
-		
-		request.setAttribute
-		("feedback","Ciao "+utente.getNickname()+", alla prossima! :)");
 		
 		return mapping.findForward("success");
 	}
