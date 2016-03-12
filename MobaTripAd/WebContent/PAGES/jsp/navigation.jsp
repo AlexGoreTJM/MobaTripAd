@@ -2,6 +2,33 @@
     pageEncoding="ISO-8859-1"%>
     <%@ include file="/PAGES/jsp/customTag.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>MobaTripAd --Home Page--</title>
+
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" media="all" type="text/css" href="RESOURCES/css/bootstrap.min.css"/>
+  
+<!--<link type="text/css" rel="stylesheet"
+	href="<c:url value="/css/bootstrap.min.css" />" /> -->
+<!-- Custom CSS -->
+<link rel="stylesheet" media="all" type="text/css" href="RESOURCES/css/shop-homepage.css"/>
+<!-- Notify CSS -->
+<link href="RESOURCES/css/notify.css" rel="stylesheet">
+
+</head>
+
+<body>
  <!-- l'header contiene la testata del sito  -->
  <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -35,8 +62,9 @@
         
         </c:when>
 					<c:otherwise>
-					<li><a href="vaiProfilo.do" class="navbar-link">Ciao  ${sessionScope.utente.nickname}</a></li> 				
-						<li><a href="logout.do" class="navbar-link">Logout<span class="glyphicon glyphicon-log-out"></span></a>
+					<li><a href="vaiProfilo.do" class="navbar-link" >Ciao  ${sessionScope.utente.nickname}</a></li> 				
+						<li><a href="logout.do" class="navbar-link logout" id="logout">Logout<span class="glyphicon glyphicon-log-out"></span></a>
+						
         </li>
         
         </c:otherwise>
@@ -51,6 +79,8 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+
 
 <%-- <!-- Navigation -->
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -95,12 +125,11 @@
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container --> </nav> <br><br> --%>
-	
-	
-	
-	
-	
-	
-	
-      
-      
+	<script src="RESOURCES/js/jquery.js"></script>
+	<script src="RESOURCES/js/notify.js"></script>
+ <script src="RESOURCES/js/mobatripadScript.js"></script> 
+	<!-- Bootstrap Core JavaScript -->
+	<script src="RESOURCES/js/bootstrap.min.js"></script>
+	</body>
+
+</html>

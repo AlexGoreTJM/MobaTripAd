@@ -33,7 +33,7 @@ public class Logout extends Action {
 				request.getSession().removeAttribute( bean );
 			}
 		
-			request.setAttribute
+			request.getSession().setAttribute
 			("feedback","Ciao "+utente.getNickname()+", alla prossima! :)");
 		
 		}

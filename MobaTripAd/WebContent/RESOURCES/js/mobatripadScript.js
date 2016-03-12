@@ -1,12 +1,24 @@
-$('#loginn').click(function(){
-    $("#contenuto").load("/MobaTripAd/vaiLogin.do");
-    return false;
-});
 
-$('#signin').click(function(){
-    $("#contenuto").load("/MobaTripAd/vaiSignin.do");
-    return false;
-});
+
+
+
+$('.logout').on('click', function(e){
+		e.preventDefault();
+//		url= $(this).attr("logout.do");
+		$.notify('Ciao alla prossima!!');
+//		window.setTimeout(1000);
+//		window.location.href= "logout.do";
+		
+		
+		
+		function prova(){
+			window.location.href= "logout.do";
+		}
+		
+		setTimeout(prova, 1500);
+		
+	});
+
 
 
 //

@@ -151,3 +151,16 @@ a.login {
   }
 }
 
+.alert{
+    width:450px;
+}
+
+body {
+     
+     background: url('../img/background.jpg');
+     
+     background-repeat: repeat;
+   
+     
+}
+
