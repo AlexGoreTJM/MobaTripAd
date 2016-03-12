@@ -73,7 +73,8 @@
 
 <action path="/vaiLogin" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/login.jsp" ></action>
 <action path="/vaiSignup" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/signup.jsp" ></action>
-<action path="/vaiProfilo" tModificaProfiloProfilo" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/modificaProfilo.jsp" ></action>
+<action path="/vaiProfilo" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/profiloUente.jsp" ></action>
+<action path="/vaiModificaProfilo" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/modificaProfilo.jsp" ></action>
 
 <!-- ============================================= PATH CHE ESEGUONO FORM E ACTION SPECIFICI ============================================= -->
 
