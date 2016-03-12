@@ -28,9 +28,40 @@
 	<%@ include file="../jsp/navigation.jsp"%>
 	<div class="container" style="margin-top: 40px">
 		<div class="row">
-			<div class="col-md-6">
-				<img src="${pathGioco}${gioco.img1}" alt="testo" /> Titolo:
-				${gioco.titolo}
+			<div class="col-md-5 col-md-2 col-md-5">
+				<img src="${pathGioco}${gioco.img1}" alt="testo" /> 
+				Titolo: ${gioco.titolo}
+				Uscita: ${gioco.dataUscita}
+				Valutazione sito: ${gioco.valutazioneSito}
+				Valutazione utenti: 
+				<div class="ratings">
+					<c:choose>
+						<c:when test="${gioco.valutazione != 0}">
+							<c:set var="count" value="1" scope="page" />
+							<c:forEach begin="${count}" end="${gioco.valutazione / 2}"
+								varStatus="loop">
+								<c:set var="count" value="${count + 1}" scope="page" />
+								<span class="glyphicon glyphicon-star"></span>
+							</c:forEach>
+							<c:forEach begin="${count}" end="5" varStatus="loop">
+								<c:set var="count" value="${count + 1}" scope="page" />
+								<span class="glyphicon glyphicon-star-empty"></span>
+							</c:forEach>
+						</c:when>
+						<c:otherwise>
+							<span>N/P</span>
+						</c:otherwise>
+					</c:choose>
+				</p>
+			</div>
+			Recensione sito: ${gioco.info}
+			<p>
+			Recensioni: 
+			<c:forEach items="${gioco.recensioni}" var="recensioni">
+				${recensioni.utente.nickname}
+				${recensioni.info}
+				<p>
+			</c:forEach>
 
 			</div>
 		</div>
