@@ -12,7 +12,6 @@ import moba.controller.form.ModificaForm;
 import moba.model.dao.DAO;
 import moba.model.dao.DaoUtente;
 import moba.model.dao.eccezioni.DAOException;
-import moba.model.dao.eccezioni.DAOUnivocoException;
 import moba.model.dao.enumeratori.Tabella;
 import moba.model.entity.Utente;
 
@@ -29,7 +28,7 @@ public class Modifica extends Action{
 		try {
 			DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
 			
-			dao.updateProfilo(u, f.getEmail(), f.getPassword(), f.getNome(), f.getCognome(), f.getInfo());
+			request.getSession().setAttribute("utente", dao.updateProfilo(u, f.getEmail(), f.getPassword(), f.getNome(), f.getCognome(), f.getInfo()));
 			
 			return mapping.findForward("success");
 			
