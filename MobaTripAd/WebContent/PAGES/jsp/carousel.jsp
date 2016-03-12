@@ -26,7 +26,7 @@
 									</a>
 								</div>
 								<div class="item">
-									<a href="http://www.hdblog.it">
+									<a href="http://www.youporn.com">
 										<img class="slide-image" src="${pathGioco}${listaGiocoPopolari[2].img1}" title="${listaGiocoPopolari[2].titolo}">
 									</a>
 								</div>
