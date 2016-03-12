@@ -28,10 +28,10 @@ public class Inizia extends Action {
 			DaoCategoria daoc = (DaoCategoria) DAO.getDaoInstance(Tabella.Categoria);
 			HttpSession session = request.getSession();
 			
-			request.setAttribute("listaGiocoRecente", dao.selectRecente());
-			request.setAttribute("listaGiocoPopolari", dao.selectPopolare());
-			request.setAttribute("listaPiattaforma", daop.select());
-			request.setAttribute("listaCategoria", daoc.select());
+			session.setAttribute("listaGiocoRecente", dao.selectRecente());
+			session.setAttribute("listaGiocoPopolari", dao.selectPopolare());
+			session.setAttribute("listaPiattaforma", daop.select());
+			session.setAttribute("listaCategoria", daoc.select());
 			
 			session.setAttribute("pathCategoria", "IMGDB/Categoria/");
 			session.setAttribute("pathPiattaforma", "IMGDB/Piattaforma/");
