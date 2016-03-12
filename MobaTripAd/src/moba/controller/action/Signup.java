@@ -41,7 +41,7 @@ public class Signup extends Action{
 			
 			request.setAttribute
 			("feedback", "Controlla la tua mail ("+utente.getEmail()+") e conferma la registrazione!");
-			
+			System.out.println("Registrazione a buon fine!");
 			return mapping.findForward("success");
 			
 		} catch (DAOUnivocoException e) {

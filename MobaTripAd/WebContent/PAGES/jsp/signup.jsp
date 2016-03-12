@@ -34,7 +34,7 @@
           <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
           <h6>Upload a different photo...</h6>
           
-          <input type="file" class="form-control">
+          <input type="file" name="avatar" class="form-control">
         </div>
       </div>
       
@@ -47,25 +47,25 @@
           <div class="form-group">
             <label class="col-lg-3 control-label">Nome:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text">
+              <input class="form-control" name="nome" type="text">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Cognome:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text">
+              <input class="form-control" name="cognome" type="text">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Username:</label>
             <div class="col-md-8">
-              <input class="form-control" type="text">
+              <input class="form-control" name="username" type="text">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text">
+              <input class="form-control" name="email" type="text">
             </div>
           </div>
          <div class="form-group">
@@ -78,7 +78,7 @@
           <div class="form-group">
             <label class="col-md-3 control-label">Password:</label>
             <div class="col-md-8">
-              <input class="form-control" type="password">
+              <input class="form-control" name="password" type="password">
             </div>
           </div>
           <div class="form-group">
@@ -90,7 +90,7 @@
            <div class="form-group">
             <label class="col-md-3 control-label">Parlaci di te:</label>
             <div class="col-md-8">
-              <input class="form-control" type="text" name="password_c">
+              <input class="form-control" type="text" name="info">
             </div>
           </div>
           <div class="form-group">

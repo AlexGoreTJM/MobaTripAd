@@ -100,7 +100,8 @@ public class SignupForm extends ActionForm {
 			errori.add("email", new ActionMessage("formale", "email"));
 		
 		if(this.avatar == null || this.avatar.isEmpty())
-			errori.add("avatar", new ActionMessage("obbligatorio", "avatar"));
+//			errori.add("avatar", new ActionMessage("obbligatorio", "avatar"));
+			avatar = "MOBAavatar.png";
 			
 		return errori;
 	
