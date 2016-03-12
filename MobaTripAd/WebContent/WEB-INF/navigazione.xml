@@ -54,7 +54,7 @@
     </global-exceptions>
 
 
-<!-- =========================================== Global Forward Definitions -->
+<!-- =========================================== Global Forward Definitions  -->
 
     <global-forwards>
         <!-- Default forward to "Welcome" action -->
