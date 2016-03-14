@@ -70,11 +70,11 @@
         
         </c:otherwise>
 				</c:choose>
-			<form class="navbar-form navbar-left" role="search">
+			<form class="navbar-form navbar-left" role="search" action="cercaGioco.do">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default">Cerca</button>
       </form>
       </ul>
     </div><!-- /.navbar-collapse -->
