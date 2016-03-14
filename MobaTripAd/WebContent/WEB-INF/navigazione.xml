@@ -28,6 +28,9 @@
 	<form-bean type="moba.controller.form.SignupForm" name="SignupForm" />
 	<form-bean type="moba.controller.form.ModificaForm" name="ModificaForm" />
 	<form-bean type="moba.controller.form.RecensioneForm" name="RecensioneForm" />
+	<form-bean name="formFile" type="org.apache.struts.action.DynaActionForm">
+       <form-property name="myFile" type="org.apache.struts.upload.FormFile"/>
+   </form-bean>
 
 	<!-- sample form bean descriptor for a DynaActionForm
         <form-bean type="org.apache.struts.action.DynaActionForm" name="logonForm" >
@@ -135,6 +138,11 @@
 <action path="/autenticazione" type="moba.controller.action.Autenticazione" >
 
 	<forward name="success" path="/PAGES/jsp/autenticationOK.jsp" />
+	<forward name="failure" path="/PAGES/jsp/errore.jsp" />
+</action>
+
+<action path="/upload" type="moba.controller.action.Upload" name="ValidaFile" >
+	<forward name="success" path="/PAGES/jsp/profiloUtente.jsp" />
 	<forward name="failure" path="/PAGES/jsp/errore.jsp" />
 </action>
 
