@@ -50,7 +50,7 @@
                              <c:forEach items="${listaPiattaforma}" var="piattaforma">
                                 <tr>
                                     <td>
-                                        <a href="/MobaTripAd/cercaPiattaforma.do?piattaformaDaCercare=">${piattaforma.nome}</a>
+                                        <a href="/MobaTripAd/cercaPiattaforma.do?piattaformaDaCercare=${piattaforma.idpiattaforma}">${piattaforma.nome}</a>
                                     </td>
                                 </tr>
     						 </c:forEach>
