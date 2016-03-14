@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-Registrazione avvenuta con successo. Una mail di conferma ti è stata inviata all'indirizzo da te specificato. <br>
+Per completare la registrazione cliccare nel link sulla mail di conferma che ti è stata inviata all'indirizzo specificato.  <br>
 <a href="inizia.do">Torna alla Home Page</a>
 </body>
 </html>

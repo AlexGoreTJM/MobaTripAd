@@ -8,7 +8,10 @@
 </head>
 <body>
 
-ok sei stato autenticato 
+Complimenti sei stato registrato! 
+<% request.getSession().setAttribute("utente", null); %>
+
+<a href="vaiLogin.do">Vai alla pagina di login</a> 
 
 </body>
 </html>
