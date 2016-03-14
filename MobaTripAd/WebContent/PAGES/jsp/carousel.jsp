@@ -17,7 +17,7 @@
 							<div class="carousel-inner">
 								<div class="item active">
 									<a href="schedaGioco.do?idGioco=${listaGiocoPopolari[0].idGioco}">
-										<img class="slide-image" src="${pathGioco}${listaGiocoPopolari[0].img1}" title="${listaGiocoPopolari[1].titolo}">
+										<img class="slide-image" src="${pathGioco}${listaGiocoPopolari[0].img1}" title="${listaGiocoPopolari[0].titolo}">
 									</a>
 								</div>
 								<div class="item">
