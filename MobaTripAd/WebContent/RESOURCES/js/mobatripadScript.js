@@ -6,9 +6,9 @@ $('#logout').on('click', function(e){
 		e.preventDefault();
 //		url= $(this).attr("logout.do");
 //		var msg = $('#mv').val();
-		var msg = $(this).attr("data-sesFeedback");
+		
 //		alert(msg);
-		$.notify(msg);
+		
 		
 //		window.setTimeout(1000);
 //		window.location.href= "logout.do";
@@ -18,7 +18,8 @@ $('#logout').on('click', function(e){
 		function prova(){
 			window.location.href= "logout.do";
 		}
-		
+		var msg = $(this).attr("data-sesFeedback");
+		$.notify(msg);
 		setTimeout(prova, 1500);
 		
 	});
