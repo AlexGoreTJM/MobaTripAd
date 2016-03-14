@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>MobaTripAd --Home Page--</title>
+<title>MobaTripAd --Scheda Gioco--</title>
 
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" media="all" type="text/css"
@@ -25,7 +25,180 @@
 <body>
 	<%@ include file="../jsp/navigation.jsp"%>
 	
-	<div class="container">
+	
+	
+	
+	 <div class="container">
+
+        <div class="row">
+        <%@ include file="../jsp/menu.jsp"%>
+
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+
+                <!-- Blog Post -->
+
+                <!-- Title -->
+                <h1>${gioco.titolo}</h1>
+<p class="lead">
+                    Uscita: ${gioco.dataUscita} Valutazione sito: ${gioco.valutazioneSito/2}
+                </p>
+                
+
+                <hr>
+
+                <!-- Date/Time -->
+                <p><span class="glyphicon glyphicon-time"></span> Gioco inserito il: ${gioco.dataReg} Valutazione: <c:choose>
+							<c:when test="${gioco.valutazione != 0}">
+								<c:set var="count" value="1" scope="page" />
+								
+								<c:forEach begin="${count}" end="${gioco.valutazione / 2}"
+									varStatus="loop">
+									<c:set var="count" value="${count + 1}" scope="page" />
+									<span class="glyphicon glyphicon-star"></span>
+								</c:forEach>
+								
+								<c:forEach begin="${count}" end="5" varStatus="loop">
+									<c:set var="count" value="${count + 1}" scope="page" />
+									<span class="glyphicon glyphicon-star-empty"></span>
+								</c:forEach>
+								
+							</c:when>
+							<c:otherwise>
+								<span>N/P</span>
+							</c:otherwise>
+						</c:choose></p>
+
+                <hr>
+
+                <!-- Preview Image -->
+                <img class="img-responsive" src="${pathGioco}${gioco.img1}" alt="">
+
+                <hr>
+
+                <!-- Post Content -->
+                <p class="lead">${gioco.info}</p>
+
+                <hr>
+
+                <!-- Blog Comments -->
+
+                <!-- Comments Form -->
+                <div class="well">
+                    <h4>Leave a Comment:</h4>
+                    <form role="form">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+
+                <hr>
+
+                <!-- Posted Comments -->
+<c:forEach items="${gioco.recensioni}" var="recensioni">
+                <!-- Comment -->
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="" alt="">
+                    </a>
+                    <div class="media-body">
+                        
+                        ${recensioni.utente.nickname} ${recensioni.dataRec}
+                    </div>
+                    <br>
+                </div>
+
+                <!-- Comment -->
+                
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="" alt="">
+                    </a>
+                    <div class="media-body">
+                        
+                       
+                        
+                        <!-- Nested Comment -->
+                        ${recensioni.info} 
+                        
+                        <!-- End Nested Comment -->
+                    </div>
+                    <hr>
+                </div>
+</c:forEach>
+            </div>
+
+<%-- <c:forEach items="${gioco.recensioni}" var="recensioni">
+							${recensioni.utente.nickname}
+							<span class="glyphicon glyphicon-thumbs-up"></span>
+							<span class="glyphicon glyphicon-thumbs-down"></span>
+							<br>
+							${recensioni.info}
+							
+							<p>
+						</c:forEach> --%>
+            <!-- Blog Sidebar Widgets Column -->
+            <!-- <div class="col-md-4">
+
+                Blog Search Well
+                <div class="well">
+                    <h4>Blog Search</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                    /.input-group
+                </div>
+
+                Blog Categories Well
+                <div class="well">
+                    <h4>Blog Categories</h4>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    /.row
+                </div>
+
+                Side Widget Well
+                <div class="well">
+                    <h4>Side Widget Well</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+                </div>
+
+            </div>
+
+        </div> -->
+	
+	<%-- <div class="container">
 		<div class="row">
 		
 			<%@ include file="../jsp/menu.jsp"%>
@@ -96,8 +269,8 @@
 						</form>
 				</div>
 			</div>
-		</div>
-	</div>
+		</div>--%>
+	</div> 
 </body>
 </html>
 
