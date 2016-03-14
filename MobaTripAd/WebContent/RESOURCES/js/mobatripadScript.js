@@ -24,7 +24,16 @@ $('#logout').on('click', function(e){
 		
 	});
 
+function doAjaxPost() {
 
+$('#backup').click(function(){
+	var msg = $(this).attr("data-FedBackup");
+    $("#contenuto").load(msg);
+   
+    return false;
+
+});
+}
 
 //
 //function doAjaxPost() {

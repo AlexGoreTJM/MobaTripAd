@@ -27,7 +27,7 @@
 
 			<%@ include file="../jsp/menu.jsp" %>
 
-			<div class="col-md-9 col-sm-12">
+			<div class="col-md-9 col-sm-12" id="contenuto">
 
 
 				<%@ include file="../jsp/carousel.jsp" %>
@@ -45,13 +45,13 @@
 	</div>
 	<!-- /.container -->
 
-	<div class="container">
+	
 
 		<hr>
 <%@ include file="../jsp/footer.jsp" %>
 		
 
-	</div>
+	
 	<!-- /.container -->
 
 	<!-- jQuery -->
