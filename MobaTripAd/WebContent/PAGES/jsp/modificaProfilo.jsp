@@ -25,14 +25,14 @@
 <body>
 <%@ include file="../jsp/navigation.jsp" %>
 <div class="container">
-    <h1>Update Profile</h1>
+    <h1>Aggiorna Profilo</h1>
   	<hr>
 	<div class="row">
       <!-- left column -->
       <div class="col-md-3">
         <div class="text-center">
-          <img src="${pathUtente}${utente.avatar}" class="avatar img-circle" alt="avatar">
-          <h6>Upload a different photo...</h6>
+          <img src="${pathUtente}${utente.avatar}" height="256" width="256" alt="avatar">
+          <h6>Carica un'altra foto...</h6>
           
           <input type="file" name="avatar" class="form-control">
         </div>
@@ -41,7 +41,7 @@
       <!-- edit form column -->
       <div class="col-md-9 personal-info">
         
-        <h3>Personal info</h3>
+        
         
         <form class="form-horizontal" role="form" action="modifica.do" method="post">
           <div class="form-group">
