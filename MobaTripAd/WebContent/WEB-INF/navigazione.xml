@@ -27,6 +27,7 @@
 	<form-bean type="moba.controller.form.LoginForm" name="LoginForm" />
 	<form-bean type="moba.controller.form.SignupForm" name="SignupForm" />
 	<form-bean type="moba.controller.form.ModificaForm" name="ModificaForm" />
+	<form-bean type="moba.controller.form.RecensioneForm" name="RecensioneForm" />
 
 	<!-- sample form bean descriptor for a DynaActionForm
         <form-bean type="org.apache.struts.action.DynaActionForm" name="logonForm" >
@@ -119,7 +120,11 @@
 	<forward name="success" path="/inizia.do" />
 </action>
 
-
+<action path="/recensione" type="moba.controller.action.RecensioneAction" name="RecensioneForm"
+	validate="true" input="/PAGES/jsp/index.jsp"  >
+	<forward name="success" path="/PAGES/jsp/gioco.jsp" />
+	<forward name="failure" path="/PAGES/jsp/index.jsp" />
+</action>
 
 
 
