@@ -297,4 +297,24 @@ public class DaoUtente extends DAO {
 
 	}
 
+	public void updateImg(int idUtente, String string) {
+		String sql = "UPDATE utente SET avatar = ? where idutente = ?";
+		
+		try (PreparedStatement pst = con.prepareStatement(sql)) {
+
+			pst.setString(1, string);
+			pst.setInt(2, idUtente);
+			pst.executeUpdate();
+
+		} catch (SQLException e) {
+			try {
+				throw new DAOException("ERRORE UPDATE UTENTE, Causa: " + e.getMessage()
+						+ " Errorcode: " + e.getErrorCode());
+			} catch (DAOException e1) {
+				System.out.println(e.getMessage());
+			}
+		}
+		
+	}
+
 }
