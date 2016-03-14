@@ -1,5 +1,7 @@
 package moba.controller.action;
 
+import java.util.UUID;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -35,9 +37,12 @@ public class Signup extends Action{
 								 , f.getInfo());
 		try {
 			DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
-			dao.insert(utente);
+//			dao.insert(utente);
 			
-			MailJava.MandaSignMail(utente.getEmail());
+			final String token = UUID.randomUUID().toString();
+			request.getSession().setAttribute("token", token);
+			request.getSession().setAttribute("utente", utente);
+			MailJava.MandaSignMail(utente.getEmail(), token);
 			
 			request.setAttribute
 			("feedback", "Controlla la tua mail ("+utente.getEmail()+") e conferma la registrazione!");

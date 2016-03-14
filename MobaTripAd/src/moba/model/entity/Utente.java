@@ -19,6 +19,7 @@ public class Utente {
 	//COSTRUTTORI:
 	public Utente(int idUtente){
 		this.idUtente = idUtente;
+
 	}
 	
 	public Utente(int idUtente, boolean admin, String nickname, String email, String password, String nome,
@@ -35,6 +36,7 @@ public class Utente {
 		this.avatar = avatar;
 		this.dataReg = dataReg;
 		this.info = info;
+
 	}
 	
 	public Utente(String nickname, String email, String password, String nome, String cognome, Grado grado,
@@ -47,6 +49,7 @@ public class Utente {
 		this.grado = grado;
 		this.avatar = avatar;
 		this.info = info;
+
 	}
 
 	public Utente(boolean admin, String nickname, String email, String password, String nome, String cognome, String grado,

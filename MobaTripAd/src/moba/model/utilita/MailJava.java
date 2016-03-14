@@ -1,6 +1,7 @@
 package moba.model.utilita;
 
 import java.util.Properties;
+import java.util.UUID;
 
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -9,11 +10,18 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpSession;
+
+import org.eclipse.jdt.internal.compiler.ast.ThisReference;
+
+import moba.model.entity.Grado;
+import moba.model.entity.Utente;
 
 public class MailJava {
 	
-     public static void MandaSignMail(String email){
-    	 Properties props = new Properties();
+     public static void MandaSignMail(String email, String token){
+    	
+    	Properties props = new Properties();
  		props.put("mail.smtp.host", "smtp.libero.it");
  		props.put("mail.smtp.socketFactory.port", "465");
  		props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
@@ -31,8 +39,10 @@ public class MailJava {
  			Message message = new MimeMessage(session);
  			message.setFrom(new InternetAddress("mobatripadproject@libero.it"));
  			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
- 			message.setSubject("MobaTripAd: Email di Benvenuto");
- 			message.setText("Ciao benvenuto nel sito di MobaTripAd. Inizia a recensire qualche gioco.");
+ 			message.setSubject("MobaTripAd: Email di Autenticazione");
+ 			
+ 			
+ 			message.setText("http://localhost:8080/MobaTripAd/autenticazione.do?tokenURL=" +token);
 
  			Transport.send(message);
 
@@ -43,12 +53,5 @@ public class MailJava {
  		}
     	 
      }
-
-     
-     
-   
-     
-	
-	
 
 }

@@ -5,7 +5,7 @@ public class Utilita {
 
 	public static boolean verificaPassword(String password) {
 		
-		if(!(password.matches("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,20})")))
+		if(!(password.matches("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,20})"))) 
 			return false;
 		
 		return true;
