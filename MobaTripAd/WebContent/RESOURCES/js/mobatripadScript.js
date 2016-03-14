@@ -5,7 +5,9 @@
 $('.logout').on('click', function(e){
 		e.preventDefault();
 //		url= $(this).attr("logout.do");
-		$.notify('Ciao alla prossima!!');
+		var msg = $('#mv').val();
+		alert(msg);
+		$.notify(msg);
 //		window.setTimeout(1000);
 //		window.location.href= "logout.do";
 		

@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>MobaTripAd --Home Page--</title>
+<title>MobaTripAd --Login--</title>
 
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" media="all" type="text/css" href="RESOURCES/css/bootstrap.min.css"/>
