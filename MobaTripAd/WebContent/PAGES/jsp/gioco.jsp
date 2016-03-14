@@ -84,7 +84,7 @@
                 <!-- Blog Comments -->
 
                 <!-- Comments Form -->
-                <div class="well">
+                <div class="well" style="background: url('../img/background.jpg');">
                     <h4>Leave a Comment:</h4>
                     <form role="form" action="recensione.do" method="post">
                         <div class="form-group">

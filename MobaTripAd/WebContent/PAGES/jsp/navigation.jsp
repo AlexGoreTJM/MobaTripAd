@@ -64,8 +64,8 @@
         </c:when>
 					<c:otherwise>
 					<li><a href="vaiProfilo.do" class="navbar-link" >Ciao  ${sessionScope.utente.nickname}</a></li> 				
-						<li><a href="logout.do" class="navbar-link logout" id="logout">Logout<span class="glyphicon glyphicon-log-out"></span></a>
-						<input id='mv' type='hidden' value='${sessionScope.feedback}'/>
+						<li><a href="logout.do" class="navbar-link logout" id="logout" data-sesFeedback="${sessionScope.feedback}">Logout<span class="glyphicon glyphicon-log-out"></span></a>
+						
         </li>
         
         </c:otherwise>

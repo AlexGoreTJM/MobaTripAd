@@ -2,12 +2,14 @@
 
 
 
-$('.logout').on('click', function(e){
+$('#logout').on('click', function(e){
 		e.preventDefault();
 //		url= $(this).attr("logout.do");
-		var msg = $('#mv').val();
-		alert(msg);
+//		var msg = $('#mv').val();
+		var msg = $(this).attr("data-sesFeedback");
+//		alert(msg);
 		$.notify(msg);
+		
 //		window.setTimeout(1000);
 //		window.location.href= "logout.do";
 		

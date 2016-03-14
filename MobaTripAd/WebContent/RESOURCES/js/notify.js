@@ -41,7 +41,7 @@
 
             '<div class="alert notify-message">',
                 '<button type="button" class="close" aria-hidden="true">&times;</button>',
-                '<div>'+this.options.message+'</div>',
+                '<div style="color:black;">'+this.options.message+'</div>',
             '</div>'
 
         ].join('')).data("notifyMessage", this);
