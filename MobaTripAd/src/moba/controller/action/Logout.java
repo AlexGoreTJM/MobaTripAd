@@ -31,10 +31,11 @@ public class Logout extends Action {
 				String bean = (String) beanInSessione.nextElement();
 				System.out.println(bean);
 				request.getSession().removeAttribute( bean );
+				
 			}
-		
-			request.getSession().setAttribute
-			("feedback","Ciao "+utente.getNickname()+", alla prossima! :)");
+//
+//			request.getSession().setAttribute
+//			("feedback","Ciao "+utente.getNickname()+", alla prossima! :)");
 		
 		}
 		

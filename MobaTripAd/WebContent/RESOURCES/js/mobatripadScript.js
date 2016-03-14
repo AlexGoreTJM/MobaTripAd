@@ -18,8 +18,8 @@ $('#logout').on('click', function(e){
 		function prova(){
 			window.location.href= "logout.do";
 		}
-		var msg = $(this).attr("data-sesFeedback");
-		$.notify(msg);
+		var msg = $(this).attr("data-nickname");
+		$.notify("ciao "+msg+ " alla prossima");
 		setTimeout(prova, 1500);
 		
 	});
