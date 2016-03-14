@@ -37,13 +37,10 @@ public class RecensioneAction extends Action{
 
 			daoRecensione.insert(new Recensione(idUtente, idGioco, rf.getRecensione()));
 			daoValutazione.insert(new Valutazione(idUtente, idGioco, Integer.parseInt(request.getParameter("voto"))));
-			
-			request.setAttribute("riscontro", 1);
 
 			return mapping.findForward("success");
 
 		} catch (DAOException e) {
-			request.setAttribute("riscontro", 0);
 			request.setAttribute("errore", e.getMessage());
 			return mapping.findForward("failure");
 		}
