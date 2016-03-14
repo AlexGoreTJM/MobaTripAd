@@ -187,6 +187,43 @@ public class DaoUtente extends DAO {
 		}
 	}
 	
+	public Utente updateProfilo(Utente utente, String email, String password, String nome, String cognome, String info) throws DAOException {
+		
+		String sql = "UPDATE utente SET email = ? password = ?, nome = ?, cognome = ?, info = ? "
+				+ "WHERE idutente = ?";
+		
+		try (PreparedStatement pst = con.prepareStatement(sql)){
+			
+			pst.setString(1, email);
+			pst.setString(2, password);
+			if(nome == null)
+				pst.setString(3, ""); 
+			else
+				pst.setString(3, nome);
+			if(cognome == null)
+				pst.setString(4, ""); 
+			else
+				pst.setString(4, cognome);
+			if(info == null)
+				pst.setString(5, ""); 
+			else
+				pst.setString(5, info);
+			
+			pst.setInt(6, utente.getIdUtente());
+			
+			pst.executeUpdate();
+			
+			Utente u = this.select(utente.getIdUtente());
+			
+			return u;		//ritorno dell'utente modificato
+			
+		} catch (SQLException e) {
+			throw new DAOException
+			("ERRORE UPDATE UTENTE x pk="+utente.getIdUtente()
+			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		}
+	}
+	
 	public int updateUtenteGrado(int idUtente) throws DAOException {
 		
 		DaoRecensione dr = new DaoRecensione();

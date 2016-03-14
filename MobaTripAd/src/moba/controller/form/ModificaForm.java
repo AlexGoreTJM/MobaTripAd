@@ -55,6 +55,13 @@ public class ModificaForm extends ActionForm{
 
 		ActionErrors errori = new ActionErrors();
 		
+		System.out.println("asduhaiulfhwileugf");
+		System.out.println(this.nome);
+		System.out.println(this.cognome);
+
+		
+		
+		
 		if(this.email == null || this.email.isEmpty())
 			errori.add("email", new ActionMessage("obbligatorio", "email"));
 		

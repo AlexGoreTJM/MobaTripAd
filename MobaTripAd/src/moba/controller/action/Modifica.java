@@ -21,12 +21,13 @@ public class Modifica extends Action{
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
 
-		Utente u = (Utente) request.getAttribute("utente");
+		Utente u = (Utente) request.getSession().getAttribute("utente");
 		ModificaForm f = (ModificaForm) form;
-		
 		
 		try {
 			DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
+			
+			System.out.println("!!!!!!!!!!!!!!!!!");
 			
 			request.getSession().setAttribute("utente", dao.updateProfilo(u, f.getEmail(), f.getPassword(), f.getNome(), f.getCognome(), f.getInfo()));
 			
