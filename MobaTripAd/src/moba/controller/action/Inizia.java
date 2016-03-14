@@ -27,6 +27,7 @@ public class Inizia extends Action {
 			DaoPiattaforma daop = (DaoPiattaforma) DAO.getDaoInstance(Tabella.Piattaforma);
 			DaoCategoria daoc = (DaoCategoria) DAO.getDaoInstance(Tabella.Categoria);
 			HttpSession session = request.getSession();
+			session.setMaxInactiveInterval(-1);
 			
 			session.setAttribute("listaGiocoRecente", dao.selectRecente());
 			session.setAttribute("listaGiocoPopolari", dao.selectPopolare());
@@ -36,6 +37,7 @@ public class Inizia extends Action {
 			session.setAttribute("pathCategoria", "IMGDB/Categoria/");
 			session.setAttribute("pathPiattaforma", "IMGDB/Piattaforma/");
 			session.setAttribute("pathGioco", "IMGDB/Gioco/");
+			session.setAttribute("pathUtente", "IMGDB/Utente/");
 			return mapping.findForward("success");
 		} catch (DAOException e) {
 
