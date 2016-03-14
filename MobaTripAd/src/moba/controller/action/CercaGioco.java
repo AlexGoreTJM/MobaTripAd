@@ -26,7 +26,7 @@ public class CercaGioco extends Action{
 		try {
 			DaoGioco daoGioco = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
 
-			request.setAttribute("listaGioco", daoGioco.selectByTitolo(titoloGioco));
+			request.setAttribute("listaGiocoRicerca", daoGioco.selectByTitolo(titoloGioco));
 
 			return mapping.findForward("success");
 
