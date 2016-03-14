@@ -88,6 +88,7 @@
                     <h4>Leave a Comment:</h4>
                     <form role="form" action="recensione.do" method="post">
                         <div class="form-group">
+                        	<input type="hidden" name="idGioco" value="${gioco.idGioco}">
                             <textarea class="form-control" rows="3" name="recensione"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>

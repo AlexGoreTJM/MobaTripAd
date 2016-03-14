@@ -25,9 +25,9 @@ public class RecensioneAction extends Action{
 			HttpServletResponse response) {
 		
 		RecensioneForm rf = (RecensioneForm) form;
-
 		HttpSession session = request.getSession();
-		int idGioco = ((Gioco) session.getAttribute("gioco")).getIdGioco();
+		
+		int idGioco = Integer.parseInt(request.getParameter("idGioco"));
 		int idUtente = ((Utente)session.getAttribute("utente")).getIdUtente();
 		
 		try {

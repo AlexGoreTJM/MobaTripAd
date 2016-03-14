@@ -35,7 +35,6 @@ public <T> int insert(T entity) throws DAOException {
 				+ "VALUES (?,?,?,?,?,?,?)";
 		
 		try (PreparedStatement pst = con.prepareStatement(sql)) {
-			
 			pst.setInt(1, r.getUtente().getIdUtente());
 			pst.setInt(2, r.getIdGioco());
 			pst.setInt(3, r.getCtrLike());
@@ -43,12 +42,10 @@ public <T> int insert(T entity) throws DAOException {
 			pst.setInt(5, r.getSegnalata());
 			pst.setString(6, r.getInfo());
 			pst.setTimestamp(7, r.getDataRec());
-			
-			//esegue la query cos� preparata:
+			System.out.println(r.toString());
 			int update = pst.executeUpdate();
-			
+			System.out.println("query eseguita");
 			new DaoUtente().updateUtenteGrado(r.getUtente().getIdUtente());
-			
 			return update;
 			
 		
