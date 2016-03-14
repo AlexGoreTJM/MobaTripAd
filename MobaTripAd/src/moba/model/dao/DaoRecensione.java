@@ -293,6 +293,24 @@ public <T> int insert(T entity) throws DAOException {
 		}
 	}
 	
+	public void segnala(int idGioco, int idUtente) throws DAOException {
+		
+		String sql = "UPDATE RECENSIONE SET segnalata = 1 where idutente = ? and idgioco = ?";
+		
+		try(PreparedStatement pst = con.prepareStatement(sql)) {
+			pst.setInt(1, idUtente);
+			pst.setInt(2, idGioco);
+			
+			pst.executeUpdate();
+			
+			new DaoUtente().updateUtenteGrado(idUtente);
+			
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE UPDATE RECENSIONE REMOVE LIKE. "
+					+ "Causa: " + e.getMessage() + " Errorcode: " + e.getErrorCode());
+		}
+	}
+	
 	public static void main(String[] args) {
 		
 		try {

@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
 import moba.model.dao.enumeratori.Tabella;
-import moba.model.entity.Recensione;
 import moba.model.entity.Valutazione;
 
 public class DaoValutazione extends DAO {
@@ -35,7 +34,7 @@ public <T> int insert(T entity) throws DAOException {
 			
 			pst.setInt(1, v.getUtente().getIdUtente());
 			pst.setInt(2, v.getGioco().getIdGioco());
-			pst.setBoolean(3, v.getVoto());
+			pst.setInt(3, v.getVoto());
 			
 			//esegue la query così preparata:
 			return pst.executeUpdate();
@@ -88,7 +87,7 @@ public <T> int insert(T entity) throws DAOException {
 		return new Valutazione(
 				 new DaoUtente().select(res.getInt("idutente"))
 				,new DaoGioco().select(res.getInt("idgioco")) 
-				,res.getBoolean("voto")
+				,res.getInt("voto")
 				);
 	}
 
