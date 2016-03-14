@@ -77,19 +77,18 @@
 
                 <!-- Comments Form -->
                 <div class="well" style="background: url('../img/background.jpg');">
-                    <h4>Leave a Comment:</h4><form>
-  <fieldset>
-    <span class="star-cb-group">
-      <input type="radio" id="rating-5" name="voto" value="5" /><label for="rating-5">5</label>
-      <input type="radio" id="rating-4" name="voto" value="4" checked="checked" /><label for="rating-4">4</label>
-      <input type="radio" id="rating-3" name="voto" value="3" /><label for="rating-3">3</label>
-      <input type="radio" id="rating-2" name="voto" value="2" /><label for="rating-2">2</label>
-      <input type="radio" id="rating-1" name="voto" value="1" /><label for="rating-1">1</label>
-      <input type="radio" id="rating-0" name="voto" value="0" class="star-cb-clear" /><label for="rating-0">0</label>
-    </span>
-  </fieldset>
-</form>
+                    <h4>Leave a Comment:</h4>
                     <form role="form" action="recensione.do" method="post">
+                      <fieldset>
+    					<span class="star-cb-group">
+      						<input type="radio" id="rating-5" name="voto" value="5" /><label for="rating-5">5</label>
+      						<input type="radio" id="rating-4" name="voto" value="4" checked="checked" /><label for="rating-4">4</label>
+     						<input type="radio" id="rating-3" name="voto" value="3" /><label for="rating-3">3</label>
+      						<input type="radio" id="rating-2" name="voto" value="2" /><label for="rating-2">2</label>
+      						<input type="radio" id="rating-1" name="voto" value="1" /><label for="rating-1">1</label>
+      						<input type="radio" id="rating-0" name="voto" value="0" class="star-cb-clear" /><label for="rating-0">0</label>
+    					</span>
+  					</fieldset>
                         <div class="form-group">
                         	<input type="hidden" name="idGioco" value="${gioco.idGioco}">
                             <textarea class="form-control" rows="3" name="recensione"></textarea>
