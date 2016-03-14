@@ -66,7 +66,7 @@ public class Recensione {
 
 	@Override
 	public String toString() {
-		return "/n Recensione [utente=" + utente + ", gioco=" + idGioco + ", ctrLike=" + ctrLike + ", ctrDislike="
+		return "/n Recensione [utente=" + utente + ", idGioco=" + idGioco + ", ctrLike=" + ctrLike + ", ctrDislike="
 				+ ctrDislike + ", segnalata=" + segnalata + ", info=" + info + ", dataRec=" + dataRec + "]";
 	}
 
