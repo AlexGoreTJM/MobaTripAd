@@ -34,7 +34,7 @@
         <%@ include file="../jsp/menu.jsp"%>
 
             <!-- Blog Post Content Column -->
-            <div class="col-lg-8">
+            <div class="col-md-9 col-sm-12">
 
                 <!-- Blog Post -->
 
@@ -270,7 +270,15 @@
 				</div>
 			</div>
 		</div>--%>
+		</div>
 	</div> 
+	<div class="container">
+
+		<hr>
+<%@ include file="../jsp/footer.jsp" %>
+		
+
+	</div>
 </body>
 </html>
 

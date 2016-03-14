@@ -16,7 +16,7 @@
 
 
 	<%@ include file="../jsp/navigation.jsp" %>
-	<%@ include file="../jsp/feedback.jsp" %>
+	
 	
 		
 
@@ -27,16 +27,16 @@
 
 			<%@ include file="../jsp/menu.jsp" %>
 
-			<div class="col-md-9">
+			<div class="col-md-9 col-sm-12">
 
 
 				<%@ include file="../jsp/carousel.jsp" %>
 
-				<div class="row">
+				
 
 					<%@ include file="../jsp/corpo.jsp" %>
 
-				</div>
+				
 
 			</div>
 
