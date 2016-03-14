@@ -31,7 +31,7 @@ public class DaoCategoria extends DAO {
 
 	@Override
 	public <T> ArrayList<T> select() throws DAOException {
-		String sql = "SELECT idcategoria, nome, img, info FROM moba.categoria ORDER BY idcategoria ";
+		String sql = "SELECT idcategoria, nome, img, info FROM moba.categoria ORDER BY nome ";
 		ArrayList<T> lista = new ArrayList<T>();
 		try (PreparedStatement pst = con.prepareStatement(sql)) {
 

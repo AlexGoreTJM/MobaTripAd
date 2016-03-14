@@ -30,7 +30,7 @@ public class DaoPiattaforma extends DAO {
 
 	@Override
 	public <T> ArrayList<T> select() throws DAOException {
-		String sql = "SELECT idpiattaforma, nome, brand, logo, info FROM piattaforma ORDER BY idpiattaforma ";
+		String sql = "SELECT idpiattaforma, nome, brand, logo, info FROM piattaforma ORDER BY nome ";
 		ArrayList<T> lista = new ArrayList<T>();
 		try (PreparedStatement pst = con.prepareStatement(sql)) {
 
