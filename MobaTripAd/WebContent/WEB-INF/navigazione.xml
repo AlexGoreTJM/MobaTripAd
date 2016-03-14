@@ -26,7 +26,7 @@
 	
 	<form-bean type="moba.controller.form.LoginForm" name="LoginForm" />
 	<form-bean type="moba.controller.form.SignupForm" name="SignupForm" />
-
+	<form-bean type="moba.controller.form.ModificaForm" name="ModificaForm" />
 
 	<!-- sample form bean descriptor for a DynaActionForm
         <form-bean type="org.apache.struts.action.DynaActionForm" name="logonForm" >

@@ -11,19 +11,12 @@ import moba.model.utilita.Utilita;
 
 public class ModificaForm extends ActionForm{
 	
-	private String email;
 	private String password;
 	private String nome;
 	private String cognome;
 	private String info;
 	
 	
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
 	public String getPassword() {
 		return password;
 	}
@@ -53,20 +46,7 @@ public class ModificaForm extends ActionForm{
 	@Override
 	public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
 
-		ActionErrors errori = new ActionErrors();
-		
-		System.out.println("asduhaiulfhwileugf");
-		System.out.println(this.nome);
-		System.out.println(this.cognome);
-
-		
-		
-		
-		if(this.email == null || this.email.isEmpty())
-			errori.add("email", new ActionMessage("obbligatorio", "email"));
-		
-		if(!Utilita.verificaEmail(this.email))
-			errori.add("email", new ActionMessage("formale", "email"));
+		ActionErrors errori = new ActionErrors();	
 		
 		if(this.password == null || this.password.isEmpty())
 			errori.add("password", new ActionMessage("obbligatorio", "password"));

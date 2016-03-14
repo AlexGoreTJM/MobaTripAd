@@ -187,29 +187,29 @@ public class DaoUtente extends DAO {
 		}
 	}
 	
-	public Utente updateProfilo(Utente utente, String email, String password, String nome, String cognome, String info) throws DAOException {
+	public Utente updateProfilo(Utente utente, String password, String nome, String cognome, String info) throws DAOException {
 		
-		String sql = "UPDATE utente SET email = ? password = ?, nome = ?, cognome = ?, info = ? "
+		String sql = "UPDATE utente SET password = ?, nome = ?, cognome = ?, info = ? "
 				+ "WHERE idutente = ?";
 		
 		try (PreparedStatement pst = con.prepareStatement(sql)){
 			
-			pst.setString(1, email);
-			pst.setString(2, password);
+			pst.setString(1, password);
 			if(nome == null)
+				pst.setString(2, ""); 
+			else
+				pst.setString(2, nome);
+			if(cognome == null)
 				pst.setString(3, ""); 
 			else
-				pst.setString(3, nome);
-			if(cognome == null)
+				pst.setString(3, cognome);
+			if(info == null)
 				pst.setString(4, ""); 
 			else
-				pst.setString(4, cognome);
-			if(info == null)
-				pst.setString(5, ""); 
-			else
-				pst.setString(5, info);
+				pst.setString(4, info);
 			
-			pst.setInt(6, utente.getIdUtente());
+			System.out.println(utente.getIdUtente());
+			pst.setInt(5, utente.getIdUtente());
 			
 			pst.executeUpdate();
 			

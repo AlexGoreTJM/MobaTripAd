@@ -25,11 +25,9 @@ public class Modifica extends Action{
 		ModificaForm f = (ModificaForm) form;
 		
 		try {
-			DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
+			DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);			
 			
-			System.out.println("!!!!!!!!!!!!!!!!!");
-			
-			request.getSession().setAttribute("utente", dao.updateProfilo(u, f.getEmail(), f.getPassword(), f.getNome(), f.getCognome(), f.getInfo()));
+			request.getSession().setAttribute("utente", dao.updateProfilo(u, f.getPassword(), f.getNome(), f.getCognome(), f.getInfo()));
 			
 			return mapping.findForward("success");
 			
