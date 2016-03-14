@@ -40,9 +40,6 @@
       
       <!-- edit form column -->
       <div class="col-md-9 personal-info">
-        
-        
-        
         <form class="form-horizontal" role="form" action="modifica.do" method="post">
           <div class="form-group">
             <label class="col-lg-3 control-label">Nome:</label>
