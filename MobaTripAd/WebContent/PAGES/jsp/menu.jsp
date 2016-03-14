@@ -29,7 +29,7 @@
                             <c:forEach items="${listaCategoria}" var="categoria">
                                 <tr>
                                     <td>
-                                        <a href="http://www.jquery2dotnet.com">${categoria.nome}</a>
+                                        <a href="/MobaTripAd/cercaCategoria.do?categoriaDaCercare=${categoria.idCategoria}">${categoria.nome}</a>
                                     </td>
                                 </tr>
     						 </c:forEach>
@@ -50,7 +50,7 @@
                              <c:forEach items="${listaPiattaforma}" var="piattaforma">
                                 <tr>
                                     <td>
-                                        <a href="http://www.jquery2dotnet.com">${piattaforma.nome}</a>
+                                        <a href="/MobaTripAd/cercaPiattaforma.do?piattaformaDaCercare=">${piattaforma.nome}</a>
                                     </td>
                                 </tr>
     						 </c:forEach>
