@@ -31,8 +31,8 @@ public <T> int insert(T entity) throws DAOException {
 		 */
 		
 		String sql = "INSERT INTO recensione "
-				+ "(idutente,idgioco,ctrlike,ctrdislike,segnalata,info,datarec) "
-				+ "VALUES (?,?,?,?,?,?,?)";
+				+ "(idutente,idgioco,ctrlike,ctrdislike,segnalata,info) "
+				+ "VALUES (?,?,?,?,?,?)";
 		
 		try (PreparedStatement pst = con.prepareStatement(sql)) {
 			pst.setInt(1, r.getUtente().getIdUtente());
@@ -41,10 +41,9 @@ public <T> int insert(T entity) throws DAOException {
 			pst.setInt(4, r.getCtrDislike());
 			pst.setInt(5, r.getSegnalata());
 			pst.setString(6, r.getInfo());
-			pst.setTimestamp(7, r.getDataRec());
 			System.out.println(r.toString());
 			int update = pst.executeUpdate();
-			System.out.println("query eseguita");
+
 			new DaoUtente().updateUtenteGrado(r.getUtente().getIdUtente());
 			return update;
 			
