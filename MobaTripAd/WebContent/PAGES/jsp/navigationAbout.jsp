@@ -17,14 +17,14 @@
 <title>MobaTripAd --Home Page--</title>
 
 <!-- Bootstrap Core CSS -->
-<link rel="stylesheet" media="all" type="text/css" href="RESOURCES/css/bootstrap.min.css"/>
+<link rel="stylesheet" media="all" type="text/css" href="../../RESOURCES/css/bootstrap.min.css"/>
   
 <!--<link type="text/css" rel="stylesheet"
 	href="<c:url value="/css/bootstrap.min.css" />" /> -->
 <!-- Custom CSS -->
-<link rel="stylesheet" media="all" type="text/css" href="RESOURCES/css/shop-homepage.css"/>
+<link rel="stylesheet" media="all" type="text/css" href="../../RESOURCES/css/shop-homepage.css"/>
 <!-- Notify CSS -->
-<link href="RESOURCES/css/notify.css" rel="stylesheet">
+<link href="../../RESOURCES/css/notify.css" rel="stylesheet">
 
 
 </head>
