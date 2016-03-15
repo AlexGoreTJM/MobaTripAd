@@ -156,6 +156,16 @@
 	<forward name="failure" path="/PAGES/jsp/errore.jsp" />
 </action>
 
+<action path="/gestioneUtente" type="moba.controller.action.GestioneUtente">
+	<forward name="success" path="/PAGES/jsp/gestioneUtente.jsp" />
+	<forward name="failure" path="/PAGES/jsp/errore.jsp" />
+</action>
+
+<action path="/eliminaUtente" type="moba.controller.action.CancellaUtente">
+	<forward name="success" path="/PAGES/jsp/confermaCancellazione.jsp" />
+	<forward name="failure" path="/PAGES/jsp/errore.jsp" />
+</action>
+
 <!-- sample input and input submit actions
    
 <action path="/Input" type="org.apache.struts.actions.ForwardAction" parameter="/pages/Input.jsp"/>
