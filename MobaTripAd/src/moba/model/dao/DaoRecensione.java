@@ -3,6 +3,7 @@ package moba.model.dao;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
@@ -81,7 +82,25 @@ public <T> int insert(T entity) throws DAOException {
 
 		
 	public <T> ArrayList<T> select() throws DAOException {
-		throw new DAOException("WARNING: COMANDO NON IMPLEMENTATO!");
+		
+		String sql = "SELECT idutente, idgioco from recensione order by (ctrlike - ctrdislike) desc";
+		ArrayList<Recensione> lista = new ArrayList<Recensione>();
+		
+		try(PreparedStatement pst = con.prepareStatement(sql)) {
+			res = pst.executeQuery();
+			
+			while(res.next()){
+				lista.add(this.select(res.getInt("idutente"), res.getInt("idgioco")));
+
+			}
+			if (lista.size() == 0)
+				throw new DAONonTrovatoException("ERRORE SELECT RECENSIONI");
+			
+			return (ArrayList<T>) lista;
+
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE SELECT RECENSIONI . Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		} 
 	}
 	
 	
