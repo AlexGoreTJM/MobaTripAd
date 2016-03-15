@@ -158,8 +158,8 @@
 					</div>
 					<c:if test="${utente.admin}">
 						<form action="/MobaTripAd/eliminaRecensione.do">
-						<input type="hidden" name="idGioco" value="${recensione.idGioco}">
-						<input type="hidden" name="idUtente" value="${recensione.utente.idUtente}">
+						<input type="hidden" name="idGioco" value="${recensioni.idGioco}">
+						<input type="hidden" name="idUtente" value="${recensioni.utente.idUtente}">
 						<button type="submit" class="btn btn-primary pull-right">ELIMINA</button>
 						</form>
 						</c:if>
