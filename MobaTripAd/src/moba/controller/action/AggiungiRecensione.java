@@ -19,7 +19,7 @@ import moba.model.entity.Recensione;
 import moba.model.entity.Utente;
 import moba.model.entity.Valutazione;
 
-public class RecensioneAction extends Action{
+public class AggiungiRecensione extends Action{
 
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,

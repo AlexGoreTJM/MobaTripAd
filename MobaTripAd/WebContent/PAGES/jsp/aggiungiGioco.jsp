@@ -13,7 +13,7 @@
         
  
  
-  <form role="form" action="" method="post" >
+  <form role="form" action="aggiungiGioco.do" method="post" >
     <div class="col-md-8 col-sm-12">
     <h1>Aggiungi Gioco</h1>
       

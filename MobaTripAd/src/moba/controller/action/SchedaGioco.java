@@ -10,8 +10,10 @@ import org.apache.struts.action.ActionMapping;
 
 import moba.model.dao.DAO;
 import moba.model.dao.DaoGioco;
+import moba.model.dao.DaoRecensione;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.enumeratori.Tabella;
+import moba.model.entity.Utente;
 
 public class SchedaGioco extends Action{
 
@@ -24,6 +26,12 @@ public class SchedaGioco extends Action{
 			DaoGioco daoGioco = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
 
 			request.setAttribute("gioco", daoGioco.select(idGioco));
+			
+			if(request.getSession().getAttribute("utente") != null){
+				DaoRecensione daoRecensione = (DaoRecensione) DAO.getDaoInstance(Tabella.Recensione);
+				if(daoRecensione.select(((Utente)request.getSession().getAttribute("utente")).getIdUtente(), idGioco) != null)
+					request.setAttribute("recensioneInserita", 1);
+			}
 
 			return mapping.findForward("success");
 
