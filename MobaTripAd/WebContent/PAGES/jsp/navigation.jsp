@@ -49,7 +49,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="PAGES/jsp/about.jsp">About <span class="sr-only">(current)</span></a></li>
+        <li><a href="vaiAbout.do">About <span class="sr-only">(current)</span></a></li>
         <li><a href="vaiContact.do">Contact</a></li>
         
         
