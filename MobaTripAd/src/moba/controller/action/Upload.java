@@ -62,7 +62,12 @@ public class Upload extends Action {
 		        dao.updateImg(idUtente, fileName);
 		        
 		        ((Utente) request.getSession().getAttribute("utente")).setAvatar(fileName);
+		        
+		        request.setAttribute("uploadedFilePath",newFile.getAbsoluteFile());
+		        request.setAttribute("uploadedFileName",newFile.getName());
+		        
 	        } else {
+	        	
 	        	int i = 0;
 	        	while(newFile.exists()){
 	        		i++;
@@ -74,16 +79,16 @@ public class Upload extends Action {
 	    	        
 	    	        ((Utente) request.getSession().getAttribute("utente")).setAvatar(newFileName);
 	    	        
+	    	        request.setAttribute("uploadedFilePath",newFile.getAbsoluteFile());
+			        request.setAttribute("uploadedFileName",newFile.getName());
+	    	        
 	        	}
 	        	FileOutputStream fos = new FileOutputStream(newFile);
 		        fos.write(file.getFileData());
 		        fos.flush();
 		        fos.close();
+		       
 	        }
-	        
-	        request.setAttribute("uploadedFilePath",newFile.getAbsoluteFile());
-	        request.setAttribute("uploadedFileName",newFile.getName());
-	        
 	    }
 		return mapping.findForward("success");
 	}
