@@ -18,31 +18,31 @@
     <h1>Aggiungi Gioco</h1>
       
       <div class="form-group">
-        <label for="InputTitolo">Titolo</label>
+        <label for="titolo">Titolo</label>
         <div class="input-group">
-          <input type="text" class="form-control" name="InputTitolo" id="InputTitolo" placeholder="Enter Titolo" required>
+          <input type="text" class="form-control" name="titolo" id="titolo" placeholder="Enter Titolo" required>
           <span class="input-group-addon"></span></div>
       </div>
       <div class="form-group">
-        <label for="InputSh">Software house</label>
+        <label for="sh">Software house</label>
         <div class="input-group">
-          <input type="text" class="form-control" name="InputSh" id="InputSh" placeholder="Enter Software House" required>
+          <input type="text" class="form-control" name="sh" id="sh" placeholder="Enter Software House" required>
           <span class="input-group-addon"></span></div>
       </div>
       <div class="form-group">
-        <label for="InputPlayers">Players</label>
+        <label for="players">Players</label>
         <div class="input-group">
-          <input type="text" class="form-control" name="InputPlayers" id="InputPlayers" placeholder="Enter Players" required>
+          <input type="text" class="form-control" name="players" id="players" placeholder="Enter Players" required>
           <span class="input-group-addon"></span></div>
       </div>
             <div class="form-group">
-        <label for="InputWeb">Web</label>
+        <label for="web">Web</label>
         <div class="input-group">
-          <input type="text" class="form-control" name="InputWeb" id="InputWeb" placeholder="Enter Web" required>
+          <input type="text" class="form-control" name="web" id="web" placeholder="Enter Web" required>
           <span class="input-group-addon"></span></div>
       </div>
       <div class="form-group">
-        <label for="InputDataUscita">Data uscita</label>
+        <label for="dataUscita">Data uscita</label>
         <div class="input-group">
           <input type="text" class="form-control" name="year" id="year" placeholder="Anno" required>
           <input type="text" class="form-control" name="month" id="month" placeholder="Mese" required>
@@ -50,57 +50,68 @@
           <span class="input-group-addon"></span></div>
       </div>
       <div class="form-group">
-        <label for="InputEtaMin">Età min</label>
+        <label for="etaMin">Età min</label>
         <div class="input-group">
-          <input type="text" class="form-control" name="InputEtaMin" id="InputEtaMin" placeholder="Enter Età min" required>
+          <input type="text" class="form-control" name="etaMin" id="etaMin" placeholder="Enter Età min" required>
           <span class="input-group-addon"></span></div>
       </div>
       <div class="form-group">
-        <label for="InputCostoLancio">Costo lancio</label>
+        <label for="costoLancio">Costo lancio</label>
         <div class="input-group">
-          <input type="text" class="form-control" name="InputCostoLancio" id="InputCostoLancio" placeholder="Enter costo lancio" required>
+          <input type="text" class="form-control" name="costoLancio" id="costoLancio" placeholder="Enter costo lancio" required>
           <span class="input-group-addon"></span></div>
       </div>
+      <div class="form-group">
+        <label for="idCategoria">Categoria</label>
+        <div class="input-group">
+          <fieldset>
+          <select name="idCategoria">
+          <c:forEach items="${listaCategoria}" var="categoria">
+          <option value="${categoria.idCategoria}"> ${categoria.nome} </option>
+          </c:forEach>
+          </select>
+    	</fieldset>
+      </div><br>
 	  <div class="form-group">
-        <label for="InputValutazioneSito">Valutazione sito</label>
+        <label for="valutazioneSito">Valutazione sito</label>
         <div class="input-group">
-          <input type="text" class="form-control" name="InputValutazioneSito" id="InputValutazioneSito" placeholder="Enter valutazione sito" required>
+          <input type="text" class="form-control" name="valutazioneSito" id="valutazioneSito" placeholder="Enter valutazione sito" required>
           <span class="input-group-addon"></span></div>
       </div>
       	  <div class="form-group">
-        <label for="InputPro">Pro</label>
+        <label for="pro">Pro</label>
         <div class="input-group">
-          <input type="text" class="form-control" name="InputPro" id="InputPro" placeholder="Enter Pro" required>
+          <input type="text" class="form-control" name="pro" id="pro" placeholder="Enter Pro" required>
           <span class="input-group-addon"></span></div>
       </div>
       	  <div class="form-group">
-        <label for="InputContro">Contro</label>
+        <label for="contro">Contro</label>
         <div class="input-group">
-          <input type="text" class="form-control" name="InputContro" id="InputContro" placeholder="Enter Contro" required>
+          <input type="text" class="form-control" name="contro" id="contro" placeholder="Enter Contro" required>
           <span class="input-group-addon"></span></div>
       </div>
       	  <div class="form-group">
-        <label for="InputUrlVideo">Url video</label>
+        <label for="urlVideo">Url video</label>
         <div class="input-group">
-          <input type="text" class="form-control" name="InputUrlVideo" id="InputUrlVideo" placeholder="Enter URL video" required>
+          <input type="text" class="form-control" name="urlVideo" id="urlVideo" placeholder="Enter URL video" required>
           <span class="input-group-addon"></span></div>
       </div>
       	  <div class="form-group">
-        <label for="InputUrlSh">Url Software House</label>
+        <label for="urlSh">Url Software House</label>
         <div class="input-group">
-          <input type="text" class="form-control" name="InputUrlSh" id="InputUrlSh" placeholder="Enter URL Software House" required>
+          <input type="text" class="form-control" name="urlSh" id="urlSh" placeholder="Enter URL Software House" required>
           <span class="input-group-addon"></span></div>
       </div>
       	  <div class="form-group">
-        <label for="InputRequisiti">Requisiti</label>
+        <label for="requisiti">Requisiti</label>
         <div class="input-group">
-          <input type="text" class="form-control" name="InputRequisiti" id="InputRequisiti" placeholder="Enter requisiti" required>
+          <input type="text" class="form-control" name="requisiti" id="requisiti" placeholder="Enter requisiti" required>
           <span class="input-group-addon"></span></div>
       </div>
       	  <div class="form-group">
-        <label for="InputInfo">Info</label>
+        <label for="info">Info</label>
         <div class="input-group">
-          <input type="text" class="form-control" name="InputInfo" id="InputInfo" placeholder="Enter valutazione sito" required>
+          <input type="text" class="form-control" name="info" id="info" placeholder="Enter valutazione sito" required>
           <span class="input-group-addon"></span></div>
       </div>
       <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
