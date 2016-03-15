@@ -23,7 +23,7 @@ public class InserisciGioco extends Action {
 			HttpServletResponse response) {
 
 		InserisciGiocoForm igf = (InserisciGiocoForm) form;
-		Date d = new Date(Integer.parseInt(igf.getYear()), Integer.parseInt(igf.getMonth()), Integer.parseInt(igf.getDay()));
+		Date d = new Date(Integer.parseInt(igf.getYear())-1900, Integer.parseInt(igf.getMonth()), Integer.parseInt(igf.getDay()));
 		try {
 			DaoGioco daoGioco = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
 			daoGioco.insert(new Gioco(igf.getTitolo(), 

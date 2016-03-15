@@ -1,5 +1,6 @@
 package moba.model.dao;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -21,21 +22,23 @@ public class DaoGioco extends DAO {
 
 	@Override
 	public <T> int insert(T entity) throws DAOException {
+		
 		Gioco gioco = (Gioco) entity;
+		
 		String sql = "INSERT INTO GIOCO"
 				+ " (titolo, sh, players, web, datauscita, etamin, costolancio,idcategoria,valutazionesito,pro,contro,img1,img2,urlvideo,urlsh,requisiti,info) "
-				+ "values=(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-
+				+ "values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		System.out.println(gioco.toString());
 		try (PreparedStatement pst = con.prepareStatement(sql, new String[] { "idgioco" })) {
 
 			pst.setString(1, gioco.getTitolo());
 			pst.setString(2, gioco.getSh());
-			pst.setDouble(3, gioco.getPlayers());
-			pst.setDouble(4, (gioco.isWeb()) ? 1 : 0);
+			pst.setInt(3, gioco.getPlayers());
+			pst.setInt(4, (gioco.isWeb()) ? 1 : 0);
 			pst.setDate(5, gioco.getDataUscita());
 			pst.setDouble(6, gioco.getEtaMin());
 			pst.setDouble(7, gioco.getCostoLancio());
-			pst.setDouble(8, gioco.getCategoria().getIdCategoria());
+			pst.setInt(8, gioco.getCategoria().getIdCategoria());
 			pst.setDouble(9, gioco.getValutazioneSito());
 			pst.setString(10, gioco.getPro());
 			pst.setString(11, gioco.getContro());
@@ -47,7 +50,6 @@ public class DaoGioco extends DAO {
 			pst.setString(17, gioco.getInfo());
 
 			pst.executeUpdate();
-
 			res = pst.getGeneratedKeys();
 			res.next();
 			return res.getInt(1);
@@ -55,7 +57,7 @@ public class DaoGioco extends DAO {
 		}
 
 		catch (SQLException e) {
-			throw new DAOException("ERRORE NELL'INSERIMENTO");
+			throw new DAOException("ERRORE NELL'INSERIMENTO" + e.getMessage());
 		}
 	}
 
@@ -266,11 +268,11 @@ public class DaoGioco extends DAO {
 		try {
 			DaoGioco dao = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
 
-			// int i = dao.insert((T) new Gioco("PROVA", "PROVA", 1, 1, new
-			// DATE, 11, 11, 1, 1, "ddd", "ppp", "ddd", "dddd", "ddd", null,
-			// null, null));
+			int i = dao.insert(new Gioco("PROVAAAAaaaaaaaa", "PROVAA", 1, true, new
+			Date(100,12,1), 1, 1, 1, 1, "ddd", "ppp", "ddd", "dddd", "ddd", null,
+			null, null));
 
-			System.out.println("" + dao.selectByTitolo("warcraft"));
+			System.out.println(i);
 
 		} catch (DAOException e) {
 			System.out.println(e.getMessage());

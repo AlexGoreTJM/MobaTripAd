@@ -24,7 +24,8 @@ public class DaoUtente extends DAO {
 		Utente u = (Utente) entity;
 		System.out.println(u.getPassword());
 
-		String sql = "INSERT INTO utente " + "(admin, nickname, email, password, nome, cognome, grado, avatar, info) "
+		String sql = "INSERT INTO utente " + 
+				"(admin, nickname, email, password, nome, cognome, grado, avatar, info) "
 				+ "VALUES (?,?,?,?,?,?,?,?,?)";
 
 		try (PreparedStatement pst = con.prepareStatement(sql, new String[] { "idutente" })) {
