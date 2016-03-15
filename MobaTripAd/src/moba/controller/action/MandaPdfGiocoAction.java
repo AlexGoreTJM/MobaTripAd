@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -29,24 +30,22 @@ public class MandaPdfGiocoAction extends Action {
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws FileNotFoundException, DocumentException {
-		
+		HttpSession session = request.getSession();
 		int idGioco = Integer.parseInt(request.getParameter("idGioco"));
-	//	int idUtente = Integer.parseInt(request.getParameter("idUtente"));
+		int idUtente = ((Utente) session.getAttribute("utente")).getIdUtente();
+	
 		
 		try{
 			
-			System.out.println("PROVA");
+			
 			DaoGioco daoGioco = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
 			request.setAttribute("gioco", daoGioco.select(idGioco));
 			Gioco g = (Gioco) request.getAttribute("gioco");
-			System.out.println("DATI GIOCO: "+g.getTitolo()+" "+g.getCategoria().getNome());
 			
-			/*
 		    DaoUtente daoUtente = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
 		    request.setAttribute("utente", daoUtente.select(idUtente));
 			Utente u = (Utente) request.getAttribute("utente");
-	        System.out.println("DATI UTENTE: "+ u.getNickname());
-	        */
+
 			String path = JavaPDF.creaGiocoPDF(g.getTitolo(), 
 					g.getSh(),
 					g.getPlayers(),
@@ -58,7 +57,7 @@ public class MandaPdfGiocoAction extends Action {
 					g.getValutazioneSito(),
 					g.getInfo());
 			
-			MailJava.MandaGiocoPDFMail("kuno98200@yahoo.it", path, g.getTitolo());
+			MailJava.MandaGiocoPDFMail(u.getEmail(), path, g.getTitolo());
 		    System.out.println(path);
 		    File file = new File(path);
 		    file.delete();
