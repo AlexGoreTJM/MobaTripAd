@@ -7,6 +7,7 @@
 		<div class="row">
  <div class="col-md-8 col-sm-12">
  <p> Bravo!hai cancellato l'utente ${sessionScope.utente.nickname}</p>
+ <a href="inizia.do">Torna alla home</a>
  </div>
  </div>
  </div>
