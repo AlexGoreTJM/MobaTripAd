@@ -8,6 +8,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import moba.controller.form.InserisciGiocoForm;
 import moba.model.dao.DAO;
 import moba.model.dao.DaoGioco;
 import moba.model.dao.eccezioni.DAOException;
@@ -21,26 +22,27 @@ public class InserisciGioco extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
 
-		Date d = new Date(Integer.parseInt(request.getParameter("year")), Integer.parseInt(request.getParameter("month")), Integer.parseInt(request.getParameter("day")));
+		InserisciGiocoForm igf = (InserisciGiocoForm) form;
+		Date d = new Date(Integer.parseInt(igf.getYear()), Integer.parseInt(igf.getMonth()), Integer.parseInt(igf.getDay()));
 		try {
 			DaoGioco daoGioco = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
-			daoGioco.insert(new Gioco(request.getParameter("InputTitolo"), 
-					request.getParameter("InputSh"),
-					Integer.parseInt(request.getParameter("InputPlayers")), 
-					(request.getParameter("InputWeb")=="1")? true : false,
+			daoGioco.insert(new Gioco(igf.getTitolo(), 
+					igf.getSh(),
+					Integer.parseInt(igf.getPlayers()), 
+					(igf.getWeb()=="1")? true : false,
 					d, 
-					Integer.parseInt(request.getParameter("InputEtaMin")),
-					Double.parseDouble(request.getParameter("InputCostoLancio")), 
-					Integer.parseInt(request.getParameter("InputIdCategoria")),
-					Double.parseDouble(request.getParameter("InputValutazioneSito")), 
-					request.getParameter("InputPro"),
-					request.getParameter("InputContro"), 
+					Integer.parseInt(igf.getEtaMin()),
+					Double.parseDouble(igf.getCostoLancio()), 
+					Integer.parseInt(igf.getIdCategoria()),
+					Double.parseDouble(igf.getValutazioneSito()), 
+					igf.getPro(),
+					igf.getContro(), 
 					"tempImg1",
 					"tempImg2", 
-					request.getParameter("InputUrlVideo"),
-					request.getParameter("InputUrlSh"),
-					request.getParameter("InputRequisiti"),
-					request.getParameter("InputInfo")));
+					igf.getUrlVideo(),
+					igf.getUrlSh(),
+					igf.getRequisiti(),
+					igf.getInfo()));
 			
 			return mapping.findForward("success");
 		} catch (DAOException e) {
