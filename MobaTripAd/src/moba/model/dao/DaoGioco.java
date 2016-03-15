@@ -280,4 +280,24 @@ public class DaoGioco extends DAO {
 
 	}
 
+	public void updateImg(int idGioco, String fileName1, String fileName2) throws DAOException {
+
+		String sql = "UPDATE gioco SET IMG1 = ?, IMG2 = ? "
+				+ "WHERE idgioco = ? ";
+		
+		try (PreparedStatement pst = con.prepareStatement(sql)){
+			
+			pst.setString(1, fileName1);
+			pst.setString(2, fileName2);
+			pst.setInt(3, idGioco);
+			
+			pst.executeUpdate();
+		} catch (SQLException e) {
+			throw new DAOException
+			("ERRORE UPDATE GIOCO Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+			
+		}
+		
+	}
+
 }

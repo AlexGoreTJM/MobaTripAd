@@ -13,7 +13,7 @@
         
  
  
-  <form role="form" action="aggiungiGioco.do" method="post" >
+  <form role="form" action="aggiungiGioco.do" method="post" enctype="multipart/form-data">
     <div class="col-md-8 col-sm-12">
     <h1>Aggiungi Gioco</h1>
       
@@ -114,6 +114,19 @@
           <input type="text" class="form-control" name="info" id="info" placeholder="Enter valutazione sito" required>
           <span class="input-group-addon"></span></div>
       </div>
+      <div class="form-group">
+        <label for="info">Image</label>
+        <div class="input-group">
+          <input type="file" name="file1" class="form-control">
+          <span class="input-group-addon"></span></div>
+      </div>
+      <div class="form-group">
+        <label for="info">Image2</label>
+        <div class="input-group">
+          <input type="file" name="file2" class="form-control">
+          <span class="input-group-addon"></span></div>
+      </div>
+      
       <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
     </div>
   </form>

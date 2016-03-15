@@ -6,6 +6,7 @@ import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
+import org.apache.struts.upload.FormFile;
 
 import moba.model.utilita.Utilita;
 
@@ -20,8 +21,8 @@ public class InserisciGiocoForm extends ActionForm {
 	private String valutazioneSito;
 	private String pro;
 	private String contro;
-	private String img1;
-	private String img2;
+	private FormFile file1;
+	private FormFile file2;
 	private String urlVideo;
 	private String urlSh;
 	private String requisiti;
@@ -110,20 +111,20 @@ public class InserisciGiocoForm extends ActionForm {
 		this.contro = contro;
 	}
 
-	public String getImg1() {
-		return img1;
+	public FormFile getFile1() {
+		return file1;
 	}
 
-	public void setImg1(String img1) {
-		this.img1 = img1;
+	public void setFile1(FormFile file1) {
+		this.file1 = file1;
 	}
 
-	public String getImg2() {
-		return img2;
+	public FormFile getFile2() {
+		return file2;
 	}
 
-	public void setImg2(String img2) {
-		this.img2 = img2;
+	public void setFile2(FormFile file2) {
+		this.file2 = file2;
 	}
 
 	public String getUrlVideo() {
@@ -219,26 +220,27 @@ public class InserisciGiocoForm extends ActionForm {
 		if (this.contro == null || this.contro.isEmpty())
 			errori.add("contro", new ActionMessage("obbligatorio", "contro"));
 
-		if (this.urlVideo == null || this.urlVideo.isEmpty())
-			errori.add("urlVideo", new ActionMessage("obbligatorio", "urlVideo"));
-
-		if (this.urlSh == null || this.urlSh.isEmpty())
-			errori.add("urlSh", new ActionMessage("obbligatorio", "urlSh"));
-
-		if (this.requisiti == null || this.requisiti.isEmpty())
-			errori.add("requisiti", new ActionMessage("obbligatorio", "requisiti"));
-
 		if (this.info == null || this.info.isEmpty())
 			errori.add("info", new ActionMessage("obbligatorio", "info"));
-		
+
 		if (this.year == null || this.year.isEmpty())
 			errori.add("year", new ActionMessage("obbligatorio", "year"));
-		
+
 		if (this.month == null || this.month.isEmpty())
 			errori.add("month", new ActionMessage("obbligatorio", "month"));
-		
+
 		if (this.day == null || this.day.isEmpty())
 			errori.add("day", new ActionMessage("obbligatorio", "day"));
+		
+		if( getFile1().getFileSize() == 0){
+	 	       errori.add("common.file.err",
+	 	    	new ActionMessage("error.common.file.required"));
+	 	    }
+		
+		if( getFile2().getFileSize() == 0){
+	 	       errori.add("common.file.err",
+	 	    	new ActionMessage("error.common.file.required"));
+	 	    }
 
 		return errori;
 	}
