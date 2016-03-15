@@ -44,7 +44,9 @@
       <div class="form-group">
         <label for="InputDataUscita">Data uscita</label>
         <div class="input-group">
-          <input type="text" class="form-control" name="InputDataUscita" id="InputDataUscita" placeholder="Enter Data Uscita" required>
+          <input type="text" class="form-control" name="year" id="year" placeholder="Anno" required>
+          <input type="text" class="form-control" name="month" id="month" placeholder="Mese" required>
+          <input type="text" class="form-control" name="day" id="day" placeholder="Giorno" required>
           <span class="input-group-addon"></span></div>
       </div>
       <div class="form-group">
