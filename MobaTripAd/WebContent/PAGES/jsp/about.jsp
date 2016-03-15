@@ -15,7 +15,7 @@
 
 
 
-	<%@ include file="../jsp/navigationAbout.jsp" %>
+	<%@ include file="../jsp/navigation.jsp" %>
 	
 	
 		

@@ -3,7 +3,7 @@
 <%@ include file="/PAGES/jsp/customTag.jsp"%>
 
 
-	<%@ include file="../jsp/navigationAbout.jsp" %>
+	<%@ include file="../jsp/navigation.jsp" %>
 	
 	
 	<div class="container">

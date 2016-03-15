@@ -77,7 +77,8 @@
 <action path="/vaiSignup" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/signup.jsp" ></action>
 <action path="/vaiProfilo" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/profiloUtente.jsp" ></action>
 <action path="/vaiModificaProfilo" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/modificaProfilo.jsp" ></action>
-
+<action path="/vaiContact" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/contactUs.jsp" ></action>
+<action path="/vaiAbout" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/about.jsp" ></action>
 <!-- ============================================= PATH CHE ESEGUONO FORM E ACTION SPECIFICI ============================================= -->
 
 <action path="/inizia" type="moba.controller.action.Inizia">
