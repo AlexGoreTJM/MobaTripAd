@@ -80,6 +80,14 @@ public class JavaPDF {
 		    preface.add(new Paragraph(info));
 		    
 		    document.add(preface);
+		    
+		    
+		    /*
+		     * Image image1 = Image.getInstance("Lighthouse.jpg");
+		image1.scaleToFit(new Rectangle(300f, 300f));
+		image1.setAlignment(Paragraph.ALIGN_CENTER);
+		document.add(image1);
+		     */
 		  }
 	  
 	  public static String creaGiocoPDF(String titolo, 

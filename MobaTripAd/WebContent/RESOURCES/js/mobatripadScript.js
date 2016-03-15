@@ -1,13 +1,10 @@
 
 
-
-
 $('#logout').on('click', function(e){
 		e.preventDefault();
-//		url= $(this).attr("logout.do");
-//		var msg = $('#mv').val();
-		
-//		alert(msg);
+////		url= $(this).attr("logout.do");
+////		var msg = $('#mv').val();		
+	//	alert(msg);
 		
 		
 //		window.setTimeout(1000);
@@ -23,6 +20,31 @@ $('#logout').on('click', function(e){
 		setTimeout(prova, 1500);
 		
 	});
+
+
+
+$('#inviaPDF').on('click', function(e){
+	e.preventDefault();
+//	url= $(this).attr("logout.do");
+//	var msg = $('#mv').val();
+	
+//	alert(msg);
+	
+	
+//	window.setTimeout(1000);
+//	window.location.href= "logout.do";
+	
+	
+	
+	function prova1(){
+		window.location.href= "sendPDF.do";
+	}
+	var msg = $(this).attr("data-pdf");
+	$.notify("Pdf "+ msg+ " inviato");
+	setTimeout(prova, 1500);
+	
+});
+
 
 
 function mySubstr() {

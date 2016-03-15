@@ -113,8 +113,8 @@
 				<form role="form" action="sendPDF.do" method="post">
 					<div class="form-group">
 						<input type="hidden" name="idGioco" value="${gioco.idGioco}">
-					</div>
-					Download scheda gioco: <button type="submit" class="btn btn-primary">Invia PDF</button>
+					</div> 
+					Download scheda gioco: <button type="submit" class="btn btn-primary" id="inviaPDF" data-pdf="${sessionScope.utente.email}">Invia PDF</button>
 				</form>
             </c:if>
 
