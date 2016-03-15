@@ -16,146 +16,149 @@
 </head>
 <body>
 	<%@ include file="../jsp/navigation.jsp"%>
-	
-	
-	
-	
-	 <div class="container">
 
-        <div class="row">
-        <%@ include file="../jsp/menu.jsp"%>
 
-            <!-- Blog Post Content Column -->
-            <div class="col-md-9 col-sm-12">
 
-                <!-- Blog Post -->
 
-                <!-- Title -->
-                <h1>${gioco.titolo}</h1>
-<p class="lead">
-                    Uscita: ${gioco.dataUscita} Valutazione sito: ${gioco.valutazioneSito/2}
-                </p>
-                
+	<div class="container">
 
-                <hr>
+		<div class="row">
+			<%@ include file="../jsp/menu.jsp"%>
 
-                <!-- Date/Time -->
-                <p><span class="glyphicon glyphicon-time"></span> Gioco inserito il: ${gioco.dataReg} Valutazione: <c:choose>
-							<c:when test="${gioco.valutazione != 0}">
-								<c:set var="count" value="1" scope="page" />
-								
-								<c:forEach begin="${count}" end="${gioco.valutazione / 2}"
-									varStatus="loop">
-									<c:set var="count" value="${count + 1}" scope="page" />
-									<span class="glyphicon glyphicon-star"></span>
-								</c:forEach>
-								
-								<c:forEach begin="${count}" end="5" varStatus="loop">
-									<c:set var="count" value="${count + 1}" scope="page" />
-									<span class="glyphicon glyphicon-star-empty"></span>
-								</c:forEach>
-								
-							</c:when>
-							<c:otherwise>
-								<span>N/P</span>
-							</c:otherwise>
-						</c:choose></p>
+			<!-- Blog Post Content Column -->
+			<div class="col-md-9 col-sm-12">
 
-                <hr>
+				<!-- Blog Post -->
 
-                <!-- Preview Image -->
-                <img class="img-responsive" src="${pathGioco}${gioco.img1}" alt="">
+				<!-- Title -->
+				<h1>${gioco.titolo}</h1>
+				<p class="lead">Uscita: ${gioco.dataUscita} Valutazione sito:
+					${gioco.valutazioneSito/2}</p>
 
-                <hr>
 
-                <!-- Post Content -->
-                <p class="lead">${gioco.info}</p>
+				<hr>
 
-                <hr>
+				<!-- Date/Time -->
+				<p>
+					<span class="glyphicon glyphicon-time"></span> Gioco inserito il:
+					${gioco.dataReg} Valutazione:
+					<c:choose>
+						<c:when test="${gioco.valutazione != 0}">
+							<c:set var="count" value="1" scope="page" />
 
-                <!-- Blog Comments -->
+							<c:forEach begin="${count}" end="${gioco.valutazione / 2}"
+								varStatus="loop">
+								<c:set var="count" value="${count + 1}" scope="page" />
+								<span class="glyphicon glyphicon-star"></span>
+							</c:forEach>
 
-                <!-- Comments Form -->
-                <div class="well" style="background: url('../img/background.jpg');">
-                    <h4>Leave a Comment:</h4>
-                    <form role="form" action="recensione.do" method="post">
-                      <fieldset>
-    					<span class="star-cb-group">
-      						<input type="radio" id="rating-5" name="voto" value="5" /><label for="rating-5">5</label>
-      						<input type="radio" id="rating-4" name="voto" value="4" checked="checked" /><label for="rating-4">4</label>
-     						<input type="radio" id="rating-3" name="voto" value="3" /><label for="rating-3">3</label>
-      						<input type="radio" id="rating-2" name="voto" value="2" /><label for="rating-2">2</label>
-      						<input type="radio" id="rating-1" name="voto" value="1" /><label for="rating-1">1</label>
-      						<input type="radio" id="rating-0" name="voto" value="0" class="star-cb-clear" /><label for="rating-0">0</label>
-    					</span>
-  					</fieldset>
-                        <div class="form-group">
-                        	<input type="hidden" name="idGioco" value="${gioco.idGioco}">
-                            <textarea class="form-control" rows="3" name="recensione"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        
-                        
-                    
-                    
-                </div>
-                        
-                        
-                        
-                        
-                    </form>
-                    
-                    <form role="form" action="sendPDF.do" method="post">
-                        <div class="form-group">
-                        	<input type="hidden" name="idGioco" value="${gioco.idGioco}">
-                            
-                        </div>
-                        <button type="submit" class="btn btn-primary">Invia PDF</button>
-                    </form>
-                    
-                    
-                    
-                    
-                </div>
-                
+							<c:forEach begin="${count}" end="5" varStatus="loop">
+								<c:set var="count" value="${count + 1}" scope="page" />
+								<span class="glyphicon glyphicon-star-empty"></span>
+							</c:forEach>
 
-                <hr>
+						</c:when>
+						<c:otherwise>
+							<span>N/P</span>
+						</c:otherwise>
+					</c:choose>
+				</p>
 
-                <!-- Posted Comments -->
-<c:forEach items="${gioco.recensioni}" var="recensioni">
-                <!-- Comment -->
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="" alt="">
-                    </a>
-                    <div class="media-body">
-                        
-                        ${recensioni.utente.nickname} ${recensioni.dataRec}
-                    </div>
-                    <br>
-                </div>
+				<hr>
 
-                <!-- Comment -->
-                
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="" alt="">
-                    </a>
-                    <div class="media-body">
-                        
-                       
-                        
-                        <!-- Nested Comment -->
-                        ${recensioni.info} 
-                        
-                        <!-- End Nested Comment -->
-                    </div>
-                    <hr>
-                </div>
-</c:forEach>
-            </div>
+				<!-- Preview Image -->
+				<img class="img-responsive" src="${pathGioco}${gioco.img1}" alt="">
 
-<%-- <c:forEach items="${gioco.recensioni}" var="recensioni">
+				<hr>
+
+				<!-- Post Content -->
+				<p class="lead">${gioco.info}</p>
+
+				<hr>
+
+				<!-- Blog Comments -->
+
+				<!-- Comments Form -->
+			<c:if test="${sessionScope.utente != null && recensioneInserita == null }">
+				<div class="well" style="background: url('../img/background.jpg');">
+					<h4>Leave a Comment:</h4>
+					<form role="form" action="recensione.do" method="post">
+						<fieldset>
+							<span class="star-cb-group"> <input type="radio"
+								id="rating-5" name="voto" value="5" /><label for="rating-5">5</label>
+								<input type="radio" id="rating-4" name="voto" value="4"
+								checked="checked" /><label for="rating-4">4</label> <input
+								type="radio" id="rating-3" name="voto" value="3" /><label
+								for="rating-3">3</label> <input type="radio" id="rating-2"
+								name="voto" value="2" /><label for="rating-2">2</label> <input
+								type="radio" id="rating-1" name="voto" value="1" /><label
+								for="rating-1">1</label> <input type="radio" id="rating-0"
+								name="voto" value="0" class="star-cb-clear" /><label
+								for="rating-0">0</label>
+							</span>
+						</fieldset>
+						<div class="form-group">
+							<input type="hidden" name="idGioco" value="${gioco.idGioco}">
+							<textarea class="form-control" rows="3" name="recensione"></textarea>
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+				</div>
+			</c:if>
+
+
+
+				
+
+				<form role="form" action="sendPDF.do" method="post">
+					<div class="form-group">
+						<input type="hidden" name="idGioco" value="${gioco.idGioco}">
+
+					</div>
+					<button type="submit" class="btn btn-primary">Invia PDF</button>
+				</form>
+
+
+
+
+			</div>
+
+
+			<hr>
+
+			<!-- Posted Comments -->
+			<c:forEach items="${gioco.recensioni}" var="recensioni">
+				<!-- Comment -->
+				<div class="media">
+					<a class="pull-left" href="#"> <img class="media-object" src=""
+						alt="">
+					</a>
+					<div class="media-body">${recensioni.utente.nickname}
+						${recensioni.dataRec}</div>
+					<br>
+				</div>
+
+				<!-- Comment -->
+
+				<div class="media">
+					<a class="pull-left" href="#"> <img class="media-object" src=""
+						alt="">
+					</a>
+					<div class="media-body">
+
+
+
+						<!-- Nested Comment -->
+						${recensioni.info}
+
+						<!-- End Nested Comment -->
+					</div>
+					<hr>
+				</div>
+			</c:forEach>
+		</div>
+
+		<%-- <c:forEach items="${gioco.recensioni}" var="recensioni">
 							${recensioni.utente.nickname}
 							<span class="glyphicon glyphicon-thumbs-up"></span>
 							<span class="glyphicon glyphicon-thumbs-down"></span>
@@ -164,8 +167,8 @@
 							
 							<p>
 						</c:forEach> --%>
-            <!-- Blog Sidebar Widgets Column -->
-            <!-- <div class="col-md-4">
+		<!-- Blog Sidebar Widgets Column -->
+		<!-- <div class="col-md-4">
 
                 Blog Search Well
                 <div class="well">
@@ -222,8 +225,8 @@
             </div>
 
         </div> -->
-	
-	<%-- <div class="container">
+
+		<%-- <div class="container">
 		<div class="row">
 		
 			<%@ include file="../jsp/menu.jsp"%>
@@ -295,13 +298,13 @@
 				</div>
 			</div>
 		</div>--%>
-		</div>
-	</div> 
+	</div>
+	</div>
 	<div class="container">
 
 		<hr>
-<%@ include file="../jsp/footer.jsp" %>
-		
+		<%@ include file="../jsp/footer.jsp"%>
+
 
 	</div>
 </body>
