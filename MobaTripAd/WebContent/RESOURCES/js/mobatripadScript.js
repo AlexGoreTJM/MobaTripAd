@@ -25,7 +25,11 @@ $('#logout').on('click', function(e){
 	});
 
 
-
+function mySubstr() {
+    var str = document.title
+    var res = str.substr(0, 6);
+    document.getElementById("demo").innerHTML = res;
+}
 //
 //function doAjaxPost() {
 //
