@@ -8,9 +8,9 @@
 			<a href="schedaGioco.do?idGioco=${GiocoRecente.idGioco}"><img src="${pathGioco}${GiocoRecente.img1}"
 				alt="${GiocoRecente.titolo}"></a>
 			<div class="caption">
-				<h4 class="pull-right">Voto: ${GiocoRecente.valutazioneSito/2}</h4>
+				<h4 class="pull-right">Voto: ${GiocoRecente.valutazioneSito/2}</h4><br><br>
 				<h4>
-					<a href="schedaGioco.do?idGioco=${GiocoRecente.idGioco}">${GiocoRecente.titolo}</a>
+					<a href="schedaGioco.do?idGioco=${GiocoRecente.idGioco}" style="color: black;">${GiocoRecente.titolo}</a>
 				</h4>
 				<p>${GiocoRecente.info}</p>
 			</div>

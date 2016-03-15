@@ -48,7 +48,7 @@
 	
 
 		<hr>
-<%@ include file="../jsp/footer.jsp" %>
+<%-- <%@ include file="../jsp/footer.jsp" %> --%>
 		
 
 	
