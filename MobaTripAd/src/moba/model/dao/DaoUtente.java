@@ -89,7 +89,18 @@ public class DaoUtente extends DAO {
 
 	@Override
 	public <T> ArrayList<T> select() throws DAOException {
-		throw new DAOException("WARNING: COMANDO NON IMPLEMENTATO!");
+		String sql = "SELECT idutente, admin, nickname, email, password, nome, cognome, grado, avatar, datareg, info "
+				+ "FROM utente ORDER BY nickname";
+		ArrayList<Utente> lista = new ArrayList<Utente>();
+		try (PreparedStatement pst = con.prepareStatement(sql)) {
+			res = pst.executeQuery(); // esegue la query così preparata
+			while(res.next())
+				lista.add(componiEntity());
+			return (ArrayList<T>) lista;
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE SELECT UTENTE. Causa: " + e.getMessage() + " Errorcode: "
+					+ e.getErrorCode());
+		}	
 	}
 
 	@Override

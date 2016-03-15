@@ -16,6 +16,12 @@
 
         <div class="col-sm-12 col-md-3">
             <div class="panel-group" id="accordion">
+            
+            
+            
+            <!---------------------------------------------CATEGORIA---------------------------------------------------->
+            
+            
                 <div class="panel panel-default" style="background: url('../img/background.jpg');">
                     <div class="panel-heading">
                         <h4 class="panel-title">
@@ -37,6 +43,10 @@
                         </div>
                     </div>
                 </div>
+                
+            <!---------------------------------------------------PIATTAFORMA---------------------------------------------->
+                
+                
                 <div class="panel panel-default" style="background: url('../img/background.jpg');">
                     <div class="panel-heading">
                         <h4 class="panel-title">
@@ -58,11 +68,13 @@
                         </div>
                     </div>
                 </div>
+                
+            <!---------------------------------------------------AREA ADMIN---------------------------------------------->
+			<c:if test="${utente.admin}">
                 <div class="panel panel-default" style="background: url('../img/background.jpg');">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-user">
-                            </span>Account</a>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Admin</a>
                         </h4>
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse">
@@ -70,29 +82,36 @@
                             <table class="table">
                                 <tr>
                                     <td>
-                                        <a href="http://www.jquery2dotnet.com">Change Password</a>
+                                        <a href="http://www.jquery2dotnet.com">Aggiungi Gioco/Recensione</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="http://www.jquery2dotnet.com">Notifications</a> <span class="label label-info">5</span>
+                                        <a href="/MobaTripAd/gestioneUtente.do">Gestisci Utenti</a> <!-- <span class="label label-info">5</span>  -->
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="http://www.jquery2dotnet.com">Import/Export</a>
+                                        <a href="http://www.jquery2dotnet.com">Gestisci Recensioni</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="glyphicon glyphicon-trash text-danger"></span><a href="http://www.jquery2dotnet.com" class="text-danger">
-                                            Delete Account</a>
+                                        <a href="http://www.jquery2dotnet.com">Gestisci Segnalazioni</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="http://www.jquery2dotnet.com">Statistiche</a>
                                     </td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                 </div>
+            </c:if>    
+            <!-----------------------------------------------------------------------------------------------
+
                 <div class="panel panel-default" style="background: url('../img/background.jpg');">
                     <div class="panel-heading">
                         <h4 class="panel-title">
@@ -126,6 +145,6 @@
                             </table>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>

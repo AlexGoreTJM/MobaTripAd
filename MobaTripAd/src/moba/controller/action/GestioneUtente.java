@@ -22,7 +22,7 @@ public class GestioneUtente extends Action {
 		DaoUtente dao;
 		try {
 			dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
-			request.setAttribute("listaUtente", dao.select());
+			request.getSession().setAttribute("listaGestioneUtente", dao.select());
 			return mapping.findForward("success");
 		} catch (DAOException e) {
 			request.setAttribute("errore", e.getMessage());
