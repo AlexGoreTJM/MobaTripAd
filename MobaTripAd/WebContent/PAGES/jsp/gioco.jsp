@@ -157,9 +157,9 @@
 						<!-- End Nested Comment -->
 					</div>
 					<c:if test="${utente.admin}">
-						<form action="/eliminaRecensione.do">
+						<form action="/MobaTripAd/eliminaRecensione.do">
 						<input type="hidden" name="idGioco" value="${recensione.idGioco}">
-						<input type="hidden" name="idGioco" value="${recensione.utente.idUtente}">
+						<input type="hidden" name="idUtente" value="${recensione.utente.idUtente}">
 						<button type="submit" class="btn btn-primary pull-right">ELIMINA</button>
 						</form>
 						</c:if>
