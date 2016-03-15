@@ -50,7 +50,8 @@ public class JavaPDF {
 			  int etaMin,
 			  double costoLancio,
 			  String categoria,
-			  double valutazioneSito)
+			  double valutazioneSito,
+			  String info)
 		      throws DocumentException {
 		    Paragraph preface = new Paragraph();
 		    addEmptyLine(preface, 1);	
@@ -62,7 +63,11 @@ public class JavaPDF {
 		    addEmptyLine(preface, 1);
 		    preface.add(new Paragraph("Numero Giocatori: " + players, smallBold));
 		    addEmptyLine(preface, 1);
-		     preface.add(new Paragraph("Online: " + web, smallBold));
+		    if (web){
+		     preface.add(new Paragraph("Online: si", smallBold));}
+		    else {
+		    	preface.add(new Paragraph("Online: no", smallBold));
+		    }
 		    addEmptyLine(preface, 1);
 		     preface.add(new Paragraph("Data di uscita: " + dataUscita, smallBold));
 		    addEmptyLine(preface, 1);
@@ -70,7 +75,10 @@ public class JavaPDF {
 		    addEmptyLine(preface, 1);
 		    preface.add(new Paragraph("Costo di lancio: " + costoLancio, smallBold));
 		    addEmptyLine(preface, 1);
-		    preface.add(new Paragraph("Valutazione sito: "+ valutazioneSito));
+		    preface.add(new Paragraph("Valutazione sito: "+ valutazioneSito, smallBold));
+		    addEmptyLine(preface, 3);
+		    preface.add(new Paragraph(info));
+		    
 		    document.add(preface);
 		  }
 	  
@@ -82,13 +90,15 @@ public class JavaPDF {
 			  int etaMin, 
 			  double costoLancio, 
 			  String categoria, 
-			  double valutazioneSito) throws FileNotFoundException, DocumentException{
+			  double valutazioneSito,
+			  String info) throws FileNotFoundException, DocumentException{
+		  
 		  Document d = new Document();
 		
 		  
 		  PdfWriter.getInstance(d, new FileOutputStream("C:/Users/Ats/Desktop/"+titolo+".pdf"));
 		  d.open();
-		  addGioco(d, titolo,sh,players,web,dataUscita,etaMin,costoLancio,categoria,valutazioneSito);
+		  addGioco(d, titolo,sh,players,web,dataUscita,etaMin,costoLancio,categoria,valutazioneSito,info);
 		  d.close();
 		  return "C:/Users/Ats/Desktop/"+titolo+".pdf";  
 	  }

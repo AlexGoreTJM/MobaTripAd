@@ -79,10 +79,11 @@ public class MailJava {
   			Message message = new MimeMessage(session);
   			message.setFrom(new InternetAddress("mobatripadproject@libero.it"));
   			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
-  			message.setSubject("PDF Gioco");
+  			message.setSubject("PDF "+titolo);
+  			message.setText("Eccoti il pdf del gioco, stronzo!");
   			
-  			
-  			message.setText("Ecco il pdf del gioco.");
+
+
   			
   			
   			
@@ -90,7 +91,7 @@ public class MailJava {
   	        Multipart multipart = new MimeMultipart();
   	        messageBodyPart = new MimeBodyPart();
   	        String file = path;
-  	        String fileName = titolo;
+  	        String fileName = titolo+".pdf";
   	        DataSource source = new FileDataSource(file);
   	        messageBodyPart.setDataHandler(new DataHandler(source));
   	        messageBodyPart.setFileName(fileName);
