@@ -14,12 +14,6 @@
 				</h4>
 				<p>${utente.nome} ${utente.cognome}$<br>{utente.dataReg}</p>
 			</div>
-			<!--<div class="ratings">
-				<p class="pull-right"><a href="eliminaUtente.do?idUtenteCanc=${utente.idUtente}">Elimina!</a></p>
-				<p>
-					 <a href="mailto:${utente.mail}">${utente.mail}</a>  
-				</p>
-			</div>-->
 		</div>
 	</div>
 </c:forEach>
