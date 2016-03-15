@@ -115,7 +115,7 @@
 						<input type="hidden" name="idGioco" value="${gioco.idGioco}">
 
 					</div>
-					<button type="submit" class="btn btn-primary">Invia PDF</button>
+					Download scheda gioco: <button type="submit" class="btn btn-primary">Invia PDF</button>
 				</form>
 
 
