@@ -4,7 +4,7 @@
 
 <c:forEach items="${listaGiocoRecente}" var="GiocoRecente">
 	<div class="col-sm-4 col-lg-4 col-md-4">
-		<div class="thumbnail" style="background: url('../img/background.jpg');">
+		<div class="thumbnail" >
 			<a href="schedaGioco.do?idGioco=${GiocoRecente.idGioco}"><img src="${pathGioco}${GiocoRecente.img1}"
 				alt="${GiocoRecente.titolo}"></a>
 			<div class="caption">

@@ -9,9 +9,9 @@
 <body>
 
 <div class="col-sm-4 col-lg-4 col-md-4">
-		<div class="thumbnail" style="background: url('../img/background.jpg');">
-			<img src="../../IMGDB/Dev/fil.jpg"
-				alt=""></a>
+		<div class="thumbnail" >
+			<img src="/../IMGDB/Dev/fil.jpg" alt=""></a>
+				
 			<div class="caption">
 				<h4>
 					<font color="white">Filippo Trombetta</font>
@@ -21,8 +21,8 @@
 		</div>
 	</div>
 	<div class="col-sm-4 col-lg-4 col-md-4">
-		<div class="thumbnail" style="background: url('../img/background.jpg');">
-			<img src="../../IMGDB/Dev/ale.jpg"
+		<div class="thumbnail" >
+			<img src="/IMGDB/Dev/ale.jpg"
 				alt=""></a>
 			<div class="caption">
 				<h4>
