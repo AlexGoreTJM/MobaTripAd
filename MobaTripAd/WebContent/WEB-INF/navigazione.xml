@@ -178,6 +178,12 @@
 	<forward name="failure" path="/PAGES/jsp/errore.jsp" />
 </action>
 
+<action path="/aggiungiGioco" type="moba.controller.action.InserisciGioco">
+	<forward name="success" path="/PAGES/jsp/index.jsp" />
+	<forward name="failure" path="/PAGES/jsp/errore.jsp" />
+</action>
+
+
 <!-- sample input and input submit actions
    
 <action path="/Input" type="org.apache.struts.actions.ForwardAction" parameter="/pages/Input.jsp"/>
