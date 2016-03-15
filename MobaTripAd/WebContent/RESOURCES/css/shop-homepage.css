@@ -189,3 +189,30 @@ body {
 	color:white;
 }
 
+
+#titles:after
+{
+	position: absolute;
+	content: ' ';
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 60%;
+	background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+	pointer-events: none;
+}
+
+#titlecontent
+{
+	position: absolute;
+	top: 100%;
+	animation: scroll 100s linear 4s infinite;
+}
+
+@keyframes scroll {
+	0% { top: 100%; }
+	100% { top: -170%; }
+}
+
+
+

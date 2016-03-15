@@ -17,17 +17,15 @@
 <title>MobaTripAd --Home Page--</title>
 
 <!-- Bootstrap Core CSS -->
-<link rel="stylesheet" media="all" type="text/css" href="RESOURCES/css/bootstrap.min.css"/>
-
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" media="all" type="text/css" href="../../RESOURCES/css/bootstrap.min.css"/>
   
 <!--<link type="text/css" rel="stylesheet"
 	href="<c:url value="/css/bootstrap.min.css" />" /> -->
 <!-- Custom CSS -->
-<link rel="stylesheet" media="all" type="text/css" href="RESOURCES/css/shop-homepage.css"/>
+<link rel="stylesheet" media="all" type="text/css" href="../../RESOURCES/css/shop-homepage.css"/>
 <!-- Notify CSS -->
-<link href="RESOURCES/css/notify.css" rel="stylesheet">
-<link href="RESOURCES/css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../../RESOURCES/css/notify.css" rel="stylesheet">
+
 
 </head>
 
@@ -128,13 +126,11 @@
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container --> </nav> <br><br> --%>
-	
 	<script src="RESOURCES/js/jquery.js"></script>
 	<script src="RESOURCES/js/notify.js"></script>
  <script src="RESOURCES/js/mobatripadScript.js"></script> 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="RESOURCES/js/bootstrap.min.js"></script>
-	<script src="RESOURCES/js/star-rating.js" type="text/javascript"></script>
 	</body>
 
 </html>
