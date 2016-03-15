@@ -127,6 +127,29 @@ public <T> int insert(T entity) throws DAOException {
 	
 	}
 	
+	public  Recensione selectVerifica(int idUtente, int idGioco) throws DAOException {
+		String sql = 
+		"SELECT idutente, idgioco, ctrlike, ctrdislike, segnalata, info, datarec "
+		+"FROM RECENSIONE "
+		+"WHERE idutente = ? and idgioco = ?";
+		
+		try(PreparedStatement pst = con.prepareStatement(sql)) {
+			pst.setInt(1, idUtente);
+			pst.setInt(2, idGioco);
+			res = pst.executeQuery(); //esegue la query cos� preparata
+			if(res.next())
+				return  componiEntity();
+			else
+				return null;
+
+			
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE SELECT RECENSIONE x idUtente: "+idUtente + " e x idGioco "+idGioco
+			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		}
+	
+	}
+	
 	private Recensione componiEntity() throws SQLException, DAOException {
 		//SELECT idutente, idgioco, ctrlike, ctrdislike, segnalata, info, datarec 
 		return new Recensione(

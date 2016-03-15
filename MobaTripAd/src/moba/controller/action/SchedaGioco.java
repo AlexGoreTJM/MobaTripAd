@@ -28,8 +28,10 @@ public class SchedaGioco extends Action{
 			request.setAttribute("gioco", daoGioco.select(idGioco));
 			
 			if(request.getSession().getAttribute("utente") != null){
+				
 				DaoRecensione daoRecensione = (DaoRecensione) DAO.getDaoInstance(Tabella.Recensione);
-				if(daoRecensione.select(((Utente)request.getSession().getAttribute("utente")).getIdUtente(), idGioco) != null)
+				
+				if(daoRecensione.selectVerifica(((Utente)request.getSession().getAttribute("utente")).getIdUtente(), idGioco) != null)
 					request.setAttribute("recensioneInserita", 1);
 			}
 

@@ -79,8 +79,7 @@
 				<!-- Blog Comments -->
 
 				<!-- Comments Form -->
-				 <c:if
-					test="${sessionScope.utente != null && recensioneInserita == null }"> 
+				<c:if test="${sessionScope.utente != null && recensioneInserita == null }">
 					<div class="well" style="background: url('../img/background.jpg');">
 						<h4>Leave a Comment:</h4>
 						<form role="form" action="recensione.do" method="post">
@@ -105,7 +104,7 @@
 							<button type="submit" class="btn btn-primary">Submit</button>
 						</form>
 					</div>
-				 </c:if>
+				</c:if>
 
 
 
@@ -159,6 +158,12 @@
 			</c:forEach>
 		</div>
 	</div>
+	
+	
+	
+	
+	
+	
 		<%-- <c:forEach items="${gioco.recensioni}" var="recensioni">
 							${recensioni.utente.nickname}
 							<span class="glyphicon glyphicon-thumbs-up"></span>
@@ -300,7 +305,7 @@
 			</div>
 		</div>--%>
 	</div>
-	</div>
+
 	<div class="container">
 
 		<hr>
