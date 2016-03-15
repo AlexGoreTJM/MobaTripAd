@@ -2,6 +2,8 @@ package moba.controller.action;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.nio.file.FileStore;
+import java.nio.file.FileSystem;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -51,14 +53,29 @@ public class Upload extends Action {
 	       
               
 	        if(!newFile.exists()){
-	          FileOutputStream fos = new FileOutputStream(newFile);
-	          fos.write(file.getFileData());
-	          fos.flush();
-	          fos.close();
+	        	FileOutputStream fos = new FileOutputStream(newFile);
+	        	fos.write(file.getFileData());
+	        	fos.flush();
+	        	fos.close();
+	          
+	        	DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
+		        dao.updateImg(idUtente, fileName);
+		        
+		        ((Utente) request.getSession().getAttribute("utente")).setAvatar(fileName);
 	        } else {
-	        	newFile.delete();
-	        	File realNewFile = new File(filePath, fileName);
-	        	FileOutputStream fos = new FileOutputStream(realNewFile);
+	        	int i = 0;
+	        	while(newFile.exists()){
+	        		i++;
+	        		String newFileName = "U0000" + idUtente  + "(" + i + ")" + ".jpg";
+	        		newFile.renameTo(new File(filePath, newFileName));
+	        		
+	    	        DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
+	    	        dao.updateImg(idUtente, newFileName);
+	    	        
+	    	        ((Utente) request.getSession().getAttribute("utente")).setAvatar(newFileName);
+	    	        
+	        	}
+	        	FileOutputStream fos = new FileOutputStream(newFile);
 		        fos.write(file.getFileData());
 		        fos.flush();
 		        fos.close();
@@ -67,10 +84,6 @@ public class Upload extends Action {
 	        request.setAttribute("uploadedFilePath",newFile.getAbsoluteFile());
 	        request.setAttribute("uploadedFileName",newFile.getName());
 	        
-	        DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
-	        dao.updateImg(idUtente,fileName);
-	        
-	        ((Utente) request.getSession().getAttribute("utente")).setAvatar(fileName);;
 	    }
 		return mapping.findForward("success");
 	}
