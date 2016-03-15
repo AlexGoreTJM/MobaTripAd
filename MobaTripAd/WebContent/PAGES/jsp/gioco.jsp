@@ -134,7 +134,10 @@
 						alt="">
 					</a>
 					<div class="media-body">${recensioni.utente.nickname}
-						${recensioni.dataRec}</div>
+						${recensioni.dataRec}
+						
+						
+						</div>
 					<br>
 				</div>
 
@@ -153,6 +156,14 @@
 
 						<!-- End Nested Comment -->
 					</div>
+					<c:if test="${utente.admin}">
+						<form action="/eliminaRecensione.do">
+						<input type="hidden" name="idGioco" value="${recensione.idGioco}">
+						<input type="hidden" name="idGioco" value="${recensione.utente.idUtente}">
+						<button type="submit" class="btn btn-primary pull-right">ELIMINA</button>
+						</form>
+						</c:if>
+						
 					<hr>
 				</div>
 			</c:forEach>
