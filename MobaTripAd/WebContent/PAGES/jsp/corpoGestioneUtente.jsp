@@ -8,11 +8,17 @@
 			<img src="${pathUtente}${utente.avatar}"
 				alt="${utente.nome}">
 			<div class="caption">
-				<h4 class="pull-right">Grado: ${utente.grado}</h4>
+				<h4 class="pull-right">Grado: ${utente.grado.nome}</h4>
 				<h4>
 					${utente.nickname}
 				</h4>
-				<p>${utente.nome} ${utente.cognome}$<br>{utente.dataReg}</p>
+				<p>${utente.nome} ${utente.cognome}<br>${utente.dataReg}<br>		 <a href="mailto:${utente.email}"><font color="blue">${utente.email}</font></a>  </p>
+			</div>
+			<div class="ratings">
+				<p class="pull-right"><a href="eliminaUtente.do?idUtenteCanc=${utente.idUtente}"><font color="red">Elimina!</font></a></p>
+				<p>
+				.
+				</p>
 			</div>
 		</div>
 	</div>
