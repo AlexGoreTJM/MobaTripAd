@@ -16,16 +16,32 @@
 <script type="text/javascript">
 
 $(function () {
-    $(".like").click(function () {
+    $(".like1").click(function () {
         var input = $(this).find('.qty1');
-        input.val(parseInt(input.val())+ 1);
+        input.val(parseInt(input.val()) + 1);
 		
         var idutente = $(this).attr("data-idutente");
         var idgioco = $(this).attr("data-idgioco");
         window.location.href= "incrementaLike.do?idu=" + idutente + "&idg=" + idgioco;
     });
     
-	$(".dislike").click(function () {
+	$(".dislike1").click(function () {
+    var input = $(this).find('.qty2');
+    input.val(input.val() - 1);
+    
+    
+	});
+	
+	$(".like0").click(function () {
+        var input = $(this).find('.qty1');
+        input.val(parseInt(input.val()) - 1);
+		
+        var idutente = $(this).attr("data-idutente");
+        var idgioco = $(this).attr("data-idgioco");
+        window.location.href= "decrementaLike.do?idu=" + idutente + "&idg=" + idgioco;
+    });
+    
+	$(".dislike0").click(function () {
     var input = $(this).find('.qty2');
     input.val(input.val() - 1);
     
@@ -177,13 +193,46 @@ $(function () {
 						<br>
 
 							<div class="container"> 
-   								 <a class="like" data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}" ><i class="fa fa-thumbs-o-up"></i>  
-       							 Like <input class="qty1" name="qty1" readonly="readonly" type="text" value="${recensioni.ctrLike}" />
-    							</a>
-    							<a class="dislike"><i class="fa fa-thumbs-o-down"></i> 
-        						Dislike <input class="qty2"  name="qty2" readonly="readonly" type="text" value="${recensioni.ctrDislike}"
-        							data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}" />
-   								 </a>
+   								 <c:if test="${ sessionScope.utente != null}">
+								<c:choose>
+									<c:when test="${like == null || like == 0}">
+   										<a class="like1" data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}"> <i class="fa fa-thumbs-o-up"></i>  
+       										Like <input class="qty1" name="qty1" readonly="readonly" type="text" value="${recensioni.ctrLike}" />
+       										<%
+       							 				if(request.getSession().getAttribute("like") != null)
+       							 					if(((String)request.getSession().getAttribute("like")).equals("0"))
+       							 						request.getSession().setAttribute("like", "1");
+       							 					else
+       							 						request.getSession().setAttribute("like", "0");
+       							 				else
+       							 					request.getSession().setAttribute("like", "1");
+       										%>
+    									</a>
+    									<a class="dislike1"><i class="fa fa-thumbs-o-down"></i> 
+        									Dislike <input class="qty2"  name="qty2" readonly="readonly" type="text" value="${recensioni.ctrDislike}"
+        									data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}" />
+   										 </a>
+   								 	</c:when>
+   								 	<c:otherwise>
+   								 		<a class="like0" data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}"> <i class="fa fa-thumbs-o-up"></i>  
+       										Like <input class="qty1" name="qty1" readonly="readonly" type="text" value="${recensioni.ctrLike}" />
+       										<%
+       							 				if(request.getSession().getAttribute("like") != null)
+       							 					if(((String)request.getSession().getAttribute("like")).equals("1"))
+       							 						request.getSession().setAttribute("like", "0");
+       							 					else
+       							 						request.getSession().setAttribute("like", "1");
+       							 				else
+       							 					request.getSession().setAttribute("like", "1");
+       										%>
+    									</a>
+    									<a class="dislike0"><i class="fa fa-thumbs-o-down"></i> 
+        									Dislike <input class="qty2"  name="qty2" readonly="readonly" type="text" value="${recensioni.ctrDislike}"
+        									data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}" />
+   										 </a>
+   								 	</c:otherwise>
+   								</c:choose>
+   							</c:if>
 							</div>
 	
 
