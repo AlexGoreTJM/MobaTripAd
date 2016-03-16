@@ -79,8 +79,9 @@ public class MailJava {
   			Message message = new MimeMessage(session);
   			message.setFrom(new InternetAddress("mobatripadproject@libero.it"));
   			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
-  			message.setSubject("Dati "+titolo);
   			message.setText("Eccoti il pdf del gioco");
+  			message.setSubject("MobaTripAd: Dati "+titolo);
+  			
   			
 
 

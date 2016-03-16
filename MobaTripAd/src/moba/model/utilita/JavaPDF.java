@@ -85,9 +85,11 @@ public class JavaPDF {
 		    addEmptyLine(preface, 1);
 		    preface.add(new Paragraph("Valutazione sito: "+ valutazioneSito, smallBold));
 		    addEmptyLine(preface, 3);
-		    preface.add(new Paragraph(info));
-		    
 		    document.add(preface);
+		    document.newPage();
+		    Paragraph postface = new Paragraph(); 
+		    postface.add(new Paragraph(info));    
+		    document.add(postface);
 		    
 		   
 		
