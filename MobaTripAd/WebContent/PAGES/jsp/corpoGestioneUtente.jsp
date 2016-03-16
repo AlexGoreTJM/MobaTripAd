@@ -6,7 +6,7 @@
 	<div class="col-sm-4 col-lg-4 col-md-4">
 		<div class="thumbnail">
 			<img src="${pathUtente}${utente.avatar}"
-				alt="${utente.nome}">
+				alt="${utente.nome}" style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;">
 			<div class="caption">
 				<h4 class="pull-right">Grado: ${utente.grado.nome}</h4>
 				<h4>

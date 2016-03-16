@@ -30,7 +30,7 @@
 					<font color="white">Alessandro Galiano</font>
 				</h4>
 				<p><font color="white">Dott. Informatica per il Management</font></p>
-				<p><font color="white">e-mail: dot.alessandrogaliano@gmail.com</font></p>
+				<p><font color="white">e-mail: dott.alessandrogaliano@gmail.com</font></p>
 			</div>
 		</div>
 	</div>
@@ -56,7 +56,7 @@
 					<font color="white">Lucas Marcelo Marini Tejada</font>
 				</h4>
 				<p><font color="white">Dott. Ingegneria Informatica</font></p>
-				<p><font color="white">e-mail: lucatejada@gmail.com</font></p>
+				<p><font color="white">e-mail: lucastejada@gmail.com</font></p>
 			</div>
 		</div>
 	</div>

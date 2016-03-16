@@ -76,8 +76,8 @@ $(function () {
 
 				<!-- Title -->
 				<h1>${gioco.titolo}</h1>
-				<p class="lead">Uscita: ${gioco.dataUscita} Valutazione sito:
-					${gioco.valutazioneSito/2}/5</p>
+				<p class="lead">Uscita: ${gioco.dataUscita} Valutazione:
+					${gioco.valutazioneSito/2}/5 Multiplayer: ${gioco.web()}</p>
 
 
 				<hr>
@@ -85,7 +85,7 @@ $(function () {
 				<!-- Date/Time -->
 				<p>
 					<span class="glyphicon glyphicon-time"></span> Gioco inserito il:
-					${gioco.dataReg} Valutazione:
+					${gioco.dataReg} Valutazione utenti:
 					<c:choose>
 						<c:when test="${gioco.valutazione != 0}">
 							<c:set var="count" value="1" scope="page" />

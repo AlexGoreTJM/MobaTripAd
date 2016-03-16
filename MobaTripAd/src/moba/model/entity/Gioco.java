@@ -97,9 +97,24 @@ public class Gioco {
 	}
 
 	public boolean isWeb() {
-		return web;
+		
+		return web ;
 	}
 
+	
+
+	public String web(){
+		if(this.web){
+			String result ="SI";
+			return result;
+		}
+		else{
+			String result = "NO";
+			return result;
+		}	
+	}
+	
+	
 	public Date getDataUscita() {
 		return dataUscita;
 	}

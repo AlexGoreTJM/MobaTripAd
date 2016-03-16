@@ -23,14 +23,13 @@
 
 
 <!-- Page Content -->
-<div class="container">
+<div class="container centered">
 
 	<div class="row">
 
 		<%@ include file="../jsp/menu.jsp"%>
 
 		<div class="col-md-9 col-sm-12" id="contenuto">
-
 
 			<div class="col-sm-6 col-lg-6 col-md-6">
 				<div class="statistiche">
@@ -92,7 +91,6 @@
 
 
 				</div>
-
 			</div>
 			<!-- /.container -->
 
