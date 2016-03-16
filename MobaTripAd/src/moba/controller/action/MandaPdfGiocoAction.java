@@ -46,7 +46,8 @@ public class MandaPdfGiocoAction extends Action {
 			
 		    DaoUtente daoUtente = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
 		    request.setAttribute("utente", daoUtente.select(idUtente));
-			Utente u = (Utente) request.getAttribute("utente");
+		    String email = daoUtente.recuperaEmail(idUtente);
+			//Utente u = (Utente) request.getAttribute("utente");
             String path_img=  "C:/Users/ats/git/MobaTripAd/MobaTripAd/WebContent/IMGDB/Gioco/"+g.getImg1();
 			String path = JavaPDF.creaGiocoPDF(g.getTitolo(), 
 					path_img,
@@ -60,7 +61,7 @@ public class MandaPdfGiocoAction extends Action {
 					g.getValutazioneSito(),
 					g.getInfo());
 			
-			MailJava.MandaGiocoPDFMail(u.getEmail(), path, g.getTitolo());
+			MailJava.MandaGiocoPDFMail(email, path, g.getTitolo());
 		    System.out.println(path);
 		    File file = new File(path);
 		    file.delete();
