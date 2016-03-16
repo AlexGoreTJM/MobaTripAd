@@ -171,7 +171,7 @@ a.login {
 
 body {
      color: white;
-     background: url('../img/background.jpg');
+      background: url('../img/background.jpg'); 
      
      background-repeat: repeat;
    

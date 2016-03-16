@@ -83,11 +83,6 @@ public class MailJava {
   			message.setSubject("MobaTripAd: Dati "+titolo);
   			
   			
-
-
-  			
-  			
-  			
   			MimeBodyPart messageBodyPart = new MimeBodyPart();
   	        Multipart multipart = new MimeMultipart();
   	        messageBodyPart = new MimeBodyPart();

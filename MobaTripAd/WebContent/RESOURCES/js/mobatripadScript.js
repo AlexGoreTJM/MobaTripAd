@@ -10,7 +10,7 @@ $( document ).ready(function() {
 		e.preventDefault();	
 	var myVar= $(this).attr("data-pdf");
 	var myVar2 = $(this).attr("data-idgioco");
-		$.notify("Pdf " + myVar +" inviato");
+		$.notify("Pdf inviato a " + myVar);
 		
 		setTimeout(prova1(myVar2), 1500);
 	});
@@ -35,43 +35,6 @@ function prova1(myVar2){
 
 
 
-//function mySubstr() {
-//var str = document.title
-//var res = str.substr(0, 6);
-//document.getElementById("demo").innerHTML = res;
-//}
-
-//function doAjaxPost() {
-
-//// get the form values
-
-//var name = $('#loginn').val();
-
-//$.ajax({
-
-//type : "POST",
-
-//url : "/MobaTripAd/vaiLogin.do",
-
-//data : name,
-
-//success : function(response) {
-
-//// we have the response
-
-//$('#contenuto').html(response);
-
-//},
-
-//error : function(e) {
-
-//alert('Error: ' + e);
-
-//}
-
-//});
-
-//}
 
 function cutString() {
 	var titoli = document.getElementsByClassName("tit");
