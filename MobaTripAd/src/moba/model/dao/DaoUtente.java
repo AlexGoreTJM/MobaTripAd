@@ -273,6 +273,23 @@ public class DaoUtente extends DAO {
 					"ERRORE UPDATE UTENTE. " + "Causa: " + e.getMessage() + " Errorcode: " + e.getErrorCode());
 		}
 	}
+	
+	public int countUtenti() throws DAOException{
+    	
+    	String sql = "select count(*) as utenti from utente where admin = 0";
+    	
+    	try (PreparedStatement pst = con.prepareStatement(sql)) {
+			res = pst.executeQuery(); // esegue la query così preparata
+			if (res.next())
+				return res.getInt("utenti");
+			else
+				throw new DAONonTrovatoException(
+						"WARNING: dati non trovati in UTENTE");
+
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE COUNT UTENTE . Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		}    	
+    }
 
 	private <T> T componiEntity() throws SQLException, DAOException {
 

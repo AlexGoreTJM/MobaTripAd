@@ -157,12 +157,19 @@
 					</div>
 					<c:if test="${utente.admin}">
 						<form action="/MobaTripAd/eliminaRecensione.do">
-						<input type="hidden" name="idGioco" value="${recensioni.idGioco}">
-						<input type="hidden" name="idUtente" value="${recensioni.utente.idUtente}">
-						<button type="submit" class="btn btn-primary pull-right">ELIMINA</button>
+							<input type="text" value="${recensioni.segnalata}" disabled="disabled">
+							<input type="hidden" name="idGioco" value="${recensioni.idGioco}">
+							<input type="hidden" name="idUtente" value="${recensioni.utente.idUtente}">
+							<button type="submit" class="btn btn-primary pull-right">ELIMINA</button>
 						</form>
-						</c:if>
-						
+					</c:if>
+						<c:if test="${recensioni.utente.idUtente == utente.idUtente}">
+						<form action="/MobaTripAd/eliminaRecensione.do">
+							<input type="hidden" name="idGioco" value="${recensioni.idGioco}">
+							<input type="hidden" name="idUtente" value="${recensioni.utente.idUtente}">
+							<button type="submit" class="btn btn-primary pull-right">ELIMINA</button>
+						</form>
+					</c:if>
 					<hr>
 				</div>
 			</c:forEach>

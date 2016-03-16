@@ -216,6 +216,23 @@ public class DaoGioco extends DAO {
 
 		return giochi;
 	}
+	
+public int countGiochi() throws DAOException{
+    	
+    	String sql = "select count(*) as giochi from gioco";
+    	
+    	try (PreparedStatement pst = con.prepareStatement(sql)) {
+			res = pst.executeQuery(); // esegue la query così preparata
+			if (res.next())
+				return res.getInt("giochi");
+			else
+				throw new DAONonTrovatoException(
+						"WARNING: dati non trovati in GIOCO");
+
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE COUNT GIOCO . Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		}    	
+    }
 
 	private <T> T componiEntity() throws SQLException, DAOException {
 
