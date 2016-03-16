@@ -27,7 +27,7 @@ public class RecensioneForm extends ActionForm {
 		
 		//nell'ActionMessage definiamo un 'etichetta' facilmente decifrabile secondo la regola NomeClasse.campo.problema
 		if(this.recensione == null || this.recensione.isEmpty())
-			errori.add("username", new ActionMessage("obbligatorio", "recensione"));
+			errori.add("recensione", new ActionMessage("obbligatorio", "recensione"));
 			
 		return errori;
 	

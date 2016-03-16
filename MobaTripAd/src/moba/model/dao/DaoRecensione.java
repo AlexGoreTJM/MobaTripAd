@@ -206,7 +206,7 @@ public <T> int insert(T entity) throws DAOException {
 		String sql = 
 		"SELECT idutente, idgioco, ctrlike, ctrdislike, segnalata, info, datarec "
 		+"FROM RECENSIONE "
-		+"WHERE idgioco = ? and segnalata = 0";
+		+"WHERE idgioco = ?";
 		ArrayList<Recensione> lista = new ArrayList<Recensione>();
 		try(PreparedStatement pst = con.prepareStatement(sql)) {
 			pst.setInt(1, idGioco);

@@ -88,8 +88,8 @@ $(function () {
 					${gioco.dataReg} Valutazione:
 					<c:choose>
 						<c:when test="${gioco.valutazione != 0}">
+							<c:if test="${gioco.valutazione != 10}">
 							<c:set var="count" value="1" scope="page" />
-
 							<c:forEach begin="${count}" end="${gioco.valutazione / 2}"
 								varStatus="loop">
 								<c:set var="count" value="${count + 1}" scope="page" />
@@ -100,7 +100,14 @@ $(function () {
 								<c:set var="count" value="${count + 1}" scope="page" />
 								<span class="glyphicon glyphicon-star-empty"></span>
 							</c:forEach>
-
+						</c:if>
+						<c:if test="${gioco.valutazione == 10}">
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						</c:if>
 						</c:when>
 						<c:otherwise>
 							<span>N/P</span>
