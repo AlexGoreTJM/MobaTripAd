@@ -406,21 +406,45 @@ public <T> int insert(T entity) throws DAOException {
 	
 	public void segnala(int idGioco, int idUtente) throws DAOException {
 		
-		String sql = "UPDATE RECENSIONE SET segnalata = 1 where idutente = ? and idgioco = ?";
+		int segnalazioni= this.countSegnalazioni(idUtente, idGioco);
+		
+		String sql = "UPDATE RECENSIONE SET segnalata = ? where idutente = ? and idgioco = ?";
 		
 		try(PreparedStatement pst = con.prepareStatement(sql)) {
-			pst.setInt(1, idUtente);
-			pst.setInt(2, idGioco);
+			pst.setInt(1, segnalazioni+1);
+			pst.setInt(2, idUtente);
+			pst.setInt(3, idGioco);
 			
 			pst.executeUpdate();
 			
-			new DaoUtente().updateUtenteGrado(idUtente);
-			
+						
 		} catch (SQLException e) {
 			throw new DAOException("ERRORE UPDATE RECENSIONE REMOVE LIKE. "
 					+ "Causa: " + e.getMessage() + " Errorcode: " + e.getErrorCode());
 		}
 	}
+	
+	
+	public int countSegnalazioni(int idUtente,int idGioco) throws DAOException {
+		String sql = "SELECT segnalata FROM RECENSIONE WHERE idutente = ? and idGioco= ? ";
+		
+		try(PreparedStatement pst = con.prepareStatement(sql)) {
+			pst.setInt(1, idUtente);
+			pst.setInt(2, idGioco);
+			res = pst.executeQuery();
+			
+			if (res.next())
+				return res.getInt("segnalata");
+			else
+				return -1;
+						
+
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE COUNT SEGNALAZIONI X idutente: "+idUtente
+			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		}
+	}
+
 	
 	public static void main(String[] args) {
 		
