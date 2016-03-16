@@ -69,7 +69,7 @@
 						</form>
 					</div>
 					<div class="panel-footer ">
-						<a href="vaiSignup.do">Don't have an account!</a><p>	
+						<a href="vaiSignup.do">Non hai un account? Registrati!</a><p>	
 					
 					<a href="vaiRecupera.do">Hai dimenticato username o password?</a><p></div>
 					

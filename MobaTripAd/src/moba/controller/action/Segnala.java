@@ -23,8 +23,8 @@ public class Segnala extends Action {
 		
 		HttpSession session = request.getSession();
 
-		int idGioco = Integer.parseInt((String)request.getAttribute("idGioco"));
-		int idUtente = Integer.parseInt((String)request.getAttribute("idUtente"));
+		int idGioco = Integer.parseInt(request.getParameter("idGioco"));
+		int idUtente = Integer.parseInt(request.getParameter("idUtente"));
 
 		try {
 			DaoRecensione daoRecensione = (DaoRecensione) DAO.getDaoInstance(Tabella.Recensione);
