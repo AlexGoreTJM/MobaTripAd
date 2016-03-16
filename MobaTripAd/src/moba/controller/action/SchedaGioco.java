@@ -25,7 +25,7 @@ public class SchedaGioco extends Action{
 		try {
 			DaoGioco daoGioco = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
 
-			request.setAttribute("gioco", daoGioco.select(idGioco));
+			request.getSession().setAttribute("gioco", daoGioco.select(idGioco));
 			
 			if(request.getSession().getAttribute("utente") != null){
 				
