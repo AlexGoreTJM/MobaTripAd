@@ -31,7 +31,7 @@ public class Upload extends Action {
 	    FormFile file = fileUploadForm.getFile();
 		
 	    //Get the servers upload directory real path name
-	    String filePath = "C:\\Users\\ats\\git\\MobaTripAd\\MobaTripAd\\WebContent\\IMGDB\\Utente";
+	    String filePath = "C:\\Program Files\\apache-tomcat-8.0.32\\webapps\\MobaTripAd\\IMGDB\\Utente";
                
 	    
 	    //create the upload folder if not exists
@@ -52,7 +52,7 @@ public class Upload extends Action {
 	        File newFile = new File(filePath, fileName);
 	       
               
-	        if(!newFile.exists()){
+
 	        	FileOutputStream fos = new FileOutputStream(newFile);
 	        	fos.write(file.getFileData());
 	        	fos.flush();
@@ -66,29 +66,7 @@ public class Upload extends Action {
 		        request.setAttribute("uploadedFilePath",newFile.getAbsoluteFile());
 		        request.setAttribute("uploadedFileName",newFile.getName());
 		        
-	        } else {
-	        	
-	        	int i = 0;
-	        	while(newFile.exists()){
-	        		i++;
-	        		String newFileName = "U0000" + idUtente  + "(" + i + ")" + ".jpg";
-	        		newFile.renameTo(new File(filePath, newFileName));
-	        		
-	    	        DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
-	    	        dao.updateImg(idUtente, newFileName);
-	    	        
-	    	        ((Utente) request.getSession().getAttribute("utente")).setAvatar(newFileName);
-	    	        
-	    	        request.setAttribute("uploadedFilePath",newFile.getAbsoluteFile());
-			        request.setAttribute("uploadedFileName",newFile.getName());
-	    	        
-	        	}
-	        	FileOutputStream fos = new FileOutputStream(newFile);
-		        fos.write(file.getFileData());
-		        fos.flush();
-		        fos.close();
-		       
-	        }
+	        
 	    }
 		return mapping.findForward("success");
 	}

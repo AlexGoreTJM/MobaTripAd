@@ -2,6 +2,8 @@ package moba.controller.action;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.MalformedURLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,7 +31,7 @@ public class MandaPdfGiocoAction extends Action {
 	
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
-			HttpServletResponse response) throws FileNotFoundException, DocumentException {
+			HttpServletResponse response) throws DocumentException, MalformedURLException, IOException {
 		HttpSession session = request.getSession();
 		int idGioco = Integer.parseInt(request.getParameter("idGioco"));
 		int idUtente = ((Utente) session.getAttribute("utente")).getIdUtente();
@@ -45,8 +47,9 @@ public class MandaPdfGiocoAction extends Action {
 		    DaoUtente daoUtente = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
 		    request.setAttribute("utente", daoUtente.select(idUtente));
 			Utente u = (Utente) request.getAttribute("utente");
-
+            String path_img=  "C:/Users/ats/git/MobaTripAd/MobaTripAd/WebContent/IMGDB/Gioco/"+g.getImg1();
 			String path = JavaPDF.creaGiocoPDF(g.getTitolo(), 
+					path_img,
 					g.getSh(),
 					g.getPlayers(),
 					g.isWeb(),
