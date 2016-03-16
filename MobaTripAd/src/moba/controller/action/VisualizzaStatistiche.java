@@ -29,11 +29,11 @@ public class VisualizzaStatistiche extends Action{
 			DaoGioco daoGioco = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
 			DaoRecensione daoRecensione = (DaoRecensione) DAO.getDaoInstance(Tabella.Recensione);
 			
-			System.out.println("ciao lucas");
+			
 			session.setAttribute("numeroUtenti", daoUtente.countUtenti());
-			System.out.println(daoUtente.countUtenti());
+			
 			session.setAttribute("numeroGiochi", daoGioco.countGiochi());
-			System.out.println(daoGioco.countGiochi());
+			
 			session.setAttribute("numeroRecensioni", daoRecensione.countRecensioni());
 			
 			session.setAttribute("recPerUtente", daoRecensione.countRecensioniByUtente());
