@@ -57,7 +57,8 @@ public class JavaPDF {
 			  String info)
 		      throws DocumentException, MalformedURLException, IOException {
 		    Image image1 = Image.getInstance(immagine);
-		    image1.scaleAbsolute(500,500);
+		    image1.scaleAbsolute(300,300);
+		    image1.setAlignment(Element.ALIGN_CENTER);
 		    
 		    document.add(image1);
 		    Paragraph preface = new Paragraph();
@@ -85,7 +86,7 @@ public class JavaPDF {
 		    preface.add(new Paragraph("Valutazione sito: "+ valutazioneSito, smallBold));
 		    addEmptyLine(preface, 3);
 		    preface.add(new Paragraph(info));
-		   
+		    
 		    document.add(preface);
 		    
 		   
