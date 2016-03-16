@@ -2,6 +2,8 @@ package moba.model.utilita;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -13,6 +15,7 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
+import com.itextpdf.text.Image;
 import com.itextpdf.text.List;
 import com.itextpdf.text.ListItem;
 import com.itextpdf.text.Paragraph;
@@ -41,7 +44,7 @@ public class JavaPDF {
 	  }
 	  
 	  
-	  private static void addGioco(Document document,
+	  private static void addGioco(Document document, String immagine,
 			  String titolo,
 			  String sh,
 			  int players,
@@ -52,7 +55,11 @@ public class JavaPDF {
 			  String categoria,
 			  double valutazioneSito,
 			  String info)
-		      throws DocumentException {
+		      throws DocumentException, MalformedURLException, IOException {
+		    Image image1 = Image.getInstance(immagine);
+		    image1.scaleAbsolute(500,500);
+		    
+		    document.add(image1);
 		    Paragraph preface = new Paragraph();
 		    addEmptyLine(preface, 1);	
 		    preface.add(new Paragraph(titolo, catFont));
@@ -78,9 +85,11 @@ public class JavaPDF {
 		    preface.add(new Paragraph("Valutazione sito: "+ valutazioneSito, smallBold));
 		    addEmptyLine(preface, 3);
 		    preface.add(new Paragraph(info));
-		    
+		   
 		    document.add(preface);
 		    
+		   
+		
 		    
 		    /*
 		     * Image image1 = Image.getInstance("Lighthouse.jpg");
@@ -90,7 +99,7 @@ public class JavaPDF {
 		     */
 		  }
 	  
-	  public static String creaGiocoPDF(String titolo, 
+	  public static String creaGiocoPDF(String titolo, String immagine, 
 			  String sh, 
 			  int players,
 			  boolean web, 
@@ -99,14 +108,14 @@ public class JavaPDF {
 			  double costoLancio, 
 			  String categoria, 
 			  double valutazioneSito,
-			  String info) throws FileNotFoundException, DocumentException{
+			  String info) throws DocumentException, MalformedURLException, IOException{
 		  
 		  Document d = new Document();
 		
 		  
 		  PdfWriter.getInstance(d, new FileOutputStream("C:/Users/Ats/Desktop/"+titolo+".pdf"));
 		  d.open();
-		  addGioco(d, titolo,sh,players,web,dataUscita,etaMin,costoLancio,categoria,valutazioneSito,info);
+		  addGioco(d, immagine, titolo,sh,players,web,dataUscita,etaMin,costoLancio,categoria,valutazioneSito,info);
 		  d.close();
 		  return "C:/Users/Ats/Desktop/"+titolo+".pdf";  
 	  }
