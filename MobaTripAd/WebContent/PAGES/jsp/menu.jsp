@@ -102,7 +102,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="http://www.jquery2dotnet.com">Statistiche</a>
+                                        <a href="/MobaTripAd/visualizzaStatistiche.do">Statistiche</a>
                                     </td>
                                 </tr>
                             </table>
