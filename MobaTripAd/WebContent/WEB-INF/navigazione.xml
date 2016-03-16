@@ -194,7 +194,7 @@
 </action>
 
 <action path="/incrementaLike" type="moba.controller.action.IncrementaLike" >
-	<forward name="success" path="/PAGES/jsp/index.jsp" />
+	<forward name="success" path="/PAGES/jsp/gioco.jsp" />
 	<forward name="failure" path="/PAGES/jsp/errore.jsp" />
 </action>
 
