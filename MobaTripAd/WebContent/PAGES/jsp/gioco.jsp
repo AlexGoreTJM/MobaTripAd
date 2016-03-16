@@ -33,7 +33,7 @@
 				<!-- Title -->
 				<h1>${gioco.titolo}</h1>
 				<p class="lead">Uscita: ${gioco.dataUscita} Valutazione sito:
-					${gioco.valutazioneSito/2}</p>
+					${gioco.valutazioneSito/2}/5</p>
 
 
 				<hr>
