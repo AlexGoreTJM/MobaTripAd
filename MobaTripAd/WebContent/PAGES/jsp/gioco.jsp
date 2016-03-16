@@ -12,6 +12,27 @@
 
 <title>MobaTripAd --Scheda Gioco--</title>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(function () {
+    $(".like").click(function () {
+        var input = $(this).find('.qty1');
+        input.val(parseInt(input.val())+ 1);
+		
+        var idutente = $(this).attr("data-idutente");
+        var idgioco = $(this).attr("data-idgioco");
+        window.location.href= "incrementaLike.do?idu=" + idutente + "&idg=" + idgioco;
+    });
+    
+	$(".dislike").click(function () {
+    var input = $(this).find('.qty2');
+    input.val(input.val() - 1);
+    
+    
+	});
+});
+</script> 
 
 </head>
 <body>
@@ -152,6 +173,19 @@
 
 						<!-- Nested Comment -->
 						${recensioni.info}
+						
+						<br>
+
+							<div class="container"> 
+   								 <a class="like" data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}" ><i class="fa fa-thumbs-o-up"></i>  
+       							 Like <input class="qty1" name="qty1" readonly="readonly" type="text" value="0" />
+    							</a>
+    							<a class="dislike"><i class="fa fa-thumbs-o-down"></i> 
+        						Dislike <input class="qty2"  name="qty2" readonly="readonly" type="text" value="0"
+        							data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}" />
+   								 </a>
+							</div>
+	
 
 						<!-- End Nested Comment -->
 					</div>
