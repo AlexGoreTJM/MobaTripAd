@@ -3,7 +3,9 @@ package moba.model.dao;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
@@ -83,20 +85,48 @@ public <T> int insert(T entity) throws DAOException {
 		
 	public <T> ArrayList<T> select() throws DAOException {
 		
-		String sql = "SELECT idutente, idgioco from recensione order by (ctrlike - ctrdislike) desc";
+		String sql = "SELECT idutente, idgioco, ctrlike, ctrdislike, segnalata, info, datarec "
+				+ "FROM recensione order by (ctrlike - ctrdislike) desc";
 		ArrayList<Recensione> lista = new ArrayList<Recensione>();
 		
 		try(PreparedStatement pst = con.prepareStatement(sql)) {
 			res = pst.executeQuery();
 			
-			while(res.next()){
-				lista.add(this.select(res.getInt("idutente"), res.getInt("idgioco")));
+			while(res.next())
+				lista.add(componiEntity());
 
-			}
 			if (lista.size() == 0)
 				throw new DAONonTrovatoException("ERRORE SELECT RECENSIONI");
 			
 			return (ArrayList<T>) lista;
+
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE SELECT RECENSIONI . Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		} 
+	}
+	
+	public ArrayList<ArrayList<String>> selectLikesDislikesByRecensione() throws DAOException {
+		
+		String sql = "SELECT u.nickname as utente, g.titolo as gioco, r.ctrlike as likes, r.ctrdislike as dislikes "
+				+ "FROM utente u, gioco g, recensione r "
+				+ "WHERE u.idutente = r.idutente and g.idgioco = r.idgioco "
+				+ "ORDER BY (ctrlike - ctrdislike) desc";
+		
+		ArrayList<ArrayList<String>> lista = new ArrayList<>();
+		
+		try(PreparedStatement pst = con.prepareStatement(sql)) {
+			res = pst.executeQuery();
+			
+			while(res.next()){
+				lista.add(new ArrayList<String>(
+						Arrays.asList(res.getString("utente"), res.getString("gioco"), 
+						Integer.toString(res.getInt("likes")), Integer.toString(res.getInt("dislikes")))));
+			}
+				
+			if (lista.size() == 0)
+				throw new DAONonTrovatoException("ERRORE SELECT RECENSIONI");
+			
+			return lista;
 
 		} catch (SQLException e) {
 			throw new DAOException("ERRORE SELECT RECENSIONI . Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
@@ -275,6 +305,23 @@ public <T> int insert(T entity) throws DAOException {
 		}
 	}
 	
+    public int countRecensioni() throws DAOException{
+    	
+    	String sql = "select count(*) as recensioni from recensione";
+    	
+    	try (PreparedStatement pst = con.prepareStatement(sql)) {
+			res = pst.executeQuery(); // esegue la query così preparata
+			if (res.next())
+				return res.getInt("recensioni");
+			else
+				throw new DAONonTrovatoException(
+						"WARNING: dati non trovati in RECENSIONE");
+
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE COUNT RECENSIONE . Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		}    	
+    }
+	
 	public int countRecensioniByUtente(int idUtente) throws DAOException {
 		String sql = "SELECT COUNT(*) AS recensioni FROM RECENSIONE WHERE idutente = ? GROUP BY idutente";
 		
@@ -294,6 +341,28 @@ public <T> int insert(T entity) throws DAOException {
 			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
 		}
 	}
+	
+    public HashMap<String, Integer> countRecensioniByUtente() throws DAOException{
+    	
+    	String sql = "select u.nickname as utente, count(r.idutente) as recensioni from utente u left join recensione r on u.idutente = r.idutente where u.admin = 0 group by u.nickname order by recensioni desc";
+    	LinkedHashMap<String, Integer> map = new LinkedHashMap<String, Integer>();
+   
+    	try (PreparedStatement pst = con.prepareStatement(sql)) {
+			res = pst.executeQuery(); // esegue la query così preparata
+			
+			while(res.next())
+				map.put(res.getString("utente"), res.getInt("recensioni"));
+			
+			if (map.size() == 0)
+				throw new DAONonTrovatoException("ERRORE COUNT RECENSIONI_PER_UTENTE");
+			
+			return map;
+
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE COUNT RECENSIONI_PER_UTENTE . Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		} 
+    	
+    }
 	
 	public int countLikeByUtente(int idUtente) throws DAOException {
 		String sql = "SELECT SUM(ctrlike) AS likes FROM RECENSIONE WHERE idutente = ? GROUP BY idutente";
@@ -357,6 +426,12 @@ public <T> int insert(T entity) throws DAOException {
 		
 		try {
 			DaoRecensione dao = (DaoRecensione) DAO.getDaoInstance(Tabella.Recensione);
+			
+//			System.out.println(new DaoUtente().countUtenti());
+//			System.out.println(new DaoGioco().countGiochi());
+//			System.out.println(dao.countRecensioni());
+//			System.out.println(dao.countRecensioniByUtente());
+			System.out.println(dao.selectLikesDislikesByRecensione());
 			
 		} catch (DAOException e) {
 			System.out.println(e.getMessage());
