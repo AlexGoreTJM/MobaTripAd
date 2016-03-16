@@ -21,16 +21,18 @@
 				<p>
 					<c:choose>
 						<c:when test="${GiocoRecente.valutazione != 0}">
-							<c:set var="count" value="1" scope="page" />
-							<c:forEach begin="${count}" end="${GiocoRecente.valutazione / 2}"
+							<c:set var="count" value="0" scope="page" />
+							<c:forEach begin="${count}" end="${(GiocoRecente.valutazione / 2)-1}"
 								varStatus="loop">
 								<c:set var="count" value="${count + 1}" scope="page" />
 								<span class="glyphicon glyphicon-star"></span>
 							</c:forEach>
-							<c:forEach begin="${count}" end="5" varStatus="loop">
+							<c:if test="${count != 5}">
+							<c:forEach begin="${count}" end="4" varStatus="loop">
 								<c:set var="count" value="${count + 1}" scope="page" />
 								<span class="glyphicon glyphicon-star-empty"></span>
 							</c:forEach>
+							</c:if>
 						</c:when>
 						<c:otherwise>
 							<span>N/P</span>

@@ -16,18 +16,41 @@
 <script type="text/javascript">
 
 $(function () {
-    $(".like").click(function () {
+    $(".like1").click(function () {
         var input = $(this).find('.qty1');
-        input.val(parseInt(input.val())+ 1);
+        input.val(parseInt(input.val()) + 1);
 		
         var idutente = $(this).attr("data-idutente");
         var idgioco = $(this).attr("data-idgioco");
         window.location.href= "incrementaLike.do?idu=" + idutente + "&idg=" + idgioco;
     });
     
-	$(".dislike").click(function () {
+	$(".dislike1").click(function () {
+    var input = $(this).find('.qty2');
+    input.val(input.val() + 1);
+    
+    var idutente = $(this).attr("data-idutente");
+    var idgioco = $(this).attr("data-idgioco");
+    window.location.href= "incrementaDislike.do?idu=" + idutente + "&idg=" + idgioco;
+    
+	});
+	
+	$(".like0").click(function () {
+        var input = $(this).find('.qty1');
+        input.val(parseInt(input.val()) - 1);
+		
+        var idutente = $(this).attr("data-idutente");
+        var idgioco = $(this).attr("data-idgioco");
+        window.location.href= "decrementaLike.do?idu=" + idutente + "&idg=" + idgioco;
+    });
+    
+	$(".dislike0").click(function () {
     var input = $(this).find('.qty2');
     input.val(input.val() - 1);
+    
+    var idutente = $(this).attr("data-idutente");
+    var idgioco = $(this).attr("data-idgioco");
+    window.location.href= "decrementaDislike.do?idu=" + idutente + "&idg=" + idgioco;
     
     
 	});
@@ -135,7 +158,7 @@ $(function () {
 					<div class="form-group">
 						<input type="hidden" name="idGioco" value="${gioco.idGioco}">
 					</div> 
-					Download scheda gioco: <button type="submit" class="btn btn-primary" id="inviaPDF" data-pdf="${sessionScope.utente.email}">Invia PDF</button>
+					Download scheda gioco: <button type="submit" class="btn btn-primary" id="inviaPDF" data-idgioco="${gioco.idGioco}" data-pdf="${sessionScope.utente.email}">Invia PDF</button>
 				</form>
             </c:if>
 
@@ -175,15 +198,72 @@ $(function () {
 						${recensioni.info}
 						
 						<br>
-
+						
 							<div class="container"> 
-   								 <a class="like" data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}" ><i class="fa fa-thumbs-o-up"></i>  
-       							 Like <input class="qty1" name="qty1" readonly="readonly" type="text" value="${recensioni.ctrLike}" />
-    							</a>
-    							<a class="dislike"><i class="fa fa-thumbs-o-down"></i> 
-        						Dislike <input class="qty2"  name="qty2" readonly="readonly" type="text" value="${recensioni.ctrDislike}"
-        							data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}" />
-   								 </a>
+   							<c:if test="${ sessionScope.utente != null}">
+								<c:choose>
+									<c:when test="${like == null || like == 0}">
+   										<a class="like1" data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}"> <i class="fa fa-thumbs-o-up"></i>  
+       										Like <input class="qty1" name="qty1" readonly="readonly" type="text" value="${recensioni.ctrLike}" />
+       										<%
+       							 				if(request.getSession().getAttribute("like") != null)
+       							 					if(((String)request.getSession().getAttribute("like")).equals("0"))
+       							 						request.getSession().setAttribute("like", "1");
+       							 					else
+       							 						request.getSession().setAttribute("like", "0");
+       							 				else
+       							 					request.getSession().setAttribute("like", "1");
+       										%>
+    									</a>
+    									<a class="dislike1" data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}"><i class="fa fa-thumbs-o-down"></i> 
+        									Dislike <input class="qty2"  name="qty2" readonly="readonly" type="text" value="${recensioni.ctrDislike}"
+        									data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}" />
+        									<%
+       							 				if(request.getSession().getAttribute("dislike") != null)
+       							 					if(((String)request.getSession().getAttribute("dislike")).equals("0"))
+       							 						request.getSession().setAttribute("dislike", "1");
+       							 					else
+       							 						request.getSession().setAttribute("dislike", "0");
+       							 				else
+       							 					request.getSession().setAttribute("dislike", "1");
+       										%>
+   										 </a>
+   								 	</c:when>
+   								 	<c:otherwise>
+   								 		<a class="like0" data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}"> <i class="fa fa-thumbs-o-up"></i>  
+       										Like <input class="qty1" name="qty1" readonly="readonly" type="text" value="${recensioni.ctrLike}" />
+       										<%
+       							 				if(request.getSession().getAttribute("like") != null)
+       							 					if(((String)request.getSession().getAttribute("like")).equals("1"))
+       							 						request.getSession().setAttribute("like", "0");
+       							 					else
+       							 						request.getSession().setAttribute("like", "1");
+       							 				else
+       							 					request.getSession().setAttribute("like", "1");
+       										%>
+    									</a>
+    									<a class="dislike0" data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}"><i class="fa fa-thumbs-o-down"></i> 
+        									Dislike <input class="qty2"  name="qty2" readonly="readonly" type="text" value="${recensioni.ctrDislike}"
+        									data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}" />
+        									<%
+       							 				if(request.getSession().getAttribute("dislike") != null)
+       							 					if(((String)request.getSession().getAttribute("dislike")).equals("1"))
+       							 						request.getSession().setAttribute("dislike", "0");
+       							 					else
+       							 						request.getSession().setAttribute("dislike", "1");
+       							 				else
+       							 					request.getSession().setAttribute("dislike", "1");
+       										%>
+   										 </a>
+   								 	</c:otherwise>
+   								</c:choose>
+   							</c:if>
+   							
+   								<form action="segnala.do">
+   									<input type="submit" value="Segnala">
+   									<input type="hidden" name="idGioco" value="${recensioni.idGioco}">
+									<input type="hidden" name="idUtente" value="${recensioni.utente.idUtente}">
+   								</form>
 							</div>
 	
 

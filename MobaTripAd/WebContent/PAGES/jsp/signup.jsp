@@ -31,7 +31,7 @@
       <!-- left column -->
       <div class="col-md-3">
         <div class="text-center">
-          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+          <img src="/MobaTripAd/IMGDB/Utente/MOBAavatar.png" class="avatar img-circle" alt="avatar" height="256" width="256">
           <h6>Upload a different photo...</h6>
           
           <input type="file" name="avatar" class="form-control">

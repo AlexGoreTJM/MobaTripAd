@@ -15,7 +15,7 @@ import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.enumeratori.Tabella;
 import moba.model.entity.Gioco;
 
-public class IncrementaLike extends Action {
+public class IncrementaDislike extends Action{
 
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
@@ -26,7 +26,7 @@ public class IncrementaLike extends Action {
 		try {
 			DaoRecensione dao = (DaoRecensione) DAO.getDaoInstance(Tabella.Recensione);
 			
-			dao.addLike(idUtente, idGioco);
+			dao.addDislike(idUtente, idGioco);
 		
 			Gioco g = (Gioco) request.getSession().getAttribute("gioco");
 			
@@ -46,4 +46,5 @@ public class IncrementaLike extends Action {
 			return mapping.findForward("failure");
 		}
 	}
+	
 }
