@@ -10,9 +10,9 @@
 			<div class="caption">
 				<h4 class="pull-right">Voto: ${GiocoRecente.valutazioneSito/2}/5</h4><br><br>
 				<h4>
-					<a href="schedaGioco.do?idGioco=${GiocoRecente.idGioco}" style="color: black;">${GiocoRecente.titolo}</a>
+					<a class="tit" href="schedaGioco.do?idGioco=${GiocoRecente.idGioco}" style="color: black;">${GiocoRecente.titolo}</a>
 				</h4>
-				<p>${GiocoRecente.info}</p>
+				<p class="inf">${GiocoRecente.info}</p>
 			</div>
 			<div class="ratings">
 				<p class="pull-right">${GiocoRecente.recensioni.size()}

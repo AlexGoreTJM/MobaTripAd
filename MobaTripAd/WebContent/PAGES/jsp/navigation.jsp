@@ -31,7 +31,7 @@
 
 </head>
 
-<body>
+<body onload="cutString();">
  <!-- l'header contiene la testata del sito  -->
  <nav class="navbar navbar-default">
   <div class="container-fluid">

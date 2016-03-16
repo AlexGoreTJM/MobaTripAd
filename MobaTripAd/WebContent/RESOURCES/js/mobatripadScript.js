@@ -84,3 +84,33 @@ function mySubstr() {
 //	});
 //
 //}
+
+function cutString() {
+    var titoli = document.getElementsByClassName("tit");
+    var i,j;
+    var charsToCutTo = 17;
+    for (i = 0; i < titoli.length; i++) {
+    	if(titoli[i].innerHTML.length > charsToCutTo){
+    	  var strShort = "";
+          for(j = 0; j < charsToCutTo; j++){
+              strShort += titoli[i].innerHTML[j];
+          }
+          document.getElementsByClassName("tit")[i].title = "text";
+          document.getElementsByClassName("tit")[i].innerHTML = strShort + "...";
+    	}
+    }
+    
+    var info = document.getElementsByClassName("inf");
+    var x,y;
+    var charsToCutTo2 = 35;
+    for (x = 0; x < info.length; x++) {
+    	if(info[x].innerHTML.length > charsToCutTo2){
+    	  var strShort = "";
+          for(y = 0; y < charsToCutTo2; y++){
+              strShort += info[x].innerHTML[y];
+          }
+          document.getElementsByClassName("inf")[x].title = "text";
+          document.getElementsByClassName("inf")[x].innerHTML = strShort + "...";
+    	}
+    }
+}
