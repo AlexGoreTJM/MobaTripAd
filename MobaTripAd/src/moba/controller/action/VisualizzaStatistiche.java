@@ -10,8 +10,9 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import moba.model.dao.DAO;
+import moba.model.dao.DaoGioco;
 import moba.model.dao.DaoRecensione;
-import moba.model.dao.DaoStatistica;
+import moba.model.dao.DaoUtente;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.enumeratori.Tabella;
 
@@ -24,8 +25,8 @@ public class VisualizzaStatistiche extends Action{
 		HttpSession session = request.getSession();
 		
 		try {
-			DaoStatistica daoUtente = (DaoStatistica) DAO.getDaoInstance(Tabella.Utente);
-			DaoStatistica daoGioco = (DaoStatistica) DAO.getDaoInstance(Tabella.Gioco);
+			DaoUtente daoUtente = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
+			DaoGioco daoGioco = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
 			DaoRecensione daoRecensione = (DaoRecensione) DAO.getDaoInstance(Tabella.Recensione);
 			
 			session.setAttribute("numeroUtenti", daoUtente.countUtenti());
