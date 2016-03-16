@@ -135,7 +135,7 @@ $(function () {
 					<div class="form-group">
 						<input type="hidden" name="idGioco" value="${gioco.idGioco}">
 					</div> 
-					Download scheda gioco: <button type="submit" class="btn btn-primary" id="inviaPDF" data-pdf="${sessionScope.utente.email}">Invia PDF</button>
+					Download scheda gioco: <button type="submit" class="btn btn-primary" id="inviaPDF" data-idgioco="${gioco.idGioco}" data-pdf="${sessionScope.utente.email}">Invia PDF</button>
 				</form>
             </c:if>
 

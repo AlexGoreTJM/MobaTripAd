@@ -34,6 +34,7 @@ public class MandaPdfGiocoAction extends Action {
 			HttpServletResponse response) throws DocumentException, MalformedURLException, IOException {
 		HttpSession session = request.getSession();
 		int idGioco = Integer.parseInt(request.getParameter("idGioco"));
+		System.out.println(idGioco);
 		int idUtente = ((Utente) session.getAttribute("utente")).getIdUtente();
 	
 		
