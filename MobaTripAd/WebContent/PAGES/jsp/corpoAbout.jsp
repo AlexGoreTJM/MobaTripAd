@@ -10,9 +10,9 @@
 
 <div class="col-sm-4 col-lg-4 col-md-4">
 		<div class="thumbnail" >
-			<img src="/../IMGDB/Dev/fil.jpg" alt=""></a>
+			<a><img src="IMGDB/Dev/fil.jpg" alt=""></a>
 				
-			<div class="caption">
+			<div class="caption" style="background-color:black;">
 				<h4>
 					<font color="white">Filippo Trombetta</font>
 				</h4>
@@ -22,9 +22,9 @@
 	</div>
 	<div class="col-sm-4 col-lg-4 col-md-4">
 		<div class="thumbnail" >
-			<img src="/IMGDB/Dev/ale.jpg"
+			<a><img src="IMGDB/Dev/ale.jpg"
 				alt=""></a>
-			<div class="caption">
+			<div class="caption" style="background-color:black;">
 				<h4>
 					<font color="white">Alessandro Galiano</font>
 				</h4>

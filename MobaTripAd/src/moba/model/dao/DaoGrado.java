@@ -4,10 +4,10 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import moba.model.entity.Grado;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
 import moba.model.dao.enumeratori.Tabella;
+import moba.model.entity.Grado;
 
 public class DaoGrado extends DAO {
 
@@ -25,10 +25,6 @@ public class DaoGrado extends DAO {
 		throw new DAOException("WARNING: COMANDO NON IMPLEMENTATO!");
 	}
 
-	
-	
-	
-	
 	@Override
 	public <T> ArrayList<T> select() throws DAOException {
 		throw new DAOException("WARNING: COMANDO NON IMPLEMENTATO!");
