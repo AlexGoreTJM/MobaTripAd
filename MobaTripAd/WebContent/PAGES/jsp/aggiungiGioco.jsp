@@ -67,7 +67,7 @@
           <fieldset>
           <select name="idCategoria">
           <c:forEach items="${listaCategoria}" var="categoria">
-          <option value="${categoria.idCategoria}"> ${categoria.nome} </option>
+          <option value="${categoria.idCategoria}" style="color:black;"> ${categoria.nome} </option>
           </c:forEach>
           </select>
     	</fieldset>
