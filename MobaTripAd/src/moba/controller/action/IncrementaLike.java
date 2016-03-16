@@ -18,15 +18,10 @@ import moba.model.entity.Utente;
 public class IncrementaLike extends Action {
 
 	@Override
-	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
-			HttpServletResponse response) {
-		HttpSession session = request.getSession();
+	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 
 		int idUtente = Integer.parseInt(request.getParameter("idu"));
 		int idGioco = Integer.parseInt(request.getParameter("idg"));
-		
-		System.out.println("cazzo di buddha" + idUtente);
-		System.out.println("cazzo di matteo"+ idGioco);
 		
 		try {
 			DaoRecensione dao = (DaoRecensione) DAO.getDaoInstance(Tabella.Recensione);

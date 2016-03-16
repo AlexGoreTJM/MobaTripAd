@@ -178,10 +178,10 @@ $(function () {
 
 							<div class="container"> 
    								 <a class="like" data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}" ><i class="fa fa-thumbs-o-up"></i>  
-       							 Like <input class="qty1" name="qty1" readonly="readonly" type="text" value="0" />
+       							 Like <input class="qty1" name="qty1" readonly="readonly" type="text" value="${recensioni.ctrLike}" />
     							</a>
     							<a class="dislike"><i class="fa fa-thumbs-o-down"></i> 
-        						Dislike <input class="qty2"  name="qty2" readonly="readonly" type="text" value="0"
+        						Dislike <input class="qty2"  name="qty2" readonly="readonly" type="text" value="${recensioni.ctrDislike}"
         							data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}" />
    								 </a>
 							</div>
