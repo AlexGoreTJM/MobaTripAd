@@ -27,8 +27,11 @@ $(function () {
     
 	$(".dislike1").click(function () {
     var input = $(this).find('.qty2');
-    input.val(input.val() - 1);
+    input.val(input.val() + 1);
     
+    var idutente = $(this).attr("data-idutente");
+    var idgioco = $(this).attr("data-idgioco");
+    window.location.href= "incrementaDislike.do?idu=" + idutente + "&idg=" + idgioco;
     
 	});
 	
@@ -44,6 +47,10 @@ $(function () {
 	$(".dislike0").click(function () {
     var input = $(this).find('.qty2');
     input.val(input.val() - 1);
+    
+    var idutente = $(this).attr("data-idutente");
+    var idgioco = $(this).attr("data-idgioco");
+    window.location.href= "decrementaDislike.do?idu=" + idutente + "&idg=" + idgioco;
     
     
 	});
@@ -208,9 +215,18 @@ $(function () {
        							 					request.getSession().setAttribute("like", "1");
        										%>
     									</a>
-    									<a class="dislike1"><i class="fa fa-thumbs-o-down"></i> 
+    									<a class="dislike1" data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}"><i class="fa fa-thumbs-o-down"></i> 
         									Dislike <input class="qty2"  name="qty2" readonly="readonly" type="text" value="${recensioni.ctrDislike}"
         									data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}" />
+        									<%
+       							 				if(request.getSession().getAttribute("dislike") != null)
+       							 					if(((String)request.getSession().getAttribute("dislike")).equals("0"))
+       							 						request.getSession().setAttribute("dislike", "1");
+       							 					else
+       							 						request.getSession().setAttribute("dislike", "0");
+       							 				else
+       							 					request.getSession().setAttribute("dislike", "1");
+       										%>
    										 </a>
    								 	</c:when>
    								 	<c:otherwise>
@@ -226,9 +242,18 @@ $(function () {
        							 					request.getSession().setAttribute("like", "1");
        										%>
     									</a>
-    									<a class="dislike0"><i class="fa fa-thumbs-o-down"></i> 
+    									<a class="dislike0" data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}"><i class="fa fa-thumbs-o-down"></i> 
         									Dislike <input class="qty2"  name="qty2" readonly="readonly" type="text" value="${recensioni.ctrDislike}"
         									data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}" />
+        									<%
+       							 				if(request.getSession().getAttribute("dislike") != null)
+       							 					if(((String)request.getSession().getAttribute("dislike")).equals("1"))
+       							 						request.getSession().setAttribute("dislike", "0");
+       							 					else
+       							 						request.getSession().setAttribute("dislike", "1");
+       							 				else
+       							 					request.getSession().setAttribute("dislike", "1");
+       										%>
    										 </a>
    								 	</c:otherwise>
    								</c:choose>
