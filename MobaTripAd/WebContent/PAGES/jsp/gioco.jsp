@@ -198,9 +198,9 @@ $(function () {
 						${recensioni.info}
 						
 						<br>
-
+						
 							<div class="container"> 
-   								 <c:if test="${ sessionScope.utente != null}">
+   							<c:if test="${ sessionScope.utente != null}">
 								<c:choose>
 									<c:when test="${like == null || like == 0}">
    										<a class="like1" data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}"> <i class="fa fa-thumbs-o-up"></i>  
@@ -258,6 +258,12 @@ $(function () {
    								 	</c:otherwise>
    								</c:choose>
    							</c:if>
+   							
+   								<form action="segnala.do">
+   									<input type="submit" value="Segnala">
+   									<input type="hidden" name="idGioco" value="${recensioni.idGioco}">
+									<input type="hidden" name="idUtente" value="${recensioni.utente.idUtente}">
+   								</form>
 							</div>
 	
 
