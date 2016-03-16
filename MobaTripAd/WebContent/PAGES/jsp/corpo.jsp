@@ -2,15 +2,16 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
+
 <c:forEach items="${listaGiocoRecente}" var="GiocoRecente">
 	<div class="col-sm-4 col-lg-4 col-md-4">
 		<div class="thumbnail" >
 			<p><a href="schedaGioco.do?idGioco=${GiocoRecente.idGioco}"><img src="${pathGioco}${GiocoRecente.img1}"
 				alt="${GiocoRecente.titolo}"></a>
 			<div class="caption">
-				<h4 class="pull-right">Voto: ${GiocoRecente.valutazioneSito/2}/5</h4><br><br>
+				<h4 class="pull-right">Voto: ${GiocoRecente.valutazioneSito/2}/5</h4>
 				<h4>
-					<a class="tit" href="schedaGioco.do?idGioco=${GiocoRecente.idGioco}" style="color: black;">${GiocoRecente.titolo}</a>
+					<a class="tit" href="schedaGioco.do?idGioco=${GiocoRecente.idGioco}" style="color: black;" title="${GiocoRecente.titolo}">${GiocoRecente.titolo}</a>
 				</h4>
 				<p class="inf">${GiocoRecente.info}</p>
 			</div>
