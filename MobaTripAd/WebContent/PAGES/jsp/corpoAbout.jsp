@@ -10,7 +10,7 @@
 
 <div class="col-sm-4 col-lg-4 col-md-4">
 		<div class="thumbnail" >
-			<a><img src="IMGDB/Dev/fil.jpg" alt=""></a>
+			<a><img src="IMGDB/Dev/fil.jpg" alt="" style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;"></a>
 				
 			<div class="caption" style="background-color:black;">
 				<h4>
@@ -24,7 +24,7 @@
 	<div class="col-sm-4 col-lg-4 col-md-4">
 		<div class="thumbnail" >
 			<a><img src="IMGDB/Dev/ale.jpg"
-				alt=""></a>
+				alt=""style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;"></a>
 			<div class="caption" style="background-color:black;">
 				<h4>
 					<font color="white">Alessandro Galiano</font>
@@ -37,7 +37,7 @@
 		<div class="col-sm-4 col-lg-4 col-md-4">
 		<div class="thumbnail" >
 			<a><img src="IMGDB/Dev/lu.jpg"
-				alt=""></a>
+				alt=""style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;"></a>
 			<div class="caption" style="background-color:black;">
 				<h4>
 					<font color="white">Luca Della Gatta</font>
@@ -50,7 +50,7 @@
 		<div class="col-sm-4 col-lg-4 col-md-4">
 		<div class="thumbnail" >
 			<a><img src="IMGDB/Dev/lucas.jpg"
-				alt=""></a>
+				alt=""style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;"></a>
 			<div class="caption" style="background-color:black;">
 				<h4>
 					<font color="white">Lucas Marcelo Marini Tejada</font>
@@ -63,7 +63,7 @@
 	<div class="col-sm-4 col-lg-4 col-md-4">
 		<div class="thumbnail" >
 			<a><img src="IMGDB/Dev/cri.jpg"
-				alt=""></a>
+				alt=""style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;"></a>
 			<div class="caption" style="background-color:black;">
 				<h4>
 					<font color="white">Christian Rascioni</font>
@@ -76,7 +76,7 @@
 	<div class="col-sm-4 col-lg-4 col-md-4">
 		<div class="thumbnail" >
 			<a><img src="IMGDB/Dev/em.jpg"
-				alt=""></a>
+				alt=""style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;"></a>
 			<div class="caption" style="background-color:black;">
 				<h4>
 					<font color="white">Emanuele Marchionne</font>
@@ -89,7 +89,7 @@
 	<div class="col-sm-4 col-lg-4 col-md-4">
 		<div class="thumbnail" >
 			<a><img src="IMGDB/Dev/gu.jpg"
-				alt=""></a>
+				alt=""style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;"></a>
 			<div class="caption" style="background-color:black;">
 				<h4>
 					<font color="white">Guglielmo Faiola</font>
@@ -102,7 +102,7 @@
 	<div class="col-sm-4 col-lg-4 col-md-4">
 		<div class="thumbnail" >
 			<a><img src="IMGDB/Dev/mat.jpg"
-				alt=""></a>
+				alt=""style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;"></a>
 			<div class="caption" style="background-color:black;">
 				<h4>
 					<font color="white">Matteo di Girolamo</font>
@@ -115,13 +115,13 @@
 	<div class="col-sm-4 col-lg-4 col-md-4">
 		<div class="thumbnail" >
 			<a><img src="IMGDB/Dev/ric.jpg"
-				alt=""></a>
+				alt=""style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;"></a>
 			<div class="caption" style="background-color:black;">
 				<h4>
 					<font color="white">Riccardo Rossi</font>
 				</h4>
 				<p><font color="white">Dott. Informatica</font></p>
-				<p><font color="white">e-mail: </font></p>
+				<p><font color="white">e-mail: kuno98200@yahoo.it</font></p>
 			</div>
 		</div>
 	</div>
