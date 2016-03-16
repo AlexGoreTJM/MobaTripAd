@@ -30,6 +30,7 @@
 	<form-bean type="moba.controller.form.RecensioneForm" name="RecensioneForm" />
 	<form-bean type="moba.controller.form.ValidaFile" name="ValidaFile" />
 	<form-bean type="moba.controller.form.InserisciGiocoForm" name="InserisciGiocoForm" />
+	<form-bean type="moba.controller.form.ForgetForm" name="ForgetForm" />
 
 	<!-- sample form bean descriptor for a DynaActionForm
         <form-bean type="org.apache.struts.action.DynaActionForm" name="logonForm" >
@@ -81,6 +82,8 @@
 <action path="/vaiContact" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/contactUs.jsp" ></action>
 <action path="/vaiAbout" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/about.jsp" ></action>
 <action path="/inserisciGioco" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/aggiungiGioco.jsp" ></action>
+<action path="/vaiRecupera" type="org.apache.struts.actions.ForwardAction" parameter="/PAGES/jsp/recuperaPass.jsp" ></action>
+
 
 <!-- ============================================= PATH CHE ESEGUONO FORM E ACTION SPECIFICI ============================================= -->
 
@@ -198,6 +201,11 @@
 	<forward name="failure" path="/PAGES/jsp/errore.jsp" />
 </action>
 
+<action path="/forget" type="moba.controller.action.Forget" name="ForgetForm"
+	validate="true" input="/PAGES/jsp/recuperaPass.jsp"  >
+	<forward name="success" path="/PAGES/jsp/forget.jsp" />
+	<forward name="failure" path="/PAGES/jsp/errore.jsp" />
+</action>
 <action path="/decrementaLike" type="moba.controller.action.DecrementaLike" >
 	<forward name="success" path="/PAGES/jsp/gioco.jsp" />
 	<forward name="failure" path="/PAGES/jsp/errore.jsp" />
@@ -217,7 +225,6 @@
 	<forward name="success" path="/PAGES/jsp/gioco.jsp" />
 	<forward name="failure" path="/PAGES/jsp/errore.jsp" />
 </action>
-
 <!-- sample input and input submit actions
    
 <action path="/Input" type="org.apache.struts.actions.ForwardAction" parameter="/pages/Input.jsp"/>

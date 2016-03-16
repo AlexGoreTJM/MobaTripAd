@@ -116,7 +116,7 @@ public class DaoUtente extends DAO {
 			if (res.next())
 				return componiEntity();
 			else
-				throw new DAONonTrovatoException("WARNING: dati non trovati in UTENTE x pk: " + pk);
+				throw new DAONonTrovatoException("UTENTE NON REGISTRATO");
 
 		} catch (SQLException e) {
 			throw new DAOException("ERRORE SELECT UTENTE x pk: " + pk + ". Causa: " + e.getMessage() + " Errorcode: "
@@ -164,6 +164,63 @@ public class DaoUtente extends DAO {
 
 		} catch (SQLException e) {
 			throw new DAOException("ERRORE SELECT UTENTE x login: " + username + ". Causa: " + e.getMessage()
+					+ " Errorcode: " + e.getErrorCode());
+		}
+	}
+	
+	public String recuperaUsername(String email) throws DAOException {
+
+		String sql = "SELECT nickname FROM utente " + "WHERE email = ?";
+
+		try (PreparedStatement pst = con.prepareStatement(sql)) {
+
+			pst.setString(1, email);
+			res = pst.executeQuery();
+			if (res.next())
+				return res.getString("nickname");
+			else
+				throw new DAONonTrovatoException("email " + email + " non registrata!");
+
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE SELECT UTENTE x recupero nickname: " + email + ". Causa: " + e.getMessage()
+					+ " Errorcode: " + e.getErrorCode());
+		}
+	}
+	
+	
+	public String recuperaEmail(int idutente) throws DAOException {
+
+		String sql = "SELECT email FROM utente " + "WHERE idutente = ?";
+
+		try (PreparedStatement pst = con.prepareStatement(sql)) {
+
+			pst.setInt(1, idutente);
+			res = pst.executeQuery();
+			if (res.next())
+				return res.getString("email");
+			else
+				throw new DAONonTrovatoException("User " + idutente + " non registrata!");
+
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE SELECT UTENTE x recupero email: " + idutente + ". Causa: " + e.getMessage()
+					+ " Errorcode: " + e.getErrorCode());
+		}
+	}
+	
+	public boolean getEmail(String email) throws DAOException {
+
+		String sql = "SELECT email FROM utente " + "WHERE email = ?";
+
+		try (PreparedStatement pst = con.prepareStatement(sql)) {
+
+			pst.setString(1, email);
+			res = pst.executeQuery();
+			if (res.next())
+				return true;
+			else
+				throw new DAONonTrovatoException("email " + email + " non registrata!");
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE SELECT UTENTE x recupero email: " + email + ". Causa: " + e.getMessage()
 					+ " Errorcode: " + e.getErrorCode());
 		}
 	}

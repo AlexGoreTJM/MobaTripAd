@@ -60,6 +60,43 @@ public class MailJava {
     	 
      }
      
+     public static void MandaUserPass(String email, String username, String password){
+     	
+    	Properties props = new Properties();
+ 		props.put("mail.smtp.host", "smtp.libero.it");
+ 		props.put("mail.smtp.socketFactory.port", "465");
+ 		props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+ 		props.put("mail.smtp.auth", "true");
+ 		props.put("mail.smtp.port", "465");
+ 		Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
+ 			@Override
+ 			protected PasswordAuthentication getPasswordAuthentication() {
+ 				return new PasswordAuthentication("mobatripadproject@libero.it", "Password2");
+ 			}
+ 		});
+
+ 		try {
+
+ 			Message message = new MimeMessage(session);
+ 			message.setFrom(new InternetAddress("mobatripadproject@libero.it"));
+ 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
+ 			message.setSubject("MobaTripAd: Email di recupero dati utente");
+ 			
+ 			
+ 			message.setText("I dati utente sono: Username = " + username+ ", Password = "+password);
+
+ 			Transport.send(message);
+
+ 			System.out.println("Done");
+
+ 		} catch (MessagingException e) {
+ 			throw new RuntimeException(e);
+ 		}
+    	 
+     }    
+     
+     
+     
      public static void MandaGiocoPDFMail(String email, String path, String titolo){
     	Properties props = new Properties();
   		props.put("mail.smtp.host", "smtp.libero.it");
@@ -83,6 +120,11 @@ public class MailJava {
   			message.setSubject("MobaTripAd: Dati "+titolo);
   			
   			
+
+
+  			
+  			
+  			
   			MimeBodyPart messageBodyPart = new MimeBodyPart();
   	        Multipart multipart = new MimeMultipart();
   	        messageBodyPart = new MimeBodyPart();
@@ -103,42 +145,42 @@ public class MailJava {
   		} catch (MessagingException e) {
   			throw new RuntimeException(e);
   		}
- 
+    	  
      }
+
      
      public static void ContattaMail(String nome, String email, String messaggio) {
 
-     	Properties props = new Properties();
-  		props.put("mail.smtp.host", "smtp.libero.it");
-  		props.put("mail.smtp.socketFactory.port", "465");
-  		props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-  		props.put("mail.smtp.auth", "true");
-  		props.put("mail.smtp.port", "465");
-  		Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
-  			@Override
-  			protected PasswordAuthentication getPasswordAuthentication() {
-  				return new PasswordAuthentication("mobatripadproject@libero.it", "Password2");
-  			}
-  		});
+      	Properties props = new Properties();
+   		props.put("mail.smtp.host", "smtp.libero.it");
+   		props.put("mail.smtp.socketFactory.port", "465");
+   		props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+   		props.put("mail.smtp.auth", "true");
+   		props.put("mail.smtp.port", "465");
+   		Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
+   			@Override
+   			protected PasswordAuthentication getPasswordAuthentication() {
+   				return new PasswordAuthentication("mobatripadproject@libero.it", "Password2");
+   			}
+   		});
 
-  		try {
+   		try {
 
-  			Message message = new MimeMessage(session);
-  			message.setFrom(new InternetAddress("mobatripadproject@libero.it"));
-  			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("mobatripadproject@libero.it"));
-  			message.setSubject("MobaTripAd: Contattaci!");
-  			
-  			
-  			message.setText("Nome: " + nome + " Email: " + email + " Messaggio: " + messaggio);
+   			Message message = new MimeMessage(session);
+   			message.setFrom(new InternetAddress("mobatripadproject@libero.it"));
+   			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("mobatripadproject@libero.it"));
+   			message.setSubject("MobaTripAd: Contattaci!");
+   			
+   			
+   			message.setText("Nome: " + nome + " Email: " + email + " Messaggio: " + messaggio);
 
-  			Transport.send(message);
+   			Transport.send(message);
 
-  			System.out.println("Done");
+   			System.out.println("Done");
 
-  		} catch (MessagingException e) {
-  			throw new RuntimeException(e);
-  		}
- 	}
-
-
+   		} catch (MessagingException e) {
+   			throw new RuntimeException(e);
+   		}
+  	}
+     
 }

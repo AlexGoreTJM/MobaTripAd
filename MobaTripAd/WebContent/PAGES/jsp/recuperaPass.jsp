@@ -29,17 +29,12 @@
 			<div class="col-sm-6 col-md-4 col-md-offset-4">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<strong> Login to continue</strong>
+						<strong> Recupero dati login</strong>
 					</div>
 					<div class="panel-body">
-						<form role="form" action="login.do" method="post">
+						<form role="form" action="forget.do" method="post">
 							<fieldset>
-								<div class="row">
-									<div class="center-block">
-										<img class="profile-img"
-											src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt="">
-									</div>
-								</div>
+								
 								<div class="row">
 									<div class="col-sm-12 col-md-10  col-md-offset-1 ">
 										<div class="form-group">
@@ -47,31 +42,20 @@
 												<span class="input-group-addon">
 													<i class="glyphicon glyphicon-user"></i>
 												</span> 
-												<input class="form-control" placeholder="Username" name="username" type="text" autofocus>
+												<input class="form-control" placeholder="Inserisci email" name="email" type="text" autofocus>
 											</div>
 											<html:errors property="username" bundle="errori" />
 										</div>
+										
 										<div class="form-group">
-											<div class="input-group">
-												<span class="input-group-addon">
-													<i class="glyphicon glyphicon-lock"></i>
-												</span>
-												<input class="form-control" placeholder="Password" name="password" type="password" value="">
-											</div>
-											<html:errors property="password" bundle="errori" />
-										</div>
-										<div class="form-group">
-											<input type="submit" class="btn btn-lg btn-primary btn-block" value="Login">
+											<input type="submit" class="btn btn-lg btn-primary btn-block" value="Clicca qui">
 										</div>
 									</div>
 								</div>
 							</fieldset>
 						</form>
 					</div>
-					<div class="panel-footer ">
-						<a href="vaiSignup.do">Don't have an account!</a><p>	
 					
-					<a href="vaiRecupera.do">Hai dimenticato username o password?</a><p></div>
 					
 					<%-- <div class="panel-body">
 					<form class="form-horizontal" role="form" action="forget.do" method="post">
