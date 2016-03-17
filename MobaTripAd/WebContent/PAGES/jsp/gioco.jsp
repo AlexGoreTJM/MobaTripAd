@@ -251,7 +251,7 @@ Valutazione utenti:
 						alt="">
 					</a>
 					<div class="media-body">
-					<img src="${pathUtente}${recensioni.utente.avatar}" alt="" height="48" width="48"/> <b style="color: red">${recensioni.utente.nickname}</b> [${recensioni.utente.grado.nome}]
+					<img src="${pathUtente}${recensioni.utente.avatar}" alt="" height="48" width="48" class="img-circle"/> <b style="color: red">${recensioni.utente.nickname}</b> <img alt="grado" src="${pathGrado}${recensioni.utente.grado.nome}.png" height="50" width="50" class="img-circle">
 						<div class="date">${recensioni.dataRec}</div>
 						
 						
