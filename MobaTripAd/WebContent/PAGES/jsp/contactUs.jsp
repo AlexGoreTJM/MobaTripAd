@@ -12,25 +12,25 @@
 
 		<form role="form" action="contattaci.do" method="post">
 			<div class="col-md-8 col-sm-12">
-				<h1>Contact Us</h1>
+				<h1>Contattaci</h1>
 				<div class="form-group">
-					<label for="InputName">Your Name</label>
+					<label for="InputName">Nome</label>
 					<div class="input-group">
 						<input type="text" class="form-control" name="nome" id="InputName"
-							placeholder="Enter Name" required> <span
+							placeholder="Inserisci nome" required> <span
 							class="input-group-addon"></span>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="InputEmail">Your Email</label>
+					<label for="InputEmail">Email</label>
 					<div class="input-group">
 						<input type="email" class="form-control" id="InputEmail"
-							name="email" placeholder="Enter Email" required> <span
+							name="email" placeholder="Inserisci email" required> <span
 							class="input-group-addon"></span>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="InputMessage">Message</label>
+					<label for="InputMessage">Messaggio</label>
 					<div class="input-group">
 						<textarea name="messaggio" id="InputMessage" class="form-control"
 							rows="5" required></textarea>
@@ -38,7 +38,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="InputReal">What is 4+3? (Simple Spam Checker)</label>
+					<label for="InputReal">Quanto fa 4+3? (Spam Checker)</label>
 					<div class="input-group">
 						<input type="text" class="form-control" name="valore"
 							id="InputReal" required> <span class="input-group-addon"></span>

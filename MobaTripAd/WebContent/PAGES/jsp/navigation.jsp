@@ -54,7 +54,7 @@
 			<ul class="nav navbar-nav">
 				<li><a href="vaiAbout.do">About <span class="sr-only">(current)</span></a></li>
 				<c:if test="${!utente.admin}">
-					<li><a href="vaiContact.do">Contact</a></li>
+					<li><a href="vaiContact.do">Contatti</a></li>
 				</c:if>
 			</ul>
 
