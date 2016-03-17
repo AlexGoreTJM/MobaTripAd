@@ -6,40 +6,43 @@
 <div class="container">
 	<div class="row">
 		<%@ include file="../jsp/menu.jsp"%>
-		<form role="form" action="aggiungiGioco.do" method="post"
-			enctype="multipart/form-data">
+		<form role="form" action="aggiungiGioco.do" method="post" enctype="multipart/form-data">
 			<div class="col-md-8 col-sm-12">
 				<h1>Aggiungi Gioco</h1>
 				<div class="form-group">
-					<label for="titolo">Titolo</label>
+					<label for="titolo">* Titolo</label>
 					<div class="input-group">
 						<input type="text" class="form-control" name="titolo" id="titolo"
 							placeholder="Enter Titolo" required> <span
 							class="input-group-addon"></span>
+						<div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="sh">Software house</label>
+					<label for="sh">* Software house</label>
 					<div class="input-group">
 						<input type="text" class="form-control" name="sh" id="sh"
 							placeholder="Enter Software House" required> <span
 							class="input-group-addon"></span>
+						<div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="players">Players</label>
+					<label for="players">* Players</label>
 					<div class="input-group">
 						<input type="text" class="form-control" name="players"
 							id="players" placeholder="Enter Players" required> <span
 							class="input-group-addon"></span>
+						<div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="web">Web</label>
+					<label for="web">* Web</label>
 					<div class="input-group">
 						<input type="text" class="form-control" name="web" id="web"
 							placeholder="Enter Web" required> <span
 							class="input-group-addon"></span>
+						<div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
 					</div>
 				</div>
 				<div class="form-group">
@@ -91,19 +94,21 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="pro">Pro</label>
+						<label for="pro">* Pro</label>
 						<div class="input-group">
 							<input type="text" class="form-control" name="pro" id="pro"
 								placeholder="Enter Pro" required> <span
 								class="input-group-addon"></span>
+							<div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="contro">Contro</label>
+						<label for="contro">* Contro</label>
 						<div class="input-group">
 							<input type="text" class="form-control" name="contro" id="contro"
 								placeholder="Enter Contro" required> <span
 								class="input-group-addon"></span>
+							<div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
 						</div>
 					</div>
 					<div class="form-group">
@@ -115,11 +120,12 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="urlSh">Url Software House</label>
+						<label for="urlSh">* Url Software House</label>
 						<div class="input-group">
 							<input type="text" class="form-control" name="urlSh" id="urlSh"
 								placeholder="Enter URL Software House" required> <span
 								class="input-group-addon"></span>
+							<div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
 						</div>
 					</div>
 					<div class="form-group">
@@ -139,10 +145,11 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="info">Image</label>
+						<label for="info">* Image</label>
 						<div class="input-group">
 							<input type="file" name="file1" class="form-control"> <span
 								class="input-group-addon"></span>
+							<div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
 						</div>
 					</div>
 					<div class="form-group">
@@ -158,6 +165,7 @@
 				</div>
 		</form>
 		<hr class="featurette-divider hidden-lg">
+		<h6>* campi obbligatori</h6>
 	</div>
 </div>
 <script src="RESOURCES/js/jquery.js"></script>
