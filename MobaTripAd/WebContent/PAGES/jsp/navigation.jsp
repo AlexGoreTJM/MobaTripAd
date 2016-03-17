@@ -62,7 +62,7 @@
 				<c:choose>
 					<c:when test="${sessionScope.utente == null}">
 
-						<li><a class="navbar-link" href="vaiSignup.do">Sign Up</a></li>
+						<li><a class="navbar-link" href="vaiSignup.do">Registrati</a></li>
 						<li><a class="navbar-link" href="vaiLogin.do">Login</a></li>
 
 					</c:when>

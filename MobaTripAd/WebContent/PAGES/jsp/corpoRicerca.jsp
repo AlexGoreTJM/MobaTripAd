@@ -4,13 +4,13 @@
 <!-- viene creato il corpo con i giochi cercati nel form Search in alto a destra -->
 <c:forEach items="${listaGiocoRicerca}" var="GiocoRecente">
 	<div class="col-sm-4 col-lg-4 col-md-4">
-		<div class="thumbnail">
+		<div class="thumbnail" style="background: url('RESOURCES/img/menu_background.png')">
 			<a href="schedaGioco.do?idGioco=${GiocoRecente.idGioco}"><img src="${pathGioco}${GiocoRecente.img1}"
 				alt="${GiocoRecente.titolo}"></a>
 			<div class="caption">
 				<h4 class="pull-right">Voto: ${GiocoRecente.valutazioneSito/2}/5</h4>
 				<h4>
-					<a class="tit" style="color:black;" href="schedaGioco.do?idGioco=${GiocoRecente.idGioco}">${GiocoRecente.titolo}</a>
+					<a class="tit" style="color:white;" href="schedaGioco.do?idGioco=${GiocoRecente.idGioco}">${GiocoRecente.titolo}</a>
 				</h4>
 				<p>${GiocoRecente.info}</p>
 			</div>
