@@ -198,7 +198,7 @@ Valutazione utenti:
 				<c:if test="${sessionScope.utente != null && recensioneInserita == null  && utente.dataReg != null }">
 				<hr>
 					<div class="well" style="background: url('../img/background.jpg');">
-						<h4>Leave a Comment:</h4>
+						<h4>Lascia un commento:</h4>
 						<form role="form" action="recensione.do" method="post">
 							<fieldset>
 								<span class="star-cb-group"> <input type="radio"
@@ -219,7 +219,7 @@ Valutazione utenti:
 								<textarea class="form-control" rows="3" name="recensione"></textarea>
 								<html:errors property="recensione" bundle="errori" />
 							</div>
-							<button type="submit" class="btn btn-primary">Submit</button>
+							<button type="submit" class="btn btn-primary">Commenta</button>
 						</form>
 					</div>
 				</c:if>
