@@ -1,5 +1,7 @@
 package moba.model.dao;
 
+//Classe java contenente i dao della tabella Categoria.
+
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
