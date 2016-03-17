@@ -1,5 +1,7 @@
 package moba.controller.action;
 
+//Action che si occupa di inviare un pdf ad un utente tramite email.
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -28,7 +30,7 @@ import moba.model.utilita.JavaPDF;
 import moba.model.utilita.MailJava;
 
 public class MandaPdfGiocoAction extends Action {
-	
+
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws DocumentException, MalformedURLException, IOException {
@@ -36,45 +38,32 @@ public class MandaPdfGiocoAction extends Action {
 		int idGioco = Integer.parseInt(request.getParameter("idGioco"));
 		System.out.println(idGioco);
 		int idUtente = ((Utente) session.getAttribute("utente")).getIdUtente();
-	
-		
-		try{
-			
-			
+
+		try {
+
 			DaoGioco daoGioco = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
 			request.setAttribute("gioco", daoGioco.select(idGioco));
 			Gioco g = (Gioco) request.getAttribute("gioco");
-			
-		    DaoUtente daoUtente = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
-		    request.setAttribute("utente", daoUtente.select(idUtente));
-		    String email = daoUtente.recuperaEmail(idUtente);
-			//Utente u = (Utente) request.getAttribute("utente");
-            String path_img=  "C:/Users/ats/git/MobaTripAd/MobaTripAd/WebContent/IMGDB/Gioco/"+g.getImg1();
-			String path = JavaPDF.creaGiocoPDF(g.getTitolo(), 
-					path_img,
-					g.getSh(),
-					g.getPlayers(),
-					g.isWeb(),
-					g.getDataReg(),
-					g.getEtaMin(),
-					g.getCostoLancio(),
-					g.getCategoria().getNome(),
-					g.getValutazioneSito(),
-					g.getInfo());
-			
+
+			DaoUtente daoUtente = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
+			request.setAttribute("utente", daoUtente.select(idUtente));
+			String email = daoUtente.recuperaEmail(idUtente);
+			String path_img = "C:/Users/ats/git/MobaTripAd/MobaTripAd/WebContent/IMGDB/Gioco/" + g.getImg1();
+			String path = JavaPDF.creaGiocoPDF(g.getTitolo(), path_img, g.getSh(), g.getPlayers(), g.isWeb(),
+					g.getDataReg(), g.getEtaMin(), g.getCostoLancio(), g.getCategoria().getNome(),
+					g.getValutazioneSito(), g.getInfo());
+
 			MailJava.MandaGiocoPDFMail(email, path, g.getTitolo());
-		    System.out.println(path);
-		    File file = new File(path);
-		    file.delete();
-			
+			System.out.println(path);
+			File file = new File(path);
+			file.delete();
 
 			return mapping.findForward("success");
 		} catch (DAOException e) {
 			request.setAttribute("errore", e.getMessage());
 			return mapping.findForward("failure");
-	
+
+		}
+
 	}
-
 }
-}
-

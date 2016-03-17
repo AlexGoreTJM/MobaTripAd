@@ -17,7 +17,6 @@ public abstract class DAO {
 	
 	protected DAO() throws DAOException {
 		con = ConnessioneSingleton.getIstanza().getCon();
-//		System.out.println("Connessione OK ==> "+con);
 	}
 	
 	public static DAO getDaoInstance(Tabella entity) throws DAOException{
@@ -49,8 +48,6 @@ public abstract class DAO {
 	}
 	
 	
-	//DICHIARAZIONI PROTOTIPI METODI C.R.U.D.:
-
 	public abstract <T> int insert(T entity) throws DAOException;
 	
 	public abstract <T> T delete(int pk) throws DAOException;

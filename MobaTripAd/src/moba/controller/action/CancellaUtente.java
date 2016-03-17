@@ -1,5 +1,7 @@
 package moba.controller.action;
 
+//Action che permette all'admin di cancellare un utente.
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 

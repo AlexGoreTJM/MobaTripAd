@@ -1,5 +1,7 @@
 package moba.controller.action;
 
+//Action che si occupa di eliminare una recensione.
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
