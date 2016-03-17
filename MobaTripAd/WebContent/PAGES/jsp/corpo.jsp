@@ -20,8 +20,14 @@
 				<p class="inf">${GiocoRecente.info}</p>
 			</div>
 			<div class="ratings">
-				<p class="pull-right">${GiocoRecente.recensioni.size()}
-					recensioni</p>
+				<p class="pull-right">${GiocoRecente.recensioni.size()} 
+					<c:if test="${GiocoRecente.recensioni.size() == 1}">
+						recensione
+					</c:if>
+					<c:if test="${GiocoRecente.recensioni.size() != 1}">
+						recensioni
+					</c:if>
+				</p>
 				<p>
 					<c:choose>
 						<c:when test="${GiocoRecente.valutazione != 0}">
