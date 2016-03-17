@@ -12,12 +12,12 @@
 		<div class="thumbnail" >
 			<a><img src="IMGDB/Dev/fil.jpg" alt="" style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;"></a>
 				
-			<div class="caption" style="background-color:black;">
+			<div class="caption" style="background-color:white;">
 				<h4>
-					<font color="white">Filippo Trombetta</font>
+					<font color="black">Filippo Trombetta</font>
 				</h4>
-				<p><font color="white">Dott. Ingegneria Elettronica ed Informatica.</font></p>
-				<p><font color="white">e-mail: ftrombetta91@gmail.com</font></p>
+				<p>Dott. Ingegneria Elettronica ed Informatica.</p>
+				<p>e-mail: ftrombetta91@gmail.com</p>
 			</div>
 		</div>
 	</div>
@@ -25,12 +25,12 @@
 		<div class="thumbnail" >
 			<a><img src="IMGDB/Dev/ale.jpg"
 				alt=""style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;"></a>
-			<div class="caption" style="background-color:black;">
+			<div class="caption" style="background-color:white;">
 				<h4>
-					<font color="white">Alessandro Galiano</font>
+					<font color="black">Alessandro Galiano</font>
 				</h4>
-				<p><font color="white">Dott. Informatica per il Management</font></p>
-				<p><font color="white">e-mail: dott.alessandrogaliano@gmail.com</font></p>
+				<p>Dott. Informatica per il Management</p>
+				<p>e-mail: dott.alessandrogaliano@gmail.com</p>
 			</div>
 		</div>
 	</div>
@@ -38,12 +38,12 @@
 		<div class="thumbnail" >
 			<a><img src="IMGDB/Dev/lu.jpg"
 				alt=""style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;"></a>
-			<div class="caption" style="background-color:black;">
+			<div class="caption" style="background-color:white;">
 				<h4>
-					<font color="white">Luca Della Gatta</font>
+					<font color="black">Luca Della Gatta</font>
 				</h4>
-				<p><font color="white">Dott. Ingegneria Informatica</font></p>
-				<p><font color="white">e-mail: l.dellagatta@hotmail.it</font></p>
+				<p>Dott. Ingegneria Informatica</p>
+				<p>e-mail: l.dellagatta@hotmail.it</p>
 			</div>
 		</div>
 	</div>
@@ -51,12 +51,12 @@
 		<div class="thumbnail" >
 			<a><img src="IMGDB/Dev/lucas.jpg"
 				alt=""style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;"></a>
-			<div class="caption" style="background-color:black;">
+			<div class="caption" style="background-color:white;">
 				<h4>
-					<font color="white">Lucas Marcelo Marini Tejada</font>
+					<font color="black">Lucas Marcelo Marini Tejada</font>
 				</h4>
-				<p><font color="white">Dott. Ingegneria Informatica</font></p>
-				<p><font color="white">e-mail: lucastejada@gmail.com</font></p>
+				<p>Dott. Ingegneria Informatica</p>
+				<p>e-mail: lucastejada@gmail.com</p>
 			</div>
 		</div>
 	</div>
@@ -64,12 +64,12 @@
 		<div class="thumbnail" >
 			<a><img src="IMGDB/Dev/cri.jpg"
 				alt=""style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;"></a>
-			<div class="caption" style="background-color:black;">
+			<div class="caption" style="background-color:white;">
 				<h4>
-					<font color="white">Christian Rascioni</font>
+					<font color="black">Christian Rascioni</font>
 				</h4>
-				<p><font color="white">Dott. Informatica</font></p>
-				<p><font color="white">e-mail: c.rascioni@gmail.com</font></p>
+				<p>Dott. Informatica</p>
+				<p>e-mail: c.rascioni@gmail.com</p>
 			</div>
 		</div>
 	</div>
@@ -77,12 +77,12 @@
 		<div class="thumbnail" >
 			<a><img src="IMGDB/Dev/em.jpg"
 				alt=""style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;"></a>
-			<div class="caption" style="background-color:black;">
+			<div class="caption" style="background-color:white;">
 				<h4>
-					<font color="white">Emanuele Marchionne</font>
+					<font color="black">Emanuele Marchionne</font>
 				</h4>
-				<p><font color="white">Dott. Ingegneria Elettronica</font></p>
-				<p><font color="white">e-mail: emanuelemarchionne@gmail.com</font></p>
+				<p>Dott. Ingegneria Elettronica</p>
+				<p>e-mail: emanuelemarchionne@gmail.com</p>
 			</div>
 		</div>
 	</div>
@@ -90,12 +90,12 @@
 		<div class="thumbnail" >
 			<a><img src="IMGDB/Dev/gu.jpg"
 				alt=""style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;"></a>
-			<div class="caption" style="background-color:black;">
+			<div class="caption" style="background-color:white;">
 				<h4>
-					<font color="white">Guglielmo Faiola</font>
+					<font color="black">Guglielmo Faiola</font>
 				</h4>
-				<p><font color="white">Dott. Ingegneria Informatica</font></p>
-				<p><font color="white">e-mail: guglielmofai@gmail.com</font></p>
+				<p>Dott. Ingegneria Informatica</p>
+				<p>e-mail: guglielmofai@gmail.com</p>
 			</div>
 		</div>
 	</div>
@@ -103,12 +103,12 @@
 		<div class="thumbnail" >
 			<a><img src="IMGDB/Dev/mat.jpg"
 				alt=""style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;"></a>
-			<div class="caption" style="background-color:black;">
+			<div class="caption" style="background-color:white;">
 				<h4>
-					<font color="white">Matteo di Girolamo</font>
+					<font color="black">Matteo di Girolamo</font>
 				</h4>
-				<p><font color="white">Dott. Ingegneria Informatica</font></p>
-				<p><font color="white">e-mail: matteo.digirolamo@hotmail.it</font></p>
+				<p>Dott. Ingegneria Informatica</p>
+				<p>e-mail: matteo.digirolamo@hotmail.it</p>
 			</div>
 		</div>
 	</div>
@@ -116,12 +116,12 @@
 		<div class="thumbnail" >
 			<a><img src="IMGDB/Dev/ric.jpg"
 				alt=""style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;"></a>
-			<div class="caption" style="background-color:black;">
+			<div class="caption" style="background-color:white;">
 				<h4>
-					<font color="white">Riccardo Rossi</font>
+					<font color="black">Riccardo Rossi</font>
 				</h4>
-				<p><font color="white">Dott. Informatica</font></p>
-				<p><font color="white">e-mail: kuno98200@yahoo.it</font></p>
+				<p>Dott. Informatica</p>
+				<p>e-mail: kuno98200@yahoo.it</p>
 			</div>
 		</div>
 	</div>
