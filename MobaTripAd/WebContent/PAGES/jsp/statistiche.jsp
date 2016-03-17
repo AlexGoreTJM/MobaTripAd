@@ -31,7 +31,7 @@
 
 		<div class="col-md-9 col-sm-12" id="contenuto">
 
-			<div class="col-sm-6 col-lg-6 col-md-6">
+			<div class="col-sm-6 col-lg-6 col-md-6 col-md-offset-3">
 				<div class="statistiche">
 					<h1>Statistiche</h1>
 					<p>
