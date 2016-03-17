@@ -41,7 +41,7 @@
       <!-- edit form column -->
       <div class="col-md-9 personal-info">
         
-        <h3>Personal info</h3>
+        <h3>Informazioni Personali</h3>
         
         <form class="form-horizontal" role="form" action="signup.do" method="post">
           <div class="form-group">
@@ -90,7 +90,7 @@
             <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt="" title="La password deve essere di almeno 8 caratteri, contenere almeno una lettera maiuscola e un numero" style="width: 40px; height: 40px; margin: 0;" >
           </div>
           <div class="form-group">
-            <label class="col-md-3 control-label">* Confirm password:</label>
+            <label class="col-md-3 control-label">* Conferma password:</label>
             <div class="col-md-8">
               <input class="form-control" type="password" name="password_c">
               <div class="erroriWithe"><html:errors property="password_c" bundle="errori" /></div>
@@ -105,9 +105,9 @@
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
-              <input type="submit" class="btn btn-primary" value="Save Changes">
+              <input type="submit" class="btn btn-primary" value="Registrati">
               <span></span>
-              <input type="reset" class="btn btn-default" value="Cancel">
+              <input type="reset" class="btn btn-default" value="Reset">
             </div>
           </div>
         </form>
