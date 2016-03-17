@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<!-- viene creato il corpo con i giochi cercati nel form Search in alto a destra -->
 <c:forEach items="${listaGiocoRicerca}" var="GiocoRecente">
 	<div class="col-sm-4 col-lg-4 col-md-4">
 		<div class="thumbnail">
