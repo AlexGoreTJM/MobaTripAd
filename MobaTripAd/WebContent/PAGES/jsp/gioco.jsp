@@ -73,9 +73,10 @@ $(function () {
 			<div class="col-md-9 col-sm-12">
 
 				<!-- Blog Post -->
-				<h1 class="pull-right">Valutazione: <a style="color: gold">${gioco.valutazioneSito/2}/5</a></h1>
 				<!-- Title -->
 				<h1><b>${gioco.titolo}</b></h1>
+								<h1 class="pull-right">Valutazione: <a style="color: gold">${gioco.valutazioneSito/2}/5</a></h1>
+				<br>
 								<hr>
 								
 <p class="lead"><table class="lead" style="width: 100%;">
