@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
    <%@ include file="/PAGES/jsp/customTag.jsp"%>
+   
+<!-- Crea i form per la modifica da parte dell'utente delle sue inforamzioni personali -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -8,19 +10,17 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="1;url=localhost:8080/MobaTripAd/vaiModificaProfilo.do"><!--  Serve per refreshare le immagini caricate -->
 <meta name="description" content="">
 <meta name="author" content="">
 
 <title>MobaTripAd --Home Page--</title>
-
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" media="all" type="text/css" href="RESOURCES/css/bootstrap.min.css"/>
-  
-<!--<link type="text/css" rel="stylesheet"
+  <!--<link type="text/css" rel="stylesheet"
 	href="<c:url value="/css/bootstrap.min.css" />" /> -->
 <!-- Custom CSS -->
 <link rel="stylesheet" media="all" type="text/css" href="RESOURCES/css/shop-homepage.css"/>
-
 </head>
 <body>
 <%@ include file="../jsp/navigation.jsp" %>
@@ -80,81 +80,5 @@
       </div>
   </div>
 </div>
-
-<meta http-equiv="refresh" content="1;url=localhost:8080/MobaTripAd/vaiModificaProfilo.do">
-
-
-
-
-
-
-
-
-
-
-<!-- <form action="signup.do" method="post">
-<table>
-    <tr>
-      <td>Nome:</td>
-      <td><input type="text" name="nome"></td>
-    </tr>
-    
-    <tr>
-      <td>Cognome:</td>
-      <td><input type="text" name="cognome"></td>
-    </tr>
-    
-    <tr>
-      <td>*Username:</td>
-      <td><input type="text" name="username"></td>
-      <td></td>
-    </tr>
-    
-    <tr>
-      <td>*Email:</td>
-      <td><input type="text" name="email"></td>
-      <td></td>
-    </tr>
-    
-    <tr>
-      <td>*Conferma email:</td>
-      <td><input type="text" name="email_c"></td>
-      <td></td>
-    </tr>
-    
-    <tr>
-      <td>*Password:</td>
-      <td><input type="password" name="password"></td>
-      <td></td>
-    </tr>
-    
-    <tr>
-      <td>*Conferma password:</td>
-      <td><input type="password" name="password_c"></td>
-      <td></td>
-    </tr>
-    
-    <tr>
-      <td>*Avatar:</td>
-      <td><input type="text" name="avatar"></td>
-      <td></td>
-    </tr>
-    
-    <tr>
-      <td>Parlaci di te:</td>
-      <td><input type="text" name="info"></td>
-    </tr>
-    <tr>
-    <td colspan="2"><input type="submit" ></td>
-
-</table>
-
-
-
-</form> -->
-
-
-
-
 </body>
 </html>
