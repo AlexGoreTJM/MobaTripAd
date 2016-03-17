@@ -4,10 +4,13 @@
 
 
 <!-- Footer -->
-		<footer>
-		<div class="row">
-			<div class="col-lg-12">
-				<p>Copyright &copy; Your Website 2014</p>
-			</div>
-		</div>
-		</footer>
+		<div id="footer" class="">
+    <div class="container">
+        <p class="text-muted">This Bootstrap Example courtesy <a href="http://www.bootply.com" class="">Bootply.com</a>
+        </p>
+    </div>
+</div>
+<ul class="nav pull-right scroll-top">
+    <li><a href="#" title="Scroll to top" class=""><i class="glyphicon glyphicon-chevron-up"></i></a>
+    </li>
+</ul>
