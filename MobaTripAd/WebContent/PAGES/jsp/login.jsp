@@ -93,4 +93,3 @@
 		<%@ include file="../jsp/footer.jsp"%>
 	</div>
 </body>
-</html>

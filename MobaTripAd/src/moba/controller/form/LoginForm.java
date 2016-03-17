@@ -39,9 +39,8 @@ public class LoginForm extends ActionForm {
 		
 		if(this.password == null || this.password.isEmpty())
 			errori.add("password", new ActionMessage("obbligatorio", "password"));
-	
-		if(!Utilita.verificaPassword(this.password))
-			errori.add("password", new ActionMessage("formale", "password"));
+		else if(!Utilita.verificaPassword(this.password))
+			errori.add("password", new ActionMessage("formale_p", "password"));
 		
 		return errori;
 	}
