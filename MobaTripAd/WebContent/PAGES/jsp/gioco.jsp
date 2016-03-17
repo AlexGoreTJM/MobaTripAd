@@ -58,7 +58,7 @@ $(function () {
 </script> 
 
 </head>
-<body>
+<body onload="cutData();">
 	<%@ include file="../jsp/navigation.jsp"%>
 
 
@@ -102,7 +102,7 @@ $(function () {
 				<hr>
 <p class="lead"><table class="lead" style="width: 100%;">
 <tr> 
-<td><span class="glyphicon glyphicon-time"></span> Gioco inserito il: ${gioco.dataReg}</td>
+<td><span class="glyphicon glyphicon-time"></span> Gioco inserito il: <div class="date">${gioco.dataReg}</div></td>
 <td>PEGI: ${gioco.etaMin}</td>
 </tr>
 </table>
@@ -252,7 +252,7 @@ Valutazione utenti:
 					</a>
 					<div class="media-body">
 					<img src="${pathUtente}${recensioni.utente.avatar}" alt="" height="48" width="48"/> <b style="color: red">${recensioni.utente.nickname}</b> [${recensioni.utente.grado.nome}]
-						${recensioni.dataRec}
+						<div class="date">${recensioni.dataRec}</div>
 						
 						
 						</div>

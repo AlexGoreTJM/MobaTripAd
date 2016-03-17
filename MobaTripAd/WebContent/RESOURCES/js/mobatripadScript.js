@@ -83,3 +83,18 @@ function cutString() {
 		}
 	}
 }
+
+function cutData() {
+	var date = document.getElementsByClassName("date");
+	var i, j;
+	var charsToCutTo = 10;
+	for (i = 0; i < date.length; i++) {
+		if (date[i].innerHTML.length > charsToCutTo) {
+			var strShort = "";
+			for (j = 0; j < charsToCutTo; j++) {
+				strShort += date[i].innerHTML[j];
+			}
+			document.getElementsByClassName("date")[i].innerHTML = strShort;
+		}
+	}
+}
