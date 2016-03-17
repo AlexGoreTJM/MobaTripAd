@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
+import moba.model.dao.enumeratori.Tabella;
 import moba.model.entity.Piattaforma;
 import moba.model.entity.Shop;
 
@@ -59,5 +60,16 @@ public class DaoShop extends DAO{
 		return (T) new Shop(res.getInt("idGioco"), res.getInt("idPiattaforma"), res.getString("link"));
 	}
 
+	public static void main(String[] args) {
+		try {
+			DaoShop dao = (DaoShop) DAO.getDaoInstance(Tabella.Shop);
+
+			System.out.println("\nselect(pk): " + dao.select(1));
+
+
+		} catch (DAOException e) {
+			System.out.println(e.getMessage());
+		}
+	}
 	
 }
