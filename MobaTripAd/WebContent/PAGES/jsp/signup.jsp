@@ -111,7 +111,7 @@
             </div>
           </div>
         </form>
-        <h6>* campi obbligatori</h6>
+        <h6>* campi obbligatori ** La password deve essere di almeno 8 caratteri, contenere almeno una lettera maiuscola e un numero</h6>
       </div>
   </div>
 </div>
