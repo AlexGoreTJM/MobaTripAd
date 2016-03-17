@@ -34,8 +34,8 @@
           <img src="${pathUtente}${utente.avatar}" height="256" width="256" alt="avatar">
           <h6>Carica un'altra foto...</h6>
           <form name="formFile" action="upload.do" method="post" enctype="multipart/form-data">
-          	<input type="file" name="file" class="form-control">
-          	<input type="submit" value="Carica">
+          	<input type="file" name="file" class="form-control"><br>
+          	<input type="submit" value="Carica" class="btn btn-primary">
           </form>
           
         </div>
@@ -81,7 +81,7 @@
   </div>
 </div>
 
-
+<meta http-equiv="refresh" content="1;url=localhost:8080/MobaTripAd/vaiModificaProfilo.do">
 
 
 
