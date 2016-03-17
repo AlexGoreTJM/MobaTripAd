@@ -122,7 +122,7 @@
 				<h4>
 					<font color="black">Riccardo Rossi</font>
 				</h4>
-				<p>Dott. Informatica</p>
+				<p>Dott. Informatica Magistrale</p>
 				<p>e-mail: kuno98200@yahoo.it</p>
 			</div>
 		</div>
