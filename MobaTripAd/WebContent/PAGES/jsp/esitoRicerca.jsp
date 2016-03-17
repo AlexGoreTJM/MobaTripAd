@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ include file="/PAGES/jsp/customTag.jsp"%>
-
+<!-- Creazione della pagina che conterrà i giochi cercati con il form "search" -->
 
 
 
@@ -13,43 +13,21 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+<%@ include file="../jsp/navigation.jsp"%>
 
-
-	<%@ include file="../jsp/navigation.jsp" %>
-	
-	
-		
-
-	<!-- Page Content -->
-	<div class="container">
-
-		<div class="row">
-
-			<%@ include file="../jsp/menu.jsp" %>
-
-			<div class="col-md-9 col-sm-12">
-
-
-				
-
-					<%@ include file="../jsp/corpoRicerca.jsp" %>
-
-				
-
-			</div>
-
+<!-- Page Content -->
+<div class="container">
+	<div class="row">
+		<%@ include file="../jsp/menu.jsp"%>
+		<div class="col-md-9 col-sm-12">
+			<%@ include file="../jsp/corpoRicerca.jsp"%>
 		</div>
-
 	</div>
-	<!-- /.container -->
-
-	<div class="container">
-
-		<hr>
-<%@ include file="../jsp/footer.jsp" %>
-		
-
-	</div>
-	<!-- /.container -->
-
-	<!-- jQuery -->
+</div>
+<!-- /.container -->
+<div class="container">
+	<hr>
+	<%@ include file="../jsp/footer.jsp"%>
+</div>
+<!-- /.container -->
+<!-- jQuery -->
