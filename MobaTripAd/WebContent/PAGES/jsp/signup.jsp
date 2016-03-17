@@ -57,34 +57,43 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="col-md-3 control-label">Username:</label>
+            <label class="col-md-3 control-label">*Username:</label>
             <div class="col-md-8">
               <input class="form-control" name="username" type="text">
+              <div class="erroriWithe"><html:errors property="username" bundle="errori" /></div>
             </div>
+            
           </div>
           <div class="form-group">
-            <label class="col-lg-3 control-label">Email:</label>
+            <label class="col-lg-3 control-label">*Email:</label>
             <div class="col-lg-8">
               <input class="form-control" name="email" type="text">
+              <div class="erroriWithe"><html:errors property="email" bundle="errori" /></div>
             </div>
+            
           </div>
          <div class="form-group">
-            <label class="col-lg-3 control-label">Conferma Email:</label>
+            <label class="col-lg-3 control-label">*Conferma Email:</label>
             <div class="col-lg-8">
               <input class="form-control" type="text" name="email_c">
+               <div class="erroriWithe"><html:errors property="email" bundle="errori" /></div>
             </div>
+           
           </div>
       
           <div class="form-group">
-            <label class="col-md-3 control-label">Password:</label>
+            <label class="col-md-3 control-label">*Password:</label>
             <div class="col-md-8">
               <input class="form-control" name="password" type="password">
+              <div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
             </div>
+            
           </div>
           <div class="form-group">
-            <label class="col-md-3 control-label">Confirm password:</label>
+            <label class="col-md-3 control-label">*Confirm password:</label>
             <div class="col-md-8">
               <input class="form-control" type="password" name="password_c">
+              <div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
             </div>
           </div>
            <div class="form-group">
@@ -102,6 +111,7 @@
             </div>
           </div>
         </form>
+        <h6>* campi obbligatori</h6>
       </div>
   </div>
 </div>
