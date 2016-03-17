@@ -12,6 +12,7 @@ import org.apache.struts.action.ActionMapping;
 
 import moba.controller.form.SignupForm;
 import moba.model.dao.DAO;
+import moba.model.dao.DaoNews;
 import moba.model.dao.DaoUtente;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAOUnivocoException;
@@ -26,7 +27,7 @@ public class Signup extends Action{
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		
 		SignupForm f = (SignupForm) form;
-		
+
 		Utente utente = new Utente(f.getUsername()
 								 , f.getEmail()
 								 , f.getPassword()
@@ -37,7 +38,8 @@ public class Signup extends Action{
 								 , f.getInfo());
 		try {
 			DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
-//			dao.insert(utente);
+
+			
 			
 			final String token = UUID.randomUUID().toString();
 			request.getSession().setAttribute("token", token);
