@@ -32,9 +32,13 @@
       <div class="col-md-3">
         <div class="text-center">
           <img src="${pathUtente}${utente.avatar}" height="256" width="256" alt="avatar">
+          <br> <br>
+          <img alt="grado" src="${pathGrado}${utente.grado.nome}.png" height="150" width="150">
+          <br>
+          <b>GRADO:</b> ${utente.grado.nome}
+          
         </div>
       </div>
-      
       <!-- edit form column -->
       <div class="col-md-9 personal-info">
         <form class="form-horizontal" role="form" action="vaiModificaProfilo.do" method="post">
@@ -62,12 +66,7 @@
               <input class="form-control" name="email" readonly="text" value="${utente.email}">
             </div>
           </div>
-                    <div class="form-group">
-            <label class="col-md-3 control-label">Grado:</label>
-            <div class="col-md-8">
-              <input class="form-control" name="grado" readonly="text" value="${utente.grado.nome}">
-            </div>
-          </div>
+                 
                     <div class="form-group">
             <label class="col-md-3 control-label">Data Registrazione:</label>
             <div class="col-md-8">
@@ -81,6 +80,8 @@
               <input class="form-control" readonly="text" name="info" value="${utente.info}">
             </div>
           </div>
+          
+          
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">

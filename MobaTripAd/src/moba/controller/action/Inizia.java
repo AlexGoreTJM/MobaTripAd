@@ -38,6 +38,7 @@ public class Inizia extends Action {
 			session.setAttribute("pathPiattaforma", "IMGDB/Piattaforma/");
 			session.setAttribute("pathGioco", "IMGDB/Gioco/");
 			session.setAttribute("pathUtente", "IMGDB/Utente/");
+			session.setAttribute("pathGrado", "IMGDB/Grado/");
 			return mapping.findForward("success");
 		} catch (DAOException e) {
 
