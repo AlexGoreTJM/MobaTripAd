@@ -187,6 +187,26 @@ public class DaoRecensione extends DAO {
 					+ " Errorcode: " + e.getErrorCode());
 		}
 	}
+	
+	public <T> T selectByIdUtente(int idUtente) throws DAOException {
+		String sql = 
+		"SELECT idutente, idgioco, ctrlike, ctrdislike, segnalata, info, datarec "
+		+"FROM RECENSIONE "
+		+"WHERE idutente = ?";
+		ArrayList<Recensione> lista = new ArrayList<Recensione>();
+		try(PreparedStatement pst = con.prepareStatement(sql)) {
+			pst.setInt(1, idUtente);
+			res = pst.executeQuery(); //esegue la query cos� preparata
+			while(res.next())
+				lista.add(componiEntity());
+			
+			return (T) lista;
+
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE SELECT RECENSIONE x nome: "+idUtente
+			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		}
+	}
 
 	public int addLike(int idUtente, int idGioco) throws DAOException {
 
