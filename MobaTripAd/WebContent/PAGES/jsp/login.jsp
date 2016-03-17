@@ -53,7 +53,7 @@
 													class="glyphicon glyphicon-user"></i>
 												</span> 
 												<div class="form-control">
-													<html:text name="LoginForm" property="username" style="color:black; border-style:none; " />
+													<html:text name="LoginForm" property="username" style="color:black;" />
 												</div>
 											</div>
 											<div class="errori">
@@ -66,7 +66,7 @@
 													class="glyphicon glyphicon-lock"></i>
 												</span> 
 												<div class="form-control">
-													<html:text name="LoginForm" property="password" style="color:black; border-style:none;" />
+													<html:password name="LoginForm" property="password" style="color:black;" />
 												</div>
 											</div>
 											<div class="errori">
