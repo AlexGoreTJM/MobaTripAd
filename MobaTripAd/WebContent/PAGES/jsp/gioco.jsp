@@ -91,7 +91,7 @@ $(function () {
 				
 				<p class="lead"><table class="lead" style="width: 100%;">
 <tr> 
-<td>Software House: ${gioco.sh}</td>
+<td><a href="${gioco.urlSh}">Software House: ${gioco.sh}</a></td>
 <td>Uscita: ${gioco.dataUscita}</td> 
 <td>Multiplayer: ${gioco.web()}</td>
 </tr>
@@ -180,6 +180,17 @@ Valutazione utenti:
 
 				<!-- Preview Image -->
 				<img class="img-responsive" src="${pathGioco}${gioco.img2}" alt="">
+
+				<hr>
+
+				<iframe width=100% height="480" src="${gioco.urlVideo}" frameborder="0" allowfullscreen></iframe>
+
+
+
+
+
+
+
 
 
 				<!-- Comments Form -->
