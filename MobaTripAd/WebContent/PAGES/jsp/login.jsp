@@ -36,7 +36,7 @@
 						<strong> Login to continue</strong>
 					</div>
 					<div class="panel-body">
-						<form role="form" action="login.do" method="post">
+						<html:form action="login.do" method="post">
 							<fieldset>
 								<div class="row">
 									<div class="center-block">
@@ -51,8 +51,10 @@
 											<div class="input-group">
 												<span class="input-group-addon"> <i
 													class="glyphicon glyphicon-user"></i>
-												</span> <input class="form-control" placeholder="Username"
-													name="username" type="text" autofocus>
+												</span> 
+												<div class="form-control">
+													<html:text name="LoginForm" property="username" style="color:black; border-style:none; " />
+												</div>
 											</div>
 											<div class="errori">
 												<html:errors property="username" bundle="errori" />
@@ -62,8 +64,10 @@
 											<div class="input-group">
 												<span class="input-group-addon"> <i
 													class="glyphicon glyphicon-lock"></i>
-												</span> <input class="form-control" placeholder="Password"
-													name="password" type="password" value="">
+												</span> 
+												<div class="form-control">
+													<html:text name="LoginForm" property="password" style="color:black; border-style:none;" />
+												</div>
 											</div>
 											<div class="errori">
 												<html:errors property="password" bundle="errori" />
@@ -76,7 +80,7 @@
 									</div>
 								</div>
 							</fieldset>
-						</form>
+						</html:form>
 					</div>
 					<div class="panel-footer ">
 						<a href="vaiSignup.do">Non hai un account? Registrati!</a>
@@ -93,3 +97,4 @@
 		<%@ include file="../jsp/footer.jsp"%>
 	</div>
 </body>
+</html>
