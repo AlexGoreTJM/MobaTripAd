@@ -81,87 +81,16 @@
 					<div class="panel-footer ">
 						<a href="vaiSignup.do">Non hai un account? Registrati!</a>
 						<p>
-
 							<a href="vaiRecupera.do">Hai dimenticato username o password?</a>
 						<p>
 					</div>
-
-					<%-- <div class="panel-body">
-					<form class="form-horizontal" role="form" action="forget.do" method="post">
-					
-				<fieldset>
-							
-								<div class="row">
-									<div class="col-sm-12 col-md-10  col-md-offset-1 ">
-										<div class="form-group">
-											<div class="input-group">
-											
-												<span class="input-group-addon">
-													
-												</span> 
-												<input class="form-control" placeholder="Inserisci l'email" name="username" type="text" autofocus>
-											</div>
-											<html:errors property="username" bundle="errori" />
-										</div>
-										
-										<div class="form-group">
-											<input type="submit" class="btn btn-lg btn-primary btn-block" value="Invia">
-										</div>
-									</div>
-								</div>
-							</fieldset>
-         			</form>
-                </div> --%>
 				</div>
 			</div>
 		</div>
 	</div>
-	<%-- <div class="container">
-
-		<div class="row">
-<%@ include file="../jsp/menu.jsp" %>
-<div class="col-md-9">
-
-				
-
-				<div class="row">
-<form action="login.do" method="post">
-<table>
-	<tr>
-		<td>Username</td>
-		<td><input type="text" name="username"></td>
-	</tr>
-	<tr>
-		<td colspan="2"> <html:errors property="username" bundle="errori" /> </td>
-	</tr>
-	<tr>
-		<td>Password</td>
-		<td><input type="password" name="password"></td>
-	</tr>
-	<tr>
-		<td colspan="2" > <html:errors property="password" bundle="errori" /> </td>
-	</tr>
-	<tr>
-		<td></td>
-		<td><input type="submit" ></td>
-	</tr>
-</table> 
-<a href="/PAGES/jsp/signup.jsp">REGISTRATI</a>.
-</form>
-	</div>
-
-			</div>
-
-		</div>
-
-	</div> --%>
 	<div class="container">
-
 		<hr>
 		<%@ include file="../jsp/footer.jsp"%>
-
-
 	</div>
-
 </body>
 </html>
