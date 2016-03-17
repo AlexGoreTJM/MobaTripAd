@@ -1,5 +1,7 @@
 package moba.model.dao;
 
+//Classe Java contente i dao della tabella Gioco.
+
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

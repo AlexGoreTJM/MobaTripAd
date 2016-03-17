@@ -1,5 +1,7 @@
 package moba.model.dao;
 
+//Classe astratta DAO che viene estesa dai singoli DAO.
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;

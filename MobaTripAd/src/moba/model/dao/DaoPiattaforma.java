@@ -1,5 +1,7 @@
 package moba.model.dao;
 
+//Classe java contenente i dao della tabella Piattaforma.
+
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -46,7 +48,8 @@ public class DaoPiattaforma extends DAO {
 		}
 
 	}
-	//seleziona una piattaforma
+
+	// seleziona una piattaforma
 	@Override
 	public <T> T select(int pk) throws DAOException {
 		String sql = "SELECT idpiattaforma, nome, brand, logo, info FROM moba.piattaforma WHERE idpiattaforma=? ";
