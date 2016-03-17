@@ -1,5 +1,7 @@
 package moba.model.entity;
 
+//Classe bean java rappresentante l'entity Grado.
+
 public class Grado {
 	
 	private String nome;

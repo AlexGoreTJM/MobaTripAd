@@ -1,5 +1,7 @@
 package moba.model.entity;
 
+//Classe Bean Java rappresentante l'entity gioco.
+
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -25,22 +27,22 @@ public class Gioco {
 	private String requisiti;
 	private String info;
 	private Timestamp dataReg;
-	
-	//oggetti compositivi:
+
+	// oggetti compositivi:
 	private Categoria categoria;
 	private ArrayList<Piattaforma> piattaforme;
 	private ArrayList<Recensione> recensioni;
-	
-	
-	//COSTRUTTORI:
-	
-	public Gioco(int idGioco){
+
+	// COSTRUTTORI:
+
+	public Gioco(int idGioco) {
 		this.idGioco = idGioco;
 	}
 
 	public Gioco(int idGioco, String titolo, String sh, int players, boolean web, Date dataUscita, int etaMin,
 			double costoLancio, Categoria categoria, double valutazioneSito, String pro, String contro, String img1,
-			String img2, String urlVideo, String urlSh, String requisiti, String info, Timestamp dataReg, ArrayList<Piattaforma> piattaforme,ArrayList<Recensione> recensioni, double valutazione) {
+			String img2, String urlVideo, String urlSh, String requisiti, String info, Timestamp dataReg,
+			ArrayList<Piattaforma> piattaforme, ArrayList<Recensione> recensioni, double valutazione) {
 		super();
 		this.idGioco = idGioco;
 		this.titolo = titolo;
@@ -69,17 +71,17 @@ public class Gioco {
 	public Gioco(String titolo, String sh, int players, boolean web, Date dataUscita, int etaMin, double costoLancio,
 			int idCategoria, double valutazioneSito, String pro, String contro, String img1, String img2,
 			String urlVideo, String urlSh, String requisiti, String info) {
-		
-		this(0, titolo, sh, players, web, dataUscita, etaMin, costoLancio, new Categoria(idCategoria, null, null, null), valutazioneSito, pro, contro,
-				img1, img2, urlVideo, urlSh, requisiti, info, null, null,null,0.0);
+
+		this(0, titolo, sh, players, web, dataUscita, etaMin, costoLancio, new Categoria(idCategoria, null, null, null),
+				valutazioneSito, pro, contro, img1, img2, urlVideo, urlSh, requisiti, info, null, null, null, 0.0);
 	}
 
-	
-	//GETTER & SETTER:
+	// GETTER & SETTER:
 
 	public int getIdGioco() {
 		return idGioco;
 	}
+
 	public void setIdGioco(int idGioco) {
 		this.idGioco = idGioco;
 	}
@@ -97,24 +99,20 @@ public class Gioco {
 	}
 
 	public boolean isWeb() {
-		
-		return web ;
+
+		return web;
 	}
 
-	
-
-	public String web(){
-		if(this.web){
-			String result ="SI";
+	public String web() {
+		if (this.web) {
+			String result = "SI";
 			return result;
-		}
-		else{
+		} else {
 			String result = "NO";
 			return result;
-		}	
+		}
 	}
-	
-	
+
 	public Date getDataUscita() {
 		return dataUscita;
 	}
@@ -170,7 +168,7 @@ public class Gioco {
 	public Timestamp getDataReg() {
 		return dataReg;
 	}
-	
+
 	public ArrayList<Piattaforma> getPiattaforme() {
 		return piattaforme;
 	}
@@ -178,8 +176,6 @@ public class Gioco {
 	public ArrayList<Recensione> getRecensioni() {
 		return recensioni;
 	}
-
-	
 
 	public double getValutazione() {
 		return valutazione;
@@ -191,16 +187,12 @@ public class Gioco {
 
 	@Override
 	public String toString() {
-		return "\n\nGioco [idGioco=" + idGioco + ", titolo=" + titolo + ", sh=" + sh + ", players=" + players 
-				+ ", web=" + web + ", dataUscita=" + dataUscita + ", etaMin=" + etaMin + ", costoLancio=" + costoLancio
-				+ ", valutazioneSito=" + valutazioneSito + ", valutazione=" + valutazione
-				+ ", pro=" + pro + ", contro=" + contro + ", img1=" + img1 + ", img2=" + img2 
-				+ ", urlVideo=" + urlVideo + ", urlSh=" + urlSh
-				+ ", requisiti=" + requisiti + ", dataReg=" + dataReg
-				+ "\nINFO=" + info + "]"
-				+ "\nCATEGORIA: " + categoria
-				+ "\nPIATTAFORME:\n"+ piattaforme
-				+ "\nRECENSIONI:\n" + recensioni;
+		return "\n\nGioco [idGioco=" + idGioco + ", titolo=" + titolo + ", sh=" + sh + ", players=" + players + ", web="
+				+ web + ", dataUscita=" + dataUscita + ", etaMin=" + etaMin + ", costoLancio=" + costoLancio
+				+ ", valutazioneSito=" + valutazioneSito + ", valutazione=" + valutazione + ", pro=" + pro + ", contro="
+				+ contro + ", img1=" + img1 + ", img2=" + img2 + ", urlVideo=" + urlVideo + ", urlSh=" + urlSh
+				+ ", requisiti=" + requisiti + ", dataReg=" + dataReg + "\nINFO=" + info + "]" + "\nCATEGORIA: "
+				+ categoria + "\nPIATTAFORME:\n" + piattaforme + "\nRECENSIONI:\n" + recensioni;
 	}
 
 }

@@ -1,5 +1,7 @@
 package moba.model.entity;
 
+//Classe bean java rappresentante l'entity Piattaforma
+
 public class Piattaforma {
 
 	private int idpiattaforma;

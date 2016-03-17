@@ -1,5 +1,7 @@
 package moba.model.entity;
 
+//Classe bean java rappresentante l'entity Recensione
+
 import java.sql.Timestamp;
 
 public class Recensione {

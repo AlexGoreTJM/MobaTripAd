@@ -1,5 +1,7 @@
 package moba.model.entity;
 
+//Classe bean java rappresentante l'entity Valutazione
+
 public class Valutazione {
 
 	private Utente utente;

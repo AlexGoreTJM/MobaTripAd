@@ -1,5 +1,7 @@
 package moba.model.entity;
 
+//Classe bean java rappresentante il collegamento tra gioco e piattaforma.
+
 public class GiocoPiatta {
 
 	private int idGioco;
