@@ -334,12 +334,13 @@ Valutazione utenti:
    								</c:choose>
    							</c:if>
    							<p>
+   							<c:if test="${recensioni.utente.idUtente == utente.idUtente}">
    								<form action="segnala.do">
    												<input type="hidden" name="idGioco" value="${recensioni.idGioco}">
 									<input type="hidden" name="idUtente" value="${recensioni.utente.idUtente}">
    									<input type="submit" value="Segnala" class="btn btn-primary">
    					
-   								</form>
+   								</form></c:if>
 							</div>
 	
 
