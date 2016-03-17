@@ -1,4 +1,5 @@
 package moba.model.utilita;
+
 import java.io.FileNotFoundException;
 
 import java.io.FileOutputStream;
@@ -11,10 +12,12 @@ import com.itextpdf.text.Anchor;
 import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Chapter;
+import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
+import com.itextpdf.text.Font.FontFamily;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.List;
 import com.itextpdf.text.ListItem;
@@ -46,7 +49,6 @@ public class JavaPDF {
 		Image image1 = Image.getInstance(immagine);
 		image1.scaleAbsolute(300, 300);
 		image1.setAlignment(Element.ALIGN_CENTER);
-
 		document.add(image1);
 		Paragraph preface = new Paragraph();
 		addEmptyLine(preface, 1);
@@ -78,7 +80,6 @@ public class JavaPDF {
 		postface.add(new Paragraph(info));
 		document.add(postface);
 
-		
 	}
 
 	public static String creaGiocoPDF(String titolo, String immagine, String sh, int players, boolean web,
@@ -94,7 +95,5 @@ public class JavaPDF {
 		d.close();
 		return "C:/Users/Ats/Desktop/" + titolo + ".pdf";
 	}
-
-	
 
 }
