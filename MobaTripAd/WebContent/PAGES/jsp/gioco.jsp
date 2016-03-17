@@ -289,7 +289,7 @@ Valutazione utenti:
        							 				else
        							 					request.getSession().setAttribute("like", "1");
        										%>
-    									</a>
+    									</a>&nbsp;&nbsp;&nbsp;
     									<a class="dislike1" data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}"><i class="fa fa-thumbs-o-down"></i> 
         									Dislike <input class="qty2"  name="qty2" readonly="readonly" type="text" value="${recensioni.ctrDislike}"
         									data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}" />
@@ -302,7 +302,7 @@ Valutazione utenti:
        							 				else
        							 					request.getSession().setAttribute("dislike", "1");
        										%>
-   										 </a>
+   										 </a>&nbsp;&nbsp;&nbsp;
    								 	</c:when>
    								 	<c:otherwise>
    								 		<a class="like0" data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}"> <i class="fa fa-thumbs-o-up"></i>  
@@ -316,7 +316,7 @@ Valutazione utenti:
        							 				else
        							 					request.getSession().setAttribute("like", "1");
        										%>
-    									</a>
+    									</a>&nbsp;&nbsp;&nbsp;
     									<a class="dislike0" data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}"><i class="fa fa-thumbs-o-down"></i> 
         									Dislike <input class="qty2"  name="qty2" readonly="readonly" type="text" value="${recensioni.ctrDislike}"
         									data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}" />
@@ -329,7 +329,7 @@ Valutazione utenti:
        							 				else
        							 					request.getSession().setAttribute("dislike", "1");
        										%>
-   										 </a>
+   										 </a>&nbsp;&nbsp;&nbsp;
    								 	</c:otherwise>
    								</c:choose>
    							</c:if>
