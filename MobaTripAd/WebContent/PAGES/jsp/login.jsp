@@ -42,7 +42,7 @@
 									<div class="center-block">
 										<img class="profile-img"
 											src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
-											alt="">
+											alt="" style="min-width: 20px; min-height: 200px; max-width: 20px; max-height: 20px;">
 									</div>
 								</div>
 								<div class="row">

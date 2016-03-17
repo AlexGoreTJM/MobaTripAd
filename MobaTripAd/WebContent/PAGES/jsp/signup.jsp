@@ -84,7 +84,9 @@
           <div class="form-group">
             <label class="col-md-3 control-label">* Password:</label>
             <div class="col-md-8">
-              <input class="form-control" name="password" type="password">
+              <input class="form-control" name="password" type="password"> <img class="profile-img"
+											src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+											alt="" title="La password deve essere di almeno 8 caratteri, contenere almeno una lettera maiuscola e un numero" style="width: 40px; height: 40px; margin: 0;" >
               <div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
             </div>
             
