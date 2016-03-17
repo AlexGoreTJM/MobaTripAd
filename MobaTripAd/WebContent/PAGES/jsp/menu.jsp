@@ -55,7 +55,7 @@
                         </h4>
                     </div>
                     <div id="collapseTwo" class="panel-collapse collapse">
-                        <div class="panel-body">
+                        <div class="panel-body" style="background-color:black;">
                             <table class="table">
                              <c:forEach items="${listaPiattaforma}" var="piattaforma">
                                 <tr>
@@ -78,7 +78,7 @@
                         </h4>
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse">
-                        <div class="panel-body">
+                        <div class="panel-body" style="background-color:black;">
                             <table class="table">
                                 <tr>
                                     <td>
