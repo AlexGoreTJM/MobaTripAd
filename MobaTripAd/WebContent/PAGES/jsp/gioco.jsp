@@ -195,7 +195,7 @@ Valutazione utenti:
 
 
 				<!-- Comments Form -->
-				<c:if test="${sessionScope.utente != null && recensioneInserita == null }">
+				<c:if test="${sessionScope.utente != null && recensioneInserita == null  && utente.dataReg != null }">
 				<hr>
 					<div class="well" style="background: url('../img/background.jpg');">
 						<h4>Leave a Comment:</h4>

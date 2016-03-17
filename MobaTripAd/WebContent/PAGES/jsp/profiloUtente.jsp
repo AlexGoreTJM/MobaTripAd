@@ -90,13 +90,14 @@
 						</div>
 					</div>
 
-
+				<c:if test="${utente.dataReg != null }">
 					<div class="form-group">
 						<label class="col-md-3 control-label"></label>
 						<div class="col-md-8">
 							<input type="submit" class="btn btn-primary" value="Modifica">
 						</div>
 					</div>
+				</c:if>
 				</form>
 			</div>
 		</div>
