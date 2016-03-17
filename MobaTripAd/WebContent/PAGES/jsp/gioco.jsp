@@ -250,7 +250,8 @@ Valutazione utenti:
 					<a class="pull-left" href="#"> <img class="media-object" src=""
 						alt="">
 					</a>
-					<div class="media-body">${recensioni.utente.nickname}
+					<div class="media-body">
+					<img src="${pathUtente}${recensioni.utente.avatar}" alt="" height="48" width="48"/> ${recensioni.utente.nickname} [${recensioni.utente.grado.nome}]
 						${recensioni.dataRec}
 						
 						
