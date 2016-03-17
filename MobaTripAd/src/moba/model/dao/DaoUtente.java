@@ -1,7 +1,5 @@
 package moba.model.dao;
 
-//Classe java contenente i dao della tabella Utente.
-
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -21,12 +19,13 @@ public class DaoUtente extends DAO {
 	}
 
 	@Override
-	public <T> int insert(T entity) throws DAOException {
+	public <T> int insert(T entity) throws DAOException{
 
 		Utente u = (Utente) entity;
 		System.out.println(u.getPassword());
 
-		String sql = "INSERT INTO utente " + "(admin, nickname, email, password, nome, cognome, grado, avatar, info) "
+		String sql = "INSERT INTO utente " + 
+				"(admin, nickname, email, password, nome, cognome, grado, avatar, info) "
 				+ "VALUES (?,?,?,?,?,?,?,?,?)";
 
 		try (PreparedStatement pst = con.prepareStatement(sql, new String[] { "idutente" })) {
@@ -51,27 +50,30 @@ public class DaoUtente extends DAO {
 
 		} catch (SQLException e) {
 
-			if (e.getErrorCode() == 1) {
-
-				if (e.getMessage().matches("EMAIL")) {
-
+			if(e.getErrorCode() == 1){
+				
+				if (e.getMessage().matches("EMAIL")){
+				
 					throw new DAOUnivocoException("EMAIL già registrata");
-
-				} else if (e.getMessage().matches("NICKNAME")) {
-
+					
+				} else if(e.getMessage().matches("NICKNAME")){
+					
 					throw new DAOUnivocoException("NICKNAME già presente");
 				}
 			}
-
+				
 			throw new DAOException(
 					"ERRORE INSERT UTENTE. " + "Causa: " + e.getMessage() + " Errorcode: " + e.getErrorCode());
-		}
+		} 
 	}
 
 	@Override
 	public <T> T delete(int pk) throws DAOException {
+
 		Utente u = this.select(pk);
+
 		String sql = "DELETE FROM utente WHERE idutente = ?";
+
 		try (PreparedStatement pst = con.prepareStatement(sql)) {
 
 			pst.setInt(1, pk);
@@ -79,6 +81,7 @@ public class DaoUtente extends DAO {
 
 			return (T) u;
 		} catch (SQLException e) {
+
 			throw new DAOException("ERRORE DELETE UTENTE x pk=" + pk + ". Causa: " + e.getMessage() + " Errorcode: "
 					+ e.getErrorCode());
 		}
@@ -92,13 +95,13 @@ public class DaoUtente extends DAO {
 		ArrayList<Utente> lista = new ArrayList<Utente>();
 		try (PreparedStatement pst = con.prepareStatement(sql)) {
 			res = pst.executeQuery(); // esegue la query così preparata
-			while (res.next())
+			while(res.next())
 				lista.add(componiEntity());
 			return (ArrayList<T>) lista;
 		} catch (SQLException e) {
-			throw new DAOException(
-					"ERRORE SELECT UTENTE. Causa: " + e.getMessage() + " Errorcode: " + e.getErrorCode());
-		}
+			throw new DAOException("ERRORE SELECT UTENTE. Causa: " + e.getMessage() + " Errorcode: "
+					+ e.getErrorCode());
+		}	
 	}
 
 	@Override
@@ -144,9 +147,13 @@ public class DaoUtente extends DAO {
 		}
 
 	}
+
 	public String recuperaPassword(String username) throws DAOException {
+
 		String sql = "SELECT password FROM utente " + "WHERE nickname = ? or email = ?";
+
 		try (PreparedStatement pst = con.prepareStatement(sql)) {
+
 			pst.setString(1, username);
 			pst.setString(2, username);
 			res = pst.executeQuery();
@@ -160,9 +167,13 @@ public class DaoUtente extends DAO {
 					+ " Errorcode: " + e.getErrorCode());
 		}
 	}
+	
 	public String recuperaUsername(String email) throws DAOException {
+
 		String sql = "SELECT nickname FROM utente " + "WHERE email = ?";
+
 		try (PreparedStatement pst = con.prepareStatement(sql)) {
+
 			pst.setString(1, email);
 			res = pst.executeQuery();
 			if (res.next())
@@ -175,7 +186,8 @@ public class DaoUtente extends DAO {
 					+ " Errorcode: " + e.getErrorCode());
 		}
 	}
-
+	
+	
 	public String recuperaEmail(int idutente) throws DAOException {
 
 		String sql = "SELECT email FROM utente " + "WHERE idutente = ?";
@@ -194,7 +206,7 @@ public class DaoUtente extends DAO {
 					+ " Errorcode: " + e.getErrorCode());
 		}
 	}
-
+	
 	public boolean getEmail(String email) throws DAOException {
 
 		String sql = "SELECT email FROM utente " + "WHERE email = ?";
@@ -206,21 +218,41 @@ public class DaoUtente extends DAO {
 			if (res.next())
 				return true;
 			else
-				throw new DAONonTrovatoException("email " + email + " non registrata!");
+				return false;
 		} catch (SQLException e) {
 			throw new DAOException("ERRORE SELECT UTENTE x recupero email: " + email + ". Causa: " + e.getMessage()
 					+ " Errorcode: " + e.getErrorCode());
 		}
 	}
+	
+	
+	public boolean getUsername(String username) throws DAOException {
 
-	public Utente update(Utente utente) throws DAOException {
-
-		Utente u = this.select(utente.getIdUtente());
-
-		String sql = "UPDATE UTENTE SET idutente = ?, admin = ?, nickname = ?, email = ? password = ?, nome = ?, cognome = ? grado = ? avatar = ? datareg = ?, info = ?";
+		String sql = "SELECT nickname FROM utente " + "WHERE nickname = ?";
 
 		try (PreparedStatement pst = con.prepareStatement(sql)) {
 
+			pst.setString(1, username);
+			res = pst.executeQuery();
+			if (res.next())
+				return true;
+			else
+				return false;
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE SELECT UTENTE x recupero nickname: " + username + ". Causa: " + e.getMessage()
+					+ " Errorcode: " + e.getErrorCode());
+		}
+	}
+	
+	
+	public Utente update(Utente utente) throws DAOException {
+		
+		Utente u = this.select(utente.getIdUtente());
+		
+		String sql = "UPDATE UTENTE SET idutente = ?, admin = ?, nickname = ?, email = ? password = ?, nome = ?, cognome = ? grado = ? avatar = ? datareg = ?, info = ?";
+		
+		try (PreparedStatement pst = con.prepareStatement(sql)){
+			
 			pst.setInt(1, utente.getIdUtente());
 			pst.setInt(2, utente.isAdmin() ? 1 : 0);
 			pst.setString(3, utente.getNickname());
@@ -232,107 +264,109 @@ public class DaoUtente extends DAO {
 			pst.setString(9, utente.getAvatar());
 			pst.setTimestamp(10, utente.getDataReg());
 			pst.setString(11, utente.getInfo());
-
+			
 			pst.executeUpdate();
-
+			
 			return u;
-
+			
 		} catch (SQLException e) {
-			throw new DAOException("ERRORE UPDATE UTENTE x pk=" + utente.getIdUtente() + ". Causa: " + e.getMessage()
-					+ " Errorcode: " + e.getErrorCode());
+			throw new DAOException
+			("ERRORE UPDATE UTENTE x pk="+utente.getIdUtente()
+			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
 		}
 	}
-
-	public Utente updateProfilo(Utente utente, String password, String nome, String cognome, String info)
-			throws DAOException {
-
-		String sql = "UPDATE utente SET password = ?, nome = ?, cognome = ?, info = ? " + "WHERE idutente = ?";
-
-		try (PreparedStatement pst = con.prepareStatement(sql)) {
-
+	
+	public Utente updateProfilo(Utente utente, String password, String nome, String cognome, String info) throws DAOException {
+		
+		String sql = "UPDATE utente SET password = ?, nome = ?, cognome = ?, info = ? "
+				+ "WHERE idutente = ?";
+		
+		try (PreparedStatement pst = con.prepareStatement(sql)){
+			
 			pst.setString(1, password);
-			if (nome == null)
-				pst.setString(2, "");
+			if(nome == null)
+				pst.setString(2, ""); 
 			else
 				pst.setString(2, nome);
-			if (cognome == null)
-				pst.setString(3, "");
+			if(cognome == null)
+				pst.setString(3, ""); 
 			else
 				pst.setString(3, cognome);
-			if (info == null)
-				pst.setString(4, "");
+			if(info == null)
+				pst.setString(4, ""); 
 			else
 				pst.setString(4, info);
-
+			
 			System.out.println(utente.getIdUtente());
 			pst.setInt(5, utente.getIdUtente());
-
+			
 			pst.executeUpdate();
-
+			
 			Utente u = this.select(utente.getIdUtente());
-
-			return u; // ritorno dell'utente modificato
-
+			
+			return u;		//ritorno dell'utente modificato
+			
 		} catch (SQLException e) {
-			throw new DAOException("ERRORE UPDATE UTENTE x pk=" + utente.getIdUtente() + ". Causa: " + e.getMessage()
-					+ " Errorcode: " + e.getErrorCode());
+			throw new DAOException
+			("ERRORE UPDATE UTENTE x pk="+utente.getIdUtente()
+			+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
 		}
 	}
-
+	
 	public int updateUtenteGrado(int idUtente) throws DAOException {
-
+		
 		DaoRecensione dr = new DaoRecensione();
-
+		
 		int recensioni = dr.countRecensioniByUtente(idUtente);
 		int differenzaLike = dr.countLikeByUtente(idUtente) - dr.countDislikeByUtente(idUtente);
-
+		
 		String sql = "UPDATE utente SET grado = ? where idutente = ?";
 		String grado = null;
-
-		if (recensioni < 3 || differenzaLike < 10)
+		
+		if(recensioni < 3 || differenzaLike < 10)
 			grado = "Peone";
-		else if (recensioni < 6 || differenzaLike < 20)
+		else if(recensioni < 6 || differenzaLike < 20)
 			grado = "Recluta";
-		else if (recensioni < 12 || differenzaLike < 40)
+		else if(recensioni < 12 || differenzaLike < 40)
 			grado = "Scudiero";
-		else if (recensioni < 24 || differenzaLike < 80)
+		else if(recensioni < 24 || differenzaLike < 80)
 			grado = "Fante";
-		else if (recensioni < 48 || differenzaLike < 160)
+		else if(recensioni < 48 || differenzaLike < 160)
 			grado = "Cavaliere";
-		else if (recensioni < 96 || differenzaLike < 320)
+		else if(recensioni < 96 || differenzaLike < 320)
 			grado = "Capitano";
 		else
 			grado = "Generale";
-
+		
 		try (PreparedStatement pst = con.prepareStatement(sql)) {
-
+			
 			pst.setString(1, grado);
 			pst.setInt(2, idUtente);
-
+			
 			return pst.executeUpdate();
-
+			
 		} catch (SQLException e) {
 			throw new DAOException(
 					"ERRORE UPDATE UTENTE. " + "Causa: " + e.getMessage() + " Errorcode: " + e.getErrorCode());
 		}
 	}
-
-	public int countUtenti() throws DAOException {
-
-		String sql = "select count(*) as utenti from utente where admin = 0";
-
-		try (PreparedStatement pst = con.prepareStatement(sql)) {
+	
+	public int countUtenti() throws DAOException{
+    	
+    	String sql = "select count(*) as utenti from utente where admin = 0";
+    	
+    	try (PreparedStatement pst = con.prepareStatement(sql)) {
 			res = pst.executeQuery(); // esegue la query così preparata
 			if (res.next())
 				return res.getInt("utenti");
 			else
-				throw new DAONonTrovatoException("WARNING: dati non trovati in UTENTE");
+				throw new DAONonTrovatoException(
+						"WARNING: dati non trovati in UTENTE");
 
 		} catch (SQLException e) {
-			throw new DAOException(
-					"ERRORE COUNT UTENTE . Causa: " + e.getMessage() + " Errorcode: " + e.getErrorCode());
-		}
-	}
+			throw new DAOException("ERRORE COUNT UTENTE . Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		}    	
+    }
 
 	private <T> T componiEntity() throws SQLException, DAOException {
 
@@ -371,7 +405,7 @@ public class DaoUtente extends DAO {
 
 	public void updateImg(int idUtente, String string) {
 		String sql = "UPDATE utente SET avatar = ? where idutente = ?";
-
+		
 		try (PreparedStatement pst = con.prepareStatement(sql)) {
 
 			pst.setString(1, string);
@@ -380,13 +414,13 @@ public class DaoUtente extends DAO {
 
 		} catch (SQLException e) {
 			try {
-				throw new DAOException(
-						"ERRORE UPDATE UTENTE, Causa: " + e.getMessage() + " Errorcode: " + e.getErrorCode());
+				throw new DAOException("ERRORE UPDATE UTENTE, Causa: " + e.getMessage()
+						+ " Errorcode: " + e.getErrorCode());
 			} catch (DAOException e1) {
 				System.out.println(e.getMessage());
 			}
 		}
-
+		
 	}
 
 }
