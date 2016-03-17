@@ -306,7 +306,7 @@ Valutazione utenti:
    								 	</c:when>
    								 	<c:otherwise>
    								 		<a class="like0" data-idutente="${recensioni.utente.idUtente}" data-idgioco="${gioco.idGioco}"> <i class="fa fa-thumbs-o-up"></i>  
-       										Like <input class="qty1" name="qty1" readonly="readonly" type="text" value="${recensioni.ctrLike}" />
+       										Like <input class="qty1" name="qty1" readonly="readonly" type="text" value="${recensioni.ctrLike}" /> &nbsp;&nbsp;&nbsp;
        										<%
        							 				if(request.getSession().getAttribute("like") != null)
        							 					if(((String)request.getSession().getAttribute("like")).equals("1"))
@@ -333,11 +333,12 @@ Valutazione utenti:
    								 	</c:otherwise>
    								</c:choose>
    							</c:if>
-   							
+   							<p>
    								<form action="segnala.do">
-   									<input type="submit" value="Segnala">
-   									<input type="hidden" name="idGioco" value="${recensioni.idGioco}">
+   												<input type="hidden" name="idGioco" value="${recensioni.idGioco}">
 									<input type="hidden" name="idUtente" value="${recensioni.utente.idUtente}">
+   									<input type="submit" value="Segnala" class="btn btn-primary">
+   					
    								</form>
 							</div>
 	
@@ -345,13 +346,15 @@ Valutazione utenti:
 						<!-- End Nested Comment -->
 					</div>
 					<c:if test="${utente.admin}">
+					<p>
 						<form action="/MobaTripAd/eliminaRecensione.do">
-							<input type="text" value="${recensioni.segnalata}" disabled="disabled">
+							Segnalazioni: ${recensioni.segnalata}
 							<input type="hidden" name="idGioco" value="${recensioni.idGioco}">
 							<input type="hidden" name="idUtente" value="${recensioni.utente.idUtente}">
 							<button type="submit" class="btn btn-primary pull-right">ELIMINA</button>
 						</form>
 					</c:if>
+					<p>
 						<c:if test="${recensioni.utente.idUtente == utente.idUtente}">
 						<form action="/MobaTripAd/eliminaRecensione.do">
 							<input type="hidden" name="idGioco" value="${recensioni.idGioco}">
