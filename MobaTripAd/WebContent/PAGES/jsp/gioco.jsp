@@ -73,19 +73,33 @@ $(function () {
 			<div class="col-md-9 col-sm-12">
 
 				<!-- Blog Post -->
-
+				<div class="lead pull-right">Valutazione: ${gioco.valutazioneSito/2}/5</div>
 				<!-- Title -->
 				<h1>${gioco.titolo}</h1>
-				<p class="lead">Uscita: ${gioco.dataUscita} Valutazione:
-					${gioco.valutazioneSito/2}/5 Multiplayer: ${gioco.web()}</p>
+								<hr>
+				
+				<p class="lead"><table class="lead" style="width: 100%;">
+<tr> 
+<td>Software House: ${gioco.sh}</td>
+<td>Uscita: ${gioco.dataUscita}</td> 
+<td>Multiplayer: ${gioco.web()}</td>
+</tr>
+</table></p>
 
 
 				<hr>
+<p class="lead"><table class="lead" style="width: 100%;">
+<tr> 
+<td><span class="glyphicon glyphicon-time"></span> Gioco inserito il: ${gioco.dataReg}</td>
+<td>PEGI: ${gioco.etaMin}</td>
+</tr>
+</table>
+</p>
+				<hr>
+				<div class="lead" align="center">
+<!-- ---------------------------------------------------------------------------------------- -->
 
-				<!-- Date/Time -->
-				<p>
-					<span class="glyphicon glyphicon-time"></span> Gioco inserito il:
-					${gioco.dataReg} Valutazione utenti:
+Valutazione utenti:
 					<c:choose>
 						<c:when test="${gioco.valutazione != 0}">
 							<c:if test="${gioco.valutazione != 10}">
@@ -93,27 +107,33 @@ $(function () {
 							<c:forEach begin="${count}" end="${gioco.valutazione / 2}"
 								varStatus="loop">
 								<c:set var="count" value="${count + 1}" scope="page" />
-								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star" style="color: gold;"></span>
 							</c:forEach>
 
 							<c:forEach begin="${count}" end="5" varStatus="loop">
 								<c:set var="count" value="${count + 1}" scope="page" />
-								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty" style="color: gold;"></span>
 							</c:forEach>
 						</c:if>
 						<c:if test="${gioco.valutazione == 10}">
-						<span class="glyphicon glyphicon-star"></span>
-						<span class="glyphicon glyphicon-star"></span>
-						<span class="glyphicon glyphicon-star"></span>
-						<span class="glyphicon glyphicon-star"></span>
-						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star" style="color: gold;"></span>
+						<span class="glyphicon glyphicon-star" style="color: gold;"></span>
+						<span class="glyphicon glyphicon-star" style="color: gold;"></span>
+						<span class="glyphicon glyphicon-star" style="color: gold;"></span>
+						<span class="glyphicon glyphicon-star" style="color: gold;"></span>
 						</c:if>
 						</c:when>
 						<c:otherwise>
 							<span>N/P</span>
 						</c:otherwise>
 					</c:choose>
-				</p>
+
+<!-- ---------------------------------------------------------------------------------------- -->
+
+</div>
+
+
+
 
 				<hr>
 
