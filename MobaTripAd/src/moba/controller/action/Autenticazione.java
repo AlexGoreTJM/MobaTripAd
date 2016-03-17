@@ -10,6 +10,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import moba.model.dao.DAO;
+import moba.model.dao.DaoNews;
 import moba.model.dao.DaoUtente;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.enumeratori.Tabella;
@@ -28,6 +29,8 @@ public class Autenticazione extends Action{
 	    	DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
 			Utente utente = (Utente) request.getSession().getAttribute("utente");
 			dao.insert(utente);
+			DaoNews dao2 = (DaoNews) DAO.getDaoInstance(Tabella.News);
+			dao2.insert(utente.getEmail());
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

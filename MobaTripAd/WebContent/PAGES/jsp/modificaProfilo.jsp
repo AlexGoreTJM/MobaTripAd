@@ -68,6 +68,7 @@
               <input class="form-control" type="text" name="info" value="${utente.info}">
             </div>
           </div>
+  
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
@@ -77,6 +78,24 @@
             </div>
           </div>
         </form>
+        
+        
+        <form class="form-horizontal" role="form" action="news.do" method="post">
+          <div class="form-group">
+		  <label class="col-md-3 control-label">Registrati alla News:</label>
+		  <div class="col-md-8">
+			<input type="email" class="form-control" id="InputEmail"
+				name="email" placeholder="Inserisci email" required> 
+		 </div>
+		 </div>
+		 <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input type="submit" class="btn btn-primary" value="Registrati">
+            </div>
+          </div>
+        </form>
+        
       </div>
   </div>
 </div>
