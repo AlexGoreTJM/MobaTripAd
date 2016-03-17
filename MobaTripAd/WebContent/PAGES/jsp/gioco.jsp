@@ -73,14 +73,25 @@ $(function () {
 			<div class="col-md-9 col-sm-12">
 
 				<!-- Blog Post -->
-				<div class="lead pull-right">Valutazione: ${gioco.valutazioneSito/2}/5</div>
+				<h1 class="pull-right">Valutazione: <a style="color: gold">${gioco.valutazioneSito/2}/5</a></h1>
 				<!-- Title -->
-				<h1>${gioco.titolo}</h1>
+				<h1><b>${gioco.titolo}</b></h1>
+								<hr>
+								
+<p class="lead"><table class="lead" style="width: 100%;">
+<tr> 
+<td>Giocatori: ${gioco.players}
+</td>
+<td>Costo lancio: ${gioco.costoLancio} &euro;
+</td>
+</tr>
+</table></p>									
+							
 								<hr>
 				
 				<p class="lead"><table class="lead" style="width: 100%;">
 <tr> 
-<td>Software House: ${gioco.sh}</td>
+<td><a href="${gioco.urlSh}">Software House: ${gioco.sh}</a></td>
 <td>Uscita: ${gioco.dataUscita}</td> 
 <td>Multiplayer: ${gioco.web()}</td>
 </tr>
@@ -95,6 +106,17 @@ $(function () {
 </tr>
 </table>
 </p>
+
+<hr>
+
+<p class="lead"><table class="lead" style="width: 100%;">
+<tr> 
+<td>Piattaforme: <c:forEach items="${gioco.piattaforme}" var="piattaforma">
+${piattaforma.nome}
+</c:forEach>
+</td>
+</tr>
+</table></p>	
 				<hr>
 				<div class="lead" align="center">
 <!-- ---------------------------------------------------------------------------------------- -->
@@ -132,6 +154,15 @@ Valutazione utenti:
 
 </div>
 
+<hr>
+
+<p class="lead"><table class="lead" style="width: 100%;">
+<tr> 
+<td><font color="green">PRO:</font>${gioco.pro}</td>
+<td><font color="red">CONTRO:</font>${gioco.contro}</td>
+</tr>
+</table>
+</p>
 
 
 
@@ -147,10 +178,24 @@ Valutazione utenti:
 
 				<hr>
 
-				<!-- Blog Comments -->
+				<!-- Preview Image -->
+				<img class="img-responsive" src="${pathGioco}${gioco.img2}" alt="">
+
+				<hr>
+
+				<iframe width=100% height="480" src="${gioco.urlVideo}" frameborder="0" allowfullscreen></iframe>
+
+
+
+
+
+
+
+
 
 				<!-- Comments Form -->
 				<c:if test="${sessionScope.utente != null && recensioneInserita == null }">
+				<hr>
 					<div class="well" style="background: url('../img/background.jpg');">
 						<h4>Leave a Comment:</h4>
 						<form role="form" action="recensione.do" method="post">

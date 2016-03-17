@@ -22,7 +22,7 @@
             <!---------------------------------------------CATEGORIA---------------------------------------------------->
             
             
-                <div class="panel panel-default" style="background: url('../img/background.jpg');">
+                <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
@@ -30,7 +30,7 @@
                         </h4>
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in">
-                        <div class="panel-body" style="background-color:black;">
+                        <div class="panel-body" style="background: url('RESOURCES/img/menu_background.png');">
                             <table class="table">
                             <c:forEach items="${listaCategoria}" var="categoria">
                                 <tr>
@@ -47,7 +47,7 @@
             <!---------------------------------------------------PIATTAFORMA---------------------------------------------->
                 
                 
-                <div class="panel panel-default" style="background: url('../img/background.jpg');">
+                <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
@@ -55,7 +55,7 @@
                         </h4>
                     </div>
                     <div id="collapseTwo" class="panel-collapse collapse">
-                        <div class="panel-body" style="background-color:black;">
+                        <div class="panel-body" style="background: url('RESOURCES/img/menu_background.png');">
                             <table class="table">
                              <c:forEach items="${listaPiattaforma}" var="piattaforma">
                                 <tr>
@@ -71,14 +71,14 @@
                 
             <!---------------------------------------------------AREA ADMIN---------------------------------------------->
 			<c:if test="${utente.admin}">
-                <div class="panel panel-default" style="background: url('../img/background.jpg');">
+                <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Admin</a>
                         </h4>
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse">
-                        <div class="panel-body" style="background-color:black;">
+                        <div class="panel-body" style="background: url('RESOURCES/img/menu_background.png');">
                             <table class="table">
                                 <tr>
                                     <td>
@@ -88,16 +88,6 @@
                                 <tr>
                                     <td>
                                         <a href="/MobaTripAd/gestioneUtente.do">Gestisci Utenti</a> <!-- <span class="label label-info">5</span>  -->
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="http://www.jquery2dotnet.com">Gestisci Recensioni</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="http://www.jquery2dotnet.com">Gestisci Segnalazioni</a>
                                     </td>
                                 </tr>
                                 <tr>
