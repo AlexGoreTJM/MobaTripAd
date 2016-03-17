@@ -2,18 +2,19 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ include file="/PAGES/jsp/customTag.jsp"%>
 
-	<%@ include file="../jsp/navigation.jsp" %>
-	<!-- Page Content -->
-	<div class="container">
-		<div class="row">
-			<%@ include file="../jsp/menu.jsp" %>
-			<div class="col-md-9 col-sm-12">
-				<%@ include file="../jsp/corpoAbout.jsp" %>
-					</div> 
-					</div>
+<%@ include file="../jsp/navigation.jsp"%>
+<!-- Page Content -->
+<div class="container">
+	<div class="row">
+		<%@ include file="../jsp/menu.jsp"%>
+		<div class="col-md-9 col-sm-12">
+			<%@ include file="../jsp/corpoAbout.jsp"%>
+		</div>
 	</div>
-	
-	
+</div>
+<%@ include file="../jsp/footer.jsp"%>
+
+
 
 
 
