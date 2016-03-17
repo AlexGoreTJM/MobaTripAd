@@ -33,7 +33,7 @@
         <div class="text-center">
           <img src="${pathUtente}${utente.avatar}" height="256" width="256" alt="avatar">
           <br> <br>
-          <img alt="grado" src="${pathGrado}${utente.grado.nome}.png" height="150" width="150">
+          <img alt="grado" src="${pathGrado}${utente.grado.nome}.png" height="150" width="150" class="img-circle">
           <br>
           <b>GRADO:</b> ${utente.grado.nome}
           
