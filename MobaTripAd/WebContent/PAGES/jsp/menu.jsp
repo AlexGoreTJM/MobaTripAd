@@ -82,7 +82,7 @@
                             <table class="table">
                                 <tr>
                                     <td>
-                                        <a href="/MobaTripAd/inserisciGioco.do">Aggiungi Gioco/Recensione</a>
+                                        <a href="/MobaTripAd/inserisciGioco.do">Aggiungi Gioco</a>
                                     </td>
                                 </tr>
                                 <tr>

@@ -4,7 +4,7 @@
 <!-- Pagine di controllo admin per gestire gli utenti (elimina) -->
 <c:forEach items="${listaGestioneUtente}" var="utente">
 	<div class="col-sm-4 col-lg-4 col-md-4">
-		<div class="thumbnail">
+		<div class="thumbnail" style="background: url('RESOURCES/img/menu_background.png')">
 			<img src="${pathUtente}${utente.avatar}"
 				alt="${utente.nome}" style="min-width:250px; min-height:190px;max-width:250px;max-height:190px;">
 			<div class="caption">

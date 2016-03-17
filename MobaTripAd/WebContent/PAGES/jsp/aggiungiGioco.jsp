@@ -13,7 +13,7 @@
 					<label for="titolo">* Titolo</label>
 					<div class="input-group">
 						<input type="text" class="form-control" name="titolo" id="titolo"
-							placeholder="Enter Titolo" required> <span
+							placeholder="Inserisci titolo" required> <span
 							class="input-group-addon"></span>
 						<div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
 					</div>
@@ -22,7 +22,7 @@
 					<label for="sh">* Software house</label>
 					<div class="input-group">
 						<input type="text" class="form-control" name="sh" id="sh"
-							placeholder="Enter Software House" required> <span
+							placeholder="Inserisci Software House" required> <span
 							class="input-group-addon"></span>
 						<div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
 					</div>
@@ -31,7 +31,7 @@
 					<label for="players">* Players</label>
 					<div class="input-group">
 						<input type="text" class="form-control" name="players"
-							id="players" placeholder="Enter Players" required> <span
+							id="players" placeholder="Inserisci players" required> <span
 							class="input-group-addon"></span>
 						<div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
 					</div>
@@ -40,7 +40,7 @@
 					<label for="web">* Web</label>
 					<div class="input-group">
 						<input type="text" class="form-control" name="web" id="web"
-							placeholder="Enter Web" required> <span
+							placeholder="Inserisci web" required> <span
 							class="input-group-addon"></span>
 						<div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
 					</div>
@@ -60,7 +60,7 @@
 					<label for="etaMin">Età min</label>
 					<div class="input-group">
 						<input type="text" class="form-control" name="etaMin" id="etaMin"
-							placeholder="Enter Età min" required> <span
+							placeholder="Inserisci età min" required> <span
 							class="input-group-addon"></span>
 					</div>
 				</div>
@@ -68,7 +68,7 @@
 					<label for="costoLancio">Costo lancio</label>
 					<div class="input-group">
 						<input type="text" class="form-control" name="costoLancio"
-							id="costoLancio" placeholder="Enter costo lancio" required>
+							id="costoLancio" placeholder="Inserisci costo lancio" required>
 						<span class="input-group-addon"></span>
 					</div>
 				</div>
@@ -89,7 +89,7 @@
 						<label for="valutazioneSito">Valutazione sito</label>
 						<div class="input-group">
 							<input type="text" class="form-control" name="valutazioneSito"
-								id="valutazioneSito" placeholder="Enter valutazione sito"
+								id="valutazioneSito" placeholder="Inserisci valutazione sito"
 								required> <span class="input-group-addon"></span>
 						</div>
 					</div>
@@ -97,7 +97,7 @@
 						<label for="pro">* Pro</label>
 						<div class="input-group">
 							<input type="text" class="form-control" name="pro" id="pro"
-								placeholder="Enter Pro" required> <span
+								placeholder="Inserisci pro" required> <span
 								class="input-group-addon"></span>
 							<div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
 						</div>
@@ -106,7 +106,7 @@
 						<label for="contro">* Contro</label>
 						<div class="input-group">
 							<input type="text" class="form-control" name="contro" id="contro"
-								placeholder="Enter Contro" required> <span
+								placeholder="Inserisci contro" required> <span
 								class="input-group-addon"></span>
 							<div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
 						</div>
@@ -115,7 +115,7 @@
 						<label for="urlVideo">Url video</label>
 						<div class="input-group">
 							<input type="text" class="form-control" name="urlVideo"
-								id="urlVideo" placeholder="Enter URL video" required> <span
+								id="urlVideo" placeholder="Inserisci URL video" required> <span
 								class="input-group-addon"></span>
 						</div>
 					</div>
@@ -123,7 +123,7 @@
 						<label for="urlSh">* Url Software House</label>
 						<div class="input-group">
 							<input type="text" class="form-control" name="urlSh" id="urlSh"
-								placeholder="Enter URL Software House" required> <span
+								placeholder="Inserisci URL Software House" required> <span
 								class="input-group-addon"></span>
 							<div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
 						</div>
@@ -132,7 +132,7 @@
 						<label for="requisiti">Requisiti</label>
 						<div class="input-group">
 							<input type="text" class="form-control" name="requisiti"
-								id="requisiti" placeholder="Enter requisiti" required> <span
+								id="requisiti" placeholder="Inserisci requisiti" required> <span
 								class="input-group-addon"></span>
 						</div>
 					</div>
@@ -140,7 +140,7 @@
 						<label for="info">Info</label>
 						<div class="input-group">
 							<input type="text" class="form-control" name="info" id="info"
-								placeholder="Enter valutazione sito" required> <span
+								placeholder="Inserisci valutazione sito" required> <span
 								class="input-group-addon"></span>
 						</div>
 					</div>

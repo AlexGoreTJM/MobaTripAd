@@ -70,7 +70,7 @@
 						<li><a href="vaiProfilo.do" class="navbar-link">Ciao
 								${sessionScope.utente.nickname}</a></li>
 						<li><a href="logout.do" class="navbar-link logout"
-							id="logout" data-nickname="${sessionScope.utente.nickname}">Logout<span
+							id="logout" data-nickname="${sessionScope.utente.nickname}">Logout <span
 								class="glyphicon glyphicon-log-out"></span></a></li>
 
 					</c:otherwise>
