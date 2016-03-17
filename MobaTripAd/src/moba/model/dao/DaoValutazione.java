@@ -46,10 +46,21 @@ public <T> int insert(T entity) throws DAOException {
 		}
 	}
 
-	@Override
-	public <T> T delete(int pk) throws DAOException {
-		// TODO Auto-generated method stub
-		return null;
+	public void delete(int idUtenteCancellazione, int idGiocoCancellazione) throws DAOException {
+
+		String sql = "DELETE FROM VALUTAZIONE WHERE idutente = ? and idgioco = ?";
+		
+		try (PreparedStatement pst = con.prepareStatement(sql)) {
+			
+			pst.setInt(1, idUtenteCancellazione);
+			pst.setInt(2, idGiocoCancellazione);
+			
+			pst.executeUpdate();		
+			
+		} catch (SQLException e) {
+			throw new DAOException("ERRORE DELETE VALUTAZIONE x idUtente: "+idUtenteCancellazione + " e X idGioco "+idGiocoCancellazione
+					+". Causa: "+e.getMessage()+" Errorcode: "+e.getErrorCode());
+		}	
 	}
 
 	@Override
@@ -130,6 +141,11 @@ public <T> int insert(T entity) throws DAOException {
 				e.printStackTrace();
 			}
 		}
+
+	@Override
+	public <T> T delete(int pk) throws DAOException {
+		throw new DAOException("WARNING: COMANDO NON IMPLEMENTATO");
+	}
 	
 	
 

@@ -73,19 +73,33 @@ $(function () {
 			<div class="col-md-9 col-sm-12">
 
 				<!-- Blog Post -->
-
+				<div class="lead pull-right">Valutazione: ${gioco.valutazioneSito/2}/5</div>
 				<!-- Title -->
 				<h1>${gioco.titolo}</h1>
-				<p class="lead">Uscita: ${gioco.dataUscita} Valutazione:
-					${gioco.valutazioneSito/2}/5 Multiplayer: ${gioco.web()}</p>
+								<hr>
+				
+				<p class="lead"><table class="lead" style="width: 100%;">
+<tr> 
+<td>Software House: ${gioco.sh}</td>
+<td>Uscita: ${gioco.dataUscita}</td> 
+<td>Multiplayer: ${gioco.web()}</td>
+</tr>
+</table></p>
 
 
 				<hr>
+<p class="lead"><table class="lead" style="width: 100%;">
+<tr> 
+<td><span class="glyphicon glyphicon-time"></span> Gioco inserito il: ${gioco.dataReg}</td>
+<td>PEGI: ${gioco.etaMin}</td>
+</tr>
+</table>
+</p>
+				<hr>
+				<div class="lead" align="center">
+<!-- ---------------------------------------------------------------------------------------- -->
 
-				<!-- Date/Time -->
-				<p>
-					<span class="glyphicon glyphicon-time"></span> Gioco inserito il:
-					${gioco.dataReg} Valutazione utenti:
+Valutazione utenti:
 					<c:choose>
 						<c:when test="${gioco.valutazione != 0}">
 							<c:if test="${gioco.valutazione != 10}">
@@ -93,27 +107,33 @@ $(function () {
 							<c:forEach begin="${count}" end="${gioco.valutazione / 2}"
 								varStatus="loop">
 								<c:set var="count" value="${count + 1}" scope="page" />
-								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star" style="color: gold;"></span>
 							</c:forEach>
 
 							<c:forEach begin="${count}" end="5" varStatus="loop">
 								<c:set var="count" value="${count + 1}" scope="page" />
-								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty" style="color: gold;"></span>
 							</c:forEach>
 						</c:if>
 						<c:if test="${gioco.valutazione == 10}">
-						<span class="glyphicon glyphicon-star"></span>
-						<span class="glyphicon glyphicon-star"></span>
-						<span class="glyphicon glyphicon-star"></span>
-						<span class="glyphicon glyphicon-star"></span>
-						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star" style="color: gold;"></span>
+						<span class="glyphicon glyphicon-star" style="color: gold;"></span>
+						<span class="glyphicon glyphicon-star" style="color: gold;"></span>
+						<span class="glyphicon glyphicon-star" style="color: gold;"></span>
+						<span class="glyphicon glyphicon-star" style="color: gold;"></span>
 						</c:if>
 						</c:when>
 						<c:otherwise>
 							<span>N/P</span>
 						</c:otherwise>
 					</c:choose>
-				</p>
+
+<!-- ---------------------------------------------------------------------------------------- -->
+
+</div>
+
+
+
 
 				<hr>
 
@@ -136,13 +156,13 @@ $(function () {
 						<form role="form" action="recensione.do" method="post">
 							<fieldset>
 								<span class="star-cb-group"> <input type="radio"
-									id="rating-5" name="voto" value="5" /><label for="rating-5">5</label>
-									<input type="radio" id="rating-4" name="voto" value="4"
+									id="rating-5" name="voto" value="10" /><label for="rating-5">5</label>
+									<input type="radio" id="rating-4" name="voto" value="8"
 									checked="checked" /><label for="rating-4">4</label> <input
-									type="radio" id="rating-3" name="voto" value="3" /><label
+									type="radio" id="rating-3" name="voto" value="6" /><label
 									for="rating-3">3</label> <input type="radio" id="rating-2"
-									name="voto" value="2" /><label for="rating-2">2</label> <input
-									type="radio" id="rating-1" name="voto" value="1" /><label
+									name="voto" value="4" /><label for="rating-2">2</label> <input
+									type="radio" id="rating-1" name="voto" value="2" /><label
 									for="rating-1">1</label> <input type="radio" id="rating-0"
 									name="voto" value="0" class="star-cb-clear" /><label
 									for="rating-0">0</label>
@@ -151,6 +171,7 @@ $(function () {
 							<div class="form-group">
 								<input type="hidden" name="idGioco" value="${gioco.idGioco}">
 								<textarea class="form-control" rows="3" name="recensione"></textarea>
+								<html:errors property="recensione" bundle="errori" />
 							</div>
 							<button type="submit" class="btn btn-primary">Submit</button>
 						</form>
