@@ -30,7 +30,7 @@
                         </h4>
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in">
-                        <div class="panel-body">
+                        <div class="panel-body" style="background-color:black;">
                             <table class="table">
                             <c:forEach items="${listaCategoria}" var="categoria">
                                 <tr>
