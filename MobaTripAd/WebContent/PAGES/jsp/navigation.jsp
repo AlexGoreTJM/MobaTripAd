@@ -50,8 +50,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="vaiAbout.do">About <span class="sr-only">(current)</span></a></li>
+        <c:if test="${utente.admin == null}">
         <li><a href="vaiContact.do">Contact</a></li>
-        
+        </c:if>
         
         
       </ul>
