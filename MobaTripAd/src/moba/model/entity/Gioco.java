@@ -32,6 +32,7 @@ public class Gioco {
 	private Categoria categoria;
 	private ArrayList<Piattaforma> piattaforme;
 	private ArrayList<Recensione> recensioni;
+	private ArrayList<Shop> shop;
 
 	// COSTRUTTORI:
 
@@ -42,7 +43,7 @@ public class Gioco {
 	public Gioco(int idGioco, String titolo, String sh, int players, boolean web, Date dataUscita, int etaMin,
 			double costoLancio, Categoria categoria, double valutazioneSito, String pro, String contro, String img1,
 			String img2, String urlVideo, String urlSh, String requisiti, String info, Timestamp dataReg,
-			ArrayList<Piattaforma> piattaforme, ArrayList<Recensione> recensioni, double valutazione) {
+			ArrayList<Piattaforma> piattaforme, ArrayList<Recensione> recensioni, double valutazione, ArrayList<Shop> shop) {
 		super();
 		this.idGioco = idGioco;
 		this.titolo = titolo;
@@ -66,6 +67,7 @@ public class Gioco {
 		this.piattaforme = piattaforme;
 		this.recensioni = recensioni;
 		this.valutazione = valutazione;
+		this.shop=shop;
 	}
 
 	public Gioco(String titolo, String sh, int players, boolean web, Date dataUscita, int etaMin, double costoLancio,
@@ -73,13 +75,23 @@ public class Gioco {
 			String urlVideo, String urlSh, String requisiti, String info) {
 
 		this(0, titolo, sh, players, web, dataUscita, etaMin, costoLancio, new Categoria(idCategoria, null, null, null),
-				valutazioneSito, pro, contro, img1, img2, urlVideo, urlSh, requisiti, info, null, null, null, 0.0);
+				valutazioneSito, pro, contro, img1, img2, urlVideo, urlSh, requisiti, info, null, null, null, 0.0,null);
 	}
 
 	// GETTER & SETTER:
 
+	
+	
 	public int getIdGioco() {
 		return idGioco;
+	}
+
+	public ArrayList<Shop> getShop() {
+		return shop;
+	}
+
+	public void setShop(ArrayList<Shop> shop) {
+		this.shop = shop;
 	}
 
 	public void setIdGioco(int idGioco) {

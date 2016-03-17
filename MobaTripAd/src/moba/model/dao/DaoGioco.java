@@ -15,6 +15,7 @@ import moba.model.entity.Gioco;
 import moba.model.entity.GiocoPiatta;
 import moba.model.entity.Piattaforma;
 import moba.model.entity.Recensione;
+import moba.model.entity.Shop;
 
 public class DaoGioco extends DAO {
 
@@ -238,6 +239,7 @@ public int countGiochi() throws DAOException{
 
 	private <T> T componiEntity() throws SQLException, DAOException {
 
+		ArrayList<Shop> shop = new DaoShop().select(res.getInt("idgioco"));
 		ArrayList<Piattaforma> piattaforme = new ArrayList<>();
 		ArrayList<GiocoPiatta> giocopiatta = new DaoGiocoPiatta().selectByIdGioco(res.getInt("idgioco"));
 		ArrayList<Recensione> recensione = new DaoRecensione().select(res.getInt("idgioco"));
@@ -253,7 +255,7 @@ public int countGiochi() throws DAOException{
 				res.getDouble("costolancio"), ((Categoria) new DaoCategoria().select(res.getInt("idcategoria"))),
 				res.getDouble("valutazionesito"), res.getString("pro"), res.getString("contro"), res.getString("img1"),
 				res.getString("img2"), res.getString("urlvideo"), res.getString("urlsh"), res.getString("requisiti"),
-				res.getString("info"), res.getTimestamp("datareg"), piattaforme, recensione, valutazione);
+				res.getString("info"), res.getTimestamp("datareg"), piattaforme, recensione, valutazione, shop);
 
 	}
 	
