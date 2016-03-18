@@ -154,7 +154,7 @@
 
 <action path="/recensione" type="moba.controller.action.AggiungiRecensione" name="RecensioneForm"
 	validate="true" input="/PAGES/jsp/gioco.jsp"  >
-	<forward name="success" path="/PAGES/jsp/index.jsp" />
+	<forward name="success" path="/inizia.do" />
 	<forward name="failure" path="/PAGES/jsp/errore.jsp" />
 </action>
 
