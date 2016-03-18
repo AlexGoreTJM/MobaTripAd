@@ -39,7 +39,7 @@ public class DaoShop extends DAO{
 	public <T> T select(int idGioco) throws DAOException {
 		
 		ArrayList<T> lista = new ArrayList<T>();
-		String sql = "SELECT shop.idgioco, piattaforma.nome, shop.link FROM moba.shop, moba.piattaforma WHERE idgioco = ? and shop.idpiattaforma = piattaforma.idpiattaforma; ";
+		String sql = "SELECT idgioco, nome, link FROM moba.shop, moba.piattaforma WHERE idgioco = ? and shop.idpiattaforma = piattaforma.idpiattaforma ";
 
 		try (PreparedStatement pst = con.prepareStatement(sql)) {
 
@@ -57,7 +57,7 @@ public class DaoShop extends DAO{
 	}
 
 	private <T> T componiEntity() throws SQLException{
-		return (T) new Shop(res.getInt("idGioco"), res.getString("piattaforma"), res.getString("link"));
+		return (T) new Shop(res.getInt("idgioco"), res.getString("nome"), res.getString("link"));
 	}
 
 	public static void main(String[] args) {
