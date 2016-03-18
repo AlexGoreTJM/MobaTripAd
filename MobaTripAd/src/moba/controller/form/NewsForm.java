@@ -1,6 +1,8 @@
 package moba.controller.form;
 
+import javax.mail.Session;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
@@ -8,9 +10,11 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
 
 import moba.model.dao.DAO;
+import moba.model.dao.DaoNews;
 import moba.model.dao.DaoUtente;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.enumeratori.Tabella;
+import moba.model.entity.Utente;
 import moba.model.utilita.Utilita;
 
 public class NewsForm  extends ActionForm{
@@ -29,7 +33,8 @@ public class NewsForm  extends ActionForm{
 	public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
 
 		ActionErrors errori = new ActionErrors();
-		
+		HttpSession session = request.getSession();
+		Utente u = (Utente) session.getAttribute("utente");
 		//nell'ActionMessage definiamo un 'etichetta' facilmente decifrabile secondo la regola NomeClasse.campo.problema
 		
 		try {
@@ -41,7 +46,7 @@ public class NewsForm  extends ActionForm{
 				errori.add("email", new ActionMessage("email_exist", "email"));
 			else if(!Utilita.verificaEmail(this.email))
 				errori.add("email", new ActionMessage("formale_e", "email"));
-			else if(!(dao.getEmail(this.email)))
+			else if(!(u.getEmail().equals(this.email)))
 				errori.add("email", new ActionMessage("email_not_exist", "email"));
 	
 		} catch (DAOException e) {

@@ -78,7 +78,8 @@
             </div>
           </div>
         </form>
-        
+        <br>
+        <br>
         
         <form class="form-horizontal" role="form" action="news.do" method="post">
           <div class="form-group">
@@ -86,6 +87,7 @@
 		  <div class="col-md-8">
 			<input type="email" class="form-control" id="InputEmail"
 				name="email" placeholder="Inserisci email" required> 
+				 <div class="erroriWithe"><html:errors property="email" bundle="errori" /></div>
 		 </div>
 		 </div>
 		 <div class="form-group">
