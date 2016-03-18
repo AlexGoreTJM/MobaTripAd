@@ -42,24 +42,31 @@
       <div class="col-md-9 personal-info">
         
         <h3>Informazioni Personali</h3>
-        
-        <form class="form-horizontal" role="form" action="signup.do" method="post">
+	
+	<div class="form-horizontal">
+        <html:form action="signup.do" method="post">
           <div class="form-group">
             <label class="col-lg-3 control-label">Nome:</label>
             <div class="col-lg-8">
-              <input class="form-control" name="nome" type="text">
+            	<div class="form-control">
+              		<html:text name="SignupForm" property="nome" style="color:black; border-style:none;" />
+              	</div>
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Cognome:</label>
             <div class="col-lg-8">
-              <input class="form-control" name="cognome" type="text">
+              	<div class="form-control">
+              		<html:text name="SignupForm" property="cognome" style="color:black; border-style:none;" />
+              	</div>
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">* Username:</label>
             <div class="col-md-8">
-              <input class="form-control" name="username" type="text">
+              	<div class="form-control">
+              		<html:text name="SignupForm" property="username" style="color:black; border-style:none;" />
+              	</div>
               <div class="erroriWithe"><html:errors property="username" bundle="errori" /></div>
             </div>
             
@@ -67,7 +74,9 @@
           <div class="form-group">
             <label class="col-lg-3 control-label">* Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" name="email" type="text">
+              	<div class="form-control">
+              		<html:text name="SignupForm" property="email" style="color:black; border-style:none;" />
+              	</div>
               <div class="erroriWithe"><html:errors property="email" bundle="errori" /></div>
             </div>
             
@@ -75,30 +84,38 @@
          <div class="form-group">
             <label class="col-lg-3 control-label">* Conferma Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" name="email_c">
+              	<div class="form-control">
+              		<html:text name="SignupForm" property="email_c" style="color:black; border-style:none;" />
+              	</div>
                <div class="erroriWithe"><html:errors property="email_c" bundle="errori" /></div>
             </div>
            
           </div>
       
           <div class="form-group">
-            <label class="col-md-3 control-label">* Password:</label>
+            <label class="col-md-3 control-label">* / ** Password:</label>
             <div class="col-md-8">
-              <input class="form-control" name="password" type="password">
-              <div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
+              	<div class="form-control">
+              		<html:text name="SignupForm" property="password" style="color:black; border-style:none;" />
+              	</div>
+              	<div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
             </div>           
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">* Conferma password:</label>
             <div class="col-md-8">
-              <input class="form-control" type="password" name="password_c">
+             	 <div class="form-control">
+              		<html:text name="SignupForm" property="password_c" style="color:black; border-style:none;"/>
+              	</div>
               <div class="erroriWithe"><html:errors property="password_c" bundle="errori" /></div>
             </div>
           </div>
            <div class="form-group">
             <label class="col-md-3 control-label">Parlaci di te:</label>
             <div class="col-md-8">
-              <input class="form-control" type="text" name="info">
+              	<div class="form-control">
+              		<html:text name="SignupForm" property="info" style="color:black; border-style:none;" />
+              	</div>
             </div>
           </div>
           <div class="form-group">
@@ -106,89 +123,16 @@
             <div class="col-md-8">
               <input type="submit" class="btn btn-primary" value="Registrati">
               <span></span>
-              <input type="reset" class="btn btn-default" value="Reset">
+             	<input type="reset"  value="Reset" class="btn btn-default">
             </div>
           </div>
-        </form>
-        <h6>* campi obbligatori ** La password deve essere di almeno 8 caratteri, contenere almeno una lettera maiuscola e un numero</h6>
+        </html:form>
+    </div>
+        <h6>* campi obbligatori <br>
+        ** La password deve essere di almeno 8 caratteri, contenere almeno una lettera maiuscola e un numero</h6>
       </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <form action="signup.do" method="post">
-<table>
-    <tr>
-      <td>Nome:</td>
-      <td><input type="text" name="nome"></td>
-    </tr>
-    
-    <tr>
-      <td>Cognome:</td>
-      <td><input type="text" name="cognome"></td>
-    </tr>
-    
-    <tr>
-      <td>*Username:</td>
-      <td><input type="text" name="username"></td>
-      <td></td>
-    </tr>
-    
-    <tr>
-      <td>*Email:</td>
-      <td><input type="text" name="email"></td>
-      <td></td>
-    </tr>
-    
-    <tr>
-      <td>*Conferma email:</td>
-      <td><input type="text" name="email_c"></td>
-      <td></td>
-    </tr>
-    
-    <tr>
-      <td>*Password:</td>
-      <td><input type="password" name="password"></td>
-      <td></td>
-    </tr>
-    
-    <tr>
-      <td>*Conferma password:</td>
-      <td><input type="password" name="password_c"></td>
-      <td></td>
-    </tr>
-    
-    <tr>
-      <td>*Avatar:</td>
-      <td><input type="text" name="avatar"></td>
-      <td></td>
-    </tr>
-    
-    <tr>
-      <td>Parlaci di te:</td>
-      <td><input type="text" name="info"></td>
-    </tr>
-    <tr>
-    <td colspan="2"><input type="submit" ></td>
-
-</table>
-
-
-
-</form> -->
-
-
-
 
 </body>
 </html>
