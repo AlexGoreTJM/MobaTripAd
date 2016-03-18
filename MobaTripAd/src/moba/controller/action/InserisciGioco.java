@@ -3,6 +3,7 @@ package moba.controller.action;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.sql.Date;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,9 +17,11 @@ import org.apache.struts.upload.FormFile;
 import moba.controller.form.InserisciGiocoForm;
 import moba.model.dao.DAO;
 import moba.model.dao.DaoGioco;
+import moba.model.dao.DaoNews;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.enumeratori.Tabella;
 import moba.model.entity.Gioco;
+import moba.model.utilita.MailJava;
 
 public class InserisciGioco extends Action {
 
@@ -52,6 +55,15 @@ public class InserisciGioco extends Action {
 					Double.parseDouble(igf.getCostoLancio()), Integer.parseInt(igf.getIdCategoria()),
 					Double.parseDouble(igf.getValutazioneSito()), igf.getPro(), igf.getContro(), "tempImg1", "tempImg2",
 					igf.getUrlVideo(), igf.getUrlSh(), igf.getRequisiti(), igf.getInfo()));
+			
+			DaoNews daoNews = (DaoNews) DAO.getDaoInstance(Tabella.News);
+			ArrayList<String> listaMail = daoNews.selectAll();
+			
+			for (int i=0;i<listaMail.size();i++){
+				String email = listaMail.get(i);
+				MailJava.NewsMail(email, igf.getTitolo(),"http://localhost:8080/MobaTripAd/schedaGioco.do?idGioco="+idGioco);
+			}
+			
 
 		} catch (DAOException e) {
 			request.setAttribute("errore", e.getMessage());
