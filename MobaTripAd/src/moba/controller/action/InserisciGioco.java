@@ -99,6 +99,8 @@ public class InserisciGioco extends Action {
 
 		return mapping.findForward("success");
 	}
+	
+	
 
 }
 
