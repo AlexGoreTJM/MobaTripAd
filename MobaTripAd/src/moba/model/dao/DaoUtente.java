@@ -91,7 +91,7 @@ public class DaoUtente extends DAO {
 	@Override
 	public <T> ArrayList<T> select() throws DAOException {
 		String sql = "SELECT idutente, admin, nickname, email, password, nome, cognome, grado, avatar, datareg, info "
-				+ "FROM utente ORDER BY nickname";
+				+ "FROM utente WHERE admin = 0 ORDER BY nickname";
 		ArrayList<Utente> lista = new ArrayList<Utente>();
 		try (PreparedStatement pst = con.prepareStatement(sql)) {
 			res = pst.executeQuery(); // esegue la query così preparata

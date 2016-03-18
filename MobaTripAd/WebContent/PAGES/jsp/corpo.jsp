@@ -6,8 +6,11 @@
 
 <c:forEach items="${listaGiocoRecente}" var="GiocoRecente">
 
-	<div class="col-sm-4 col-lg-4 col-md-4">
-	<div id="provahover">ciao</div>
+	<div id="x" class="col-sm-4 col-lg-4 col-md-4">
+	<div class="cs-style-1">
+	 
+	<div id="y">Recensisci ora!!!</div>
+		</div>
 		<div class="thumbnail" style="background: url('RESOURCES/img/menu_background.png')">
 		
 			<p>
