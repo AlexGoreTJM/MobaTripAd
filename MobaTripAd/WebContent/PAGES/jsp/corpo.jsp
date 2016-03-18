@@ -15,7 +15,7 @@
 		
 			<p>
 				<a href="schedaGioco.do?idGioco=${GiocoRecente.idGioco}"><img
-					src="${pathGioco}${GiocoRecente.img1}" alt="${GiocoRecente.titolo}"></a>
+					src="${pathGioco}${GiocoRecente.img1}" alt="${GiocoRecente.titolo}" ></a>
 			<div class="caption">
 				<h4 class="pull-right">Voto:
 					${GiocoRecente.valutazioneSito/2}/5</h4>
