@@ -382,7 +382,7 @@ public class DaoUtente extends DAO {
 		try {
 			DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
 
-			Utente u = new Utente(false, "skyzzo", "skyzzo@christian.com", "porcaccialatroia", "Matteo", "Matteo",
+			Utente u = new Utente(false, "skyzzo12", "skyzzo@christian.com", "porcaccialatroia", "Matteo", "Matteo",
 					"Peone", "moba.jpg", null);
 			int i = dao.insert(u);
 			System.out.println("\ninsert(Utente): " + i);
