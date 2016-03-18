@@ -46,7 +46,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="dataUscita">Data uscita</label>
+					<label for="dataUscita">* Data uscita</label>
 					<div class="input-group">
 						<input type="text" class="form-control" name="year" id="year"
 							placeholder="Anno" required> <input type="text"
@@ -57,7 +57,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="etaMin">Età min</label>
+					<label for="etaMin">* Età min</label>
 					<div class="input-group">
 						<input type="text" class="form-control" name="etaMin" id="etaMin"
 							placeholder="Inserisci età min" required> <span
@@ -65,7 +65,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="costoLancio">Costo lancio</label>
+					<label for="costoLancio">* Costo lancio</label>
 					<div class="input-group">
 						<input type="text" class="form-control" name="costoLancio"
 							id="costoLancio" placeholder="Inserisci costo lancio" required>
@@ -86,7 +86,7 @@
 					</div>
 					<br>
 					<div class="form-group">
-						<label for="valutazioneSito">Valutazione sito</label>
+						<label for="valutazioneSito">* Valutazione sito</label>
 						<div class="input-group">
 							<input type="text" class="form-control" name="valutazioneSito"
 								id="valutazioneSito" placeholder="Inserisci valutazione sito"
@@ -112,7 +112,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="urlVideo">Url video</label>
+						<label for="urlVideo">* Url video</label>
 						<div class="input-group">
 							<input type="text" class="form-control" name="urlVideo"
 								id="urlVideo" placeholder="Inserisci URL video" required> <span
@@ -129,7 +129,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="requisiti">Requisiti</label>
+						<label for="requisiti">* Requisiti</label>
 						<div class="input-group">
 							<input type="text" class="form-control" name="requisiti"
 								id="requisiti" placeholder="Inserisci requisiti" required> <span
@@ -137,7 +137,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="info">Info</label>
+						<label for="info">* Info</label>
 						<div class="input-group">
 							<input type="text" class="form-control" name="info" id="info"
 								placeholder="Inserisci valutazione sito" required> <span
@@ -153,7 +153,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="info">Image2</label>
+						<label for="info">* Image2</label>
 						<div class="input-group">
 							<input type="file" name="file2" class="form-control"> <span
 								class="input-group-addon"></span>
