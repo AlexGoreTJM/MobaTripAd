@@ -215,7 +215,7 @@ body {
 	100% { top: -170%; }
 }
 
-.like, .dislike {
+.like1, .dislike1, .like0, .dislike0 {
     display: inline-block;
     margin-bottom: 0;
     font-weight: normal;
@@ -229,11 +229,19 @@ body {
     font-size: 14px;
     line-height: 1.428571429;
     border-radius: 4px;
+    text-decoration: none;
 }
 .qty1, .qty2 {
     border: none;
     width:20px;
     background: transparent;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.qty1:hover, .qty2:hover {
+	
+	color: red;
 }
 
 .errori {
@@ -255,3 +263,4 @@ body {
 *:focus {
 	outline: none;
 }
+
