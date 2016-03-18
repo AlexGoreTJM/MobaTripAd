@@ -12,7 +12,6 @@ import org.apache.struts.action.ActionMapping;
 
 import moba.controller.form.SignupForm;
 import moba.model.dao.DAO;
-import moba.model.dao.DaoNews;
 import moba.model.dao.DaoUtente;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAOUnivocoException;
@@ -37,6 +36,7 @@ public class Signup extends Action{
 								 , "MOBAavatar.png"
 								 , f.getInfo());
 		try {
+			@SuppressWarnings("unused")
 			DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
 
 			

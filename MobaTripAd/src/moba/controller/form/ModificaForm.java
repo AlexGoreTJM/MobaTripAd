@@ -9,6 +9,7 @@ import org.apache.struts.action.ActionMessage;
 
 import moba.model.utilita.Utilita;
 
+@SuppressWarnings("serial")
 public class ModificaForm extends ActionForm{
 	
 	private String password;

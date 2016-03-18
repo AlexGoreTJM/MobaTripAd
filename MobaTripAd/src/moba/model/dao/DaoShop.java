@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
 import moba.model.dao.enumeratori.Tabella;
-import moba.model.entity.Piattaforma;
 import moba.model.entity.Shop;
 
 public class DaoShop extends DAO{
@@ -35,6 +34,7 @@ public class DaoShop extends DAO{
 				throw new DAONonTrovatoException("ERRORE SELECT SHOP NON IMPLEMENTATO");
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public <T> T select(int idGioco) throws DAOException {
 		
@@ -56,6 +56,7 @@ public class DaoShop extends DAO{
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	private <T> T componiEntity() throws SQLException{
 		return (T) new Shop(res.getInt("idgioco"), res.getString("nome"), res.getString("link"));
 	}

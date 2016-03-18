@@ -13,6 +13,7 @@ import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.enumeratori.Tabella;
 import moba.model.utilita.Utilita;
 
+@SuppressWarnings("serial")
 public class SignupForm extends ActionForm {
 	
 	private String username;

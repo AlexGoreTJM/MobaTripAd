@@ -64,6 +64,7 @@ public class DaoGioco extends DAO {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public <T> T delete(int pk) throws DAOException {
 
@@ -237,6 +238,7 @@ public int countGiochi() throws DAOException{
 		}    	
     }
 
+	@SuppressWarnings("unchecked")
 	private <T> T componiEntity() throws SQLException, DAOException {
 
 		ArrayList<Shop> shop = new DaoShop().select(res.getInt("idgioco"));
@@ -289,6 +291,7 @@ public int countGiochi() throws DAOException{
 		try {
 			DaoGioco dao = (DaoGioco) DAO.getDaoInstance(Tabella.Gioco);
 
+			@SuppressWarnings("deprecation")
 			int i = dao.insert(new Gioco("PROVAAAAaaaaaaaa", "PROVAA", 1, true, new
 			Date(100,12,1), 1, 1, 1, 1, "ddd", "ppp", "ddd", "dddd", "ddd", null,
 			null, null));

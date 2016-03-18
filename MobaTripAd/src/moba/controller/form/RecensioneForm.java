@@ -7,8 +7,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
 
-import moba.model.utilita.Utilita;
-
+@SuppressWarnings("serial")
 public class RecensioneForm extends ActionForm {
 	private String recensione;
 

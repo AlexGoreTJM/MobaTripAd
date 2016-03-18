@@ -12,7 +12,6 @@ import moba.controller.form.ForgetForm;
 import moba.model.dao.DAO;
 import moba.model.dao.DaoUtente;
 import moba.model.dao.eccezioni.DAOException;
-import moba.model.dao.eccezioni.DAOUnivocoException;
 import moba.model.dao.enumeratori.Tabella;
 import moba.model.utilita.MailJava;
 

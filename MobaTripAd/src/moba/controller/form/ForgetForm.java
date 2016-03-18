@@ -9,6 +9,7 @@ import org.apache.struts.action.ActionMessage;
 
 import moba.model.utilita.Utilita;
 
+@SuppressWarnings("serial")
 public class ForgetForm extends ActionForm {
 	
 
