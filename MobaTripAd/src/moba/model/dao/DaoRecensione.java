@@ -218,7 +218,7 @@ public class DaoRecensione extends DAO {
 
 			int update = pst.executeUpdate();
 
-//			new DaoUtente().updateUtenteGrado(idUtente);
+			new DaoUtente().updateUtenteGrado(idUtente);
 
 			return update;
 
@@ -238,7 +238,7 @@ public class DaoRecensione extends DAO {
 
 			int update = pst.executeUpdate();
 
-//			new DaoUtente().updateUtenteGrado(idUtente);
+			new DaoUtente().updateUtenteGrado(idUtente);
 
 			return update;
 
@@ -258,7 +258,7 @@ public class DaoRecensione extends DAO {
 
 			int update = pst.executeUpdate();
 
-//			new DaoUtente().updateUtenteGrado(idUtente);
+			new DaoUtente().updateUtenteGrado(idUtente);
 
 			return update;
 
@@ -278,7 +278,7 @@ public class DaoRecensione extends DAO {
 
 			int update = pst.executeUpdate();
 
-//			new DaoUtente().updateUtenteGrado(idUtente);
+			new DaoUtente().updateUtenteGrado(idUtente);
 
 			return update;
 
