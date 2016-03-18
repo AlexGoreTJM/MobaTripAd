@@ -265,7 +265,7 @@ body {
 }
 
 .erroriWithe {
-	color:red;
+	color: rgba(0, 255, 48, 0.86);
 }
 
 .caption h4{
@@ -294,6 +294,7 @@ body {
 	text-align: center;
 	backface-visibility: hidden;
 	transition: transform 0.3s, opacity 0.3s;
+	background: url('../img/menu_background.png');
 }
 #x:hover #y {
 	opacity: 1;

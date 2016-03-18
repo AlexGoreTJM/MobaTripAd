@@ -180,7 +180,7 @@
 				<c:if
 					test="${sessionScope.utente != null && recensioneInserita == 0 && utente.dataReg != null }">
 					<hr>
-					<div class="well" style="background: url('../img/background.jpg');">
+					<div id="recensisci" class="well" style="background: url('../img/background.jpg');">
 						<h4>Scrivi una recensione:</h4>
 						<form role="form" action="recensione.do" method="post">
 							<fieldset>
