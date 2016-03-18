@@ -49,7 +49,7 @@ public class MailJava {
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
 			message.setSubject("MobaTripAd: Email di Autenticazione");
 
-			message.setText("http://localhost:8080/MobaTripAd/autenticazione.do?tokenURL=" + token);
+			message.setText("http://10.10.30.139:8080/MobaTripAd/autenticazione.do?tokenURL=" + token);
 
 			Transport.send(message);
 
