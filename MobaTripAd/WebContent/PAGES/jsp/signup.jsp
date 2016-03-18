@@ -32,9 +32,6 @@
       <div class="col-md-3">
         <div class="text-center">
           <img src="/MobaTripAd/IMGDB/Utente/MOBAavatar.png" class="avatar img-circle" alt="avatar" height="256" width="256">
-          <h6>Carica una foto differente...</h6>
-          
-          <input type="file" name="avatar" class="form-control">
         </div>
       </div>
       

@@ -32,6 +32,7 @@ public class Upload extends Action {
 		
 	    //Get the servers upload directory real path name
 	    String filePath = "C:\\Program Files\\apache-tomcat-8.0.32\\webapps\\MobaTripAd\\IMGDB\\Utente";
+	   // String filePath = "C:\\Users\\ats\\git\\MobaTripAd\\MobaTripAd\\WebContent\\IMGDB\\Gioco";
                
 	    
 	    //create the upload folder if not exists
