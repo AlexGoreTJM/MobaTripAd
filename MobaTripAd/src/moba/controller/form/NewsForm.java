@@ -34,7 +34,7 @@ public class NewsForm  extends ActionForm{
 
 		ActionErrors errori = new ActionErrors();
 		HttpSession session = request.getSession();
-		Utente u = (Utente) session.getAttribute("utente");
+		Utente u1 = (Utente) session.getAttribute("utente");
 		//nell'ActionMessage definiamo un 'etichetta' facilmente decifrabile secondo la regola NomeClasse.campo.problema
 		
 		try {
@@ -46,7 +46,7 @@ public class NewsForm  extends ActionForm{
 				errori.add("email", new ActionMessage("email_exist", "email"));
 			else if(!Utilita.verificaEmail(this.email))
 				errori.add("email", new ActionMessage("formale_e", "email"));
-			else if(!(u.getEmail().equals(this.email)))
+			else if(!(u1.getEmail().equals(this.email)))
 				errori.add("email", new ActionMessage("email_not_exist", "email"));
 	
 		} catch (DAOException e) {

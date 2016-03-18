@@ -26,8 +26,8 @@ public class DisiscrizioneNews extends Action{
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		
 		HttpSession session = request.getSession();
-		Utente u = (Utente) session.getAttribute("utente");
-		String email_utente = u.getEmail();
+		Utente u2 = (Utente) session.getAttribute("utente");
+		String email_utente = u2.getEmail();
 
 		try {
 			DaoNews dao = (DaoNews) DAO.getDaoInstance(Tabella.News);	
