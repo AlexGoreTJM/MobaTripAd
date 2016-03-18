@@ -10,8 +10,6 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import moba.model.entity.Utente;
-
 public class Logout extends Action {
 
 	@Override
@@ -20,7 +18,7 @@ public class Logout extends Action {
 		
 		if(request.getSession().getAttribute("utente") != null){
 			//recupera il nick Utente dalla sessione:
-			Utente utente = (Utente) request.getSession().getAttribute("utente");
+			//Utente utente = (Utente) request.getSession().getAttribute("utente");
 		
 			Enumeration<String> beanInSessione = 		
 					request.getSession().getAttributeNames();

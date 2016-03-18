@@ -67,6 +67,7 @@ public class DaoUtente extends DAO {
 		} 
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public <T> T delete(int pk) throws DAOException {
 
@@ -88,6 +89,7 @@ public class DaoUtente extends DAO {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public <T> ArrayList<T> select() throws DAOException {
 		String sql = "SELECT idutente, admin, nickname, email, password, nome, cognome, grado, avatar, datareg, info "
@@ -368,6 +370,7 @@ public class DaoUtente extends DAO {
 		}    	
     }
 
+	@SuppressWarnings("unchecked")
 	private <T> T componiEntity() throws SQLException, DAOException {
 
 		return (T) new Utente(res.getInt("idutente"), res.getInt("admin") == 0 ? false : true,

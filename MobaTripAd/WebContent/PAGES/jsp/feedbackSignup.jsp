@@ -16,3 +16,11 @@ visionare la propria mail per abilitare le funzioni del sito)
 		</div>
 	</div>
 </div>
+<div class="container">
+		<hr>
+		<div id="footer" class="">
+	<div class="container">
+		<p class="text-muted">Copyright Gruppo ATS 2016</p>
+	</div>
+</div>
+	</div>

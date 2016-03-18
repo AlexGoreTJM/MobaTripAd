@@ -3,7 +3,6 @@ package moba.controller.action;
 //Action che si occupa di inviare un pdf ad un utente tramite email.
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
@@ -23,7 +22,6 @@ import moba.model.dao.DaoGioco;
 import moba.model.dao.DaoUtente;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.enumeratori.Tabella;
-import moba.model.entity.Categoria;
 import moba.model.entity.Gioco;
 import moba.model.entity.Utente;
 import moba.model.utilita.JavaPDF;

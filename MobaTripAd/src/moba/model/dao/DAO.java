@@ -23,6 +23,7 @@ public abstract class DAO {
 		//Pattern FACTORY:
 		String path = DAO.class.getPackage().getName();
 		try {
+			@SuppressWarnings("unchecked")
 			Class<DAO> dao = 
 		   (Class<DAO>) Class.forName(path+".Dao"+entity);
 			

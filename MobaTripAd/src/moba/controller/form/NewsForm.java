@@ -1,6 +1,5 @@
 package moba.controller.form;
 
-import javax.mail.Session;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -11,12 +10,12 @@ import org.apache.struts.action.ActionMessage;
 
 import moba.model.dao.DAO;
 import moba.model.dao.DaoNews;
-import moba.model.dao.DaoUtente;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.enumeratori.Tabella;
 import moba.model.entity.Utente;
 import moba.model.utilita.Utilita;
 
+@SuppressWarnings("serial")
 public class NewsForm  extends ActionForm{
 
 	private String email;
@@ -38,7 +37,6 @@ public class NewsForm  extends ActionForm{
 		//nell'ActionMessage definiamo un 'etichetta' facilmente decifrabile secondo la regola NomeClasse.campo.problema
 		
 		try {
-			DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
 			DaoNews daonews = (DaoNews) DAO.getDaoInstance(Tabella.News);
 			if(this.email == null || this.email.isEmpty())
 				errori.add("email", new ActionMessage("obbligatorio", "email"));

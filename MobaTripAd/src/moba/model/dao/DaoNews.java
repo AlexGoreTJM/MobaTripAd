@@ -1,13 +1,11 @@
 package moba.model.dao;
 
-import java.awt.List;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.enumeratori.Tabella;
-import moba.model.entity.Gioco;
 
 public class DaoNews extends DAO{
 

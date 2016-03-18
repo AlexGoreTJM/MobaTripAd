@@ -8,8 +8,7 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
 import org.apache.struts.upload.FormFile;
 
-import moba.model.utilita.Utilita;
-
+@SuppressWarnings("serial")
 public class InserisciGiocoForm extends ActionForm {
 	private String titolo;
 	private String sh;
