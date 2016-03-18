@@ -351,7 +351,7 @@
 									</c:choose>
 								</c:if>
 								<p>
-									<c:if test="${recensioni.utente.idUtente == utente.idUtente}">
+									<c:if test="${utente != null}">
 										<form action="segnala.do">
 											<input type="hidden" name="idGioco"
 												value="${recensioni.idGioco}"> <input type="hidden"
