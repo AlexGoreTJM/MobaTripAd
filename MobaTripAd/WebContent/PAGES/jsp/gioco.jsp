@@ -3,6 +3,7 @@
 <%@ include file="/PAGES/jsp/customTag.jsp"%>
 
 <jsp:useBean id="dateValue" class="java.util.Date" />
+<jsp:useBean id="dateRec" class="java.util.Date" />
 <jsp:setProperty name="dateValue" property="time"
 	value="${gioco.dataReg.time}" />
 
@@ -214,6 +215,10 @@
 
 				<!-- Posted Comments -->
 				<c:forEach items="${gioco.recensioni}" var="recensioni">
+				
+						<jsp:setProperty name="dateRec" property="time"
+							value="${recensioni.dataRec.time}" />
+				
 					<!-- Comment -->
 					<div class="media">
 						<a class="pull-left" href="#"> <img class="media-object"
@@ -226,7 +231,7 @@
 								alt="grado"
 								src="${pathGrado}${recensioni.utente.grado.nome}.png"
 								height="50" width="50" class="img-circle">
-							<div class="date"><br>${recensioni.dataRec}</div>
+							<br><br><fmt:formatDate value="${recensioni.dataRec}" pattern="yyyy-MM-dd" />
 
 
 						</div>
