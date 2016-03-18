@@ -66,7 +66,7 @@
 					<c:if test="${gioco.shop.size() != 0}">
 					<c:forEach items="${gioco.shop}" var="shop">
 					
-				- ${shop.piattaforma}  <a style="color: rgba(0, 255, 48, 0.86); text-decoration:none;" href="${shop.link}">Compra</a>
+				- ${shop.piattaforma}  <a  style="color: rgba(0, 255, 48, 0.86); text-decoration:none;" href="${shop.link}">Compra</a>
 			
 					</c:forEach>
 </c:if> 

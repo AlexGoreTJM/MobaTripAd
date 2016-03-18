@@ -15,7 +15,8 @@
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" media="all" type="text/css"
 	href="RESOURCES/css/bootstrap.min.css" />
-
+<link rel="stylesheet" media="all" type="text/css"
+	href="RESOURCES/css/animate.css" />
 <link
 	href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
 	rel="stylesheet">
@@ -134,7 +135,8 @@
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container --> </nav> <br><br> --%>
-
+	<script src="RESOURCES/js/jquery.fittext.js"></script>
+<script src="RESOURCES/js/jquery.lettering.js"></script>
 	<script src="RESOURCES/js/jquery.js"></script>
 	<script src="RESOURCES/js/notify.js"></script>
 	<script src="RESOURCES/js/mobatripadScript.js"></script>
