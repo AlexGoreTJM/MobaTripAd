@@ -52,6 +52,7 @@ public class AggiungiRecensione extends Action{
 			}
 			session.setAttribute("listaRecensioniUtente", listaRec);
 			session.setAttribute("listaGiochi", listaG);
+			
 			return mapping.findForward("success");
 
 		} catch (DAOException e) {

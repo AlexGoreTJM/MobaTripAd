@@ -162,7 +162,7 @@
 <br>
 				<!-- Comments Form -->
 				<c:if
-					test="${sessionScope.utente != null && recensioneInserita == null  && utente.dataReg != null }">
+					test="${sessionScope.utente != null && recensioneInserita == null && utente.dataReg != null }">
 					<hr>
 					<div class="well" style="background: url('../img/background.jpg');">
 						<h4>Scrivi una recensione:</h4>
