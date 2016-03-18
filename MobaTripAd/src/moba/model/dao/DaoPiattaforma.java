@@ -5,6 +5,7 @@ package moba.model.dao;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.eccezioni.DAONonTrovatoException;
 import moba.model.dao.enumeratori.Tabella;
@@ -72,6 +73,7 @@ public class DaoPiattaforma extends DAO {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	private <T> T componiEntity() throws SQLException {
 		return (T) new Piattaforma(res.getInt("idpiattaforma"), res.getString("nome"), res.getString("brand"),
 				res.getString("logo"), res.getString("info"));

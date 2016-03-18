@@ -1,7 +1,6 @@
 package moba.model.utilita;
 
 import java.util.Properties;
-import java.util.UUID;
 
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
@@ -16,12 +15,6 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-import javax.servlet.http.HttpSession;
-
-import org.eclipse.jdt.internal.compiler.ast.ThisReference;
-
-import moba.model.entity.Grado;
-import moba.model.entity.Utente;
 
 //Classe java contenente i metodi per l'invio di diverse tipologie di email agli utenti.
 

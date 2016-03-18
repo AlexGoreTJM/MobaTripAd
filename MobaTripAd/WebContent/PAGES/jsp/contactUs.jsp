@@ -57,6 +57,11 @@
 <script src="RESOURCES/js/mobatripadScript.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="RESOURCES/js/bootstrap.min.js"></script>
+
+<div class="container">
+		<hr>
+		<%@ include file="../jsp/footer.jsp"%>
+</div>
 </body>
 
 </html>

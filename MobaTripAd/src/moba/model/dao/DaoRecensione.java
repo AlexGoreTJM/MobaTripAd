@@ -46,6 +46,7 @@ public class DaoRecensione extends DAO {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public <T> T delete(int idUtente, int idGioco) throws DAOException {
 
 		Recensione r = this.select(idUtente, idGioco);
@@ -69,6 +70,7 @@ public class DaoRecensione extends DAO {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public <T> ArrayList<T> select() throws DAOException {
 
 		String sql = "SELECT idutente, idgioco, ctrlike, ctrdislike, segnalata, info, datarec "
@@ -171,6 +173,7 @@ public class DaoRecensione extends DAO {
 		return null;
 	}
 
+	@SuppressWarnings("unchecked")
 	public <T> T select(int idGioco) throws DAOException {
 		String sql = "SELECT idutente, idgioco, ctrlike, ctrdislike, segnalata, info, datarec " + "FROM RECENSIONE "
 				+ "WHERE idgioco = ?";
@@ -188,6 +191,7 @@ public class DaoRecensione extends DAO {
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	public <T> T selectByIdUtente(int idUtente) throws DAOException {
 		String sql = 
 		"SELECT idutente, idgioco, ctrlike, ctrdislike, segnalata, info, datarec "

@@ -8,6 +8,7 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
 import org.apache.struts.upload.FormFile;
 
+@SuppressWarnings("serial")
 public class ValidaFile extends ActionForm {
 
 	 private FormFile file;

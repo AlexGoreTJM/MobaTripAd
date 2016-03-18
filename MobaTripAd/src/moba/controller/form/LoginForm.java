@@ -9,6 +9,7 @@ import org.apache.struts.action.ActionMessage;
 
 import moba.model.utilita.Utilita;
 
+@SuppressWarnings("serial")
 public class LoginForm extends ActionForm {
 	
 	private String username;

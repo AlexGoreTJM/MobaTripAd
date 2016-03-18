@@ -72,6 +72,7 @@ public class DaoCategoria extends DAO {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	private <T> T componiEntity() throws SQLException {
 		return (T) new Categoria(res.getInt("idcategoria"), res.getString("nome"), res.getString("img"),
 				res.getString("info"));

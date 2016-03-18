@@ -10,10 +10,8 @@ import org.apache.struts.action.ActionMapping;
 
 import moba.model.dao.DAO;
 import moba.model.dao.DaoGioco;
-import moba.model.dao.DaoRecensione;
 import moba.model.dao.eccezioni.DAOException;
 import moba.model.dao.enumeratori.Tabella;
-import moba.model.entity.Recensione;
 
 public class CercaCategoria extends Action{
 

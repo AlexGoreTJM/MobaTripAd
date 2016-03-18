@@ -43,6 +43,7 @@ public class InserisciGioco extends Action {
 			folder.mkdir();
 		}
 
+		@SuppressWarnings("deprecation")
 		Date d = new Date(Integer.parseInt(igf.getYear()) - 1900, Integer.parseInt(igf.getMonth()),
 				Integer.parseInt(igf.getDay()));
 
