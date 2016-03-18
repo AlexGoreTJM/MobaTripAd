@@ -15,59 +15,6 @@
 <meta name="author" content="">
 
 <title>MobaTripAd --Scheda Gioco--</title>
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript">
-	$(function() {
-		$(".like1").click(
-				function() {
-					var input = $(this).find('.qty1');
-					input.val(parseInt(input.val()) + 1);
-
-					var idutente = $(this).attr("data-idutente");
-					var idgioco = $(this).attr("data-idgioco");
-					window.location.href = "incrementaLike.do?idu=" + idutente
-							+ "&idg=" + idgioco;
-				});
-
-		$(".dislike1").click(
-				function() {
-					var input = $(this).find('.qty2');
-					input.val(input.val() + 1);
-
-					var idutente = $(this).attr("data-idutente");
-					var idgioco = $(this).attr("data-idgioco");
-					window.location.href = "incrementaDislike.do?idu="
-							+ idutente + "&idg=" + idgioco;
-
-				});
-
-		$(".like0").click(
-				function() {
-					var input = $(this).find('.qty1');
-					input.val(parseInt(input.val()) - 1);
-
-					var idutente = $(this).attr("data-idutente");
-					var idgioco = $(this).attr("data-idgioco");
-					window.location.href = "decrementaLike.do?idu=" + idutente
-							+ "&idg=" + idgioco;
-				});
-
-		$(".dislike0").click(
-				function() {
-					var input = $(this).find('.qty2');
-					input.val(input.val() - 1);
-
-					var idutente = $(this).attr("data-idutente");
-					var idgioco = $(this).attr("data-idgioco");
-					window.location.href = "decrementaDislike.do?idu="
-							+ idutente + "&idg=" + idgioco;
-
-				});
-	});
-</script>
-
 </head>
 <body onload="cutData();">
 	<%@ include file="../jsp/navigation.jsp"%>
@@ -103,19 +50,24 @@
 					<br> Giocatori: ${gioco.players}; Multiplayer: ${gioco.web()}
 					<br>
 					<br> PEGI: ${gioco.etaMin}
-					Shop: 
+					 
 				</div>
 
-				<div class="col-md-8 col-sm-8">
-					Piattaforme:
+				<div class="col-md-12 col-sm-12">
+				<br>
+				
+					Piattaforme:<c:if test="${gioco.shop.size() == 0}">
 					<c:forEach items="${gioco.piattaforme}" var="piattaforma">
+					${piattaforma.nome}
+					</c:forEach>
+					</c:if>
+					<c:if test="${gioco.shop.size() != 0}">
+					<c:forEach items="${gioco.shop}" var="shop">
 					
-${piattaforma.nome}  
-</c:forEach> 
-
-<c:forEach items="${gioco.shop}" var="shop">
-<a style="color: rgba(0, 255, 48, 0.86); text-decoration:none;" href="${shop.link }"></a>
-</c:forEach>
+				- ${shop.piattaforma}  <a style="color: rgba(0, 255, 48, 0.86); text-decoration:none;" href="${shop.link}">Compra</a>
+			
+					</c:forEach>
+</c:if> 
 
 				</div>
 				
@@ -211,7 +163,7 @@ ${piattaforma.nome}
 					test="${sessionScope.utente != null && recensioneInserita == null  && utente.dataReg != null }">
 					<hr>
 					<div class="well" style="background: url('../img/background.jpg');">
-						<h4>Lascia un commento:</h4>
+						<h4>Scrivi una recensione:</h4>
 						<form role="form" action="recensione.do" method="post">
 							<fieldset>
 								<span class="star-cb-group"> <input type="radio"
@@ -225,6 +177,7 @@ ${piattaforma.nome}
 									for="rating-1">1</label> <input type="radio" id="rating-0"
 									name="voto" value="0" class="star-cb-clear" /><label
 									for="rating-0">0</label>
+									
 								</span>
 							</fieldset>
 							<div class="form-group">
@@ -232,7 +185,7 @@ ${piattaforma.nome}
 								<textarea class="form-control" rows="3" name="recensione"></textarea>
 								<html:errors property="recensione" bundle="errori" />
 							</div>
-							<button type="submit" class="btn btn-primary">Commenta</button>
+							<button type="submit" class="btn btn-primary">Conferma</button>
 						</form>
 					</div>
 				</c:if>
@@ -273,7 +226,7 @@ ${piattaforma.nome}
 								alt="grado"
 								src="${pathGrado}${recensioni.utente.grado.nome}.png"
 								height="50" width="50" class="img-circle">
-							<div class="date">${recensioni.dataRec}</div>
+							<div class="date"><br>${recensioni.dataRec}</div>
 
 
 						</div>

@@ -14,6 +14,52 @@ $(document).ready(function() {
 
 		setTimeout(prova1(myVar2), 1500);
 	});
+	
+	$(".like1").click(
+			function() {
+				var input = $(this).find('.qty1');
+				input.val(parseInt(input.val()) + 1);
+
+				var idutente = $(this).attr("data-idutente");
+				var idgioco = $(this).attr("data-idgioco");
+				window.location.href = "incrementaLike.do?idu=" + idutente
+						+ "&idg=" + idgioco;
+			});
+	
+	$(".dislike1").click(
+			function() {
+				var input = $(this).find('.qty2');
+				input.val(input.val() + 1);
+
+				var idutente = $(this).attr("data-idutente");
+				var idgioco = $(this).attr("data-idgioco");
+				window.location.href = "incrementaDislike.do?idu="
+						+ idutente + "&idg=" + idgioco;
+
+			});
+	
+	$(".like0").click(
+			function() {
+				var input = $(this).find('.qty1');
+				input.val(parseInt(input.val()) - 1);
+
+				var idutente = $(this).attr("data-idutente");
+				var idgioco = $(this).attr("data-idgioco");
+				window.location.href = "decrementaLike.do?idu=" + idutente
+						+ "&idg=" + idgioco;
+			});
+
+	$(".dislike0").click(
+			function() {
+				var input = $(this).find('.qty2');
+				input.val(input.val() - 1);
+
+				var idutente = $(this).attr("data-idutente");
+				var idgioco = $(this).attr("data-idgioco");
+				window.location.href = "decrementaDislike.do?idu="
+						+ idutente + "&idg=" + idgioco;
+
+			});
 
 	$('#nav').affix({
 		offset : {
@@ -30,7 +76,7 @@ $(document).ready(function() {
 	$('.scroll-top').click(function() {
 		$('body,html').animate({
 			scrollTop : 0
-		}, 1000);
+		}, 500);
 	})
 
 	/* smooth scrolling for nav sections */
