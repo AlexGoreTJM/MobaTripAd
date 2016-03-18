@@ -66,5 +66,8 @@
 		</div>
 	</div>
 </div>
-
+<div class="container">
+		<hr>
+		<%@ include file="../jsp/footer.jsp"%>
+</div>
 

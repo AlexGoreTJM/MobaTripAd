@@ -94,7 +94,11 @@
 	</div>
 	<div class="container">
 		<hr>
-		<%@ include file="../jsp/footer.jsp"%>
+		<div id="footer" class="">
+	<div class="container">
+		<p class="text-muted">Copyright Gruppo ATS 2016</p>
+	</div>
+</div>
 	</div>
 </body>
 </html>

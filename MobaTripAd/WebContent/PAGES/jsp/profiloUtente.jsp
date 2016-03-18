@@ -121,6 +121,9 @@
 		</c:forEach>
 	</c:if>
 	</div>
-
+<div class="container">
+		<hr>
+		<%@ include file="../jsp/footer.jsp"%>
+</div>
 </body>
 </html>
