@@ -233,7 +233,7 @@ body {
 }
 .qty1, .qty2 {
     border: none;
-    width:20px;
+    width:25px;
     background: transparent;
     text-decoration: none;
     cursor: pointer;

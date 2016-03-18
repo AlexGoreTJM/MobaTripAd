@@ -297,7 +297,7 @@
 												data-idgioco="${gioco.idGioco}"> <i
 												class="fa fa-thumbs-o-up"></i> Like <input class="qty1"
 												name="qty1" readonly="readonly" type="text"
-												value="${recensioni.ctrLike}" /> &nbsp;&nbsp;&nbsp; 
+												value="${recensioni.ctrLike}" /> 
 												
 												<%
  													if (request.getSession().getAttribute("like") != null)
