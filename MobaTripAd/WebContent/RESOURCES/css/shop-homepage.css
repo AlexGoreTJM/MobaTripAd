@@ -47,6 +47,36 @@
     
 }
 
+.thumbnail:HOVER + #provahover {
+    padding: 0;
+    border: 1px solid rgba(0, 255, 48, 0.50);
+    -moz-box-shadow: 0px 0px 30px rgba(0, 255, 48, 0.86);
+    -webkit-box-shadow: 0px 0px 30px rgba(0, 255, 48, 0.86);
+    box-shadow: 0px 0px 60px rgba(0, 255, 48, 0.86);
+    filter: contrast(30%);
+    
+
+ -webkit-filter: contrast(30%);
+-moz-filter: contrast(30%);
+-o-filter: contrast(30%);
+-ms-filter: contrast(30%); 
+    
+    /* display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+    box-shadow: inset 0 0 0 4px #e1e1e1, 0 0 1px rgba(0, 0, 0, 0); */
+    
+}
+
 .thumbnail .caption-full {
     padding: 9px;
     color: #333;
@@ -215,7 +245,7 @@ body {
 	100% { top: -170%; }
 }
 
-.like1, .dislike1, .like0, .dislike0 {
+.like, .dislike {
     display: inline-block;
     margin-bottom: 0;
     font-weight: normal;
@@ -229,18 +259,11 @@ body {
     font-size: 14px;
     line-height: 1.428571429;
     border-radius: 4px;
-    text-decoration: none;
 }
 .qty1, .qty2 {
     border: none;
-    width:25px;
+    width:20px;
     background: transparent;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.qty1:hover, .qty2:hover {
-	color: red;
 }
 
 .errori {
@@ -262,4 +285,33 @@ body {
 *:focus {
 	outline: none;
 }
+
+
+#provahover {
+	
+	opacity: 0.0;
+	
+	
+}
+
+.Modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border-radius: 4px;
+    max-width: 300px;
+    height: 450px;
+}
+
+.Close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 16px;
+}
+
+
+
+
+
+
 
