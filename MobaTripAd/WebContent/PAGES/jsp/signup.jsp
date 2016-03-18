@@ -93,7 +93,7 @@
             <label class="col-md-3 control-label">* / ** Password:</label>
             <div class="col-md-8">
               	<div class="form-control">
-              		<html:text name="SignupForm" property="password" style="color:black; border-style:none;" />
+              		<html:password name="SignupForm" property="password" style="color:black; border-style:none;" />
               	</div>
               	<div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
             </div>           
@@ -102,7 +102,7 @@
             <label class="col-md-3 control-label">* Conferma password:</label>
             <div class="col-md-8">
              	 <div class="form-control">
-              		<html:text name="SignupForm" property="password_c" style="color:black; border-style:none;"/>
+              		<html:password name="SignupForm" property="password_c" style="color:black; border-style:none;"/>
               	</div>
               <div class="erroriWithe"><html:errors property="password_c" bundle="errori" /></div>
             </div>
