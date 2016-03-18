@@ -6,6 +6,7 @@ $(document).ready(function() {
 		setTimeout(prova, 1500);
 	});
 
+
 	$('#inviaPDF').on('click', function(e) {
 		e.preventDefault();
 		var myVar = $(this).attr("data-pdf");
@@ -13,6 +14,10 @@ $(document).ready(function() {
 		$.notify("Pdf inviato a " + myVar);
 
 		setTimeout(prova1(myVar2), 1500);
+	});
+	
+	$(document).ready(function(){
+	    $('[data-toggle="tooltip"]').tooltip();   
 	});
 	
 	$(".like1").click(
