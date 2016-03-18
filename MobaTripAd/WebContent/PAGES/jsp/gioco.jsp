@@ -161,8 +161,24 @@
 <div class="col-md-12 col-sm-12">
 <br>
 				<!-- Comments Form -->
+				
+				<c:set var="recensioneInserita" value="0" scope="request"/>
+				
+				<c:forEach var="rec" items="${gioco.recensioni}">
+				
+				<c:if test="${rec.utente.idUtente == utente.idUtente}">
+								<c:set var="recensioneInserita" value="1" scope="request"/>
+				
+				
+				</c:if>
+				
+				
+				
+				</c:forEach>
+				
+				
 				<c:if
-					test="${sessionScope.utente != null && recensioneInserita == null && utente.dataReg != null }">
+					test="${sessionScope.utente != null && recensioneInserita == 0 && utente.dataReg != null }">
 					<hr>
 					<div class="well" style="background: url('../img/background.jpg');">
 						<h4>Scrivi una recensione:</h4>
