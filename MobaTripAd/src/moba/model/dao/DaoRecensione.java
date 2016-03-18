@@ -36,7 +36,7 @@ public class DaoRecensione extends DAO {
 			System.out.println(r.toString());
 			int update = pst.executeUpdate();
 
-			new DaoUtente().updateUtenteGrado(r.getUtente().getIdUtente());
+//			new DaoUtente().updateUtenteGrado(r.getUtente().getIdUtente());
 			return update;
 
 		} catch (SQLException e) {
@@ -59,7 +59,7 @@ public class DaoRecensione extends DAO {
 
 			pst.executeUpdate();
 
-			new DaoUtente().updateUtenteGrado(r.getUtente().getIdUtente());
+//			new DaoUtente().updateUtenteGrado(r.getUtente().getIdUtente());
 
 			return (T) r;
 
@@ -218,7 +218,7 @@ public class DaoRecensione extends DAO {
 
 			int update = pst.executeUpdate();
 
-			new DaoUtente().updateUtenteGrado(idUtente);
+//			new DaoUtente().updateUtenteGrado(idUtente);
 
 			return update;
 
@@ -238,7 +238,7 @@ public class DaoRecensione extends DAO {
 
 			int update = pst.executeUpdate();
 
-			new DaoUtente().updateUtenteGrado(idUtente);
+//			new DaoUtente().updateUtenteGrado(idUtente);
 
 			return update;
 
@@ -258,7 +258,7 @@ public class DaoRecensione extends DAO {
 
 			int update = pst.executeUpdate();
 
-			new DaoUtente().updateUtenteGrado(idUtente);
+//			new DaoUtente().updateUtenteGrado(idUtente);
 
 			return update;
 
@@ -278,7 +278,7 @@ public class DaoRecensione extends DAO {
 
 			int update = pst.executeUpdate();
 
-			new DaoUtente().updateUtenteGrado(idUtente);
+//			new DaoUtente().updateUtenteGrado(idUtente);
 
 			return update;
 
