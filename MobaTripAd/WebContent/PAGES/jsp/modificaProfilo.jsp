@@ -83,7 +83,7 @@
         
         <form class="form-horizontal" role="form" action="news.do" method="post">
           <div class="form-group">
-		  <label class="col-md-3 control-label">Registrati alla News:</label>
+		  <label class="col-md-3 control-label">Registrati alla NewsLetter:</label>
 		  <div class="col-md-8">
 			<input type="email" class="form-control" id="InputEmail"
 				name="email" placeholder="Inserisci email" required> 
@@ -94,7 +94,22 @@
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
               <input type="submit" class="btn btn-primary" value="Registrati">
-            </div>
+              <br>
+
+              <h5><a href="disiscrizioneNews.do">Cancellati dalla NewsLetter</a></h5>
+              
+              <br>
+              <c:if test="${feedback_news_dis != null && feedback_news_dis == 'sei stato cancellato dalla newsletter'}">
+            	<div class="alert alert-success">
+  					<strong>Success!</strong> Sei stato cancellato dalla Newsletter.
+				</div>
+			  </c:if>
+			  <c:if test="${ feedback_news_dis != null && feedback_news_dis == 'Impossibile cancellare perchè non sei registrato alla newsletter'}">
+				<div class="alert alert-warning">
+ 			 		<strong>Warning!</strong> Non sei presente nella Newsletter.
+				</div>
+			  </c:if>
+            </div> 
           </div>
         </form>
         

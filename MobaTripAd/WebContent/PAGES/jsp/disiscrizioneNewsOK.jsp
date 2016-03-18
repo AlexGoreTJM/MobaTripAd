@@ -7,8 +7,8 @@
 <div class="container" style="margin-top:40px">
 		<div class="row">
 		      <div class="col-sm-6 col-md-4 col-md-offset-4">
-                   Complimenti sei stato registrato alla newsletter! <br>
-                   <a href="vaiProfilo.do">Indietro</a> 
+                   La cancellazione alla newsletter è avvenuta con successo
+                    <a href="vaiProfilo.do">Indietro</a>
              </div>
        </div>
 </div>
