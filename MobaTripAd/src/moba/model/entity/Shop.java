@@ -3,15 +3,15 @@ package moba.model.entity;
 public class Shop {
 
 	private int idgioco;
-	private int idPiattaforma;
+	private String piattaforma;
 	private String link;
 	
 	public Shop(){};
 	
-	public Shop(int idgioco, int idPiattaforma, String link) {
+	public Shop(int idgioco, String piattaforma, String link) {
 		super();
 		this.idgioco = idgioco;
-		this.idPiattaforma = idPiattaforma;
+		this.piattaforma = piattaforma;
 		this.link = link;
 	}
 
@@ -19,8 +19,8 @@ public class Shop {
 		return idgioco;
 	}
 
-	public int getIdPiattaforma() {
-		return idPiattaforma;
+	public String getPiattaforma() {
+		return piattaforma;
 	}
 
 	public String getLink() {
@@ -29,7 +29,7 @@ public class Shop {
 
 	@Override
 	public String toString() {
-		return "Shop [idgioco=" + idgioco + ", idPiattaforma=" + idPiattaforma + ", link=" + link + "]";
+		return "Shop [idgioco=" + idgioco + ", piattaforma=" + piattaforma + ", link=" + link + "]";
 	}
 	
 	
