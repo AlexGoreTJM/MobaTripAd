@@ -102,6 +102,7 @@
 			</div>
 		</div>
 
+	<c:if test="${utente.admin == '0' }">
 		<h1>Recensioni</h1>
 		<hr>
 		<c:forEach items="${listaRecensioniUtente}" var="UtenteRecensione">
@@ -118,6 +119,7 @@
 			<p>${lista }${UtenteRecensione.info}
 			<hr>
 		</c:forEach>
+	</c:if>
 	</div>
 
 </body>

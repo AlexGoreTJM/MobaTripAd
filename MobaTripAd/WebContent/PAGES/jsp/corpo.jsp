@@ -5,8 +5,11 @@
 <!-- Creazione del corpo index con i giochi aggiunti recentemente nel database -->
 
 <c:forEach items="${listaGiocoRecente}" var="GiocoRecente">
+
 	<div class="col-sm-4 col-lg-4 col-md-4">
+	<div id="provahover">ciao</div>
 		<div class="thumbnail" style="background: url('RESOURCES/img/menu_background.png')">
+		
 			<p>
 				<a href="schedaGioco.do?idGioco=${GiocoRecente.idGioco}"><img
 					src="${pathGioco}${GiocoRecente.img1}" alt="${GiocoRecente.titolo}"></a>
@@ -50,7 +53,13 @@
 						</c:otherwise>
 					</c:choose>
 				</p>
+				
+				
+                
+            </div>
+        </div>
+				
+				
 			</div>
-		</div>
-	</div>
+		
 </c:forEach>

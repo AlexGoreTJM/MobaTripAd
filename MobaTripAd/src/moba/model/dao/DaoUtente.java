@@ -382,20 +382,20 @@ public class DaoUtente extends DAO {
 		try {
 			DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
 
-			Utente u = new Utente(false, "skyzzo12", "skyzzo@christian.com", "porcaccialatroia", "Matteo", "Matteo",
-					"Peone", "moba.jpg", null);
-			int i = dao.insert(u);
-			System.out.println("\ninsert(Utente): " + i);
+//			Utente u = new Utente(false, "skyzzo12", "skyzzo@christian.com", "porcaccialatroia", "Matteo", "Matteo",
+//					"Peone", "moba.jpg", null);
+//			int i = dao.insert(u);
+//			System.out.println("\ninsert(Utente): " + i);
+//
+//			System.out.println("\nselect(pk): " + dao.select(i));
 
-			System.out.println("\nselect(pk): " + dao.select(i));
-
-			System.out.println("\ndelete(pk)" + dao.delete(i));
+			System.out.println("\ndelete(pk)" + dao.delete(103));
 
 			// System.out.println("\nselect(pk): "+dao.select(i));
 
-			i = dao.insert(u);
-			System.out.println(dao.recuperaPassword("skyzzo") + "\n");
-			System.out.println(dao.recuperaPassword("skyzzo@christian.com") + "\n");
+//			i = dao.insert(u);
+//			System.out.println(dao.recuperaPassword("skyzzo") + "\n");
+//			System.out.println(dao.recuperaPassword("skyzzo@christian.com") + "\n");
 
 		} catch (DAOException e) {
 			System.out.println(e.getMessage());

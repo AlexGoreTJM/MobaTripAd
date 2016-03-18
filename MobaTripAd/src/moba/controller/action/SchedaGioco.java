@@ -31,8 +31,8 @@ public class SchedaGioco extends Action{
 				
 				DaoRecensione daoRecensione = (DaoRecensione) DAO.getDaoInstance(Tabella.Recensione);
 				
-				if(daoRecensione.selectVerifica(((Utente)request.getSession().getAttribute("utente")).getIdUtente(), idGioco) != null)
-					request.getSession().setAttribute("recensioneInserita", 1);
+//				if(daoRecensione.selectVerifica(((Utente)request.getSession().getAttribute("utente")).getIdUtente(), idGioco) != null)
+//					request.getSession().setAttribute("recensioneInserita", 1);
 			}
 
 			return mapping.findForward("success");
