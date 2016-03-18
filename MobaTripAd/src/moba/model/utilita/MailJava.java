@@ -28,6 +28,7 @@ import moba.model.entity.Utente;
 public class MailJava {
 
 	public static void MandaSignMail(String email, String token) {
+		
 
 		Properties props = new Properties();
 		props.put("mail.smtp.host", "smtp.libero.it");
@@ -43,7 +44,6 @@ public class MailJava {
 		});
 
 		try {
-
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress("mobatripadproject@libero.it"));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));

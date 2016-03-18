@@ -34,8 +34,8 @@ public class InserisciGioco extends Action {
 		FormFile file2 = igf.getFile2();
 
 		// Get the servers upload directory real path name
-		String filePath = "C:\\Users\\ats\\git\\MobaTripAd\\MobaTripAd\\WebContent\\IMGDB\\Gioco";
-//		String tomcat = "C:\\Program Files\\apache-tomcat-8.0.32\\webapps\\MobaTripAd\\IMGDB\\Gioco";
+//		String filePath = "C:\\Users\\ats\\git\\MobaTripAd\\MobaTripAd\\WebContent\\IMGDB\\Gioco";
+		String filePath = "C:\\Program Files\\apache-tomcat-8.0.32\\webapps\\MobaTripAd\\IMGDB\\Gioco";
 
 		// create the upload folder if not exists
 		File folder = new File(filePath);
@@ -61,7 +61,7 @@ public class InserisciGioco extends Action {
 			
 			for (int i=0;i<listaMail.size();i++){
 				String email = listaMail.get(i);
-				MailJava.NewsMail(email, igf.getTitolo(),"http://localhost:8080/MobaTripAd/schedaGioco.do?idGioco="+idGioco);
+				MailJava.NewsMail(email, igf.getTitolo(),"http://10.10.30.139:8080/MobaTripAd/schedaGioco.do?idGioco="+idGioco);
 			}
 			
 

@@ -18,6 +18,8 @@ import moba.model.dao.enumeratori.Tabella;
 
 public class Inizia extends Action {
 
+	
+		
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
