@@ -46,7 +46,7 @@
             <label class="col-lg-3 control-label">Nome:</label>
             <div class="col-lg-8">
             	<div class="form-control">
-              		<html:text name="SignupForm" property="nome" style="color:black; border-style:none;" />
+              		<html:text name="SignupForm" property="nome" style="color:black; border-style:none; width: 100%;height: 20px;" />
               	</div>
             </div>
           </div>
@@ -54,7 +54,7 @@
             <label class="col-lg-3 control-label">Cognome:</label>
             <div class="col-lg-8">
               	<div class="form-control">
-              		<html:text name="SignupForm" property="cognome" style="color:black; border-style:none;" />
+              		<html:text name="SignupForm" property="cognome" style="color:black; border-style:none; width: 100%;height: 20px;" />
               	</div>
             </div>
           </div>
@@ -62,7 +62,7 @@
             <label class="col-md-3 control-label">* Username:</label>
             <div class="col-md-8">
               	<div class="form-control">
-              		<html:text name="SignupForm" property="username" style="color:black; border-style:none;" />
+              		<html:text name="SignupForm" property="username" style="color:black; border-style:none; width: 100%;height: 20px;" />
               	</div>
               <div class="erroriWithe"><html:errors property="username" bundle="errori" /></div>
             </div>
@@ -72,7 +72,7 @@
             <label class="col-lg-3 control-label">* Email:</label>
             <div class="col-lg-8">
               	<div class="form-control">
-              		<html:text name="SignupForm" property="email" style="color:black; border-style:none;" />
+              		<html:text name="SignupForm" property="email" style="color:black; border-style:none; width: 100%;height: 20px; " />
               	</div>
               <div class="erroriWithe"><html:errors property="email" bundle="errori" /></div>
             </div>
@@ -82,7 +82,7 @@
             <label class="col-lg-3 control-label">* Conferma Email:</label>
             <div class="col-lg-8">
               	<div class="form-control">
-              		<html:text name="SignupForm" property="email_c" style="color:black; border-style:none;" />
+              		<html:text name="SignupForm" property="email_c" style="color:black; border-style:none; width: 100%;height: 20px;" />
               	</div>
                <div class="erroriWithe"><html:errors property="email_c" bundle="errori" /></div>
             </div>
@@ -93,7 +93,7 @@
             <label class="col-md-3 control-label">* / ** Password:</label>
             <div class="col-md-8">
               	<div class="form-control">
-              		<html:password name="SignupForm" property="password" style="color:black; border-style:none;" />
+              		<html:password name="SignupForm" property="password" style="color:black; border-style:none; width: 100%;height: 20px;" />
               	</div>
               	<div class="erroriWithe"><html:errors property="password" bundle="errori" /></div>
             </div>           
@@ -102,7 +102,7 @@
             <label class="col-md-3 control-label">* Conferma password:</label>
             <div class="col-md-8">
              	 <div class="form-control">
-              		<html:password name="SignupForm" property="password_c" style="color:black; border-style:none;"/>
+              		<html:password name="SignupForm" property="password_c" style="color:black; border-style:none; width: 100%;height: 20px;"/>
               	</div>
               <div class="erroriWithe"><html:errors property="password_c" bundle="errori" /></div>
             </div>
@@ -111,7 +111,7 @@
             <label class="col-md-3 control-label">Parlaci di te:</label>
             <div class="col-md-8">
               	<div class="form-control">
-              		<html:text name="SignupForm" property="info" style="color:black; border-style:none;" />
+              		<html:text name="SignupForm" property="info" style="color:black; border-style:none; width: 100%;height: 20px;" />
               	</div>
             </div>
           </div>
