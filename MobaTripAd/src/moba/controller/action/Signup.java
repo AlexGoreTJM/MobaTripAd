@@ -34,7 +34,7 @@ public class Signup extends Action{
 								 , f.getNome()
 								 , f.getCognome()
 								 , new Grado("Peone",1)
-								 , f.getAvatar()
+								 , "MOBAavatar.png"
 								 , f.getInfo());
 		try {
 			DaoUtente dao = (DaoUtente) DAO.getDaoInstance(Tabella.Utente);
