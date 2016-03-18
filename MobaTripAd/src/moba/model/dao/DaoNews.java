@@ -1,5 +1,6 @@
 package moba.model.dao;
 
+import java.awt.List;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -52,6 +53,27 @@ public class DaoNews extends DAO{
 			}
 		}	
 		
+		public ArrayList<String> selectAll() throws DAOException {
+			
+			ArrayList<String> listaMail = new ArrayList<String>();
+			String sql = "SELECT email FROM news ";
+			try (PreparedStatement pst = con.prepareStatement(sql)){
+				res = pst.executeQuery(); 
+				while(res.next())
+					listaMail.add(res.getString("email"));
+				
+				
+				
+			} catch (SQLException e) {
+				throw new DAOException("ERRORE SELECT ALL NEWS EMAIL: "
+				+ " Errorcode: " + e.getErrorCode());
+			}
+			
+			return listaMail;
+			
+			
+		}
+		
 		
 		
 		
@@ -97,20 +119,29 @@ public class DaoNews extends DAO{
 		return null;
 	}
 	
-	/*
+	
 	public static void main(String[] args) {
 
 		try {
 			DaoNews dao = (DaoNews) DAO.getDaoInstance(Tabella.News);
-
-			dao.delete("kuno98200@yahoo.it");
+            
+			//dao.delete("kuno98200@yahoo.it");
+			
+			
+			ArrayList<String> listaMail = dao.selectAll();
+			System.out.println(listaMail.size());
+			for (int i=0;i<listaMail.size();i++){
+				String email = listaMail.get(i);
+				System.out.println(email);
+			}
+			
 
 		} catch (DAOException e) {
 			System.out.println(e.getMessage());
 		}
 
 	}
-	*/
+	
 	
 
 }
