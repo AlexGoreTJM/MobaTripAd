@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ include file="/PAGES/jsp/customTag.jsp"%>
 
+
 <jsp:useBean id="dateValue" class="java.util.Date" />
 <jsp:useBean id="dateRec" class="java.util.Date" />
 <jsp:setProperty name="dateValue" property="time"
@@ -215,7 +216,7 @@
 
 				<!-- Posted Comments -->
 				<c:forEach items="${gioco.recensioni}" var="recensioni">
-				
+
 						<jsp:setProperty name="dateRec" property="time"
 							value="${recensioni.dataRec.time}" />
 				
@@ -246,7 +247,6 @@
 
 							<!-- Nested Comment -->
 							${recensioni.info} <br>
-
 							
 								<c:if test="${ sessionScope.utente != null}">
 									<c:choose>
@@ -256,32 +256,40 @@
 												data-idgioco="${gioco.idGioco}"> <i
 												class="fa fa-thumbs-o-up"></i> Like <input class="qty1"
 												name="qty1" readonly="readonly" type="text"
-												value="${recensioni.ctrLike}" /> <%
- 	if (request.getSession().getAttribute("like") != null)
- 						if (((String) request.getSession().getAttribute("like")).equals("0"))
- 							request.getSession().setAttribute("like", "1");
- 						else
- 							request.getSession().setAttribute("like", "0");
- 					else
- 						request.getSession().setAttribute("like", "1");
- %>
+												value="${recensioni.ctrLike}" /> 
+											
+											<%
+ 												if (request.getSession().getAttribute("like") != null)
+ 													if (((String) request.getSession().getAttribute("like")).equals("0"))
+ 														request.getSession().setAttribute("like", "1");
+ 													else
+ 														request.getSession().setAttribute("like", "0");
+ 												else
+ 													request.getSession().setAttribute("like", "1");
+									 		%>
+									 		
 											</a>&nbsp;&nbsp;&nbsp;
-    									<a class="dislike1"
+    										<a class="dislike1"
 												data-idutente="${recensioni.utente.idUtente}"
 												data-idgioco="${gioco.idGioco}"><i
 												class="fa fa-thumbs-o-down"></i> Dislike <input class="qty2"
 												name="qty2" readonly="readonly" type="text"
 												value="${recensioni.ctrDislike}"
 												data-idutente="${recensioni.utente.idUtente}"
-												data-idgioco="${gioco.idGioco}" /> <%
- 	if (request.getSession().getAttribute("dislike") != null)
- 						if (((String) request.getSession().getAttribute("dislike")).equals("0"))
- 							request.getSession().setAttribute("dislike", "1");
- 						else
- 							request.getSession().setAttribute("dislike", "0");
- 					else
- 						request.getSession().setAttribute("dislike", "1");
- %> </a>&nbsp;&nbsp;&nbsp;
+												data-idgioco="${gioco.idGioco}" /> 
+												
+											<%
+ 												if (request.getSession().getAttribute("dislike") != null)
+ 													if (((String) request.getSession().getAttribute("dislike")).equals("0"))
+ 														request.getSession().setAttribute("dislike", "1");
+ 													else
+ 														request.getSession().setAttribute("dislike", "0");
+ 												else
+ 													request.getSession().setAttribute("dislike", "1");
+ 											%> 
+ 											
+ 											</a>&nbsp;&nbsp;&nbsp;
+ 										
    								 	</c:when>
 										<c:otherwise>
 											<a class="like0"
@@ -289,32 +297,40 @@
 												data-idgioco="${gioco.idGioco}"> <i
 												class="fa fa-thumbs-o-up"></i> Like <input class="qty1"
 												name="qty1" readonly="readonly" type="text"
-												value="${recensioni.ctrLike}" /> &nbsp;&nbsp;&nbsp; <%
- 	if (request.getSession().getAttribute("like") != null)
- 						if (((String) request.getSession().getAttribute("like")).equals("1"))
- 							request.getSession().setAttribute("like", "0");
- 						else
- 							request.getSession().setAttribute("like", "1");
- 					else
- 						request.getSession().setAttribute("like", "1");
- %>
+												value="${recensioni.ctrLike}" /> &nbsp;&nbsp;&nbsp; 
+												
+												<%
+ 													if (request.getSession().getAttribute("like") != null)
+ 														if (((String) request.getSession().getAttribute("like")).equals("1"))
+ 															request.getSession().setAttribute("like", "0");
+ 														else
+ 															request.getSession().setAttribute("like", "1");
+ 													else
+ 														request.getSession().setAttribute("like", "1");
+ 												%>
+ 												
 											</a>&nbsp;&nbsp;&nbsp;
-    									<a class="dislike0"
+											
+    										<a class="dislike0"
 												data-idutente="${recensioni.utente.idUtente}"
 												data-idgioco="${gioco.idGioco}"><i
 												class="fa fa-thumbs-o-down"></i> Dislike <input class="qty2"
 												name="qty2" readonly="readonly" type="text"
 												value="${recensioni.ctrDislike}"
 												data-idutente="${recensioni.utente.idUtente}"
-												data-idgioco="${gioco.idGioco}" /> <%
- 	if (request.getSession().getAttribute("dislike") != null)
- 						if (((String) request.getSession().getAttribute("dislike")).equals("1"))
- 							request.getSession().setAttribute("dislike", "0");
- 						else
- 							request.getSession().setAttribute("dislike", "1");
- 					else
- 						request.getSession().setAttribute("dislike", "1");
- %> </a>&nbsp;&nbsp;&nbsp;
+												data-idgioco="${gioco.idGioco}" /> 
+												
+												<%
+ 													if (request.getSession().getAttribute("dislike") != null)
+ 														if (((String) request.getSession().getAttribute("dislike")).equals("1"))
+ 															request.getSession().setAttribute("dislike", "0");
+ 														else
+ 															request.getSession().setAttribute("dislike", "1");
+ 													else
+ 														request.getSession().setAttribute("dislike", "1");
+ 												%> 
+ 												
+ 											</a>&nbsp;&nbsp;&nbsp;
    								 	</c:otherwise>
 									</c:choose>
 								</c:if>
