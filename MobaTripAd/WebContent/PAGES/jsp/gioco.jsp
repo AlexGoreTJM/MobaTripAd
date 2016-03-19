@@ -271,8 +271,8 @@
 							
 								<c:if test="${ sessionScope.utente != null}">
 									<c:choose>
-										<c:when test="${like == null || like == 0}">
-											<a style="text-decoration: none;"class="like1"
+										<c:when test="${like == null || like == 0 }">
+											<a style="text-decoration: none;" class="like1"
 												data-idutente="${recensioni.utente.idUtente}"
 												data-idgioco="${gioco.idGioco}"> <i
 												class="fa fa-thumbs-o-up"></i> Like <input class="qty1"
@@ -313,7 +313,7 @@
  										
    								 	</c:when>
 										<c:otherwise>
-											<a class="like0"
+											<a style="text-decoration: none;" class="like0"
 												data-idutente="${recensioni.utente.idUtente}"
 												data-idgioco="${gioco.idGioco}"> <i
 												class="fa fa-thumbs-o-up"></i> Like <input class="qty1"
@@ -332,7 +332,7 @@
  												
 											</a>&nbsp;&nbsp;&nbsp;
 											
-    										<a class="dislike0"
+    										<a style="text-decoration: none;" class="dislike0"
 												data-idutente="${recensioni.utente.idUtente}"
 												data-idgioco="${gioco.idGioco}"><i
 												class="fa fa-thumbs-o-down"></i> Dislike <input class="qty2"
@@ -352,7 +352,7 @@
  												%> 
  												
  											</a>&nbsp;&nbsp;&nbsp;
-   								 	</c:otherwise>
+   								 		</c:otherwise>
 									</c:choose>
 								</c:if>
 								<p>
