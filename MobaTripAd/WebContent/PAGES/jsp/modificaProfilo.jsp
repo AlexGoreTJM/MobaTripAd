@@ -96,7 +96,7 @@
               <input type="submit" class="btn btn-primary" value="Registrati">
               <br>
 
-              <h5><a href="disiscrizioneNews.do">Cancellati dalla NewsLetter</a></h5>
+              <h5><a style="color: rgba(0, 255, 48, 0.86); text-decoration: none"href="disiscrizioneNews.do">Cancellati dalla NewsLetter</a></h5>
               
               <br>
               <c:if test="${feedback_news_dis != null && feedback_news_dis == 'sei stato cancellato dalla newsletter'}">

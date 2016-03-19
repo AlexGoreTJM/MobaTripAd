@@ -29,7 +29,7 @@
                             </span>Categoria</a>
                         </h4>
                     </div>
-                    <div id="collapseOne" class="panel-collapse collapse in">
+                    <div id="collapseOne" class="panel-collapse collapse">
                         <div class="panel-body" style="background: url('RESOURCES/img/menu_background.png');">
                             <table class="table">
                             <c:forEach items="${listaCategoria}" var="categoria">
