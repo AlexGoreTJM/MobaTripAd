@@ -42,7 +42,7 @@ public class MailJava {
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
 			message.setSubject("MobaTripAd: Email di Autenticazione");
 
-			message.setText("Benvenuto su MobaTripAd, clicca sul link per completare la registrazione \n http://10.10.30.139:8080/MobaTripAd/autenticazione.do?tokenURL=" + token);
+			message.setText("Benvenuto su MobaTripAd, clicca sul link per completare la registrazione \n http://10.10.30.134:8080/MobaTripAd/autenticazione.do?tokenURL=" + token);
 
 			Transport.send(message);
 
