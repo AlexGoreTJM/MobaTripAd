@@ -73,7 +73,7 @@ public class JavaPDF {
 
 		Document d = new Document();
 
-		PdfWriter.getInstance(d, new FileOutputStream("C:/Users/Ats/Desktop/" + titolo + ".pdf"));
+		PdfWriter.getInstance(d, new FileOutputStream("C:/Users/"+System.getProperty("user.name")+"/Desktop/" + titolo + ".pdf"));
 		d.open();
 		addGioco(d, immagine, titolo, sh, players, web, dataUscita, etaMin, costoLancio, categoria, valutazioneSito,
 				info);
