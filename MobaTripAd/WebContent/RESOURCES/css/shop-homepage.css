@@ -284,6 +284,7 @@ body {
     line-height: 1.428571429;
     border-radius: 4px;
     text-decoration: none;
+    color: rgba(0, 255, 48, 0.86);
 }
 .qty1, .qty2 {
     border: none;
@@ -303,7 +304,7 @@ body {
 }
 
 .erroriWithe {
-	color:red;
+	color: rgba(0, 255, 48, 0.86);
 }
 
 .caption h4{
@@ -332,6 +333,7 @@ body {
 	text-align: center;
 	backface-visibility: hidden;
 	transition: transform 0.3s, opacity 0.3s;
+	background: url('../img/menu_background.png');
 }
 #x:hover #y {
 	opacity: 1;
@@ -366,6 +368,11 @@ body {
     font-size: 16px;
 } */
 
+.btn-primary {
+    color: #fff;
+    background-color: rgba(0, 255, 48, 0.50);
+    border-color: rgba(0, 255, 48, 0.86);
+}
 
 
 

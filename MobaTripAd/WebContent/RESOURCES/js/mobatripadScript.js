@@ -16,9 +16,9 @@ $(document).ready(function() {
 		setTimeout(prova1(myVar2), 1500);
 	});
 	
-	$(document).ready(function(){
-	    $('[data-toggle="tooltip"]').tooltip();   
-	});
+	
+	
+	
 	
 	$(".like1").click(
 			function() {
@@ -92,6 +92,9 @@ $(document).ready(function() {
 			scrollTop : posi
 		}, 700);
 	})
+	
+	
+	
 
 });
 
@@ -149,3 +152,7 @@ function cutData() {
 		}
 	}
 }
+
+
+
+

@@ -9,13 +9,17 @@
 	<div id="x" class="col-sm-4 col-lg-4 col-md-4">
 	<div class="cs-style-1">
 	 
-	<div id="y">Recensisci ora!!!</div>
+	<div id="y">
+		<c:if test="${sessionScope.utente != null}">
+			<a href="schedaGioco.do?idGioco=${GiocoRecente.idGioco}#recensisci" style="color:white">Recensisci ora!!!</a>
+		</c:if>
+	</div>
 		</div>
 		<div class="thumbnail" style="background: url('RESOURCES/img/menu_background.png')">
 		
 			<p>
 				<a href="schedaGioco.do?idGioco=${GiocoRecente.idGioco}"><img
-					src="${pathGioco}${GiocoRecente.img1}" alt="${GiocoRecente.titolo}"></a>
+					src="${pathGioco}${GiocoRecente.img1}" alt="${GiocoRecente.titolo}" ></a>
 			<div class="caption">
 				<h4 class="pull-right">Voto:
 					${GiocoRecente.valutazioneSito/2}/5</h4>
