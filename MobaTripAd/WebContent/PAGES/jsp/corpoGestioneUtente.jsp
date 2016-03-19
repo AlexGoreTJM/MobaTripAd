@@ -15,7 +15,7 @@
 				<p>${utente.nome} ${utente.cognome}<br>${utente.dataReg}<br>		 <a href="mailto:${utente.email}"><font color="blue">${utente.email}</font></a>  </p>
 			</div>
 			<div class="ratings">
-				<p class="pull-right"><a href="eliminaUtente.do?idUtenteCanc=${utente.idUtente}"><font color="red">Elimina!</font></a></p>
+				<p class="pull-right"><a href="eliminaUtente.do?idUtenteCanc=${utente.idUtente}&email=${utente.email}"><font color="red">Elimina!</font></a></p>
 				<p>
 				.
 				</p>
