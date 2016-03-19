@@ -71,7 +71,7 @@
         <div class="text-animated-one">  
         
 					
-				-  <a  style="color: rgba(0, 255, 48, 0.86); text-decoration:none;" href="${shop.link}" title="COMPRA DAI NOSTRI PARTNER">${shop.piattaforma}</a>
+				-  <a  style="color: rgba(0, 255, 48, 0.86); text-decoration:none;" href="${shop.link}" title="PIATTAFORMA">${shop.piattaforma}</a>
 			</div></div>
 					</c:forEach>
 					
@@ -272,7 +272,7 @@
 								<c:if test="${ sessionScope.utente != null}">
 									<c:choose>
 										<c:when test="${like == null || like == 0}">
-											<a class="like1"
+											<a style="text-decoration: none;"class="like1"
 												data-idutente="${recensioni.utente.idUtente}"
 												data-idgioco="${gioco.idGioco}"> <i
 												class="fa fa-thumbs-o-up"></i> Like <input class="qty1"
@@ -290,7 +290,7 @@
 									 		%>
 									 		
 											</a>&nbsp;&nbsp;&nbsp;
-    										<a class="dislike1"
+    										<a style="text-decoration: none;" class="dislike1"
 												data-idutente="${recensioni.utente.idUtente}"
 												data-idgioco="${gioco.idGioco}"><i
 												class="fa fa-thumbs-o-down"></i> Dislike <input class="qty2"
