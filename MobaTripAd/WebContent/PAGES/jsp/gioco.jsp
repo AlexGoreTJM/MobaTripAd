@@ -57,24 +57,29 @@
 
 				<div class="col-md-12 col-sm-12">
 				<br>
-				
-					Piattaforme:<c:if test="${gioco.shop.size() == 0}">
+				<span class="text">ACQUISTA DAI NOSTRI PARTNER:</span>
+					<c:if test="${gioco.shop.size() == 0}">
 					<c:forEach items="${gioco.piattaforme}" var="piattaforma">
 					${piattaforma.nome}
 					</c:forEach>
 					</c:if>
+					
 					<c:if test="${gioco.shop.size() != 0}">
 					<c:forEach items="${gioco.shop}" var="shop">
 					
-				- ${shop.piattaforma}  <a  style="color: rgba(0, 255, 48, 0.86); text-decoration:none;" href="${shop.link}">Compra</a>
-			
+    <div class="aggettivi">
+        <div class="text-animated-one">  
+        
+					
+				-  <a  style="color: rgba(0, 255, 48, 0.86); text-decoration:none;" href="${shop.link}" title="COMPRA DAI NOSTRI PARTNER">${shop.piattaforma}</a>
+			</div></div>
 					</c:forEach>
-</c:if> 
+					
+</c:if>  
 
+				
 				</div>
 				
-				
-
 				<div class="col-md-12 col-sm-12" align="center">
 				<br>
 					<!-- ---------------------------------------------------------------------------------------- -->
@@ -208,7 +213,7 @@
 					</div>
 				</c:if>
 
-
+</div>
 
 
 				<c:if test="${sessionScope.utente != null}">
@@ -228,7 +233,7 @@
 
 
 
-				
+				<div class="col-md-12 col-sm-12">
 
 				<!-- Posted Comments -->
 				<c:forEach items="${gioco.recensioni}" var="recensioni">
@@ -389,15 +394,18 @@
 				</c:forEach>
 				</div>
 			</div>
-		</div>
-</div>
+			
+		
+
 		<div class="container">
 
-			<hr>
+			
 			<%@ include file="../jsp/footer.jsp"%>
 
-
+<hr>
 		</div>
+		</div>
+		
 </body>
 </html>
 
