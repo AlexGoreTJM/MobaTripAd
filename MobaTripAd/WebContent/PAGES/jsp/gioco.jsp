@@ -213,7 +213,7 @@
 					</div>
 				</c:if>
 
-</div>
+
 
 
 				<c:if test="${sessionScope.utente != null}">
@@ -227,7 +227,7 @@
 							data-pdf="${sessionScope.utente.email}">Invia PDF</button>
 					</form>
 				</c:if>
-
+</div>
 
 
 
